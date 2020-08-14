@@ -3,6 +3,9 @@
 - part: Teori
   chapters:
   - file: docs/tall_variabler
+  - file: docs/kontrollstrukturer
+  - file: docs/plotting
+  - file: docs/datahandtering
 
 - part: Programmer fra timen
   chapters:

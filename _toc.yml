@@ -6,6 +6,11 @@
   - file: docs/kontrollstrukturer
   - file: docs/plotting
   - file: docs/datahandtering
+  - file: docs/diskret_modellering
+  - file: docs/likninger
+  - file: docs/derivasjon
+  - file: docs/integrasjon
+  - file: docs/differensiallikninger
 
 - part: Programmer fra timen
   chapters:

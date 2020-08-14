@@ -7,11 +7,11 @@
   - file: docs/plotting
   - file: docs/datahandtering
   - file: docs/diskret_modellering
+  - file: docs/tilfeldigetall
   - file: docs/likninger
   - file: docs/derivasjon
-  - file: docs/integrasjon
   - file: docs/differensiallikninger
-
+  - file: docs/integrasjon
 - part: Programmer fra timen
   chapters:
   - file: docs/tema1

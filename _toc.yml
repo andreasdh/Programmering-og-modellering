@@ -2,15 +2,9 @@
 
 - part: Teori
   chapters:
-  - file: docs/molekylvisualisering
-  - file: docs/plotting_data
-  - file: docs/diskret_modellering
-  - file: docs/likninger
-  - file: docs/derivasjon
-  - file: docs/integrasjon
-  - file: docs/differensiallikninger
+  - file: docs/tall_variabler
 
-- part: Programmer fra forelesning
+- part: Programmer fra timen
   chapters:
   - file: docs/tema1
   - file: docs/tema2
@@ -19,4 +13,3 @@
   - file: docs/tema5
   - file: docs/tema6
   - file: docs/tema7
-  - file: docs/repetisjon

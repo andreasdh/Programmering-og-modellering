@@ -1,12 +1,12 @@
 #######################################################################################
 # Book settings
-title : Programmering i kjemi
+title : Programmering og modellering
 author: Andreas Haraldsrud
-logo: 'qe-logo-large.png'
+logo: 'datalogo.png'
 
 # Information about where the book exists on the web
 description: >-
-  Nettsider for IN-KJM1900
+  Nettsider for Programmering og modellering X
 
 #######################################################################################
 # Execution settings
@@ -25,7 +25,7 @@ notebook_interface            : "notebook"
 #######################################################################################
 # Launch button settings
 repository:
-  url                         : https://github.com/andreasdh/programmering-i-kjemi
+  url                         : https://github.com/andreasdh/programmering-og-modellering
   path_to_book                : "mini_book"
 
 binder:

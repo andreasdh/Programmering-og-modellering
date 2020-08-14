@@ -15,4 +15,4 @@ På siden vil du finne følgende:
 | ------------- | ------------- | -------------| ------------- |
 | 17.august | Kalvøya - timen utgår | | |
 | 21. august  | Introduksjon til programmering  | | |
-| 21. august  | Tall og variabler| | |
+| 21. august  | Tall og variabler| Les s. 15-20 + underveisoppgave 3.1| |

@@ -9,3 +9,10 @@ På siden vil du finne følgende:
 - Oppgaver som du kan prøve underveis.
 - Oppgaver og innleveringer.
 ```
+
+## Undervisningsplan
+| Dato          | Tema          | Forberedelser| Innleveringer |
+| ------------- | ------------- | -------------| ------------- |
+| 17.august | Kalvøya - timen utgår | | |
+| 21. august  | Introduksjon til programmering  | | |
+| 21. august  | Tall og variabler| | |

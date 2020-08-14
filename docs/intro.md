@@ -11,9 +11,15 @@ På siden vil du finne følgende:
 ```
 
 ## Undervisningsplan
-| Dato          | Tema          | Forberedelser| Innleveringer |
+| Dato          | Tema          | Hjemmearbeider før timen | Vurderinger|
 | ------------- | ------------- | -------------| ------------- |
 | 17.august | Kalvøya - timen utgår | | |
 | 21. august  | Introduksjon til programmering  | | |
-| 21. august  | Tall og variabler| Les s. 15-20 + underveisoppgave 3.1| |
-| 21. august  | Tall og variabler| Les s. 15-20 + underveisoppgave 3.1| |
+| 21. august  | Tall og variabler| Les 3.2 og 3.3 + underveisoppgave 3.4 og 3.5| |
+| 28. august  | Beslutninger| Les 4.1| |
+| 2. september | Fagdag: Beslutninger og løkker | Oppg. 4.1, 4.2 og 4.3| |
+| 4. september | Løkker forts.|  | Frist innlevering 1|
+| 11. september | Funksjoner | Les 3.5 + underveisoppgave 3.6| |
+| 18. september | Funksjoner II | | Frist innlevering 2 (med karakter) |
+| 25. september | Datasamlinger | | | |
+| 2. oktober | Høstferie - timen utgår | | | |

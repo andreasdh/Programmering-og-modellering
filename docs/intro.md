@@ -13,13 +13,29 @@ På siden vil du finne følgende:
 ## Undervisningsplan
 | Dato          | Tema          | Hjemmearbeider før timen | Vurderinger|
 | ------------- | ------------- | -------------| ------------- |
-| 17.august | Kalvøya - timen utgår | | |
-| 21. august  | Introduksjon til programmering  | | |
-| 21. august  | Tall og variabler| Les 3.2 og 3.3 + underveisoppgave 3.4 og 3.5| |
-| 28. august  | Beslutninger| Les 4.1| |
-| 2. september | Fagdag: Beslutninger og løkker | Oppg. 4.1, 4.2 og 4.3| |
-| 4. september | Løkker forts.|  | Frist innlevering 1|
-| 11. september | Funksjoner | Les 3.5 + underveisoppgave 3.6| |
-| 18. september | Funksjoner II | | Frist innlevering 2 (med karakter) |
-| 25. september | Datasamlinger | | | |
-| 2. oktober | Høstferie - timen utgår | | | |
+| 21.august | Kalvøya - timen utgår | | |
+| 28. august  | Introduksjon til programmering  | | |
+| 2. september  | Tall og variabler, beslutninger| Les 3.2 og 3.3 + underveisoppgave 3.4 og 3.5| |
+| 4. september  | Løkker| Les 4.1, 4.2 og 4.3| |
+| 11. september | Løkker II |Oppg. 4.1, 4.2 og 4.3| |
+| 18. september |Funksjoner | Frist innlevering I (med karakter)| |
+| 25. september | Funksjoner II| | Frist innlevering II (godkjent/ikke godkjent)|
+| ------------- | ------------- | -------------| ------------- |
+|  | Høstferie - timen utgår | | | |
+| ------------- | ------------- | -------------| ------------- |
+| 9. oktober | Datasamlinger | | | |
+| 16. oktober | Plotting  | | | |
+| 21. oktober | Fagdag: Datahåndtering og statistiske metoder | | | |
+| 23. oktober | Prøve 1 | | | Pensum: Grunnleggende programmering (ikke datahåndtering og statistikk) |
+| 30. oktober | Algoritmer og tilnærminger | | | |
+| 6. november | Feilhåndtering. | | | Frist innlevering III (måloppnåelse) |
+| 13. november | Diskret modellering: Differenslikninger. | | | |
+| 20. november | Diskret modellering: Differenslikninger. | | | |
+| 27. november | Timen utgår| | ||
+| 2. desember | Fagdag: Grafikk og simuleringer | | | |
+| 11. desember | Grafikk og simuleringer | | | |
+| 18. desember | Juleavslutning - timen utgår | | | |
+| ------------- | ------------- | -------------| ------------- |
+|  | Juleferie - timen utgår | | | |
+| ------------- | ------------- | -------------| ------------- |
+| 8. januar | Numerisk derivasjon | | | Frist grafikkprosjekt (måloppnåelse)|

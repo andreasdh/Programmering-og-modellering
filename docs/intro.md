@@ -20,9 +20,7 @@ På siden vil du finne følgende:
 | 11. september | Løkker II |Oppg. 4.1, 4.2 og 4.3| |
 | 18. september |Funksjoner | Frist innlevering I (med karakter)| |
 | 25. september | Funksjoner II| | Frist innlevering II (godkjent/ikke godkjent)|
-| ------------- | ------------- | -------------| ------------- |
 |  | Høstferie - timen utgår | | | |
-| ------------- | ------------- | -------------| ------------- |
 | 9. oktober | Datasamlinger | | | |
 | 16. oktober | Plotting  | | | |
 | 21. oktober | Fagdag: Datahåndtering og statistiske metoder | | | |
@@ -35,7 +33,5 @@ På siden vil du finne følgende:
 | 2. desember | Fagdag: Grafikk og simuleringer | | | |
 | 11. desember | Grafikk og simuleringer | | | |
 | 18. desember | Juleavslutning - timen utgår | | | |
-| ------------- | ------------- | -------------| ------------- |
 |  | Juleferie - timen utgår | | | |
-| ------------- | ------------- | -------------| ------------- |
 | 8. januar | Numerisk derivasjon | | | Frist grafikkprosjekt (måloppnåelse)|

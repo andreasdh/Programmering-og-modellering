@@ -13,9 +13,9 @@ På siden vil du finne følgende:
 ## Undervisningsplan
 | Dato          | Tema          | Hjemmearbeider før timen | Vurderinger|
 | ------------- | ------------- | -------------| ------------- |
-| 21.august | Kalvøya - timen utgår | | |
-| 28. august  | Introduksjon: Modeller og programmering | | |
-| 2. september  | **Fagdag**: Tall og variabler, beslutninger| Les 3.2 og 3.3 + underveisoppgave 3.4 og 3.5| |
+| 21. august  | Introduksjon: Modeller og programmering | | |
+| 28. august | Tall og variabler. Aritmetikk. | | |
+| 2. september  | **Fagdag**: Beslutninger, litt om løkker| Les 3.2 og 3.3 + underveisoppgave 3.4 og 3.5| |
 | 4. september  | Løkker| Les 4.1, 4.2 og 4.3| |
 | 11. september | Løkker II |Oppg. 4.1, 4.2 og 4.3| |
 | 18. september |Funksjoner | Frist innlevering I (med karakter)| |

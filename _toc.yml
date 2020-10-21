@@ -12,6 +12,7 @@
   - file: docs/derivasjon
   - file: docs/differensiallikninger
   - file: docs/integrasjon
+
 - part: Programmer fra timen
   chapters:
   - file: docs/tema1
@@ -26,6 +27,7 @@
   - file: docs/tema10
   - file: docs/tema11
   - file: docs/tema12
+
 - part: Datafiler
   chapters:
   - file: docs/datafiler

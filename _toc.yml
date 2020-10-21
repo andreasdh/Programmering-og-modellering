@@ -26,3 +26,6 @@
   - file: docs/tema10
   - file: docs/tema11
   - file: docs/tema12
+- part: Datafiler
+  chapters:
+  - file: docs/datafiler

@@ -26,7 +26,7 @@ På siden vil du finne følgende:
 | 21. oktober | **Fagdag**: Datahåndtering og statistiske metoder | | | |
 | 23. oktober | *Prøve 1* | | | Pensum: Grunnleggende programmering (ikke datahåndtering og statistikk) |
 | 30. oktober | Algoritmer og tilnærminger | | | |
-| 6. november | Algoritmer og feilhåndtering. | | | Obligatorisk lekse (som vi leverer inn sammen i timen): Se siste PP slide i algoritme PP-en.|
+| 6. november | Algoritmer og feilhåndtering. | | | Obligatorisk lekse (som vi leverer inn sammen i timen): Se siste PP-slide i algoritme PP-en.|
 | 13. november | Diskret modellering: Differenslikninger. | | | |
 | 20. november | Diskret modellering: Differenslikninger. | | | |
 | 27. november | Timen utgår| | ||

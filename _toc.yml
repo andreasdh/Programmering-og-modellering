@@ -5,9 +5,8 @@
   - file: docs/tall_variabler
   - file: docs/kontrollstrukturer
   - file: docs/plotting
-  - file: docs/datahandtering
-  - file: docs/tilfeldigetall
   - file: docs/diskret_modellering
+  - file: docs/tilfeldige_tall_grafikk
   - file: docs/likninger
   - file: docs/derivasjon
   - file: docs/differensiallikninger
@@ -27,3 +26,7 @@
   - file: docs/tema10
   - file: docs/tema11
   - file: docs/tema12
+
+- part: Datafiler
+  chapters:
+  - file: docs/datafiler

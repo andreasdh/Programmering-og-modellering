@@ -34,5 +34,5 @@ På siden vil du finne følgende:
 | 11. desember | Grafikk og simuleringer | | | |
 | 18. desember | Juleavslutning - timen utgår | | | |
 |  | Juleferie | | | |
-| 8. januar | Grafikk og simuleringer | | | Frist grafikkprosjekt (måloppnåelse)|
-| 15. januar | Grafikk og simuleringer | | | Frist grafikkprosjekt (måloppnåelse) |
+| 8. januar | Grafikk og simuleringer | | | |
+| 15. januar | Grafikk og simuleringer | | | Frist innlevering av grafikkprosjekt (måloppnåelse) |

@@ -30,8 +30,9 @@ På siden vil du finne følgende:
 | 13. november | Diskret modellering: Differenslikninger. | | | |
 | 20. november | Diskret modellering: Differenslikninger. | | | |
 | 27. november | Timen utgår| | ||
-| 2. desember | **Fagdag**: Grafikk og simuleringer | | | |
+| 2. desember | **Fagdag**: Modellering | | | |
 | 11. desember | Grafikk og simuleringer | | | |
 | 18. desember | Juleavslutning - timen utgår | | | |
 |  | Juleferie | | | |
-| 8. januar | Numerisk derivasjon | | | Frist grafikkprosjekt (måloppnåelse)|
+| 8. januar | Grafikk og simuleringer | | | Frist grafikkprosjekt (måloppnåelse)|
+| 15. januar | Grafikk og simuleringer | | | Frist grafikkprosjekt (måloppnåelse) |

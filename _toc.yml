@@ -16,7 +16,7 @@
 - part: Oppgaver
   chapters:
   - file: docs/modelleringsoppgave_a
-  
+
 - part: Programmer fra timen
   chapters:
   - file: docs/tema1

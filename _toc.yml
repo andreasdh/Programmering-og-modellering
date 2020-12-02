@@ -13,6 +13,10 @@
   - file: docs/differensiallikninger
   - file: docs/integrasjon
 
+- part: Oppgaver
+  chapters:
+  - file: docs/modelleringsoppgaveI
+
 - part: Programmer fra timen
   chapters:
   - file: docs/tema1

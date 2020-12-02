@@ -15,7 +15,8 @@
 
 - part: Oppgaver
   chapters:
-  - file: docs/modelleringsoppgaveI
+  - file: docs/modelleringsoppgave_a
+  - file: docs/integrasjon
 
 - part: Programmer fra timen
   chapters:

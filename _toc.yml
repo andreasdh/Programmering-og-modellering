@@ -6,13 +6,13 @@
   - file: docs/kontrollstrukturer
   - file: docs/plotting
   - file: docs/diskret_modellering
+  - file: docs/programmeringsverktøy
   - file: docs/tilfeldige_tall_grafikk
   - file: docs/likninger
   - file: docs/derivasjon
   - file: docs/differensiallikninger
   - file: docs/integrasjon
-  - file: docs/programmeringsverktøy
-  
+
 - part: Programmer fra timen
   chapters:
   - file: docs/tema1

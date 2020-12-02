@@ -17,6 +17,11 @@
   chapters:
   - file: docs/modelleringsoppgave_a
 
+- part: Datafiler
+  chapters:
+  - file: docs/datafiler
+
+
 - part: Programmer fra timen
   chapters:
   - file: docs/tema1
@@ -31,7 +36,3 @@
   - file: docs/tema10
   - file: docs/tema11
   - file: docs/tema12
-
-- part: Datafiler
-  chapters:
-  - file: docs/datafiler

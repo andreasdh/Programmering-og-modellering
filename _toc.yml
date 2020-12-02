@@ -5,7 +5,6 @@
   - file: docs/tall_variabler
   - file: docs/kontrollstrukturer
   - file: docs/plotting
-  - file: docs/diskret_modellering
   - file: docs/tilfeldige_tall_grafikk
   - file: docs/likninger
   - file: docs/derivasjon
@@ -16,7 +15,7 @@
 -part: Oppgaver
   chapters:
     -file: docs/modelleringsoppgaveI
-    
+
 - part: Programmer fra timen
   chapters:
   - file: docs/tema1

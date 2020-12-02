@@ -1,4 +1,4 @@
-﻿# Programmering og modellering
+# Programmering og modellering
 
 Dette er nettsida til Programmering og modellering X ved Valler vgs. Her vil du finne ulike ressurser i emnet.
 
@@ -35,4 +35,5 @@ På siden vil du finne følgende:
 | 18. desember | Juleavslutning - timen utgår | | | |
 |  | Juleferie | | | |
 | 8. januar | Grafikk og simuleringer | | | |
-| 15. januar | Grafikk og simuleringer | | | Frist innlevering av grafikkprosjekt (måloppnåelse) |
+| 15. januar | Grafikk og simuleringer | | Frist innlevering av grafikkprosjekt (måloppnåelse)|
+

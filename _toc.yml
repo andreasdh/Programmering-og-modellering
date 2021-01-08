@@ -16,7 +16,7 @@
 - part: Oppgaver
   chapters:
   - file: docs/modelleringsoppgave_a
-    - file: docs/smittemodellrapport
+  - file: docs/smittemodellrapport
 
 - part: Datafiler
   chapters:

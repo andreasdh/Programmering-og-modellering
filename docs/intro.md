@@ -35,8 +35,8 @@ På siden vil du finne følgende:
 | 18. desember | Juleavslutning - timen utgår | | |
 |  | Juleferie | | |
 | 8. januar | Grafikk og simuleringer | | |
-| 15. januar | Grafikk og simuleringer | | Frist innlevering: grafikkprosjekt (måloppnåelse)|
-| 22. januar | Numerisk derivasjon | | |
+| 15. januar | Grafikk og simuleringer | | Frist innlevering: grafikkprosjekt (søndag, måloppnåelse)|
+| 22. januar | Numerisk derivasjon |Lekse: Les s. 127–131 i boka. Gjør underveisoppgave 7.1. | |
 | 27. januar | **Fagdag**: Numerisk derivasjon og integrasjon | | |
 | 29. januar | Numerisk integrasjon | | |
 | 5. februar | Arbeid med innlevering | | Frist innlevering: Numerisk derivasjon og integrasjon (søndag)|
@@ -47,13 +47,13 @@ På siden vil du finne følgende:
 | 12. mars | Modellering | | |
 | 17 . mars | **Fagdag**: Differensiallikninger | | |
 | 19. mars | Modellering | | |
-| 26. mars | Modellering | |Frist innlevering: Modelleringsprosjekt I (søndag) |
+| 26. mars | Modellering | |Frist innlevering: Modelleringsprosjekt I (søndag, måloppnåelse) |
 | | Påskeferie | | |
 | 9. april | Modellering | | |
 | 16. april | Prøve: Numeriske metoder | | |
 | 23. april | Modellering | | |
 | 30. april | Modellering | | |
-| 7. mai | Fordypning | | Frist innlevering: Modelleringsprosjekt II (søndag) |
+| 7. mai | Fordypning | | Frist innlevering: Modelleringsprosjekt II (søndag, karakter) |
 | 14. mai | Fordypning | | |
 | 21. mai | Fordypning | | |
 | 24. mai | Øving til muntlig | | |

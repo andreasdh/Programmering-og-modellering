@@ -13,14 +13,14 @@
   - file: docs/differensiallikninger
   - file: docs/integrasjon
 
+- part: Datafiler
+  chapters:
+  - file: docs/datafiler
+
 - part: Oppgaver
   chapters:
   - file: docs/modelleringsoppgave_a
   - file: docs/smittemodellrapport
-
-- part: Datafiler
-  chapters:
-  - file: docs/datafiler
 
 - part: Programmer fra timen
   chapters:

@@ -13,15 +13,15 @@
   - file: docs/differensiallikninger
   - file: docs/integrasjon
 
+- part: Datafiler
+  chapters:
+  - file: docs/datafiler
+
 - part: Oppgaver
   chapters:
   - file: docs/modelleringsoppgave_a
   - file: docs/smittemodellrapport
   - file: docs/modellering_kinematikk
-
-- part: Datafiler
-  chapters:
-  - file: docs/datafiler
 
 - part: Programmer fra timen
   chapters:

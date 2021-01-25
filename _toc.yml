@@ -17,6 +17,7 @@
   chapters:
   - file: docs/modelleringsoppgave_a
   - file: docs/smittemodellrapport
+  - file: docs/modellering_kinematikk
 
 - part: Datafiler
   chapters:

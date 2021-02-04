@@ -38,8 +38,8 @@ På siden vil du finne følgende:
 | 15. januar | Grafikk og simuleringer | | Frist innlevering: grafikkprosjekt (søndag, måloppnåelse)|
 | 22. januar | Numerisk derivasjon |Lekse: Les s. 127–131 i boka. Gjør underveisoppgave 7.1. | |
 | 27. januar | **Fagdag**: Numerisk derivasjon og integrasjon | Lekse: Se på programmet om derivasjon på nettsidene og prøvd å forklare hver av linjene og hva som skjer i programmet. Gjør også puslespillet på samme side. | |
-| 29. januar | Numerisk integrasjon | | |
-| 5. februar | Arbeid med innlevering | | Frist innlevering: Numerisk derivasjon og integrasjon (søndag)|
+| 29. januar | Numerisk integrasjon | |Frist innlevering: Numerisk derivasjon og integrasjon (fredag) |
+| 5. februar | Numerisk løsing av likninger | | |
 | 12. februar | Numerisk løsing av likninger | | |
 | 19. februar | Numerisk løsing av likninger | | |
 | | Vinterferie | | |

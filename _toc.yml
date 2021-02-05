@@ -21,6 +21,7 @@
   chapters:
   - file: docs/modelleringsoppgave_a
   - file: docs/smittemodellrapport
+  - file: docs/likninger_oppgave1
   - file: docs/modellering_kinematikk
 
 - part: Programmer fra timen

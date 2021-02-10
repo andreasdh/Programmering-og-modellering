@@ -23,6 +23,8 @@
   - file: docs/smittemodellrapport
   - file: docs/likninger_oppgave1
   - file: docs/modellering_kinematikk
+  - file: docs/modellering_populasjonsdynamikk
+  - file: docs/modellering_reaksjonskinetikk
 
 - part: Programmer fra timen
   chapters:

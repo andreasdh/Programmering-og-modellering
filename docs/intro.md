@@ -43,7 +43,7 @@ På siden vil du finne følgende:
 | 12. februar | Numerisk løsing av likninger | | |
 | 19. februar | Numerisk løsing av likninger |Lekse: Les s. 181-187 og gjør underveisoppgave 9.2. Studer kodeeksemplene godt. | |
 | | Vinterferie | | |
-| 5. mars | Modellering | | Frist innlevering: Numerisk løsing av likninger (søndag)|
+| 5. mars | Modellering | | |
 | 12. mars | Modellering | | |
 | 17 . mars | **Fagdag**: Differensiallikninger | | |
 | 19. mars | Modellering | | |

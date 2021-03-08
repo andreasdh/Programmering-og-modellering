@@ -45,17 +45,17 @@ På siden vil du finne følgende:
 | | Vinterferie | | |
 | 5. mars | Modellering | | |
 | 12. mars | Modellering | | |
-| 17 . mars | **Fagdag**: Differensiallikninger | | |
+| 17 . mars | **Fagdag**: Differensiallikninger og modellering | | |
 | 19. mars | Modellering | | |
 | 26. mars | Modellering | |Frist innlevering: Modelleringsprosjekt I (søndag, måloppnåelse) |
 | | Påskeferie | | |
-| 9. april | Modellering | | |
+| 9. april | Repetisjon til prøve | | |
 | 16. april | Prøve: Numeriske metoder | | |
 | 23. april | Modellering | | |
 | 30. april | Modellering | | |
-| 7. mai | Fordypning | | Frist innlevering: Modelleringsprosjekt II (søndag, karakter) |
+| 7. mai | Modellering | | |
 | 14. mai | Fordypning | | |
-| 21. mai | Fordypning | | |
-| 24. mai | Øving til muntlig | | |
-| 31. mai |  Øving til muntlig | | |
+| 21. mai | Fordypning | |Frist innlevering: Modelleringsprosjekt II (søndag, karakter)  |
+| 24. mai | Fordypning | | |
+| 31. mai |  Fordypning | | |
 | 11. juni |  Avslutning | | |

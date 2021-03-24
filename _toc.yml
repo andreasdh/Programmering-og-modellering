@@ -19,6 +19,7 @@
 
 - part: Oppgaver
   chapters:
+  - file: docs/grunnleggende_programmering
   - file: docs/modelleringsoppgave_a
   - file: docs/smittemodellrapport
   - file: docs/likninger_oppgave1

@@ -1,5 +1,5 @@
 # Titrering av eddiksyre med NaOH
-Volum NaOH (mL)	pH
+Volum NaOH (mL),	pH
 0.0,	2.77
 3.0,	3.71
 6.1,	4.08

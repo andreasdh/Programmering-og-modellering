@@ -27,6 +27,8 @@
   - file: docs/Difflikninger
   - file: docs/modellering_kinematikk
   - file: docs/maskinlaring_titanic_oppgaver
+  - file: docs/numeriske_biblioteker
+  - file: docs/symbolsk_utregning
 
 - part: Programmer fra timen
   chapters:

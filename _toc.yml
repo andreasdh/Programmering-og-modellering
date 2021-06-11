@@ -12,6 +12,7 @@
   - file: docs/derivasjon
   - file: docs/differensiallikninger
   - file: docs/integrasjon
+  - file: docs/pingviner
 
 - part: Datafiler
   chapters:

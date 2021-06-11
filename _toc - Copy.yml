@@ -1,0 +1,28 @@
+﻿- file: docs/intro
+
+- part: Teori
+  chapters:
+  - file: docs/tall_variabler
+  - file: docs/kontrollstrukturer
+  - file: docs/plotting
+  - file: docs/datahandtering
+  - file: docs/tilfeldigetall
+  - file: docs/diskret_modellering
+  - file: docs/likninger
+  - file: docs/derivasjon
+  - file: docs/differensiallikninger
+  - file: docs/integrasjon
+- part: Programmer fra timen
+  chapters:
+  - file: docs/tema1
+  - file: docs/tema2
+  - file: docs/tema3
+  - file: docs/tema4
+  - file: docs/tema5
+  - file: docs/tema6
+  - file: docs/tema7
+  - file: docs/tema8
+  - file: docs/tema9
+  - file: docs/tema10
+  - file: docs/tema11
+  - file: docs/tema12

@@ -1,47 +1,40 @@
 ﻿- file: docs/intro
 
-- part: Teori
+- part: Tema 1 - Grunnleggende programmering
   chapters:
-  - file: docs/tall_variabler
-  - file: docs/kontrollstrukturer
-  - file: docs/plotting
-  - file: docs/diskret_modellering
-  - file: docs/programmeringsverktøy
-  - file: docs/tilfeldige_tall_grafikk
-  - file: docs/likninger
-  - file: docs/derivasjon
-  - file: docs/differensiallikninger
-  - file: docs/integrasjon
-  - file: docs/pingviner
+  - file: docs/tema1_grunnleggende_programmering/tall_variabler
+  - file: docstema1_grunnleggende_programmering/kontrollstrukturer
+  - file: docs/tema1_grunnleggende_programmering/programmeringsverktøy
+
+- part: Tema 2 - Kodestrukturering
+  chapters:
+  - file: docs/tema2_kodestrukturering/funksjoner
+
+- part: Tema 3 - Datahåndtering
+  chapters:
+  - file: docs/tema3_datahandtering/datasamlinger
+  - file: docs/tema3_datahandtering/datahandtering
+  - file: docs/tema3_datahandtering/plotting
+
+- part: Tema 4 - Grafikk
+  chapters:
+  - file: docs/tema4_grafikk/tilfeldige_tall_grafikk
+
+- part: Tema 5 - Algoritmer
+  chapters:
+  - file: docs/tema5_algoritmer/derivasjon
+  - file: docs/tema5_algoritmer/numeriske_biblioteker
+  - file: docs/tema5_algoritmer/symbolsk_utregning
+
+- part: Tema 6 - Modellering
+  chapters:
+  - file: docs/tema6_modellering/differenslikninger
+  - file: docs/tema6_modellering/smittemodellering_diskret
+  - file: docs/tema6_modellering/differensiallikninger
+  - file: docs/tema6_modellering/differensiallikninger_oppgaver
+  - file: docs/tema6_modellering/pingviner
+  - file: docs/tema6_modellering/maskinlaring_titanic_oppgaver
 
 - part: Datafiler
   chapters:
   - file: docs/datafiler
-
-- part: Oppgaver
-  chapters:
-  - file: docs/grunnleggende_programmering
-  - file: docs/modelleringsoppgave_a
-  - file: docs/smittemodellrapport
-  - file: docs/likninger_oppgave1
-  - file: docs/temperaturmodellering
-  - file: docs/Difflikninger
-  - file: docs/modellering_kinematikk
-  - file: docs/maskinlaring_titanic_oppgaver
-  - file: docs/numeriske_biblioteker
-  - file: docs/symbolsk_utregning
-
-- part: Programmer fra timen
-  chapters:
-  - file: docs/tema1
-  - file: docs/tema2
-  - file: docs/tema3
-  - file: docs/tema4
-  - file: docs/tema5
-  - file: docs/tema6
-  - file: docs/tema7
-  - file: docs/tema8
-  - file: docs/tema9
-  - file: docs/tema10
-  - file: docs/tema11
-  - file: docs/tema12

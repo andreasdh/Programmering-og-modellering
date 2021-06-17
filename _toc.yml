@@ -3,7 +3,8 @@
 - part: Tema 1 - Grunnleggende programmering
   chapters:
   - file: docs/tema1_grunnleggende_programmering/tall_variabler
-  - file: docstema1_grunnleggende_programmering/kontrollstrukturer
+  - file: docs/tema1_grunnleggende_programmering/kontrollstrukturer
+  - file: docs/tema1_grunnleggende_programmering/grunnleggende_programmering
   - file: docs/tema1_grunnleggende_programmering/programmeringsverktøy
 
 - part: Tema 2 - Kodestrukturering

@@ -10,6 +10,7 @@
 - part: Tema 2 - Kodestrukturering
   chapters:
   - file: docs/tema2_kodestrukturering/funksjoner
+  - file: docs/tema2_klasser_objekter
 
 - part: Tema 3 - Datahåndtering
   chapters:

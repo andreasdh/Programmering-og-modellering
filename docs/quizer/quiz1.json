@@ -1,0 +1,123 @@
+[
+  {
+        "question": "Determine the output of the following Python code:",
+	      "code": "a=\"1\"\nb=\"2\"\nprint(a+b)",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "1",
+                "correct": false,
+                "feedback": "No. When strings are operated on by +, they are concatenated."
+            },
+            {
+                "answer": "2",
+                "correct": false,
+                "feedback": "No. When strings are operated on by +, they are concatenated."
+            },
+            {
+                "answer": "3",
+                "correct": false,
+                "feedback": "No. When strings are operated on by +, they are concatenated."
+            },
+            {
+                "answer": "12",
+                "correct": true,
+                "feedback": "Yes. The + operator will concatenate the strings \"1\" and \"2\"."
+            },
+            {
+                "answer": "error",
+                "correct": false,
+                "feedback": "No. The + operator for strings performs string concatenation."
+            }
+        ]
+    },
+    {
+        "question": "Which of the following summary statistics minimizes the sum of squared errors to the data:",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "mode",
+                "correct": false,
+                "feedback": "Try again."
+            },
+            {
+                "answer": "median",
+                "correct": false,
+                "feedback": "Try again."
+            },
+            {
+                "answer": "average",
+                "correct": true,
+                "feedback": "Correct."
+            }
+        ]
+    },
+    {
+        "question": "Which of the following summary statistics minimizes the sum of absolute errors to the data:",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "average",
+                "correct": false,
+                "feedback": "Try again."
+            },
+            {
+                "answer": "median",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "mode",
+                "correct": false,
+                "feedback": "Try again."
+            }
+        ]
+    },
+    {
+        "question": "Which of the following summary statistics minimizes the number of non-zero errors to the data:",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "mode",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "average",
+                "correct": false,
+                "feedback": "Try again."
+            },
+            {
+                "answer": "median",
+                "correct": false,
+                "feedback": "Try again."
+            }
+        ]
+    },
+    {
+        "question": "Choose all of the following that are typical causes of outliers in data sets:",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "measurement errors",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "different population characteristics",
+                "correct": false,
+                "feedback": "Different population characteristics often produce variations in data, but these are not erroneous values and not considered outliers."
+            },
+            {
+                "answer": "data entry errors",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "unit conversion errors",
+                "correct": true,
+                "feedback": "Correct."
+            }
+        ]
+    }
+]

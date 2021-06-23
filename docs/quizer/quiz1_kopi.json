@@ -64,6 +64,33 @@
                 }
             ]
         },
+        {
+         "question": "Hva er output?",
+         "code": "print(3>4)",
+         "type": "multiple_choice",
+         "answers": [
+             {
+                 "answer": "En feilmelding blir skrevet ut.",
+                 "correct": false,
+                 "feedback": "Nei. Dette er en gyldig syntaks."
+             },
+             {
+                 "answer": "True.",
+                 "correct": false,
+                 "feedback": "Nei. 3 er ikke større enn 4."
+             },
+             {
+                 "answer": "False.",
+                 "correct": true,
+                 "feedback": "Ja. 3 er større enn 4, og vi får den boolske verdien True (merk at det alltid er stor forbokstav)."
+             },
+             {
+                 "answer": "Ingenting skjer.",
+                 "correct": false,
+                 "feedback": "Feil."
+             }
+         ]
+     },
      {
         "question": "Hva skjer når du kjører følgende kode?",
 	      "code": "print = \"Hei\"",
@@ -91,33 +118,6 @@
             }
         ]
     },
-    {
-       "question": "Hva er output?",
-       "code": "print(3>4)"",
-       "type": "multiple_choice",
-       "answers": [
-           {
-               "answer": "En feilmelding blir skrevet ut.",
-               "correct": false,
-               "feedback": "Nei. Dette er en gyldig syntaks."
-           },
-           {
-               "answer": "True.",
-               "correct": false,
-               "feedback": "Nei. 3 er ikke større enn 4."
-           },
-           {
-               "answer": "False.",
-               "correct": true,
-               "feedback": "Ja. 3 er større enn 4, og vi får den boolske verdien True (merk at det alltid er stor forbokstav)."
-           },
-           {
-               "answer": "Ingenting skjer.",
-               "correct": false,
-               "feedback": "Feil."
-           }
-       ]
-   },
     {
         "question": "Hva er output fra følgende kode hvis du taster inn 1 og 2 i konsollen når du kjører programmet?",
 	      "code": "a = input(\"tall 1: \")\nb = input(\"tall 1: \")\nb = float(b) \nprint(a + b)",

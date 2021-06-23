@@ -109,7 +109,7 @@
            {
                "answer": "False.",
                "correct": true,
-               "feedback": "Ja. 3 er større enn 4, og vi får den boolske verdien True (merk at det alltid er stor forbokstav)."
+               "feedback": "Ja. 3 er ikke større enn 4, og vi får den boolske verdien False (merk at det alltid er stor forbokstav)."
            },
            {
                "answer": "Ingenting skjer.",

@@ -9,9 +9,9 @@ På siden vil du finne følgende:
 - Oppgaver og innleveringer.
 - Datasett.
 ```
-
 ## Årsplan
 | Tema | Periode |
+| ------------- | ------------- |
 | Grunnleggende programmering | august-september |
 | Kodestrukturer: Funksjoner | september-oktober |
 |  | Høstferie |

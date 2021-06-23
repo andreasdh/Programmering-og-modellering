@@ -1,35 +1,35 @@
-format: jb-book
-root: docs/intro
-parts:
-- caption: Tema 1 - Grunnleggende programmering
+- file: docs/intro
+
+- part: Tema 1 - Grunnleggende programmering
   chapters:
   - file: docs/tema1_grunnleggende_programmering/tall_variabler
   - file: docs/tema1_grunnleggende_programmering/kontrollstrukturer
-  - file: "docs/tema1_grunnleggende_programmering/programmeringsverkt\xF8y"
+  - file: docs/tema1_grunnleggende_programmering/programmeringsverktøy
   - file: docs/tema1_grunnleggende_programmering/grunnleggende_programmering
   - file: docs/tema1_grunnleggende_programmering/quiz1
-- caption: Tema 2 - Kodestrukturering
+
+- part: Tema 2 - Kodestrukturering
   chapters:
   - file: docs/tema2_kodestrukturering/funksjoner
   - file: docs/tema2_kodestrukturering/klasser_objekter
-<<<<<<< HEAD
-- caption: Tema 3 - Datahåndtering
-=======
-- caption: Tema 3 - Datahandtering
->>>>>>> parent of a3bc33c (Update _toc.yml)
+
+- part: Tema 3 - Datahåndtering
   chapters:
   - file: docs/tema3_datahandtering/datasamlinger
   - file: docs/tema3_datahandtering/plotting
   - file: docs/tema3_datahandtering/datahandtering
-- caption: Tema 4 - Grafikk
+
+- part: Tema 4 - Grafikk
   chapters:
   - file: docs/tema4_grafikk/tilfeldige_tall_grafikk
-- caption: Tema 5 - Algoritmer
+
+- part: Tema 5 - Algoritmer
   chapters:
   - file: docs/tema5_algoritmer/derivasjon
   - file: docs/tema5_algoritmer/numeriske_biblioteker
   - file: docs/tema5_algoritmer/symbolsk_utregning
-- caption: Tema 6 - Modellering
+
+- part: Tema 6 - Modellering
   chapters:
   - file: docs/tema6_modellering/diskret_modellering
   - file: docs/tema6_modellering/smittemodellering_diskret
@@ -37,6 +37,7 @@ parts:
   - file: docs/tema6_modellering/differensiallikninger_oppgaver
   - file: docs/tema6_modellering/pingviner
   - file: docs/tema6_modellering/maskinlaring_titanic_oppgaver
-- caption: Datafiler
+
+- part: Datafiler
   chapters:
   - file: docs/datafiler

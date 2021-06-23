@@ -93,7 +93,7 @@
     },
     {
         "question": "Hva er output fra følgende kode hvis du taster inn 1 og 2 i konsollen når du kjører programmet?",
-	      "code": "a = input(\"tall 1: \")\n b = input(\"tall 1: \")\n b = float(b) \n print(a + b)",
+	      "code": "a = input(\"tall 1: \")\nb = input(\"tall 1: \")\nb = float(b) \nprint(a + b)",
         "type": "multiple_choice",
         "answers": [
                        {

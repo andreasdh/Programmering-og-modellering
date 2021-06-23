@@ -1,37 +1,4 @@
 [
-    {
-        "question": "Hva er output fra følgende kode?",
-	      "code": "a = 2 \nb = 1\na = b \nb = a \nprint(a, b)",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "2, 1",
-                "correct": false,
-                "feedback": "Nei. Først gis verdien til b til a, og deretter får b den samme verdien."
-            },
-            {
-                "answer": "1, 2",
-                "correct": false,
-                "feedback": "Nei. Først gis verdien til b til a, og deretter får b den samme verdien."
-            },
-            {
-                "answer": "2, 2",
-                "correct": false,
-                "feedback": "Nei. Først gis verdien til b til a, og deretter får b den samme verdien."
-            },
-            {
-                "answer": "1, 1",
-                "correct": true,
-                "feedback": "Ja. Først gis verdien til b til a, og deretter får b den samme verdien."
-            },
-            {
-                "answer": "En feilmelding blir skrevet ut.",
-                "correct": false,
-                "feedback": "Nei. Det er fullt lov å skrive over variabler."
-            }
-        ]
-    },
-
   {
         "question": "Hva er output fra følgende kode?",
 	      "code": "a=\"1\"\nb=\"2\"\nprint(a+b)",
@@ -64,6 +31,39 @@
             }
         ]
     },
+
+    {
+        "question": "Hva er output fra følgende kode?",
+	      "code": "a=\"1\"\nb=\"2\"\nprint(a+b)",
+        "type": "multiple_choice",
+        "answers": [
+                {
+                    "answer": "1",
+                    "correct": false,
+                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                },
+                {
+                    "answer": "2",
+                    "correct": false,
+                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                },
+                {
+                    "answer": "3",
+                    "correct": false,
+                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                },
+                {
+                    "answer": "12",
+                    "correct": true,
+                    "feedback": "Ja. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                },
+                {
+                    "answer": "error",
+                    "correct": false,
+                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                }
+            ]
+        },
      {
         "question": "Hva skjer når du kjører følgende kode?",
 	      "code": "print = \"Hei\"",
@@ -92,6 +92,33 @@
         ]
     },
     {
+       "question": "Hva er output?",
+       "code": "print(3>4)"",
+       "type": "multiple_choice",
+       "answers": [
+           {
+               "answer": "En feilmelding blir skrevet ut.",
+               "correct": false,
+               "feedback": "Nei. Dette er en gyldig syntaks."
+           },
+           {
+               "answer": "True.",
+               "correct": false,
+               "feedback": "Nei. 3 er ikke større enn 4."
+           },
+           {
+               "answer": "False.",
+               "correct": true,
+               "feedback": "Ja. 3 er større enn 4, og vi får den boolske verdien True (merk at det alltid er stor forbokstav)."
+           },
+           {
+               "answer": "Ingenting skjer.",
+               "correct": false,
+               "feedback": "Feil."
+           }
+       ]
+   },
+    {
         "question": "Hva er output fra følgende kode hvis du taster inn 1 og 2 i konsollen når du kjører programmet?",
 	      "code": "a = input(\"tall 1: \")\nb = input(\"tall 1: \")\nb = float(b) \nprint(a + b)",
         "type": "multiple_choice",
@@ -113,12 +140,12 @@
             },
             {
                 "answer": "3",
-                "correct": false,
+                "correct": true,
                 "feedback": "Nei. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
             },
             {
                 "answer": "Feilmelding",
-                "correct": true,
+                "correct": false,
                 "feedback": "Ja. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
             }
         ]
@@ -128,31 +155,31 @@
            "code": "a = 5.0 \nb = 3.0 \nc = a + b \na = 3.0 \nd = 2.0 \ne = a + c * d \nprint(e)",
         "type": "multiple_choice",
         "answers": [
-            {
-                "answer": "18.0",
-                "correct": false,
-                "feedback": "Correct."
-            },
-            {
-                "answer": "15.0",
-                "correct": false,
-                "feedback": "Try again."
-            },
+          {
+            "answer": "18.0",
+            "correct": false,
+            "feedback": "Feil. Pass på regnerekkefølge og hold styr på innholdet i variablene."
+          },
+          {
+            "answer": "15.0",
+            "correct": false,
+            "feedback": "Feil. Pass på regnerekkefølge og hold styr på innholdet i variablene."
+          },
             {
                 "answer": "22.0",
                 "correct": false,
-                "feedback": "Try again."
+                "feedback": "Feil. Pass på regnerekkefølge og hold styr på innholdet i variablene."
             },
             {
                 "answer": "19.0",
                 "correct": true,
-                "feedback": "Try again."
+                "feedback": "Riktig."
             }
         ]
     },
     {
         "question": "Hva er verdien til variablene nedenfor?",
-           "code": "\na = 10 \nb = 20 \na = b",
+           "code": "a = 10 \nb = 20 \na = b",
         "type": "multiple_choice",
         "answers": [
             {
@@ -178,34 +205,34 @@
         ]
     },
     {
-        "question": "Hvilk(e) kodesnutt(er) skriver ut 20 % av verdien til en variabel x?",
-        "type": "many_choice",
-        "answers": [
-            {
-                "answer": "print(20 % x)",
-                "correct": false,
-                "feedback": "Feil. Dette er faktisk riktig Python-syntaks, men den regner ikke ut prosent. Her får vi resten etter en heltallsdivisjon mellom 20 og x."
-            },
-            {
-                "answer": "print(20% * x)",
-                "correct": false,
-                "feedback": "Feil. Dette gir feilmelding."
-            },
-            {
-                "answer": "print(1.20 * x)",
-                "correct": false,
-                "feedback": "Feil. Her får du 120 % av verdien."
-            },
-            {
-                "answer": "print(x - 0.8 * x)",
-                "correct": true,
-                "feedback": "Riktig."
-            },
-            {
-                "answer": "print(0.2 * x)",
-                "correct": true,
-                "feedback": "Riktig."
-            }
-        ]
-    }
+          "question": "Hvilke(n) kodesnutt(er) skriver ut 20 % av verdien til en variabel x?",
+          "type": "many_choice",
+          "answers": [
+              {
+                  "answer": "print(20 % x)",
+                  "correct": false,
+                  "feedback": "Feil. Dette er faktisk riktig Python-syntaks, men den regner ikke ut prosent. Her får vi resten etter en heltallsdivisjon mellom 20 og x."
+              },
+              {
+                  "answer": "print(20% * x)",
+                  "correct": false,
+                  "feedback": "Feil. Dette gir feilmelding."
+              },
+              {
+                  "answer": "print(1.20 * x)",
+                  "correct": false,
+                  "feedback": "Feil. Her får du 120 % av verdien."
+              },
+              {
+                  "answer": "print(x - 0.8 * x)",
+                  "correct": true,
+                  "feedback": "Riktig."
+              },
+              {
+                  "answer": "print(0.2 * x)",
+                  "correct": true,
+                  "feedback": "Riktig."
+              }
+          ]
+      }
 ]

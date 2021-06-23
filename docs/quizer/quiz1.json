@@ -93,7 +93,7 @@
     },
     {
        "question": "Hva er output?",
-       "code": "print(3>4)"",
+       "code": "print(3>4)",
        "type": "multiple_choice",
        "answers": [
            {

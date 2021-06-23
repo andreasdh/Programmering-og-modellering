@@ -1,35 +1,31 @@
-﻿- file: docs/intro
-
-- part: Tema 1 - Grunnleggende programmering
+format: jb-book
+root: docs/intro
+parts:
+- caption: Tema 1 - Grunnleggende programmering
   chapters:
   - file: docs/tema1_grunnleggende_programmering/tall_variabler
   - file: docs/tema1_grunnleggende_programmering/kontrollstrukturer
-  - file: docs/tema1_grunnleggende_programmering/programmeringsverktøy
+  - file: "docs/tema1_grunnleggende_programmering/programmeringsverkt\xF8y"
   - file: docs/tema1_grunnleggende_programmering/grunnleggende_programmering
   - file: docs/tema1_grunnleggende_programmering/quiz1
-
-- part: Tema 2 - Kodestrukturering
+- caption: Tema 2 - Kodestrukturering
   chapters:
   - file: docs/tema2_kodestrukturering/funksjoner
   - file: docs/tema2_kodestrukturering/klasser_objekter
-
-- part: Tema 3 - Datahåndtering
+- caption: "Tema 3 - Datah\xE5ndtering"
   chapters:
   - file: docs/tema3_datahandtering/datasamlinger
   - file: docs/tema3_datahandtering/plotting
   - file: docs/tema3_datahandtering/datahandtering
-
-- part: Tema 4 - Grafikk
+- caption: Tema 4 - Grafikk
   chapters:
   - file: docs/tema4_grafikk/tilfeldige_tall_grafikk
-
-- part: Tema 5 - Algoritmer
+- caption: Tema 5 - Algoritmer
   chapters:
   - file: docs/tema5_algoritmer/derivasjon
   - file: docs/tema5_algoritmer/numeriske_biblioteker
   - file: docs/tema5_algoritmer/symbolsk_utregning
-
-- part: Tema 6 - Modellering
+- caption: Tema 6 - Modellering
   chapters:
   - file: docs/tema6_modellering/diskret_modellering
   - file: docs/tema6_modellering/smittemodellering_diskret
@@ -37,7 +33,6 @@
   - file: docs/tema6_modellering/differensiallikninger_oppgaver
   - file: docs/tema6_modellering/pingviner
   - file: docs/tema6_modellering/maskinlaring_titanic_oppgaver
-
-- part: Datafiler
+- caption: Datafiler
   chapters:
   - file: docs/datafiler

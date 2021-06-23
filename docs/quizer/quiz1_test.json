@@ -178,7 +178,7 @@
         ]
     },
     {
-          "question": "Hvilk(e) kodesnutt(er) skriver ut 20 % av verdien til en variabel x?",
+          "question": "Hvilke(n) kodesnutt(er) skriver ut 20 % av verdien til en variabel x?",
           "type": "many_choice",
           "answers": [
               {

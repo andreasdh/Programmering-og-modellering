@@ -1,37 +1,4 @@
 [
-    {
-        "question": "Hva er output fra følgende kode?",
-	      "code": "a = 2 \nb = 1\na = b \nb = a \nprint(a, b)",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "2, 1",
-                "correct": false,
-                "feedback": "Nei. Først gis verdien til b til a, og deretter får b den samme verdien."
-            },
-            {
-                "answer": "1, 2",
-                "correct": false,
-                "feedback": "Nei. Først gis verdien til b til a, og deretter får b den samme verdien."
-            },
-            {
-                "answer": "2, 2",
-                "correct": false,
-                "feedback": "Nei. Først gis verdien til b til a, og deretter får b den samme verdien."
-            },
-            {
-                "answer": "1, 1",
-                "correct": true,
-                "feedback": "Ja. Først gis verdien til b til a, og deretter får b den samme verdien."
-            },
-            {
-                "answer": "En feilmelding blir skrevet ut.",
-                "correct": false,
-                "feedback": "Nei. Det er fullt lov å skrive over variabler."
-            }
-        ]
-    },
-
   {
         "question": "Hva er output fra følgende kode?",
 	      "code": "a=\"1\"\nb=\"2\"\nprint(a+b)",
@@ -64,6 +31,39 @@
             }
         ]
     },
+
+    {
+        "question": "Hva er output fra følgende kode?",
+	      "code": "a=\"1\"\nb=\"2\"\nprint(a+b)",
+        "type": "multiple_choice",
+        "answers": [
+                {
+                    "answer": "1",
+                    "correct": false,
+                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                },
+                {
+                    "answer": "2",
+                    "correct": false,
+                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                },
+                {
+                    "answer": "3",
+                    "correct": false,
+                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                },
+                {
+                    "answer": "12",
+                    "correct": true,
+                    "feedback": "Ja. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                },
+                {
+                    "answer": "error",
+                    "correct": false,
+                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                }
+            ]
+        },
      {
         "question": "Hva skjer når du kjører følgende kode?",
 	      "code": "print = \"Hei\"",
@@ -113,12 +113,12 @@
             },
             {
                 "answer": "3",
-                "correct": false,
+                "correct": true,
                 "feedback": "Nei. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
             },
             {
                 "answer": "Feilmelding",
-                "correct": true,
+                "correct": false,
                 "feedback": "Ja. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
             }
         ]
@@ -178,34 +178,34 @@
         ]
     },
     {
-        "question": "Hvilk(e) kodesnutt(er) skriver ut 20 % av verdien til en variabel x?",
-        "type": "many_choice",
-        "answers": [
-            {
-                "answer": "print(20 % x)",
-                "correct": false,
-                "feedback": "Feil. Dette er faktisk riktig Python-syntaks, men den regner ikke ut prosent. Her får vi resten etter en heltallsdivisjon mellom 20 og x."
-            },
-            {
-                "answer": "print(20% * x)",
-                "correct": false,
-                "feedback": "Feil. Dette gir feilmelding."
-            },
-            {
-                "answer": "print(1.20 * x)",
-                "correct": false,
-                "feedback": "Feil. Her får du 120 % av verdien."
-            },
-            {
-                "answer": "print(x - 0.8 * x)",
-                "correct": true,
-                "feedback": "Riktig."
-            },
-            {
-                "answer": "print(0.2 * x)",
-                "correct": true,
-                "feedback": "Riktig."
-            }
-        ]
-    }
+          "question": "Hvilke(n) kodesnutt(er) skriver ut 20 % av verdien til en variabel x?",
+          "type": "many_choice",
+          "answers": [
+              {
+                  "answer": "print(20 % x)",
+                  "correct": false,
+                  "feedback": "Feil. Dette er faktisk riktig Python-syntaks, men den regner ikke ut prosent. Her får vi resten etter en heltallsdivisjon mellom 20 og x."
+              },
+              {
+                  "answer": "print(20% * x)",
+                  "correct": false,
+                  "feedback": "Feil. Dette gir feilmelding."
+              },
+              {
+                  "answer": "print(1.20 * x)",
+                  "correct": false,
+                  "feedback": "Feil. Her får du 120 % av verdien."
+              },
+              {
+                  "answer": "print(x - 0.8 * x)",
+                  "correct": true,
+                  "feedback": "Riktig."
+              },
+              {
+                  "answer": "print(0.2 * x)",
+                  "correct": true,
+                  "feedback": "Riktig."
+              }
+          ]
+      }
 ]

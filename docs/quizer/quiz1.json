@@ -80,40 +80,39 @@
             },
             {
                 "answer": "3",
-                "correct": true,
+                "correct": false,
                 "feedback": "Nei. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
             },
             {
                 "answer": "Feilmelding",
-                "correct": false,
+                "correct": true,
                 "feedback": "Ja. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
             }
         ]
     },
     {
         "question": "Hva er output fra følgende program?",
-           "code": {a = 5.0
-                    b = 3.0
-                    c = a + b
-                    a = 3.0
-                    d = 2.0
-                    e = a + c * d
-                    print(e)}
+           "code": "a = 5.0 \n b = 3.0 \n c = a + b \n a = 3.0 \n d = 2.0 \n e = a + c * d \n print(e)",
         "type": "multiple_choice",
         "answers": [
             {
-                "answer": "mode",
-                "correct": true,
+                "answer": "18.0",
+                "correct": false,
                 "feedback": "Correct."
             },
             {
-                "answer": "average",
+                "answer": "15.0",
                 "correct": false,
                 "feedback": "Try again."
             },
             {
-                "answer": "median",
+                "answer": "22.0",
                 "correct": false,
+                "feedback": "Try again."
+            },
+            {
+                "answer": "19.0",
+                "correct": true,
                 "feedback": "Try again."
             }
         ]

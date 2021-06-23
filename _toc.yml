@@ -6,7 +6,8 @@
   - file: docs/tema1_grunnleggende_programmering/kontrollstrukturer
   - file: docs/tema1_grunnleggende_programmering/programmeringsverktøy
   - file: docs/tema1_grunnleggende_programmering/grunnleggende_programmering
-
+  - file: docs/quizer/quiz1
+  
 - part: Tema 2 - Kodestrukturering
   chapters:
   - file: docs/tema2_kodestrukturering/funksjoner

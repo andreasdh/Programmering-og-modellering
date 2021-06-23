@@ -128,31 +128,31 @@
            "code": "a = 5.0 \nb = 3.0 \nc = a + b \na = 3.0 \nd = 2.0 \ne = a + c * d \nprint(e)",
         "type": "multiple_choice",
         "answers": [
-            {
-                "answer": "18.0",
-                "correct": false,
-                "feedback": "Correct."
-            },
-            {
-                "answer": "15.0",
-                "correct": false,
-                "feedback": "Try again."
-            },
+          {
+            "answer": "18.0",
+            "correct": false,
+            "feedback": "Feil. Pass på regnerekkefølge og hold styr på innholdet i variablene."
+          },
+          {
+            "answer": "15.0",
+            "correct": false,
+            "feedback": "Feil. Pass på regnerekkefølge og hold styr på innholdet i variablene."
+          },
             {
                 "answer": "22.0",
                 "correct": false,
-                "feedback": "Try again."
+                "feedback": "Feil. Pass på regnerekkefølge og hold styr på innholdet i variablene."
             },
             {
                 "answer": "19.0",
                 "correct": true,
-                "feedback": "Try again."
+                "feedback": "Riktig."
             }
         ]
     },
     {
         "question": "Hva er verdien til variablene nedenfor?",
-           "code": "\na = 10 \nb = 20 \na = b",
+           "code": "a = 10 \nb = 20 \na = b",
         "type": "multiple_choice",
         "answers": [
             {

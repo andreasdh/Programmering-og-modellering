@@ -124,50 +124,88 @@
         ]
     },
     {
-        "question": "Which of the following summary statistics minimizes the number of non-zero errors to the data:",
+        "question": "Hva er output fra følgende program?",
+           "code": "a = 5.0 \nb = 3.0 \nc = a + b \na = 3.0 \nd = 2.0 \ne = a + c * d \nprint(e)",
         "type": "multiple_choice",
         "answers": [
             {
-                "answer": "mode",
-                "correct": true,
+                "answer": "18.0",
+                "correct": false,
                 "feedback": "Correct."
             },
             {
-                "answer": "average",
+                "answer": "15.0",
                 "correct": false,
                 "feedback": "Try again."
             },
             {
-                "answer": "median",
+                "answer": "22.0",
                 "correct": false,
+                "feedback": "Try again."
+            },
+            {
+                "answer": "19.0",
+                "correct": true,
                 "feedback": "Try again."
             }
         ]
     },
     {
-        "question": "Choose all of the following that are typical causes of outliers in data sets:",
-        "type": "many_choice",
+        "question": "Hva er verdien til variablene nedenfor?",
+           "code": "\na = 10 \nb = 20 \na = b",
+        "type": "multiple_choice",
         "answers": [
             {
-                "answer": "measurement errors",
-                "correct": true,
-                "feedback": "Correct."
-            },
-            {
-                "answer": "different population characteristics",
+                "answer": "a = 20, b = 10",
                 "correct": false,
-                "feedback": "Different population characteristics often produce variations in data, but these are not erroneous values and not considered outliers."
+                "feedback": "Feil. I tredje linje får a verdien til b, men ikke motsatt."
             },
             {
-                "answer": "data entry errors",
-                "correct": true,
-                "feedback": "Correct."
+                "answer": "a = 20, b = 20",
+                "correct": false,
+                "feedback": "Feil. I tredje linje får a verdien til b, men ikke motsatt."
             },
             {
-                "answer": "unit conversion errors",
+                "answer": "a = 10, b = 10",
                 "correct": true,
-                "feedback": "Correct."
+                "feedback": "Riktig. I tredje linje får a verdien til b."
+            },
+            {
+                "answer": "a = 10, b = 20",
+                "correct": false,
+                "feedback": "Feil. I tredje linje får a verdien til b."
             }
         ]
-    }
+    },
+    {
+          "question": "Hvilk(e) kodesnutt(er) skriver ut 20 % av verdien til en variabel x?",
+          "type": "many_choice",
+          "answers": [
+              {
+                  "answer": "print(20 % x)",
+                  "correct": false,
+                  "feedback": "Feil. Dette er faktisk riktig Python-syntaks, men den regner ikke ut prosent. Her får vi resten etter en heltallsdivisjon mellom 20 og x."
+              },
+              {
+                  "answer": "print(20% * x)",
+                  "correct": false,
+                  "feedback": "Feil. Dette gir feilmelding."
+              },
+              {
+                  "answer": "print(1.20 * x)",
+                  "correct": false,
+                  "feedback": "Feil. Her får du 120 % av verdien."
+              },
+              {
+                  "answer": "print(x - 0.8 * x)",
+                  "correct": true,
+                  "feedback": "Riktig."
+              },
+              {
+                  "answer": "print(0.2 * x)",
+                  "correct": true,
+                  "feedback": "Riktig."
+              }
+          ]
+      }
 ]

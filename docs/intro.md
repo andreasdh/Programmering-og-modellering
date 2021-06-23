@@ -1,4 +1,4 @@
-﻿# Programmering og modellering
+# Programmering og modellering
 
 Velkommen til ressursside for Programmering og modellering X. Her vil du finne ulike ressurser i emnet.
 

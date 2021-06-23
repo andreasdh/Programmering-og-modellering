@@ -8,28 +8,23 @@ parts:
   - file: docs/tema1_grunnleggende_programmering/programmeringsverktoy
   - file: docs/tema1_grunnleggende_programmering/grunnleggende_programmering
   - file: docs/tema1_grunnleggende_programmering/quiz1
-
 - caption: Tema 2 - Kodestrukturering
   chapters:
   - file: docs/tema2_kodestrukturering/funksjoner
   - file: docs/tema2_kodestrukturering/klasser_objekter
-
 - caption: Tema 3 - Datahandtering
   chapters:
   - file: docs/tema3_datahandtering/datasamlinger
   - file: docs/tema3_datahandtering/plotting
   - file: docs/tema3_datahandtering/datahandtering
-
 - caption: Tema 4 - Grafikk
   chapters:
   - file: docs/tema4_grafikk/tilfeldige_tall_grafikk
-  
 - caption: Tema 5 - Algoritmer
   chapters:
   - file: docs/tema5_algoritmer/derivasjon
   - file: docs/tema5_algoritmer/numeriske_biblioteker
   - file: docs/tema5_algoritmer/symbolsk_utregning
-
 - caption: Tema 6 - Modellering
   chapters:
   - file: docs/tema6_modellering/diskret_modellering
@@ -38,7 +33,6 @@ parts:
   - file: docs/tema6_modellering/differensiallikninger_oppgaver
   - file: docs/tema6_modellering/pingviner
   - file: docs/tema6_modellering/maskinlaring_titanic_oppgaver
-
 - caption: Datafiler
   chapters:
   - file: docs/datafiler

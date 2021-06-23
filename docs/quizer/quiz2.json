@@ -1,12 +1,17 @@
 [
   {
-        "question": "Hva er output fra følgende kode?",
-	      "code": "a=\"1\"\nb=\"2\"\nprint(a+b)",
+        "question": "Hvilket tall vil bli skrevet ut??",
+	      "code": "a = 0 \nif a == 0:\n    a += 1 \nelif a == 1: \n    a += 1 \nelse:\n    a += 1 \nprint(a)",
         "type": "multiple_choice",
         "answers": [
             {
-                "answer": "1",
+                "answer": "0",
                 "correct": false,
+                "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+            },
+            {
+                "answer": "1",
+                "correct": true,
                 "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
             },
             {
@@ -17,15 +22,10 @@
             {
                 "answer": "3",
                 "correct": false,
-                "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
-            },
-            {
-                "answer": "12",
-                "correct": true,
                 "feedback": "Ja. Variablene inneholder strenger. Strenger slås sammen når de addderes."
             },
             {
-                "answer": "error",
+                "answer": "4",
                 "correct": false,
                 "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
             }
@@ -140,12 +140,12 @@
             },
             {
                 "answer": "3",
-                "correct": true,
+                "correct": false,
                 "feedback": "Nei. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
             },
             {
                 "answer": "Feilmelding",
-                "correct": false,
+                "correct": true,
                 "feedback": "Ja. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
             }
         ]

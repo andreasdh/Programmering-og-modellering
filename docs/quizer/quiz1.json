@@ -91,7 +91,14 @@
         ]
     },
     {
-        "question": "Which of the following summary statistics minimizes the number of non-zero errors to the data:",
+        "question": "Hva er output fra følgende program?",
+           "code": {a = 5.0
+                    b = 3.0
+                    c = a + b
+                    a = 3.0
+                    d = 2.0
+                    e = a + c * d
+                    print(e)}
         "type": "multiple_choice",
         "answers": [
             {

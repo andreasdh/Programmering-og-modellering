@@ -31,7 +31,7 @@
             }
         ]
     },
-    
+
   {
         "question": "Hva er output fra følgende kode?",
 	      "code": "a=\"1\"\nb=\"2\"\nprint(a+b)",
@@ -177,8 +177,8 @@
             }
         ]
     },
- {
-        "question": "Hvilk(e) kodesnutt(er) skriver ut 20 % av verdien til en variabel x?",
+    {
+        "question": "Hvilk(e) kodesnutt(er) skriver ut 20 \% av verdien til en variabel x?",
         "type": "many_choice",
         "answers": [
             {

@@ -12,7 +12,11 @@ parts:
   chapters:
   - file: docs/tema2_kodestrukturering/funksjoner
   - file: docs/tema2_kodestrukturering/klasser_objekter
+<<<<<<< HEAD
 - caption: Tema 3 - Datahåndtering
+=======
+- caption: Tema 3 - Datahandtering
+>>>>>>> parent of a3bc33c (Update _toc.yml)
   chapters:
   - file: docs/tema3_datahandtering/datasamlinger
   - file: docs/tema3_datahandtering/plotting

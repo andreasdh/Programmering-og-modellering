@@ -31,39 +31,6 @@
             }
         ]
     },
-
-    {
-        "question": "Hva er output fra følgende kode?",
-	      "code": "a=\"1\"\nb=\"2\"\nprint(a+b)",
-        "type": "multiple_choice",
-        "answers": [
-                {
-                    "answer": "1",
-                    "correct": false,
-                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
-                },
-                {
-                    "answer": "2",
-                    "correct": false,
-                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
-                },
-                {
-                    "answer": "3",
-                    "correct": false,
-                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
-                },
-                {
-                    "answer": "12",
-                    "correct": true,
-                    "feedback": "Ja. Variablene inneholder strenger. Strenger slås sammen når de addderes."
-                },
-                {
-                    "answer": "error",
-                    "correct": false,
-                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
-                }
-            ]
-        },
      {
         "question": "Hva skjer når du kjører følgende kode?",
 	      "code": "print = \"Hei\"",

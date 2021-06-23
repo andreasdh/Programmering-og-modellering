@@ -1,0 +1,173 @@
+[
+  {
+        "question": "Hva er output fra følgende kode?",
+	      "code": "a=\"1\"\nb=\"2\"\nprint(a+b)",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "1",
+                "correct": false,
+                "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+            },
+            {
+                "answer": "2",
+                "correct": false,
+                "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+            },
+            {
+                "answer": "3",
+                "correct": false,
+                "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+            },
+            {
+                "answer": "12",
+                "correct": true,
+                "feedback": "Ja. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+            },
+            {
+                "answer": "error",
+                "correct": false,
+                "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+            }
+        ]
+    },
+
+    {
+        "question": "Hva er output fra følgende kode?",
+	      "code": "a=\"1\"\nb=\"2\"\nprint(a+b)",
+        "type": "multiple_choice",
+        "answers": [
+                {
+                    "answer": "1",
+                    "correct": false,
+                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                },
+                {
+                    "answer": "2",
+                    "correct": false,
+                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                },
+                {
+                    "answer": "3",
+                    "correct": false,
+                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                },
+                {
+                    "answer": "12",
+                    "correct": true,
+                    "feedback": "Ja. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                },
+                {
+                    "answer": "error",
+                    "correct": false,
+                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                }
+            ]
+        },
+     {
+        "question": "Hva skjer når du kjører følgende kode?",
+	      "code": "print = \"Hei\"",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "\"Hei\" blir skrevet ut.",
+                "correct": false,
+                "feedback": "Nei. Korrekt syntaks for utskrift er: print(\"Hei\")"
+            },
+            {
+                "answer": "En feilmelding blir skrevet ut.",
+                "correct": false,
+                "feedback": "Nei. Det er fullt tillatt å skrive over print-funksjonen. Men nå finnes ikke print-funksjonen i programmet ditt mer, og du må restarte Python."
+            },
+            {
+                "answer": "Programmet krasjer.",
+                "correct": false,
+                "feedback": "Nei. Et program krasjer ikke med mindre det skjer noe teknisk feil."
+            },
+            {
+                "answer": "Ingenting skjer.",
+                "correct": true,
+                "feedback": "Ja. Det er fullt tillatt å skrive over print-funksjonen. Men nå finnes ikke print-funksjonen i programmet ditt mer, og du må restarte Python."
+            }
+        ]
+    },
+    {
+        "question": "Hva er output fra følgende kode hvis du taster inn 1 og 2 i konsollen når du kjører programmet?",
+	      "code": "a = input(\"tall 1: \")\n b = input(\"tall 1: \")\n b = float(b) \n print(a + b)",
+        "type": "multiple_choice",
+        "answers": [
+                       {
+                "answer": "3",
+                "correct": false,
+                "feedback": "Nei. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
+            },
+            {
+                "answer": "12",
+                "correct": false,
+                "feedback": "Nei. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
+            },
+            {
+                "answer": "1",
+                "correct": false,
+                "feedback": "Nei. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
+            },
+            {
+                "answer": "3",
+                "correct": true,
+                "feedback": "Nei. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
+            },
+            {
+                "answer": "Feilmelding",
+                "correct": false,
+                "feedback": "Ja. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
+            }
+        ]
+    },
+    {
+        "question": "Which of the following summary statistics minimizes the number of non-zero errors to the data:",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "mode",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "average",
+                "correct": false,
+                "feedback": "Try again."
+            },
+            {
+                "answer": "median",
+                "correct": false,
+                "feedback": "Try again."
+            }
+        ]
+    },
+    {
+        "question": "Choose all of the following that are typical causes of outliers in data sets:",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "measurement errors",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "different population characteristics",
+                "correct": false,
+                "feedback": "Different population characteristics often produce variations in data, but these are not erroneous values and not considered outliers."
+            },
+            {
+                "answer": "data entry errors",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "unit conversion errors",
+                "correct": true,
+                "feedback": "Correct."
+            }
+        ]
+    }
+]

@@ -110,115 +110,115 @@
   },
 
   {
-    "question": "Hvilken kommando vil gi lista [2, 4, 6] fra følgende liste?",
-    "code": "liste = [0, 2, 4, 6, 8, 10]",
+    "question": "Hvilken av følgende kodelinjer sjekker om a er en streng?",
+    "code": "\"a = \"potet\"\"",
     "type": "multiple_choice",
     "answers": [
       {
-        "answer": "liste[1:3]",
+        "answer": "if type(a) = str:",
         "correct": false,
-        "feedback": "Nei. Husk at [fra:til] gir til, men ikke med siste verdi."
+        "feedback": "Nei. Likhet sjekkes med doble likhetstegn. Enkle likhetstegn er tilordning til variabler."
       },
       {
-        "answer": "liste[1:4]",
+        "answer": "if type(a) = string:",
+        "correct": false,
+        "feedback": "Nei. Kommandoen for streng er str. Likhet sjekkes med doble likhetstegn. Enkle likhetstegn er tilordning til variabler."
+      },
+      {
+        "answer": "if type(a) == str:",
         "correct": true,
-        "feedback": "Riktig, for [fra:til] gir til, men ikke med siste verdi."
+        "feedback": "Riktig. Kommandoen for streng er str."
       },
       {
-        "answer": "liste[2, 4, 6]",
+        "answer": "if type(a) == string:",
         "correct": false,
-        "feedback": "Nei. Da måtte vi i såfall ha skrevet liste = [2, 4, 6]."
-      },
-      {
-        "answer": "liste[0:3]",
-        "correct": false,
-        "feedback": "Nei. 0 gir det første elementet, altså 0 i lista."
+        "feedback": "Nei. Kommandoen for streng er str."
       }
     ]
   },
   {
     "question": "Hva blir output på følgende program?",
-    "code": "tall = [1, 1, 13, 5, 55, 3, 4, 12, 10, 4] \nprint(tall[4] \ntall.remove(4) \nprint(tall[-2]) \ntall.append(3) \nprint(tall[:3])",
+    "code": "a = 10 \nb = 3 \nc = 9 \nif a > b: \n    a = b \nif a > c: \n    c = a + b \nif b != a: \n    c = a \nprint(a, b, c)",
     "type": "multiple_choice",
     "answers": [
       {
-        "answer": "55 10 [1, 1, 13]",
+        "answer": "10 3 13",
         "correct": false,
+        "feedback": "Nei"
+      },
+      {
+        "answer": "10 3 9",
+        "correct": false,
+        "feedback": "Nei."
+      },
+      {
+        "answer": "3 3 13",
+        "correct": false,
+        "feedback": "Nei."
+      },
+      {
+        "answer": "3 3 9",
+        "correct": true,
         "feedback": "Riktig."
-      },
-      {
-        "answer": "55 4 [1, 1, 13]",
-        "correct": false,
-        "feedback": "Nei. Husk at [fra:til] gir til, men ikke med siste verdi."
-      },
-      {
-        "answer": "55 10 5",
-        "correct": false,
-        "feedback": "Nei. Husk at [fra:til] gir til, men ikke med siste verdi."
-      },
-      {
-        "answer": "55 10 [1, 1, 13, 5]",
-        "correct": false,
-        "feedback": "Nei. Husk at [fra:til] gir til, men ikke med siste verdi."
       }
     ]
   },
   {
-    "question": "Hvordan kan vi slette tallet 7 fra følgende liste?",
-    "code": "liste = [1, 3, 5, 7]",
+    "question": "Hva må vi sette inn i koden for å få 15 som output?",
+    "code": "a = 10 \nb = 5 \nif a ___ b: \n    print(a + b)",
     "type": "many_choice",
     "answers": [
       {
-        "answer": "liste.pop(7)",
+        "answer": "<",
         "correct": false,
-        "feedback": "Nei. Funksjonen pop tar indeks som argument, ikke tallet i seg selv."
+        "feedback": "Nei. 10 er ikke mindre enn 5."
       },
       {
-        "answer": "del liste[3]",
-        "correct": true,
-        "feedback": "Riktig."
-      },
-      {
-        "answer": "liste.delete(7)",
-        "correct": false,
-        "feedback": "Nei, delete er ikke en funksjon i Python."
-      },
-      {
-        "answer": "liste.remove(7)",
+        "answer": "==",
         "correct": false,
         "feedback": "Riktig."
       },
       {
-        "answer": "liste.remove(3)",
+        "answer": "!=",
         "correct": true,
-        "feedback": "Nei. Funksjonen remove tar ikke indeks, men selve elementet som argument."
+        "feedback": "Riktig. != betyr \"ikke lik\", og 10 er ikke lik 5."
+      },
+      {
+        "answer": ">",
+        "correct": true,
+        "feedback": "Riktig. 10 er større enn 5."
       }
     ]
   },
   {
     "question": "Hva er output fra følgende program?",
-    "code": "liste = [1, 2, 3] \nprint(2*(liste[0] + liste[1]*2) + 2*(liste[0] + liste[-1]*2))",
-
+    "code": "a = [1, 3, 4, 5] \nif 3 in a: \n    a.remove(1) \nelse: \n    a.append(2) \nprint(sum(a))",
     "type": "numeric",
-    "precision": 2,
+    "precision": 0,
     "answers": [
       {
         "type": "value",
-        "value": 24,
+        "value": 12,
         "correct": true,
         "feedback": "Riktig."
       },
       {
-        "type": "range",
-        "range": [ -1000, 23 ],
+        "type": "value",
+        "value": 13,
         "correct": false,
-        "feedback": "Feil. Tallet skal være større."
+        "feedback": "Feil. Lista er ikke uendret etter vilkåret."
       },
       {
-        "type": "range",
-        "range": [ 25, 1000 ],
+        "type": "value",
+        "value": 15,
         "correct": false,
-        "feedback": "Feil. Tallet skal være mindre."
+        "feedback": "Feil. Tallet 3 er i lista a, så første vilkår gjennomføres."
+      },
+      {
+        "type": "value",
+        "value": 14,
+        "correct": false,
+        "feedback": "Feil. Det er kun den første if-elif-else-setningen som er sann, som utføres."
       },
       {
         "type": "default",
@@ -227,34 +227,71 @@
     ]
   },
   {
-    "question": "Hvilket output gir følgende program?",
-    "code": "liste = ['a','b','a'] \nprint(2*(liste[0] + liste[1]*2) + liste[0] + liste[-1]*2)",
+    "question": "Hvilke av følgende verdier for a, b, c og d vil skrive ut \"Betingelse a, c og d er sann!\" gitt følgende program?",
+    "code": "\"l = [4, 5, 6, 1, 1, 2, 7] \\nif a == l[3]: \\n    if b == l[0]: \\n        print(\"Betingelse a og b er sann!\") \n     if c == l[5]: \n        if d == l[2]: \n            print(\"Betingelse a, c og d er sann!\")",
     "type": "multiple_choice",
     "answers": [
       {
-        "answer": "ababaa",
-        "correct": false,
-        "feedback": "Feil."
-      },
-      {
-        "answer": "abba",
-        "correct": false,
-        "feedback": "Feil. Her er det logikk, ikke kunnskap om populærkultur som gjelder."
-      },
-      {
-        "answer": "abbabbaaa",
+        "answer": "a = 1 b = 5 c = 2 d = 6",
         "correct": true,
         "feedback": "Riktig."
       },
       {
-        "answer": "abaabaaba",
+        "answer": "a = 6 b = 1 c = 1 d = 5",
         "correct": false,
         "feedback": "Feil."
       },
       {
-        "answer": "Vi får en feilmelding.",
+        "answer": "a = 1 b = 4 c = 2 d = 3",
         "correct": false,
-        "feedback": "Feil. Det er lov å multiplisere strenger (tekst) med et hetall n. Da får vi strengen n ganger etter hverandre."
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "a = 1 b = 4 c = 2 d = 6",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "Ingen kombinasjoner av a, b, c og d kan gi denne outputen.",
+        "correct": false,
+        "feedback": "Feil."
+      }
+    ]
+  },
+  {
+    "question": "Hva skrives ut når dette programmet kjøres?",
+    "code": "l = [0.1, 3, \"molekyl\"] \nif type(l[2]) == str: \n    print(\"Første betingelse sann!\") \n    if l[1] <= 0.15: \n        print(\"Andre betingelse sann!\")     if len(l) == 3: \n        print(\"Tredje betingelse sann!\")",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "\"Første betingelse sann!\"",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "\"Andre betingelse sann!\"",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "\"Første betingelse sann!\" og \"Tredje betingelse sann!\"",
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "\"Første betingelse sann!\" og \"Andre betingelse sann!\"",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "\"Andre betingelse sann!\" og \"Tredje betingelse sann!\"",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "\"Første betingelse sann!\" og \"Andre betingelse sann!\" og \"Tredje betingelse sann!\"",
+        "correct": false,
+        "feedback": "Feil."
       }
     ]
   }

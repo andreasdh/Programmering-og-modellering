@@ -1,238 +1,205 @@
 [
   {
-        "question": "Hvilket tall vil bli skrevet ut??",
-	      "code": "a = 0 \nif a == 0:\n    a += 1 \nelif a == 1: \n    a += 1 \nelse:\n    a += 1 \nprint(a)",
+        "question": "Gitt en liste a = [1, 2, 4, 9, 16, 25], hvilken kommando gir følgende output: [4, 9]?",
         "type": "multiple_choice",
         "answers": [
             {
-                "answer": "0",
+                "answer": "a[3:4]",
                 "correct": false,
-                "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                "feedback": "Nei. Husk at indeksering starter på 0."
             },
             {
-                "answer": "1",
+                "answer": "a[2:3]",
+                "correct": false,
+                "feedback": "Nei. Husk at indeksering gir til, men ikke med siste verdi."
+            },
+            {
+                "answer": "a[2:4]",
                 "correct": true,
-                "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                "feedback": "Riktig. Indekseringen starter på 0 og gir til, men ikke med siste verdi."
             },
             {
-                "answer": "2",
+                "answer": "a[3:5]",
                 "correct": false,
-                "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                "feedback": "Nei. Husk at indeksering starter på 0."
             },
-            {
-                "answer": "3",
-                "correct": false,
-                "feedback": "Ja. Variablene inneholder strenger. Strenger slås sammen når de addderes."
-            },
-            {
-                "answer": "4",
-                "correct": false,
-                "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
-            }
         ]
     },
 
     {
         "question": "Hva er output fra følgende kode?",
-	      "code": "a=\"1\"\nb=\"2\"\nprint(a+b)",
+	      "code": "liste_a = [0, 1, 2, 3, 4, 5, 6, 7] \nlist_b = list_a[1:-1] \nlist_c = list_b[3:5] \nprint(list_c)",
         "type": "multiple_choice",
         "answers": [
                 {
-                    "answer": "1",
+                    "answer": "[3, 4, 5]",
                     "correct": false,
-                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                    "feedback": "Nei. Husk at :-1 betyr til, men ikke med siste verdi og at indekseringen starter på 0."
                 },
                 {
-                    "answer": "2",
+                    "answer": "[3, 4]",
                     "correct": false,
-                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                    "feedback": "Nei. Husk at :-1 betyr til, men ikke med siste verdi og at indekseringen starter på 0."
                 },
                 {
-                    "answer": "3",
-                    "correct": false,
-                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
-                },
-                {
-                    "answer": "12",
+                    "answer": "[4, 5]",
                     "correct": true,
-                    "feedback": "Ja. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                    "feedback": "Riktig."
                 },
                 {
-                    "answer": "error",
+                    "answer": "[4]",
                     "correct": false,
-                    "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
-                }
+                    "feedback": "Nei. Husk at :-1 betyr til, men ikke med siste verdi og at indekseringen starter på 0."
+                },
             ]
         },
-        {
-         "question": "Hva er output?",
-         "code": "print(3>4)",
-         "type": "multiple_choice",
-         "answers": [
-             {
-                 "answer": "En feilmelding blir skrevet ut.",
-                 "correct": false,
-                 "feedback": "Nei. Dette er en gyldig syntaks."
-             },
-             {
-                 "answer": "True.",
-                 "correct": false,
-                 "feedback": "Nei. 3 er ikke større enn 4."
-             },
-             {
-                 "answer": "False.",
-                 "correct": true,
-                 "feedback": "Ja. 3 er større enn 4, og vi får den boolske verdien True (merk at det alltid er stor forbokstav)."
-             },
-             {
-                 "answer": "Ingenting skjer.",
-                 "correct": false,
-                 "feedback": "Feil."
-             }
-         ]
-     },
+  {
+    "question": "Hvilken kommando vil gi lista [2, 4, 6] fra følgende liste?",
+    "code": "liste = [0, 2, 4, 6, 8, 10]",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "liste[1:3]",
+        "correct": false,
+        "feedback": "Nei. Husk at [fra:til] gir til, men ikke med siste verdi."
+      },
+      {
+        "answer": "liste[1:4]",
+        "correct": true,
+        "feedback": "Riktig, for [fra:til] gir til, men ikke med siste verdi."
+      },
+      {
+        "answer": "liste[2, 4, 6]",
+        "correct": false,
+        "feedback": "Nei. Da måtte vi i såfall ha skrevet liste = [2, 4, 6]."
+      },
+      {
+        "answer": "liste[0:3]",
+        "correct": false,
+        "feedback": "Nei. 0 gir det første elementet, altså 0 i lista."
+      }
+    ]
+  },
      {
-        "question": "Hva skjer når du kjører følgende kode?",
-	      "code": "print = \"Hei\"",
+        "question": "Hva blir output på følgende program?",
+	      "code": "tall = [1, 1, 13, 5, 55, 3, 4, 12, 10, 4] \nprint(tall[4] \ntall.remove(4) \nprint(tall[-2]) \ntall.append(3) \nprint(tall[:3])",
         "type": "multiple_choice",
         "answers": [
             {
-                "answer": "\"Hei\" blir skrevet ut.",
+                "answer": "55 10 [1, 1, 13]",
                 "correct": false,
-                "feedback": "Nei. Korrekt syntaks for utskrift er: print(\"Hei\")"
+                "feedback": "Riktig."
             },
             {
-                "answer": "En feilmelding blir skrevet ut.",
+                "answer": "55 4 [1, 1, 13]",
                 "correct": false,
-                "feedback": "Nei. Det er fullt tillatt å skrive over print-funksjonen. Men nå finnes ikke print-funksjonen i programmet ditt mer, og du må restarte Python."
+                "feedback": "Nei. Husk at [fra:til] gir til, men ikke med siste verdi."
             },
             {
-                "answer": "Programmet krasjer.",
+                "answer": "55 10 5",
                 "correct": false,
-                "feedback": "Nei. Et program krasjer ikke med mindre det skjer noe teknisk feil."
+                "feedback": "Nei. Husk at [fra:til] gir til, men ikke med siste verdi."
             },
             {
-                "answer": "Ingenting skjer.",
-                "correct": true,
-                "feedback": "Ja. Det er fullt tillatt å skrive over print-funksjonen. Men nå finnes ikke print-funksjonen i programmet ditt mer, og du må restarte Python."
+                "answer": "55 10 [1, 1, 13, 5]",
+                "correct": false,
+                "feedback": "Nei. Husk at [fra:til] gir til, men ikke med siste verdi."
             }
         ]
     },
     {
-        "question": "Hva er output fra følgende kode hvis du taster inn 1 og 2 i konsollen når du kjører programmet?",
-	      "code": "a = input(\"tall 1: \")\nb = input(\"tall 1: \")\nb = float(b) \nprint(a + b)",
-        "type": "multiple_choice",
-        "answers": [
-                       {
-                "answer": "3",
-                "correct": false,
-                "feedback": "Nei. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
-            },
-            {
-                "answer": "12",
-                "correct": false,
-                "feedback": "Nei. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
-            },
-            {
-                "answer": "1",
-                "correct": false,
-                "feedback": "Nei. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
-            },
-            {
-                "answer": "3",
-                "correct": false,
-                "feedback": "Nei. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
-            },
-            {
-                "answer": "Feilmelding",
-                "correct": true,
-                "feedback": "Ja. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
-            }
-        ]
-    },
-    {
-        "question": "Hva er output fra følgende program?",
-           "code": "a = 5.0 \nb = 3.0 \nc = a + b \na = 3.0 \nd = 2.0 \ne = a + c * d \nprint(e)",
-        "type": "multiple_choice",
+        "question": "Hvordan kan vi slette tallet 7 fra følgende liste?",
+	      "code": "liste = [1, 3, 5, 7]",
+        "type": "many_choice",
         "answers": [
           {
-            "answer": "18.0",
+            "answer": "liste.pop(7)",
             "correct": false,
-            "feedback": "Feil. Pass på regnerekkefølge og hold styr på innholdet i variablene."
-          },
-          {
-            "answer": "15.0",
-            "correct": false,
-            "feedback": "Feil. Pass på regnerekkefølge og hold styr på innholdet i variablene."
+            "feedback": "Nei. Funksjonen pop tar indeks som argument, ikke tallet i seg selv."
           },
             {
-                "answer": "22.0",
-                "correct": false,
-                "feedback": "Feil. Pass på regnerekkefølge og hold styr på innholdet i variablene."
-            },
-            {
-                "answer": "19.0",
+                "answer": "del liste[3]",
                 "correct": true,
                 "feedback": "Riktig."
-            }
+            },
+            {
+                "answer": "liste.delete(7)",
+                "correct": false,
+                "feedback": "Nei, delete er ikke en funksjon i Python."
+            },
+            {
+                "answer": "liste.remove(7)",
+                "correct": false,
+                "feedback": "Riktig."
+            },
+          {
+            "answer": "liste.remove(3)",
+            "correct": true,
+            "feedback": "Nei. Funksjonen remove tar ikke indeks, men selve elementet som argument."
+          }
         ]
     },
+  {
+    "question": "Hva er output fra følgende program?",
+    "code": "liste = [1, 2, 3] \nprint(2*(liste[0] + liste[1]*2) + 2*(liste[0] + liste[-1]*2))",
+
+    "type": "numeric",
+    "precision": 2,
+    "answers": [
+      {
+        "type": "value",
+        "value": 24,
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "type": "range",
+        "range": [ -1000, 23 ],
+        "correct": false,
+        "feedback": "Feil. Tallet skal være større."
+      },
+      {
+        "type": "range",
+        "range": [ 25, 1000 ],
+        "correct": false,
+        "feedback": "Feil. Tallet skal være mindre."
+      },
+      {
+        "type": "default",
+        "feedback": "Feil."
+      }
+    ]
+  },
     {
-        "question": "Hva er verdien til variablene nedenfor?",
-           "code": "a = 10 \nb = 20 \na = b",
+        "question": "Hvilket output gir følgende program?",
+           "code": "liste = ['a','b','a'] \nprint(2*(liste[0] + liste[1]*2) + liste[0] + liste[-1]*2)",
         "type": "multiple_choice",
         "answers": [
             {
-                "answer": "a = 20, b = 10",
+                "answer": "ababaa",
                 "correct": false,
-                "feedback": "Feil. I tredje linje får a verdien til b, men ikke motsatt."
+                "feedback": "Feil."
             },
+          {
+            "answer": "abba",
+            "correct": false,
+            "feedback": "Feil. Her er det logikk, ikke kunnskap om populærkultur som gjelder."
+          },
             {
-                "answer": "a = 20, b = 20",
-                "correct": false,
-                "feedback": "Feil. I tredje linje får a verdien til b, men ikke motsatt."
-            },
-            {
-                "answer": "a = 10, b = 10",
+                "answer": "abbabbaaa",
                 "correct": true,
-                "feedback": "Riktig. I tredje linje får a verdien til b."
+                "feedback": "Riktig."
             },
-            {
-                "answer": "a = 10, b = 20",
-                "correct": false,
-                "feedback": "Feil. I tredje linje får a verdien til b."
-            }
+          {
+            "answer": "abaabaaba",
+            "correct": false,
+            "feedback": "Feil."
+          },
+          {
+            "answer": "Vi får en feilmelding.",
+            "correct": false,
+            "feedback": "Feil. Det er lov å multiplisere strenger (tekst) med et hetall n. Da får vi strengen n ganger etter hverandre."
+          }
         ]
-    },
-    {
-          "question": "Hvilke(n) kodesnutt(er) skriver ut 20 % av verdien til en variabel x?",
-          "type": "many_choice",
-          "answers": [
-              {
-                  "answer": "print(20 % x)",
-                  "correct": false,
-                  "feedback": "Feil. Dette er faktisk riktig Python-syntaks, men den regner ikke ut prosent. Her får vi resten etter en heltallsdivisjon mellom 20 og x."
-              },
-              {
-                  "answer": "print(20% * x)",
-                  "correct": false,
-                  "feedback": "Feil. Dette gir feilmelding."
-              },
-              {
-                  "answer": "print(1.20 * x)",
-                  "correct": false,
-                  "feedback": "Feil. Her får du 120 % av verdien."
-              },
-              {
-                  "answer": "print(x - 0.8 * x)",
-                  "correct": true,
-                  "feedback": "Riktig."
-              },
-              {
-                  "answer": "print(0.2 * x)",
-                  "correct": true,
-                  "feedback": "Riktig."
-              }
-          ]
-      }
+    }
 ]

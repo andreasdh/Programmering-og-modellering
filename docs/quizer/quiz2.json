@@ -87,7 +87,7 @@
         "answers": [
             {
                 "answer": "55 10 [1, 1, 13]",
-                "correct": false,
+                "correct": true,
                 "feedback": "Riktig."
             },
             {
@@ -115,7 +115,7 @@
           {
             "answer": "liste.pop(7)",
             "correct": false,
-            "feedback": "Nei. Funksjonen pop tar indeks som argument, ikke tallet i seg selv."
+            "feedback": "Nei. Funksjonen pop tar indeks som argument, ikke tallet i seg selv: pop(3) ville fungert."
           },
             {
                 "answer": "del liste[3]",
@@ -129,12 +129,12 @@
             },
             {
                 "answer": "liste.remove(7)",
-                "correct": false,
+                "correct": true,
                 "feedback": "Riktig."
             },
           {
             "answer": "liste.remove(3)",
-            "correct": true,
+            "correct": false,
             "feedback": "Nei. Funksjonen remove tar ikke indeks, men selve elementet som argument."
           }
         ]
@@ -154,7 +154,7 @@
       },
       {
         "type": "range",
-        "range": [ -1000, 23 ],
+        "range": [ -1000, 24 ],
         "correct": false,
         "feedback": "Feil. Tallet skal være større."
       },

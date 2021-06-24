@@ -1,0 +1,261 @@
+[
+  {
+    "question": "Hva er output fra følgende kode?",
+    "type": "liste1 = [-1,2,4,4,-3] \nif liste1[3] > 0: \n    liste1[1] = 1 \nif liste1[2] < 2: \n    liste1.append(3) \nelse: \n    del liste1[2:4] \nprint(liste1)",
+    "answers": [
+      {
+        "answer": "[1, 2, 10, -1, 4]",
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "[1, 0, 3, -1, 4]",
+        "correct": false,
+        "feedback": "Nei. Husk at indeksering starter på null."
+      },
+      {
+        "answer": "[1, 0, 3 -1]",
+        "correct": false,
+        "feedback": "Feil. Begge if-testene utføres. Husk at indeksering starter på null."
+      },
+      {
+        "answer": "[1, 2, 10, -1]",
+        "correct": false,
+        "feedback": "Nei. Begge if-testene utføres."
+      }
+    ]
+  },
+
+  {
+    "question": "Hva er output fra følgende kode?",
+    "code": "a = 7 \nif a >= 7: \n    print(\"Tallet er større enn eller lik 7.\") \nif a == 7: \n    print(\"Tallet er 7.\") \nelse: \n    print(\"Tallet er ikke 7.\")",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "\"Tallet er større enn eller lik 7.\"",
+        "correct": false,
+        "feedback": "Nei. Begge if-testene utføres."
+      },
+      {
+        "answer": "\"Tallet er 7.\" ",
+        "correct": false,
+        "feedback": "Nei. Begge if-testene utføres."
+      },
+      {
+        "answer": "\"Tallet er større enn eller lik 7.\"\n \"Tallet er 7.\" ",
+        "correct": true,
+        "feedback": "Riktig. Nei. Begge if-testene utføres."
+      },
+      {
+        "answer": "\"Tallet er ikke 7.\"",
+        "correct": false,
+        "feedback": "Nei. Else-setningen utføres kun dersom foregående if-setning ikke er sann."
+      }
+    ]
+  },
+  {
+    "question": "Hva er output fra følgende kode?",
+    "code": "a = 7 \nif a >= 7: \n    print(\"Tallet er større enn eller lik 7.\") \nelif a == 7: \n    print(\"Tallet er 7.\") \nelse: \n    print(\"Tallet er ikke 7.\")",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "\"Tallet er større enn eller lik 7.\"",
+        "correct": true,
+        "feedback": "Riktig. Når en if-test er sann, hopper en over alle påfølgende elif og else."
+      },
+      {
+        "answer": "\"Tallet er 7.\" ",
+        "correct": false,
+        "feedback": "Nei. Første if-test er sann."
+      },
+      {
+        "answer": "\"Tallet er større enn eller lik 7.\"\n \"Tallet er 7.\" ",
+        "correct": false,
+        "feedback": "Nei. Når en if-test er sann, hopper en over alle påfølgende elif og else."
+      },
+      {
+        "answer": "\"Tallet er ikke 7.\"",
+        "correct": false,
+        "feedback": "Nei. Når en if-test er sann, hopper en over alle påfølgende elif og else."
+      }
+    ]
+  },
+
+  {
+    "question": "Hva er output fra følgende kode?",
+    "code": "a = 6 \nif a > 7: \n    print(\"Tallet er større enn 7.\") \nelif a == 7: \n    print(\"Tallet er 7.\") \nelse: \n    print(\"Tallet er ikke 7.\")",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "\"Tallet er større enn eller lik 7.\"",
+        "correct": false,
+        "feedback": "Nei. Ingen av vilkårene er sanne, altså aktiveres else-setningen."
+      },
+      {
+        "answer": "\"Tallet er 7.\" ",
+        "correct": false,
+        "feedback": "Nei. Ingen av vilkårene er sanne, altså aktiveres else-setningen."
+      },
+      {
+        "answer": "\"Tallet er større enn eller lik 7.\"\n \"Tallet er 7.\" ",
+        "correct": false,
+        "feedback": "Nei. Ingen av vilkårene er sanne, altså aktiveres else-setningen."
+      },
+      {
+        "answer": "\"Tallet er ikke 7.\"",
+        "correct": true,
+        "feedback": "Riktig. Ingen av vilkårene er sanne, altså aktiveres else-setningen."
+      }
+    ]
+  },
+
+  {
+    "question": "Hvilken kommando vil gi lista [2, 4, 6] fra følgende liste?",
+    "code": "liste = [0, 2, 4, 6, 8, 10]",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "liste[1:3]",
+        "correct": false,
+        "feedback": "Nei. Husk at [fra:til] gir til, men ikke med siste verdi."
+      },
+      {
+        "answer": "liste[1:4]",
+        "correct": true,
+        "feedback": "Riktig, for [fra:til] gir til, men ikke med siste verdi."
+      },
+      {
+        "answer": "liste[2, 4, 6]",
+        "correct": false,
+        "feedback": "Nei. Da måtte vi i såfall ha skrevet liste = [2, 4, 6]."
+      },
+      {
+        "answer": "liste[0:3]",
+        "correct": false,
+        "feedback": "Nei. 0 gir det første elementet, altså 0 i lista."
+      }
+    ]
+  },
+  {
+    "question": "Hva blir output på følgende program?",
+    "code": "tall = [1, 1, 13, 5, 55, 3, 4, 12, 10, 4] \nprint(tall[4] \ntall.remove(4) \nprint(tall[-2]) \ntall.append(3) \nprint(tall[:3])",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "55 10 [1, 1, 13]",
+        "correct": false,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "55 4 [1, 1, 13]",
+        "correct": false,
+        "feedback": "Nei. Husk at [fra:til] gir til, men ikke med siste verdi."
+      },
+      {
+        "answer": "55 10 5",
+        "correct": false,
+        "feedback": "Nei. Husk at [fra:til] gir til, men ikke med siste verdi."
+      },
+      {
+        "answer": "55 10 [1, 1, 13, 5]",
+        "correct": false,
+        "feedback": "Nei. Husk at [fra:til] gir til, men ikke med siste verdi."
+      }
+    ]
+  },
+  {
+    "question": "Hvordan kan vi slette tallet 7 fra følgende liste?",
+    "code": "liste = [1, 3, 5, 7]",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "liste.pop(7)",
+        "correct": false,
+        "feedback": "Nei. Funksjonen pop tar indeks som argument, ikke tallet i seg selv."
+      },
+      {
+        "answer": "del liste[3]",
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "liste.delete(7)",
+        "correct": false,
+        "feedback": "Nei, delete er ikke en funksjon i Python."
+      },
+      {
+        "answer": "liste.remove(7)",
+        "correct": false,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "liste.remove(3)",
+        "correct": true,
+        "feedback": "Nei. Funksjonen remove tar ikke indeks, men selve elementet som argument."
+      }
+    ]
+  },
+  {
+    "question": "Hva er output fra følgende program?",
+    "code": "liste = [1, 2, 3] \nprint(2*(liste[0] + liste[1]*2) + 2*(liste[0] + liste[-1]*2))",
+
+    "type": "numeric",
+    "precision": 2,
+    "answers": [
+      {
+        "type": "value",
+        "value": 24,
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "type": "range",
+        "range": [ -1000, 23 ],
+        "correct": false,
+        "feedback": "Feil. Tallet skal være større."
+      },
+      {
+        "type": "range",
+        "range": [ 25, 1000 ],
+        "correct": false,
+        "feedback": "Feil. Tallet skal være mindre."
+      },
+      {
+        "type": "default",
+        "feedback": "Feil."
+      }
+    ]
+  },
+  {
+    "question": "Hvilket output gir følgende program?",
+    "code": "liste = ['a','b','a'] \nprint(2*(liste[0] + liste[1]*2) + liste[0] + liste[-1]*2)",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "ababaa",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "abba",
+        "correct": false,
+        "feedback": "Feil. Her er det logikk, ikke kunnskap om populærkultur som gjelder."
+      },
+      {
+        "answer": "abbabbaaa",
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "abaabaaba",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "Vi får en feilmelding.",
+        "correct": false,
+        "feedback": "Feil. Det er lov å multiplisere strenger (tekst) med et hetall n. Da får vi strengen n ganger etter hverandre."
+      }
+    ]
+  }
+]

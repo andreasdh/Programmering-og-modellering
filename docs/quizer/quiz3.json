@@ -11,7 +11,7 @@
       {
         "answer": "[1, 0, 3, -1, 4]",
         "correct": false,
-        "feedback": "Nei. Husk at indeksering starter på null."
+        "feedback": "Feil. Husk at indeksering starter på null."
       },
       {
         "answer": "[1, 0, 3 -1]",
@@ -21,7 +21,7 @@
       {
         "answer": "[1, 2, 10, -1]",
         "correct": false,
-        "feedback": "Nei. Begge if-testene utføres."
+        "feedback": "Feil. Begge if-testene utføres."
       }
     ]
   },
@@ -34,22 +34,22 @@
       {
         "answer": "\"Tallet er større enn eller lik 7.\"",
         "correct": false,
-        "feedback": "Nei. Begge if-testene utføres."
+        "feedback": "Feil. Begge if-testene utføres."
       },
       {
         "answer": "\"Tallet er 7.\" ",
         "correct": false,
-        "feedback": "Nei. Begge if-testene utføres."
+        "feedback": "Feil. Begge if-testene utføres."
       },
       {
         "answer": "\"Tallet er større enn eller lik 7.\"\n \"Tallet er 7.\" ",
         "correct": true,
-        "feedback": "Riktig. Nei. Begge if-testene utføres."
+        "feedback": "Riktig. Feil. Begge if-testene utføres."
       },
       {
         "answer": "\"Tallet er ikke 7.\"",
         "correct": false,
-        "feedback": "Nei. Else-setningen utføres kun dersom foregående if-setning ikke er sann."
+        "feedback": "Feil. Else-setningen utføres kun dersom foregående if-setning ikke er sann."
       }
     ]
   },
@@ -66,17 +66,17 @@
       {
         "answer": "\"Tallet er 7.\" ",
         "correct": false,
-        "feedback": "Nei. Første if-test er sann."
+        "feedback": "Feil. Første if-test er sann."
       },
       {
         "answer": "\"Tallet er større enn eller lik 7.\"\n \"Tallet er 7.\" ",
         "correct": false,
-        "feedback": "Nei. Når en if-test er sann, hopper en over alle påfølgende elif og else."
+        "feedback": "Feil. Når en if-test er sann, hopper en over alle påfølgende elif og else."
       },
       {
         "answer": "\"Tallet er ikke 7.\"",
         "correct": false,
-        "feedback": "Nei. Når en if-test er sann, hopper en over alle påfølgende elif og else."
+        "feedback": "Feil. Når en if-test er sann, hopper en over alle påfølgende elif og else."
       }
     ]
   },
@@ -89,17 +89,17 @@
       {
         "answer": "\"Tallet er større enn eller lik 7.\"",
         "correct": false,
-        "feedback": "Nei. Ingen av vilkårene er sanne, altså aktiveres else-setningen."
+        "feedback": "Feil. Ingen av vilkårene er sanne, altså aktiveres else-setningen."
       },
       {
         "answer": "\"Tallet er 7.\" ",
         "correct": false,
-        "feedback": "Nei. Ingen av vilkårene er sanne, altså aktiveres else-setningen."
+        "feedback": "Feil. Ingen av vilkårene er sanne, altså aktiveres else-setningen."
       },
       {
         "answer": "\"Tallet er større enn eller lik 7.\"\n \"Tallet er 7.\" ",
         "correct": false,
-        "feedback": "Nei. Ingen av vilkårene er sanne, altså aktiveres else-setningen."
+        "feedback": "Feil. Ingen av vilkårene er sanne, altså aktiveres else-setningen."
       },
       {
         "answer": "\"Tallet er ikke 7.\"",
@@ -117,12 +117,12 @@
       {
         "answer": "if type(a) = str:",
         "correct": false,
-        "feedback": "Nei. Likhet sjekkes med doble likhetstegn. Enkle likhetstegn er tilordning til variabler."
+        "feedback": "Feil. Likhet sjekkes med doble likhetstegn. Enkle likhetstegn er tilordning til variabler."
       },
       {
         "answer": "if type(a) = string:",
         "correct": false,
-        "feedback": "Nei. Kommandoen for streng er str. Likhet sjekkes med doble likhetstegn. Enkle likhetstegn er tilordning til variabler."
+        "feedback": "Feil. Kommandoen for streng er str. Likhet sjekkes med doble likhetstegn. Enkle likhetstegn er tilordning til variabler."
       },
       {
         "answer": "if type(a) == str:",
@@ -132,7 +132,7 @@
       {
         "answer": "if type(a) == string:",
         "correct": false,
-        "feedback": "Nei. Kommandoen for streng er str."
+        "feedback": "Feil. Kommandoen for streng er str."
       }
     ]
   },
@@ -144,17 +144,17 @@
       {
         "answer": "10 3 13",
         "correct": false,
-        "feedback": "Nei"
+        "feedback": "Feil"
       },
       {
         "answer": "10 3 9",
         "correct": false,
-        "feedback": "Nei."
+        "feedback": "Feil."
       },
       {
         "answer": "3 3 13",
         "correct": false,
-        "feedback": "Nei."
+        "feedback": "Feil."
       },
       {
         "answer": "3 3 9",
@@ -171,7 +171,7 @@
       {
         "answer": "<",
         "correct": false,
-        "feedback": "Nei. 10 er ikke mindre enn 5."
+        "feedback": "Feil. 10 er ikke mindre enn 5."
       },
       {
         "answer": "==",

@@ -7,12 +7,12 @@
       {
         "answer": "1 2 3 4",
         "correct": false,
-        "feedback": "Nei. Range lager et intervall med (fra, til, steglengde)."
+        "feedback": "Feil. Range lager et intervall med (fra, til, steglengde)."
       },
       {
         "answer": "4 3 2 1",
         "correct": false,
-        "feedback": "Nei. Husk at fra-verdien inngår i intervallet i range."
+        "feedback": "Feil. Husk at fra-verdien inngår i intervallet i range."
       },
       {
         "answer": "5 4 3 2",
@@ -22,17 +22,17 @@
       {
         "answer": "2 3 4 5",
         "correct": false,
-        "feedback": "Nei. -1 i steglengde betyr at intervallet har synkende verdier."
+        "feedback": "Feil. -1 i steglengde betyr at intervallet har synkende verdier."
       },
       {
         "answer": "1 2 3 4 5",
         "correct": false,
-        "feedback": "Nei. -1 i steglengde betyr at intervallet har synkende verdier. Til-verdien (1) er heller ikke med i intervallet."
+        "feedback": "Feil. -1 i steglengde betyr at intervallet har synkende verdier. Til-verdien (1) er heller ikke med i intervallet."
       },
       {
         "answer": "5 4 3 2 1",
         "correct": false,
-        "feedback": "Nei. Til-verdien (1) er ikke med i intervallet."
+        "feedback": "Feil. Til-verdien (1) er ikke med i intervallet."
       }
     ]
   },
@@ -44,17 +44,17 @@
       {
         "answer": "Skriver ut alle oddetall fra og med 1 til og med 11.",
         "correct": false,
-        "feedback": "Nei. Kontroller når den første utskriften skjer."
+        "feedback": "Feil. Kontroller når den første utskriften skjer."
       },
       {
         "answer": "Skriver ut alle oddetall fra og med 1 til 11.",
         "correct": false,
-        "feedback": "Nei. Kontroller når den første utskriften skjer."
+        "feedback": "Feil. Kontroller når den første utskriften skjer."
       },
       {
         "answer": "Skriver ut alle oddetall fra og med 3 til og med 11.",
         "correct": false,
-        "feedback": "Nei. Kontroller hva a er siste gang den skrives ut."
+        "feedback": "Feil. Kontroller hva a er siste gang den skrives ut."
       },
       {
         "answer": "Skriver ut alle oddetall fra og med 3 til 11",
@@ -76,12 +76,12 @@
       {
         "answer": "b = b + 1",
         "correct": false,
-        "feedback": "Nei. Det er verdien av i, ikke b, som avgjør om løkka går eller ikke."
+        "feedback": "Feil. Det er verdien av i, ikke b, som avgjør om løkka går eller ikke."
       },
       {
         "answer": "stop()",
         "correct": false,
-        "feedback": "Nei. Funksjonen stop() finnes ikke i Python. Kommandoen break, derimot..."
+        "feedback": "Feil. Funksjonen stop() finnes ikke i Python. Kommandoen break, derimot..."
       },
       {
         "answer": "i = 10",
@@ -91,12 +91,12 @@
       {
         "answer": "b = 10",
         "correct": false,
-        "feedback": "Nei. Det er verdien av i, ikke b, som avgjør om løkka går eller ikke."
+        "feedback": "Feil. Det er verdien av i, ikke b, som avgjør om løkka går eller ikke."
       },
       {
         "answer": "stop_while()",
         "correct": false,
-        "feedback": "Nei. Funksjonen stop_while() finnes ikke i Python. Kommandoen break, derimot..."
+        "feedback": "Feil. Funksjonen stop_while() finnes ikke i Python. Kommandoen break, derimot..."
       }
     ]
   },
@@ -108,7 +108,7 @@
       {
         "answer": "Vi vet ikke på forhånd hvor mange ganger en for-løkke vil kjøre. Den kjører til en betingelse er oppfylt. En while-løkke kjører et bestemt antall ganger.",
         "correct": false,
-        "feedback": "Nei. Det er heller motsatt."
+        "feedback": "Feil. Det er heller motsatt."
       },
       {
         "answer": "Vi vet ikke på forhånd mange ganger en while-løkke vil kjøre. Den kjører til en betingelse er oppfylt. En for-løkke kjører et bestemt antall ganger.",
@@ -118,7 +118,7 @@
       {
         "answer": "De gjør akkurat det samme. De har bare forskjellig syntaks.",
         "correct": false,
-        "feedback": "Nei. Da KAN gjøre det samme, men ikke nødvendigvis."
+        "feedback": "Feil. Da KAN gjøre det samme, men ikke nødvendigvis."
       },
       {
         "answer": "En for-løkke tester om en betingelse er oppfylt for hvert steg, men det gjør ikke en while-løkke",
@@ -130,13 +130,13 @@
 
   {
     "question": "Hvilken av følgende programmer gir følgende output?",
-    "code": "1 \n2 \n3 \n4 \n5 \n6",
+    "code": "1 \n2 \n3 \n4 \n5 \n6 ",
     "type": "multiple_choice",
     "answers": [
       {
         "answer": "index = 0\n while index < 6:    print(index) \nindex = index + 1",
         "correct": false,
-        "feedback": "Nei. Sjekk hva det første vi printer ut, er."
+        "feedback": "Feil. Sjekk hva det første vi printer ut, er."
       },
       {
         "answer": "index = 0\n while index < 6:\n    index = index + 1\n    print(index)",
@@ -146,98 +146,142 @@
       {
         "answer": "index = 1\n while index < 6:\n    print(index)\n    index = index + 1",
         "correct": false,
-        "feedback": "Nei. Sjekk hva det siste vi printer ut, er."
+        "feedback": "Feil. Sjekk hva det siste vi printer ut, er."
       },
       {
         "answer": "index = 0\n while index <= 6:\n    index = index + 1 \n    print(index)",
         "correct": false,
-        "feedback": "Nei. Her vil vi få med tallet 7 (hvorfor?)."
+        "feedback": "Feil. Her vil vi få med tallet 7 (hvorfor?)."
       }
     ]
   },
   {
-    "question": "A programmer makes a program to estimate the amount of matter that will be left after a certain number of years, based on a rate of decay of 200g per year. Fill in the blanks such the program will give the following output: \nIn year 10 the amount of matter remaining is 800 g.\nIn year 9 the amount of matter remaining is 600 g.\nIn year 8 the amount of matter remaining is 400 g.\nIn year 7 the amount of matter remaining is 200 g.\nIn year 6 the amount of matter remaining is 0 g. ",
-    "code": "year = __\ndecay = 200\nmatter = 1000\nwhile year > 0 ___ matter > 0:\n    matter = matter - decay\n    print(\"In year\", year, \"the amount of matter remaining is\", matter, \"g.\")\n    year = year __ 1",
+    "question": "Hva blir output i dette programmet? ",
+    "code": "i = 0 \ntotal = 0 \nwhile total < 0: \n    i = i - 1\n    total = total - i \n    print(i, total)",
     "type": "multiple_choice",
     "answers": [
       {
-        "answer": "Number 11, conditional and, sign -",
+        "answer": "Dette gir en uendelig løkke.",
+        "correct": false,
+        "feedback": "Feil. Er kriteriet for at løkka skal gå, tilfredsstilt?"
+      },
+      {
+        "answer": "-1, 1",
+        "correct": false,
+        "feedback": "Feil. Er kriteriet for at løkka skal gå, tilfredsstilt?"
+      },
+      {
+        "answer": "Vi får en feilmelding.",
+        "correct": false,
+        "feedback": "Feil. Dette er gyldig syntaks."
+      },
+      {
+        "answer": "Ingen output",
         "correct": true,
-        "feedback": "Riktig."
-      },
-      {
-        "answer": "Number 11, conditional or, sign +",
-        "correct": false,
-        "feedback": "Nei."
-      },
-      {
-        "answer": "Number 10, conditional and, sign -",
-        "correct": false,
-        "feedback": "Nei."
-      },
-      {
-        "answer": "Number 10, conditional or, sign +",
-        "correct": false,
-        "feedback": "Nei."
+        "feedback": "Riktig. Løkka vil aldri starte, for total er ikke mindre enn null til å begynne med."
       }
     ]
   },
   {
-    "question": "Hva må vi sette inn i koden for å få 15 som output?",
-    "code": "a = 10 \nb = 5 \nif a ___ b: \n    print(a + b)",
-    "type": "many_choice",
+    "question": "Hvilke(t) tall skrives ut når dette programmet kjøres?",
+    "code": "tall = 5 \nwhile tall > 2: \n    tall = tall - 1\n    print(tall)",
+    "type": "multiple_choice",
     "answers": [
       {
-        "answer": "<",
+        "answer": "4",
         "correct": false,
-        "feedback": "Nei. 10 er ikke mindre enn 5."
+        "feedback": "Feil. Print-kommandoen er inni løkka, så den kjøres flere ganger."
       },
       {
-        "answer": "==",
+        "answer": "2",
         "correct": false,
-        "feedback": "Riktig."
+        "feedback": "Feil. Print-kommandoen er inni løkka, så den kjøres flere ganger."
       },
       {
-        "answer": "!=",
+        "answer": "4 3 2",
         "correct": true,
-        "feedback": "Riktig. != betyr \"ikke lik\", og 10 er ikke lik 5."
+        "feedback": "Riktig. Print-kommandoen er inni løkka, så den kjøres flere ganger."
       },
       {
-        "answer": ">",
+        "answer": "4 3",
+        "correct": false,
+        "feedback": "Feil. Print-kommandoen står til slutt i løkka, så den skriver ut enda et tall"
+      },
+      {
+        "answer": "3",
+        "correct": false,
+        "feedback": "Feil. Print-kommandoen er inni løkka, så den kjøres flere ganger."
+      }
+    ]
+  },
+
+  {
+    "question": "Hvilke(t) tall skrives ut når dette programmet kjøres?",
+    "code": "tall = 5 \nwhile tall > 2: \n    tall = tall - 1\nprint(tall)",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "4",
+        "correct": false,
+        "feedback": "Feil. Det er det siste tallet som skrives ut."
+      },
+      {
+        "answer": "2",
         "correct": true,
-        "feedback": "Riktig. 10 er større enn 5."
+        "feedback": "Riktig. Det er det siste tallet som skrives ut."
+      },
+      {
+        "answer": "4 3 2",
+        "correct": false,
+        "feedback": "Feil. Print-kommandoen er utenfor løkka, så den kjøres kun til sist."
+      },
+      {
+        "answer": "4 3",
+        "correct": false,
+        "feedback": "Feil. Print-kommandoen er utenfor løkka, så den kjøres kun til sist."
+      },
+      {
+        "answer": "3",
+        "correct": false,
+        "feedback": "Feil. Det er det siste tallet som skrives ut."
       }
     ]
   },
   {
     "question": "Hva er output fra følgende program?",
-    "code": "a = [1, 3, 4, 5] \nif 3 in a: \n    a.remove(1) \nelse: \n    a.append(2) \nprint(sum(a))",
+    "code": "s = 0 \ntall = 2 \nfor i in range(3):\n    s = s + tall\n    tall = tall + 3\n print(s) ",
     "type": "numeric",
     "precision": 0,
     "answers": [
       {
         "type": "value",
-        "value": 12,
+        "value": 15,
         "correct": true,
         "feedback": "Riktig."
       },
       {
         "type": "value",
-        "value": 13,
+        "value": 11,
         "correct": false,
-        "feedback": "Feil. Lista er ikke uendret etter vilkåret."
+        "feedback": "Feil. Det er verdien til variabelen tall."
       },
       {
         "type": "value",
-        "value": 15,
+        "value": 7,
         "correct": false,
-        "feedback": "Feil. Tallet 3 er i lista a, så første vilkår gjennomføres."
+        "feedback": "Feil. Løkka går enda en gang."
       },
       {
         "type": "value",
-        "value": 14,
+        "value": 2,
         "correct": false,
-        "feedback": "Feil. Det er kun den første if-elif-else-setningen som er sann, som utføres."
+        "feedback": "Feil. Verdien til s endrer seg gjennom løkka."
+      },
+      {
+        "type": "value",
+        "value": 3,
+        "correct": false,
+        "feedback": "Feil. Det er verdien til tall som adderes til s, ikke verdien til i."
       },
       {
         "type": "default",
@@ -246,32 +290,32 @@
     ]
   },
   {
-    "question": "Hvilke av følgende verdier for a, b, c og d vil skrive ut \"Vilkår a, c og d er sann\" gitt følgende program?",
-    "code": "l = [4, 5, 6, 1, 1, 2, 7] \nif a == l[3]: \n    if b == l[0]: \n        print(\"Vilkår a og b er sann\") \n     if c == l[5]: \n        if d == l[2]: \n            print(\"Vilkår a, c og d er sann\")",
+    "question": "Hvilke av alternativene nedenfor vil gi oss 6 9 12 15 som output gitt følgende program?",
+    "code": "tall = ___\n while tall <= _____:\n    print(tall * 3)\n    tall = tall + 1",
     "type": "multiple_choice",
     "answers": [
       {
-        "answer": "a = 1 b = 5 c = 2 d = 6",
+        "answer": "2, 5",
         "correct": true,
         "feedback": "Riktig."
       },
       {
-        "answer": "a = 6 b = 1 c = 1 d = 5",
+        "answer": "2, 6",
         "correct": false,
         "feedback": "Feil."
       },
       {
-        "answer": "a = 1 b = 4 c = 2 d = 3",
+        "answer": "1, 5",
         "correct": false,
         "feedback": "Riktig."
       },
       {
-        "answer": "a = 1 b = 4 c = 2 d = 6",
+        "answer": "1, 6",
         "correct": false,
         "feedback": "Feil."
       },
       {
-        "answer": "Ingen kombinasjoner av a, b, c og d kan gi denne outputen.",
+        "answer": "Ingen alternativer kan gi denne outputen.",
         "correct": false,
         "feedback": "Feil."
       }
@@ -279,39 +323,268 @@
   },
   {
     "question": "Hva skrives ut når dette programmet kjøres?",
-    "code": "l = [0.1, 3, \"molekyl\"] \nif type(l[2]) == str: \n    print(\"Første betingelse sann\") \n    if l[1] <= 0.15: \n        print(\"Andre betingelse sann\") \n     if len(l) == 3: \n        print(\"Tredje betingelse sann\")",
+    "code": "cellekultur = 150\nwhile cellekultur <= 300:\n    cellekultur = cellekultur * 2\nprint(cellekultur)",
     "type": "multiple_choice",
     "answers": [
       {
-        "answer": "\"Første betingelse sann!\"",
+        "answer": "300",
         "correct": false,
-        "feedback": "Feil."
+        "feedback": "Feil. Husk at betingelsen i løkka benytter <=."
       },
       {
-        "answer": "\"Andre betingelse sann!\"",
-        "correct": false,
-        "feedback": "Feil."
-      },
-      {
-        "answer": "\"Første betingelse sann!\" og \"Tredje betingelse sann!\"",
+        "answer": "600",
         "correct": true,
         "feedback": "Riktig."
       },
       {
-        "answer": "\"Første betingelse sann!\" og \"Andre betingelse sann!\"",
+        "answer": "150 300 600",
+        "correct": false,
+        "feedback": "Feil. Cellekulturen øker før første utskrift. Print-kommandoen står utenfor løkka."
+      },
+      {
+        "answer": "300 600",
+        "correct": false,
+        "feedback": "Feil. Print-kommandoen står utenfor løkka."
+      },
+      {
+        "answer": "150",
+        "correct": false,
+        "feedback": "Feil. Cellekulturen endrer seg i løpet av programmet."
+      }
+    ]
+  },
+  {
+    "question": "Hva gjør dette programmet?",
+    "code": "total = 0\nfor number in range(10):\n    total = total + (number + 1)\nprint(total)",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Summere alle heltall fra 1 til 10.",
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "Summere alle tall fra 1 til 9.",
         "correct": false,
         "feedback": "Feil."
       },
       {
-        "answer": "\"Andre betingelse sann!\" og \"Tredje betingelse sann!\"",
+        "answer": "Summere alle tall fra 0 til 10.",
         "correct": false,
         "feedback": "Feil."
       },
       {
-        "answer": "\"Første betingelse sann!\" og \"Andre betingelse sann!\" og \"Tredje betingelse sann!\"",
+        "answer": "Summere alle tall fra 1 til 11.",
         "correct": false,
         "feedback": "Feil."
       }
     ]
+  },
+  {
+    "question": "Hva skrives ut når dette programmet kjøres?",
+    "code": "for n in range(1, 10):\n    print(\"n\"))",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "1 2 3 4 5 6 7 8 9",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "1 2 3 4 5 6 7 8 9 10",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "0 1 2 3 4 5 6 7 8 9",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "n n n n n n n n n",
+        "correct": true,
+        "feedback": "Riktig. \"n\" er en streng. Vi printer ikke ut verdien til variabelen n."
+      }
+    ]
+  },
+  {
+    "question": "Hva skrives ut når dette programmet kjøres?",
+    "code": "for n in range(1, 10):\n    print(str(n)))",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "1 2 3 4 5 6 7 8 9",
+        "correct": true,
+        "feedback": "Riktig. str(n) gir verdien av n som en tekst."
+      },
+      {
+        "answer": "1 2 3 4 5 6 7 8 9 10",
+        "correct": false,
+        "feedback": "Feil. str(n) gir verdien av n som en tekst."
+      },
+      {
+        "answer": "0 1 2 3 4 5 6 7 8 9",
+        "correct": false,
+        "feedback": "Feil. str(n) gir verdien av n som en tekst."
+      },
+      {
+        "answer": "n n n n n n n n n",
+        "correct": false,
+        "feedback": "Feil. str(n) gir verdien av n som en tekst."
+      }
+    ]
+  },
+  {
+    "question": "Hva mangler i programmet nedenfor for å få output 1 av 5, 2 av 5, 3 av 5, 4 av 5 og 5 av 5?",
+    "code": "for n in range(5):\n print(____________)",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "n + 1, av 5",
+        "correct": false,
+        "feedback": "Feil. \"av 5\" må være en streng."
+      },
+      {
+        "answer": "n + 1 av 5",
+        "correct": false,
+        "feedback": "Feil. \"av 5\" må være en streng. Vi trenger komma som separerer ulike variabler ved utskrift."
+      },
+      {
+        "answer": "n + 1, \"av\", 5",
+        "correct": true,
+        "feedback": "Riktig. Vi kan skrive ut et dynamisk tall, en streng og til slutt et fast tall."
+      },
+      {
+        "answer": "n + 1, \"av 5\"",
+        "correct": true,
+        "feedback": "Riktig. Vi kan skrive ut et tall og så en streng."
+      },
+      {
+        "answer": "n + 1 + \" av 5\"",
+        "correct": false,
+        "feedback": "Feil. Vi kan ikke addere tall og strenger"
+      },
+      {
+        "answer": "str(n + 1) + \" av 5\"",
+        "correct": true,
+        "feedback": "Riktig. Vi kan addere to strenger."
+      }
+    ]
+  },
+  {
+    "question": "Hva mangler i programmet nedenfor for å få output 1 av 5, 2 av 5, 3 av 5, 4 av 5 og 5 av 5?",
+    "code": "for n in range(5):\n print(____________)",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "n + 1, av 5",
+        "correct": false,
+        "feedback": "Feil. \"av 5\" må være en streng."
+      },
+      {
+        "answer": "n + 1 av 5",
+        "correct": false,
+        "feedback": "Feil. \"av 5\" må være en streng. Vi trenger komma som separerer ulike variabler ved utskrift."
+      },
+      {
+        "answer": "n + 1, \"av\", 5",
+        "correct": true,
+        "feedback": "Riktig. Vi kan skrive ut et dynamisk tall, en streng og til slutt et fast tall."
+      },
+      {
+        "answer": "n + 1, \"av 5\"",
+        "correct": true,
+        "feedback": "Riktig. Vi kan skrive ut et tall og så en streng."
+      },
+      {
+        "answer": "n + 1 + \" av 5\"",
+        "correct": false,
+        "feedback": "Feil. Vi kan ikke addere tall og strenger"
+      },
+      {
+        "answer": "str(n + 1) + \" av 5\"",
+        "correct": true,
+        "feedback": "Riktig. Vi kan addere to strenger."
+      }
+    ]
+  },
+  {
+    "question": "Hva mangler i programmet nedenfor for å få output 1 av 5, 2 av 5, 3 av 5, 4 av 5 og 5 av 5?",
+    "code": "for n in range(5):\n print(____________)",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "n + 1, av 5",
+        "correct": false,
+        "feedback": "Feil. \"av 5\" må være en streng."
+      },
+      {
+        "answer": "n + 1 av 5",
+        "correct": false,
+        "feedback": "Feil. \"av 5\" må være en streng. Vi trenger komma som separerer ulike variabler ved utskrift."
+      },
+      {
+        "answer": "n + 1, \"av\", 5",
+        "correct": true,
+        "feedback": "Riktig. Vi kan skrive ut et dynamisk tall, en streng og til slutt et fast tall."
+      },
+      {
+        "answer": "n + 1, \"av 5\"",
+        "correct": true,
+        "feedback": "Riktig. Vi kan skrive ut et tall og så en streng."
+      },
+      {
+        "answer": "n + 1 + \" av 5\"",
+        "correct": false,
+        "feedback": "Feil. Vi kan ikke addere tall og strenger"
+      },
+      {
+        "answer": "str(n + 1) + \" av 5\"",
+        "correct": true,
+        "feedback": "Riktig. Vi kan addere to strenger."
+      }
+    ]
+  },
+  {
+    "question": "Hva er summen av alle tallene som skrives ut når dette programmet kjører?",
+    "code": "talliste = [1,4,-1,0,8,1]\nfor tall in talliste:\n    if tall < 0:\n        print(tall)\n    else:\n        print(tall*-1)",
+    "type": "numeric",
+    "answers": [
+      {
+        "type": "value",
+        "value": "-15",
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "type": "value",
+        "value": "15",
+        "correct": false,
+        "feedback": "Feil. Pass på fortegnet."
+      },
+      {
+        "type": "default",
+        "feedback": "Feil."
+      }
+    ]
+  },
+  {
+    "question": "Hva skrives ut når dette programmet kjører?",
+    "code": "a = 0\nfor i in range(4):\n    for j in range(2,5,2):\n        a += i+j\nprint(a)",
+    "type": "numeric",
+    "answers": [
+      {
+        "type": "value",
+        "value": "36",
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "type": "default",
+        "feedback": "Feil."
+      }
+    ]
   }
+
 ]
+  

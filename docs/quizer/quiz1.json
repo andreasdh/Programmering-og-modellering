@@ -7,17 +7,17 @@
             {
                 "answer": "1",
                 "correct": false,
-                "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                "feedback": "Feil. Variablene inneholder strenger. Strenger slås sammen når de addderes."
             },
             {
                 "answer": "2",
                 "correct": false,
-                "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                "feedback": "Feil. Variablene inneholder strenger. Strenger slås sammen når de addderes."
             },
             {
                 "answer": "3",
                 "correct": false,
-                "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                "feedback": "Feil. Variablene inneholder strenger. Strenger slås sammen når de addderes."
             },
             {
                 "answer": "12",
@@ -27,7 +27,7 @@
             {
                 "answer": "error",
                 "correct": false,
-                "feedback": "Nei. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                "feedback": "Feil. Variablene inneholder strenger. Strenger slås sammen når de addderes."
             }
         ]
     },
@@ -39,17 +39,17 @@
             {
                 "answer": "\"Hei\" blir skrevet ut.",
                 "correct": false,
-                "feedback": "Nei. Korrekt syntaks for utskrift er: print(\"Hei\")"
+                "feedback": "Feil. Korrekt syntaks for utskrift er: print(\"Hei\")"
             },
             {
                 "answer": "En feilmelding blir skrevet ut.",
                 "correct": false,
-                "feedback": "Nei. Det er fullt tillatt å skrive over print-funksjonen. Men nå finnes ikke print-funksjonen i programmet ditt mer, og du må restarte Python."
+                "feedback": "Feil. Det er fullt tillatt å skrive over print-funksjonen. Men nå finnes ikke print-funksjonen i programmet ditt mer, og du må restarte Python."
             },
             {
                 "answer": "Programmet krasjer.",
                 "correct": false,
-                "feedback": "Nei. Et program krasjer ikke med mindre det skjer noe teknisk feil."
+                "feedback": "Feil. Et program krasjer ikke med mindre det skjer noe teknisk feil."
             },
             {
                 "answer": "Ingenting skjer.",
@@ -66,12 +66,12 @@
            {
                "answer": "En feilmelding blir skrevet ut.",
                "correct": false,
-               "feedback": "Nei. Dette er en gyldig syntaks."
+               "feedback": "Feil. Dette er en gyldig syntaks."
            },
            {
                "answer": "True.",
                "correct": false,
-               "feedback": "Nei. 3 er ikke større enn 4."
+               "feedback": "Feil. 3 er ikke større enn 4."
            },
            {
                "answer": "False.",
@@ -93,22 +93,22 @@
                        {
                 "answer": "3",
                 "correct": false,
-                "feedback": "Nei. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
+                "feedback": "Feil. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
             },
             {
                 "answer": "12",
                 "correct": false,
-                "feedback": "Nei. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
+                "feedback": "Feil. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
             },
             {
                 "answer": "1",
                 "correct": false,
-                "feedback": "Nei. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
+                "feedback": "Feil. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
             },
             {
                 "answer": "3",
                 "correct": true,
-                "feedback": "Nei. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
+                "feedback": "Feil. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
             },
             {
                 "answer": "Feilmelding",

@@ -10,7 +10,7 @@
   - file: docs/tema1_grunnleggende_programmering/quiz2
   - file: docs/tema1_grunnleggende_programmering/quiz3
   - file: docs/tema1_grunnleggende_programmering/quiz4
-  - file: docs/test_quiz
+
 - part: Tema 2 - Kodestrukturering
   chapters:
   - file: docs/tema2_kodestrukturering/funksjoner

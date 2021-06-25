@@ -1,0 +1,317 @@
+[
+  {
+    "question": "Hvilke verdier blir skrevet ut?",
+    "code": "for i in range(5, 1, -1): \n    print(i)",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "1 2 3 4",
+        "correct": false,
+        "feedback": "Nei. Range lager et intervall med (fra, til, steglengde)."
+      },
+      {
+        "answer": "4 3 2 1",
+        "correct": false,
+        "feedback": "Nei. Husk at fra-verdien inngår i intervallet i range."
+      },
+      {
+        "answer": "5 4 3 2",
+        "correct": true,
+        "feedback": "Riktig. Intervallet går baklengs (-1) fra og til (men ikke med) de gitte verdiene."
+      },
+      {
+        "answer": "2 3 4 5",
+        "correct": false,
+        "feedback": "Nei. -1 i steglengde betyr at intervallet har synkende verdier."
+      },
+      {
+        "answer": "1 2 3 4 5",
+        "correct": false,
+        "feedback": "Nei. -1 i steglengde betyr at intervallet har synkende verdier. Til-verdien (1) er heller ikke med i intervallet."
+      },
+      {
+        "answer": "5 4 3 2 1",
+        "correct": false,
+        "feedback": "Nei. Til-verdien (1) er ikke med i intervallet."
+      }
+    ]
+  },
+  {
+    "question": "Hva gjør dette programmet?",
+    "code": "a = 1 \nwhile a < 11: \n     a += 2 \n    print(a)",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Skriver ut alle oddetall fra og med 1 til og med 11.",
+        "correct": false,
+        "feedback": "Nei. Kontroller når den første utskriften skjer."
+      },
+      {
+        "answer": "Skriver ut alle oddetall fra og med 1 til 11.",
+        "correct": false,
+        "feedback": "Nei. Kontroller når den første utskriften skjer."
+      },
+      {
+        "answer": "Skriver ut alle oddetall fra og med 3 til og med 11.",
+        "correct": false,
+        "feedback": "Nei. Kontroller hva a er siste gang den skrives ut."
+      },
+      {
+        "answer": "Skriver ut alle oddetall fra og med 3 til 11",
+        "correct": false,
+        "feedback": "Riktig."
+      }
+    ]
+  },
+  {
+    "question": "Hva kan stå istedenfor ??? i programmet slik at det ikke prøver å skrive ut b uendelig mange ganger?",
+    "code": "i = 0 \nb = 2 \nwhile i < 10 \n    print(b) \n    ???",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "i = i + 1",
+        "correct": true,
+        "feedback": "Riktig. Da øker i med 1 hver gang i løkka."
+      },
+      {
+        "answer": "b = b + 1",
+        "correct": false,
+        "feedback": "Nei. Det er verdien av i, ikke b, som avgjør om løkka går eller ikke."
+      },
+      {
+        "answer": "stop()",
+        "correct": false,
+        "feedback": "Nei. Funksjonen stop() finnes ikke i Python. Kommandoen break, derimot..."
+      },
+      {
+        "answer": "i = 10",
+        "correct": false,
+        "feedback": "Riktig. Men da forlater vi løkka etter én utskrift."
+      },
+      {
+        "answer": "b = 10",
+        "correct": false,
+        "feedback": "Nei. Det er verdien av i, ikke b, som avgjør om løkka går eller ikke."
+      },
+      {
+        "answer": "stop_while()",
+        "correct": false,
+        "feedback": "Nei. Funksjonen stop_while() finnes ikke i Python. Kommandoen break, derimot..."
+      }
+    ]
+  },
+
+  {
+    "question": "Hva er forskjellen mellom en for- og en while-løkke?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Vi vet ikke på forhånd hvor mange ganger en for-løkke vil kjøre. Den kjører til en betingelse er oppfylt. En while-løkke kjører et bestemt antall ganger.",
+        "correct": false,
+        "feedback": "Nei. Det er heller motsatt."
+      },
+      {
+        "answer": "Vi vet ikke på forhånd mange ganger en while-løkke vil kjøre. Den kjører til en betingelse er oppfylt. En for-løkke kjører et bestemt antall ganger.",
+        "correct": true,
+        "feedback": "Riktig. Vi kaller ofte while-løkker for \"tilstandsløkker\" og for-løkker for \"telle-løkker\"."
+      },
+      {
+        "answer": "De gjør akkurat det samme. De har bare forskjellig syntaks.",
+        "correct": false,
+        "feedback": "Nei. Da KAN gjøre det samme, men ikke nødvendigvis."
+      },
+      {
+        "answer": "En for-løkke tester om en betingelse er oppfylt for hvert steg, men det gjør ikke en while-løkke",
+        "correct": false,
+        "feedback": "Feil. Det er heller motsatt."
+      }
+    ]
+  },
+
+  {
+    "question": "Hvilken av følgende programmer gir følgende output?",
+    "code": "1 \n2 \n3 \n4 \n5 \n6",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "index = 0\n while index < 6:    print(index) \nindex = index + 1",
+        "correct": false,
+        "feedback": "Nei. Sjekk hva det første vi printer ut, er."
+      },
+      {
+        "answer": "index = 0\n while index < 6:\n    index = index + 1\n    print(index)",
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "index = 1\n while index < 6:\n    print(index)\n    index = index + 1",
+        "correct": false,
+        "feedback": "Nei. Sjekk hva det siste vi printer ut, er."
+      },
+      {
+        "answer": "index = 0\n while index <= 6:\n    index = index + 1 \n    print(index)",
+        "correct": false,
+        "feedback": "Nei. Her vil vi få med tallet 7 (hvorfor?)."
+      }
+    ]
+  },
+  {
+    "question": "A programmer makes a program to estimate the amount of matter that will be left after a certain number of years, based on a rate of decay of 200g per year. Fill in the blanks such the program will give the following output: \nIn year 10 the amount of matter remaining is 800 g.\nIn year 9 the amount of matter remaining is 600 g.\nIn year 8 the amount of matter remaining is 400 g.\nIn year 7 the amount of matter remaining is 200 g.\nIn year 6 the amount of matter remaining is 0 g. ",
+    "code": "year = __\ndecay = 200\nmatter = 1000\nwhile year > 0 ___ matter > 0:\n    matter = matter - decay\n    print(\"In year\", year, \"the amount of matter remaining is\", matter, \"g.\")\n    year = year __ 1",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Number 11, conditional and, sign -",
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "Number 11, conditional or, sign +",
+        "correct": false,
+        "feedback": "Nei."
+      },
+      {
+        "answer": "Number 10, conditional and, sign -",
+        "correct": false,
+        "feedback": "Nei."
+      },
+      {
+        "answer": "Number 10, conditional or, sign +",
+        "correct": false,
+        "feedback": "Nei."
+      }
+    ]
+  },
+  {
+    "question": "Hva må vi sette inn i koden for å få 15 som output?",
+    "code": "a = 10 \nb = 5 \nif a ___ b: \n    print(a + b)",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "<",
+        "correct": false,
+        "feedback": "Nei. 10 er ikke mindre enn 5."
+      },
+      {
+        "answer": "==",
+        "correct": false,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "!=",
+        "correct": true,
+        "feedback": "Riktig. != betyr \"ikke lik\", og 10 er ikke lik 5."
+      },
+      {
+        "answer": ">",
+        "correct": true,
+        "feedback": "Riktig. 10 er større enn 5."
+      }
+    ]
+  },
+  {
+    "question": "Hva er output fra følgende program?",
+    "code": "a = [1, 3, 4, 5] \nif 3 in a: \n    a.remove(1) \nelse: \n    a.append(2) \nprint(sum(a))",
+    "type": "numeric",
+    "precision": 0,
+    "answers": [
+      {
+        "type": "value",
+        "value": 12,
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "type": "value",
+        "value": 13,
+        "correct": false,
+        "feedback": "Feil. Lista er ikke uendret etter vilkåret."
+      },
+      {
+        "type": "value",
+        "value": 15,
+        "correct": false,
+        "feedback": "Feil. Tallet 3 er i lista a, så første vilkår gjennomføres."
+      },
+      {
+        "type": "value",
+        "value": 14,
+        "correct": false,
+        "feedback": "Feil. Det er kun den første if-elif-else-setningen som er sann, som utføres."
+      },
+      {
+        "type": "default",
+        "feedback": "Feil."
+      }
+    ]
+  },
+  {
+    "question": "Hvilke av følgende verdier for a, b, c og d vil skrive ut \"Vilkår a, c og d er sann\" gitt følgende program?",
+    "code": "l = [4, 5, 6, 1, 1, 2, 7] \nif a == l[3]: \n    if b == l[0]: \n        print(\"Vilkår a og b er sann\") \n     if c == l[5]: \n        if d == l[2]: \n            print(\"Vilkår a, c og d er sann\")",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "a = 1 b = 5 c = 2 d = 6",
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "a = 6 b = 1 c = 1 d = 5",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "a = 1 b = 4 c = 2 d = 3",
+        "correct": false,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "a = 1 b = 4 c = 2 d = 6",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "Ingen kombinasjoner av a, b, c og d kan gi denne outputen.",
+        "correct": false,
+        "feedback": "Feil."
+      }
+    ]
+  },
+  {
+    "question": "Hva skrives ut når dette programmet kjøres?",
+    "code": "l = [0.1, 3, \"molekyl\"] \nif type(l[2]) == str: \n    print(\"Første betingelse sann\") \n    if l[1] <= 0.15: \n        print(\"Andre betingelse sann\") \n     if len(l) == 3: \n        print(\"Tredje betingelse sann\")",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "\"Første betingelse sann!\"",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "\"Andre betingelse sann!\"",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "\"Første betingelse sann!\" og \"Tredje betingelse sann!\"",
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "\"Første betingelse sann!\" og \"Andre betingelse sann!\"",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "\"Andre betingelse sann!\" og \"Tredje betingelse sann!\"",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "\"Første betingelse sann!\" og \"Andre betingelse sann!\" og \"Tredje betingelse sann!\"",
+        "correct": false,
+        "feedback": "Feil."
+      }
+    ]
+  }
+]

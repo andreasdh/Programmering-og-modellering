@@ -233,5 +233,37 @@
         "feedback": "Riktig."
       }
     ]
+  },
+  {
+    "question": "Vi har en liste N = [1, 2, 3, 4, 5]. Hva blir lista når vi kjører følgende kodesnutt?",
+    "code": "N[3] = 0 \nprint(N)",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "[1, 2, 3, 0, 5]",
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "[1, 2, 0, 4, 5]",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "[1, 2, 3, 0, 0]",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "[0, 0, 0, 4, 5]",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "Dette endrer ikke denne lista.",
+        "correct": false,
+        "feedback": "Feil."
+      }
+    ]
   }
 ]

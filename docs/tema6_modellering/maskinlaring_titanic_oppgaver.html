@@ -1,0 +1,696 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maskinlæring med Titanic (oppgave) &#8212; Programmering og modellering</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Datafiler" href="../datafiler.html" />
+    <link rel="prev" title="Maskinlæring (med pingviner)" href="pingviner.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/datalogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programmering og modellering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Tema 1 - Grunnleggende programmering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+   Tall og variabler (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/kontrollstrukturer.html">
+   Kontrollstrukturer (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+   Programmeringsverktøy (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/grunnleggende_programmering.html">
+   Grunnleggende programmering (oppgaver)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/quiz1.html">
+   Quiz 1: Variabler og aritmetikk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/quiz2.html">
+   Quiz 2: Lister
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/quiz3.html">
+   Quiz 3: Vilkår (if-tester)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/quiz4.html">
+   Quiz 4: Løkker
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 2 - Kodestrukturering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema2_kodestrukturering/funksjoner.html">
+   Funksjoner (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+   Gjennomgang: Klasser og objekter
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 3 - Datahåndtering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema3_datahandtering/datasamlinger.html">
+   Datasamlinger (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema3_datahandtering/plotting.html">
+   Plotting (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema3_datahandtering/datahandtering.html">
+   Datahåndtering (teori)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 4 - Grafikk
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema4_grafikk/tilfeldige_tall_grafikk.html">
+   Tilfeldige tall og grafikk (teori)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 5 - Algoritmer
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema5_algoritmer/derivasjon.html">
+   Numerisk derivasjon (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema5_algoritmer/numeriske_biblioteker.html">
+   Numeriske biblioteker
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema5_algoritmer/symbolsk_utregning.html">
+   Symbolsk utregning (CAS)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 6 - Modellering
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="diskret_modellering.html">
+   Differenslikninger (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="smittemodellering_diskret.html">
+   Modelleringsoppgave I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="differensiallikninger.html">
+   Differensiallikninger (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="differensiallikninger_oppgaver.html">
+   Differensiallikninger (oppgaver)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pingviner.html">
+   Maskinlæring (med pingviner)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Maskinlæring med Titanic (oppgave)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Datafiler
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datafiler.html">
+   Datafiler
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/tema6_modellering/maskinlaring_titanic_oppgaver.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/andreasdh/programmering-og-modellering/master?urlpath=tree/mini_book/docs/tema6_modellering/maskinlaring_titanic_oppgaver.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Maskinlæring med Titanic (oppgave)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utforsking-og-opprydding-av-datasettet">
+     Utforsking og opprydding av datasettet
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualiseringer">
+     Visualiseringer
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maskinlaering">
+     Maskinlæring
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-og-validering-av-modellen">
+     Test og validering av modellen
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lagre-og-apne-modellen-var">
+   Lagre og åpne modellen vår
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="maskinlaering-med-titanic-oppgave">
+<h1>Maskinlæring med Titanic (oppgave)<a class="headerlink" href="#maskinlaering-med-titanic-oppgave" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Les dataene</span>
+<span class="c1"># ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="utforsking-og-opprydding-av-datasettet">
+<h2>Utforsking og opprydding av datasettet<a class="headerlink" href="#utforsking-og-opprydding-av-datasettet" title="Permalink to this headline">¶</a></h2>
+<p>La oss undersøke dataene og rydde litt, dersom vi trenger det.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Skriv ut de fem første linjene</span>
+<span class="c1"># ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi ser at det ikke er alle kategoriene vi trenger. Siden vi er interessert i hvem som overlevde, og hvorfor, kan det også være lurt å sjekke hvor mange dette var. Du kan beregne sum og antall av et dataframe-element ved å bruke metodene .sum() og .count() på elementet (f.eks. titanic[‘age’].sum()).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sjekk hvor mange som overlevde</span>
+<span class="c1"># ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Slett kategorier du mener er irrelevante for overlevelse med datarammenavn.pop(&quot;navn på kolonne&quot;)</span>
+<span class="c1"># ...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi kan også undersøke manglende verdier og eventuelt sette inn representative verdier der det mangler.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Printer ut antall manglende verdier i kolonnene</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">titanic</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>survived      0
+pclass        0
+sex           0
+age         177
+sibsp         0
+parch         0
+class         0
+alive         0
+alone         0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fyller inn manglende alder med gjennomsnittet</span>
+<span class="n">gjennomsnitt</span> <span class="o">=</span> <span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">gjennomsnitt</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>I hvilke sammenhenger kan det være legitimt å gjøre som ovenfor? Var det legitimt i denne sammenhengen?</p></li>
+</ul>
+</div>
+<div class="section" id="visualiseringer">
+<h2>Visualiseringer<a class="headerlink" href="#visualiseringer" title="Permalink to this headline">¶</a></h2>
+<p>La oss først se hvilken effekt klasse og kjønn hadde på overlevelsessjansene:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Passasjerklasse</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;pclass&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;survived&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">titanic</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;ocean&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Antall døde (0) og overlevende (1) av hver klasse&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Klasse&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Antall&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/maskinlaring_titanic_oppgaver_12_0.png" src="../../_images/maskinlaring_titanic_oppgaver_12_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lag et tilsvarende plott som viser hvilken effekt kjønn hadde på overlevelsessjansene.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi ser, ikke overraskende, at menn på 3. klasse hadde særdeles dårlige odds. Vi har alderen til passasjerene, men ikke alderskategorier. Lag alderskategorier for barn og voksen, og lag en ny kolonne kalt “aldersklasse”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sortere etter alder</span>
+<span class="n">aldersklasse</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">alder</span> <span class="ow">in</span> <span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]:</span>
+    <span class="c1">### fyll inn kode her.</span>
+    
+<span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;aldersklasse&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">aldersklasse</span>
+
+<span class="c1"># Plott effekten aldersklasse har på overlevelse</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="maskinlaering">
+<h2>Maskinlæring<a class="headerlink" href="#maskinlaering" title="Permalink to this headline">¶</a></h2>
+<p>Vi skal nå lage en modell som kan forutsi hvorvidt en person overlever på Titanic eller ikke, gitt data om personen. Vi velger ut hvilke data vi ønsker å bruke som kriterium for overlevelse, og spesifiserer kategorien “survived” som målkategorien vår:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span><span class="p">,</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kriterier</span> <span class="o">=</span> <span class="n">titanic</span><span class="p">[[</span><span class="c1"># Legg inn kriterier (kolonnekategorier) for overlevelse her]]</span>
+<span class="n">kategorier</span> <span class="o">=</span> <span class="c1"># legg inn kategori her</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I maskinlæring er det viktig at modellen vår klarer å forutsi data som kommer utenfra datasettet vi trener modellen med. Derfor deler vi ofte opp dataene i et treningssett og et testsett. Treningssettet bruker vi til å trene modellen, testsettet til å teste og evaluere modellen i etterkant. Vi blander ikke disse dataene. Vi kan generere slike data med funksjonen <em>train_test_split()</em>. Her bruker vi 80 % av dataene til trening og 20 % til testing. Du bør bruke minst 70 % av dataene dine til trening.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">testandel</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="c1"># Andel brukt til testing</span>
+<span class="n">ml_data</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">kriterier</span><span class="p">,</span> <span class="n">kategorier</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="n">testandel</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">treningskriterier</span> <span class="o">=</span> <span class="n">ml_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">testkriterier</span> <span class="o">=</span> <span class="n">ml_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">treningskategorier</span> <span class="o">=</span> <span class="n">ml_data</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">testkategorier</span> <span class="o">=</span> <span class="n">ml_data</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Forklar hva funksjonen train_test_split gjør ut fra programmet ovenfor.</p></li>
+<li><p>Hva er poenget med separate treningskriterier og testkriterier?</p></li>
+</ul>
+<p>Nå kan vi lage modellen vår. Vi bruker en algoritme som heter <em>Decision Tree Classifier</em>. Det er basert på sammensatte og forgreinede valgtrær, der alle kombinasjoner av kriterier blir utforsket. Betingede sannsynligheter for ulike hendelser blir beregnet, og de mest sannsynlige utfallene blir framhevet basert på kombinasjonen av kriteriene. Først trener vi modellen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modell</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">modell</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">treningskriterier</span><span class="p">,</span> <span class="n">treningskategorier</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier()
+</pre></div>
+</div>
+</div>
+</div>
+<p>Det var det - da har vi en modell! Den ligger nå i et objekt som vi har kalt <em>modell</em>. Vi kan få innsyn i hvordan modellen ser ut, men det kan fort bli litt uoversiktlig og teknisk. La oss først nøye oss med å sjekke hvordan modellen takler testsettet vårt.</p>
+<ul class="simple">
+<li><p>Forklar med ord hva du tror modellen gjør når den “trener”.</p></li>
+</ul>
+</div>
+<div class="section" id="test-og-validering-av-modellen">
+<h2>Test og validering av modellen<a class="headerlink" href="#test-og-validering-av-modellen" title="Permalink to this headline">¶</a></h2>
+<p>La oss nå bruke modellen for å forutsi hvem som overlever og hvem som ikke gjør det:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modellkategorier_forutsett</span> <span class="o">=</span> <span class="n">modell</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testkriterier</span><span class="p">)</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">testkategorier</span><span class="p">,</span> <span class="n">modellkategorier_forutsett</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7597765363128491
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dette betyr at modellen forutsier riktig ca. 76 % av gangene. Det er en ok modell. For å få bedre oversikt over hva modellen forutsier riktig og hva den feiler på, kan vi konstruere en såkalt “Confusion Matrix” (forvirringsmatrise/feilmatrise):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">modellkategorier_forutsett</span><span class="p">,</span> <span class="n">testkategorier</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Forvirringsmatrise&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Predikerte verdier&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Sanne verdier&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/maskinlaring_titanic_oppgaver_26_0.png" src="../../_images/maskinlaring_titanic_oppgaver_26_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Hva forteller diagrammet ovenfor oss?</p></li>
+</ul>
+<p>Vi kan benytte disse dataene til å beregne hvor stor prosentandel av overlevende og døde som modellen klarte å forutsi korrekt.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Beregn andelen korrekt forventet død og korrekt forventet overlevelse.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Sammenlikn størrelsen på disse andelene. Hva er eventuelt årsaken til at det er en forskjell på dem?</p></li>
+</ul>
+<p>La oss helt til sist visualisere modellen vår. Vi velger maks dybde på modellen til 2 for at vi ikke skal få alt for mange forgreininger.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">titanic</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;survived&#39;</span><span class="p">)</span>
+<span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">modell</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="n">titanic</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">class_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Døde&#39;</span><span class="p">,</span> <span class="s1">&#39;Overlevde&#39;</span><span class="p">],</span> <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,)</span> 
+<span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/maskinlaring_titanic_oppgaver_30_0.png" src="../../_images/maskinlaring_titanic_oppgaver_30_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Bruk visualiseringen av modellen ovenfor til å forklare hvordan modellen vår fungerer.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="lagre-og-apne-modellen-var">
+<h1>Lagre og åpne modellen vår<a class="headerlink" href="#lagre-og-apne-modellen-var" title="Permalink to this headline">¶</a></h1>
+<p>Vi kan også lagre modellen vår, slik at vi kan bruke den seinere:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filnavn</span> <span class="o">=</span> <span class="s2">&quot;titanicmodell.sav&quot;</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">modell</span><span class="p">,</span> <span class="n">filnavn</span><span class="p">)</span>
+
+<span class="n">modell</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filnavn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs/tema6_modellering"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="pingviner.html" title="previous page">Maskinlæring (med pingviner)</a>
+    <a class='right-next' id="next-link" href="../datafiler.html" title="next page">Datafiler</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Andreas Haraldsrud<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

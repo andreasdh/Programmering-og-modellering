@@ -1,0 +1,585 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelleringsoppgave I &#8212; Programmering og modellering</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Differensiallikninger (teori)" href="differensiallikninger.html" />
+    <link rel="prev" title="Differenslikninger (teori)" href="diskret_modellering.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/datalogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programmering og modellering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Tema 1 - Grunnleggende programmering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+   Tall og variabler (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/kontrollstrukturer.html">
+   Kontrollstrukturer (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+   Programmeringsverktøy (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/grunnleggende_programmering.html">
+   Grunnleggende programmering (oppgaver)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/quiz1.html">
+   Quiz 1: Variabler og aritmetikk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/quiz2.html">
+   Quiz 2: Lister
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/quiz3.html">
+   Quiz 3: Vilkår (if-tester)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/quiz4.html">
+   Quiz 4: Løkker
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 2 - Kodestrukturering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema2_kodestrukturering/funksjoner.html">
+   Funksjoner (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+   Gjennomgang: Klasser og objekter
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 3 - Datahåndtering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema3_datahandtering/datasamlinger.html">
+   Datasamlinger (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema3_datahandtering/plotting.html">
+   Plotting (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema3_datahandtering/datahandtering.html">
+   Datahåndtering (teori)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 4 - Grafikk
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema4_grafikk/tilfeldige_tall_grafikk.html">
+   Tilfeldige tall og grafikk (teori)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 5 - Algoritmer
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema5_algoritmer/derivasjon.html">
+   Numerisk derivasjon (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema5_algoritmer/numeriske_biblioteker.html">
+   Numeriske biblioteker
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema5_algoritmer/symbolsk_utregning.html">
+   Symbolsk utregning (CAS)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 6 - Modellering
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="diskret_modellering.html">
+   Differenslikninger (teori)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Modelleringsoppgave I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="differensiallikninger.html">
+   Differensiallikninger (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="differensiallikninger_oppgaver.html">
+   Differensiallikninger (oppgaver)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pingviner.html">
+   Maskinlæring (med pingviner)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="maskinlaring_titanic_oppgaver.html">
+   Maskinlæring med Titanic (oppgave)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Datafiler
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datafiler.html">
+   Datafiler
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/tema6_modellering/smittemodellering_diskret.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/andreasdh/programmering-og-modellering/master?urlpath=tree/mini_book/docs/tema6_modellering/smittemodellering_diskret.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Modelleringsoppgave I
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#smittespredning">
+     Smittespredning
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#oppgave-1">
+       Oppgave 1
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sett-opp-startverdier">
+   Sett opp startverdier
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lag-lister-for-a-spare-pa-verdiene">
+   Lag lister for å spare på verdiene
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oppgave-2">
+     Oppgave 2
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oppgave-3">
+     Oppgave 3
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ekstra-oppgave-4">
+     Ekstra: Oppgave 4
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rapport">
+     Rapport
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="modelleringsoppgave-i">
+<h1>Modelleringsoppgave I<a class="headerlink" href="#modelleringsoppgave-i" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="smittespredning">
+<h2>Smittespredning<a class="headerlink" href="#smittespredning" title="Permalink to this headline">¶</a></h2>
+<p>Vi utforsker her en modelle for smittesprendning av sykdommer. Vi kan tenke oss at antall smittede indivier <em>I</em> (“Inceptibles”) utvikler seg slik:</p>
+<div class="math notranslate nohighlight">
+\[I_{t+1} = I_n + aI_n\]</div>
+<p>Bildet nedenfor viser spike-proteinet som ligger på overflaten til coronaviruset, og som gir viruset dets karakteristiske form:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="3dmolviewer_16068959667639062"  style="position: relative; width: 640px; height: 480px">
+        <p id="3dmolwarning_16068959667639062" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
+        </div>
+<script>
+
+var loadScriptAsync = function(uri){
+  return new Promise((resolve, reject) => {
+    var tag = document.createElement('script');
+    tag.src = uri;
+    tag.async = true;
+    tag.onload = () => {
+      resolve();
+    };
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+});
+};
+
+if(typeof $3Dmolpromise === 'undefined') {
+$3Dmolpromise = null;
+  $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
+}
+
+var viewer_16068959667639062 = null;
+var warn = document.getElementById("3dmolwarning_16068959667639062");
+if(warn) {
+    warn.parentNode.removeChild(warn);
+}
+$3Dmolpromise.then(function() {
+viewer_16068959667639062 = $3Dmol.createViewer($("#3dmolviewer_16068959667639062"),{backgroundColor:"white"});
+$3Dmol.download("pdb:6B7N", viewer_16068959667639062, {}, function() {
+	viewer_16068959667639062.setStyle({"cartoon": {"color": "spectrum"}});
+viewer_16068959667639062.zoomTo();
+viewer_16068959667639062.render();
+})
+});
+</script></div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;py3Dmol.view at 0x242166663a0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Forklar for hverandre med ord hva modellen sier. Hva betyr de ulike symbolene i likningen?</p></li>
+<li><p>I hvilke sammenhenger kan det være hensiktsmessig å bruke en slik modell? Hvilke begrensninger har modellen?</p></li>
+<li><p>Lag et program som simulerer smitteutviklingen over 48 uker i en populasjon med 157759 individer, en kontaktrate på 0.2 per uke og . Hvis du trenger hjelp, kan du trykke på hintet nedenfor.</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">Hint 1</p>
+<p>En pseudokode for programmet er:</p>
+</div>
+<ul class="simple">
+<li><p>Beskriv utviklingen. Varier systematisk <em>a</em> og antall smittede til å begynne med. Kommenter hva som skjer.</p></li>
+<li><p>Hvorfor er det viktig at kontaktraten har en <em>enhet</em> (her: uker)?</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="sett-opp-startverdier">
+<h1>Sett opp startverdier<a class="headerlink" href="#sett-opp-startverdier" title="Permalink to this headline">¶</a></h1>
+<p>populasjonsstørrelse, kontaktrate og slutt-tid
+antall smittede</p>
+</div>
+<div class="section" id="lag-lister-for-a-spare-pa-verdiene">
+<h1>Lag lister for å spare på verdiene<a class="headerlink" href="#lag-lister-for-a-spare-pa-verdiene" title="Permalink to this headline">¶</a></h1>
+<p>smittede = []</p>
+<p>tid []</p>
+<p>gjenta til tid = tid_slutt:
+# Beregn antall smittede vha. modellen
+# Legg verdiene i lister</p>
+<p>plott antall smittede mot t</p>
+<div class="section" id="oppgave-2">
+<h2>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this headline">¶</a></h2>
+<p>Vi utvider modellen ved å innføre en kategori for de som er <em>mottakelige</em>, <em>S</em> (“susceptibles”). Det vil si at de som allerede er smittet, ikke kan bli smittet igjen. Vi modifiserer da modellen for de smittede, slik at den også tar hensyn til den nye kategorien:</p>
+<div class="math notranslate nohighlight">
+\[I_{t+1} = I_n + aI_nS_n\]</div>
+<ul class="simple">
+<li><p>Forklar hva som er endret i modellen. Hvorfor kan vi gjøre dette?</p></li>
+<li><p>Lag en modell for <em>S</em> (mottakelige) basert på modellen for <em>I</em>. Hint: Når en person er smittet, hva skjer med antall mottakelige?</p></li>
+<li><p>Utvid programmet ditt til å beregne og plotte antall mottakelige og smittede i samme koordinatsystem. Bruk merkelapper (labels og legend) slik at vi ser hvilken kurve som beskriver hva. Beskriv grafen med ord.</p></li>
+<li><p>Varier systematisk <em>a</em> og antall smittede til å begynne med. Kommenter hva som skjer.</p></li>
+<li><p>I hvilke sammenhenger kan det være hensiktsmessig å bruke en slik modell? Hvilke begrensninger har modellen?</p></li>
+</ul>
+</div>
+<div class="section" id="oppgave-3">
+<h2>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this headline">¶</a></h2>
+<p>Vi legger nå til muligheten for å bli frisk (hurra!). Da trenger vi også å innføre en <em>bedringsrate</em>, <em>b</em>. Et uttrykk for antall smittede kan nå være:</p>
+<div class="math notranslate nohighlight">
+\[I_{t+1} = I_n + aI_nS_n - bI_n\]</div>
+<ul class="simple">
+<li><p>Forklar alle leddene i modellen for smittede. Hva er betydningen til <em>b</em>? Hva kan være en ok størrelse for b i dette tilfellet? Diskuter.</p></li>
+<li><p>Lag en modell for antall friske med utgangspunkt i modellen ovenfor.</p></li>
+<li><p>Simuler og plott utviklingen. Hvis grafen ikke ser fornutftig ut, bør du eksperimentere med andre verdier av <em>b</em>.</p></li>
+<li><p>Beskriv grafen med ord.</p></li>
+<li><p>I hvilke sammenhenger kan det være hensiktsmessig å bruke en slik modell? Hvilke begrensninger har modellen?</p></li>
+</ul>
+<p>Det er vanskelig å fastsette parametrene <em>a</em> og <em>b</em>. Ofte fastsettes de ved å løpende sammenlikne modellene med reelle data fra observasjoner eller eksperimenter. I fila ‘influensa.txt’ (se “Datafiler” i sidemenyen) finner du en oversikt over antall smittede av influensaviruset H3N2 i en populasjon med 157 759 personer.</p>
+<ul class="simple">
+<li><p>Les av fila og plott dataene sammen med modellen og prøv å variere <em>a</em> og <em>b</em> slik at modellen stemmer så godt som mulig med dataene.</p></li>
+<li><p>Diskuter om modellen kan si noe mer generelt om smittespredning enn akkurat dette tilfellet.</p></li>
+</ul>
+</div>
+<div class="section" id="ekstra-oppgave-4">
+<h2>Ekstra: Oppgave 4<a class="headerlink" href="#ekstra-oppgave-4" title="Permalink to this headline">¶</a></h2>
+<p>Vaksiner kan redusere antall mottakelige betraktelig.</p>
+<ul class="simple">
+<li><p>Hvordan kan du utvide modellen slik at den tar hensyn til vaksinering?</p></li>
+<li><p>Lag et program der du utforsker effekten av ulike grader av vaksinasjon (i %).</p></li>
+</ul>
+</div>
+<div class="section" id="rapport">
+<h2>Rapport<a class="headerlink" href="#rapport" title="Permalink to this headline">¶</a></h2>
+<p>Skriv en rapport i Jupyter notebook der du redegjør gradvis for de ulike modellene dine. Lag også en konklusjon.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs/tema6_modellering"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="diskret_modellering.html" title="previous page">Differenslikninger (teori)</a>
+    <a class='right-next' id="next-link" href="differensiallikninger.html" title="next page">Differensiallikninger (teori)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Andreas Haraldsrud<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

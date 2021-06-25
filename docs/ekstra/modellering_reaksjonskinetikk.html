@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelleringsoppgave IIc: Reaksjonskinetikk (kjemi) &#8212; Programmering og modellering</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/datalogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programmering og modellering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Tema 1 - Grunnleggende programmering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+   Tall og variabler (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/kontrollstrukturer.html">
+   Kontrollstrukturer (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+   Programmeringsverktøy (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/grunnleggende_programmering.html">
+   Grunnleggende programmering (oppgaver)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/quiz1.html">
+   Quiz 1: Variabler og aritmetikk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/quiz2.html">
+   Quiz 2: Lister
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/quiz3.html">
+   Quiz 3: Vilkår (if-tester)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/quiz4.html">
+   Quiz 4: Løkker
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 2 - Kodestrukturering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema2_kodestrukturering/funksjoner.html">
+   Funksjoner (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+   Gjennomgang: Klasser og objekter
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 3 - Datahåndtering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema3_datahandtering/datasamlinger.html">
+   Datasamlinger (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema3_datahandtering/plotting.html">
+   Plotting (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema3_datahandtering/datahandtering.html">
+   Datahåndtering (teori)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 4 - Grafikk
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema4_grafikk/tilfeldige_tall_grafikk.html">
+   Tilfeldige tall og grafikk (teori)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 5 - Algoritmer
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema5_algoritmer/derivasjon.html">
+   Numerisk derivasjon (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema5_algoritmer/numeriske_biblioteker.html">
+   Numeriske biblioteker
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema5_algoritmer/symbolsk_utregning.html">
+   Symbolsk utregning (CAS)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 6 - Modellering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema6_modellering/diskret_modellering.html">
+   Differenslikninger (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema6_modellering/smittemodellering_diskret.html">
+   Modelleringsoppgave I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema6_modellering/differensiallikninger.html">
+   Differensiallikninger (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema6_modellering/differensiallikninger_oppgaver.html">
+   Differensiallikninger (oppgaver)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema6_modellering/pingviner.html">
+   Maskinlæring (med pingviner)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema6_modellering/maskinlaring_titanic_oppgaver.html">
+   Maskinlæring med Titanic (oppgave)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Datafiler
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datafiler.html">
+   Datafiler
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/ekstra/modellering_reaksjonskinetikk.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/andreasdh/programmering-og-modellering/master?urlpath=tree/mini_book/docs/ekstra/modellering_reaksjonskinetikk.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reaksjonsfart">
+   Reaksjonsfart
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#en-metode-for-losing-av-differensiallikninger">
+     En metode for løsing av differensiallikninger
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rapport">
+     Rapport
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="modelleringsoppgave-iic-reaksjonskinetikk-kjemi">
+<h1>Modelleringsoppgave IIc: Reaksjonskinetikk (kjemi)<a class="headerlink" href="#modelleringsoppgave-iic-reaksjonskinetikk-kjemi" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="reaksjonsfart">
+<h2>Reaksjonsfart<a class="headerlink" href="#reaksjonsfart" title="Permalink to this headline">¶</a></h2>
+<p><em>Kinetikk</em> er et område av kjemien som handler om reaksjonsfart, det vil si hvor fort reaksjoner skjer. Gjennom eksperimenter kan vi finne ut hva forholdet mellom reaktanter og produkter er ved en gitt tid, og vi kan formulere matematiske modeller som viser denne sammenhengen. Denne sammenhengen er altså i utgangspunktet <em>empirisk</em>. Det vil si at vi modellerer sammenhengen basert på reelle data, ikke på matematiske utledninger.</p>
+<p>Reaksjonsraten til et produkt eller en reaktant kan defineres som endringa i konsentrasjonen til dette produktet eller denne reaktanten i løpet av en viss tid. Når vi reduserer denne tida til å være så liten som mulig, får vi den deriverte av konsentrasjonen, siden den deriverte handler om <em>momentan</em> endring: <span class="math notranslate nohighlight">\(c'(t)\)</span>. Sammenhengen mellom den deriverte av konsentrasjonen og konsentrasjonene til de ulike stoffene som deltar i reaksjonen, kaller vi en <em>ratelov</em>.</p>
+<p>Vi tar et eksempel: Konsentrasjonen mellom hydrogengass og jod i gassfase har en relativt enkel ratelov. Merk derimot at ratelovene i utgangspunktet ikke har noen sammenheng med det støkiometriske forholdet mellom reaktanter og produkter. Egentlig er reaksjonen en likevektsreaksjon, men vi kan forenkle og skrive den slik (som en irreversibel reaksjon), noe som stemmer ved relativt lave temperaturer:</p>
+<div class="math notranslate nohighlight">
+\[H_2 (g) + I_2 (g) \rightarrow 2HI (g)\]</div>
+<p>Rateloven for denne reaksjonen er som følger:</p>
+<div class="math notranslate nohighlight">
+\[v = c'(t) = k_r[H_2][I_2]\]</div>
+<p>a) Prøv å forklare hva rateloven ovenfor forteller oss, og hva de ulike faktorene betyr.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Forklaring</p>
+<p>Symbolet <em>v</em> betyr farten på reaksjonen, og det er det samme som den deriverte av konsentrasjonen til produktet vårt (her HI). Farten avhenger av produktet av konsentrasjonen til både <span class="math notranslate nohighlight">\(H_2\)</span> og <span class="math notranslate nohighlight">\(I_2\)</span>, i tillegg til en konstant <span class="math notranslate nohighlight">\(k_r\)</span>. Konstanten <span class="math notranslate nohighlight">\(k_r\)</span> kalles <em>ratekonstanten</em> for reaksjonen, og den kan vi finne ved å gjøre eksperimenter.</p>
+</div>
+<p>Ratelovene er eksempler på <em>differensiallikninger</em>, det vil si likninger som inneholder den deriverte (endringen av en tilstand). Uttrykket beskriver endringen i systemet <span class="math notranslate nohighlight">\(c'(t)\)</span>, men ingen informasjon om selve systemet, altså konsentrasjonen, <span class="math notranslate nohighlight">\(c_{HI}(t)\)</span>. Vi ønsker med andre ord å finne konsentrasjonen ved enhver tid gitt en eller annen startbetingelse (konsentrasjoner av produkter og reaktanter ved t = 0). Det er det samme som å si at vi ønsker å finne en funksjonsverdi <span class="math notranslate nohighlight">\(f(t + dt)\)</span> for hvert tidssteg <span class="math notranslate nohighlight">\(dt\)</span>.</p>
+<p>b) Forklar hva en differensiallikning er. Hvorfor er ratelover differensiallikninger?</p>
+<div class="section" id="en-metode-for-losing-av-differensiallikninger">
+<h3>En metode for løsing av differensiallikninger<a class="headerlink" href="#en-metode-for-losing-av-differensiallikninger" title="Permalink to this headline">¶</a></h3>
+<p>Nå vi skal løse en differensiallikning, har vi en initalbetingelse <span class="math notranslate nohighlight">\(y_0\)</span> og et uttrykk for den deriverte <span class="math notranslate nohighlight">\(y'\)</span>. Vi ønsker derfor å finne <span class="math notranslate nohighlight">\(y_1\)</span> og alle andre funksjonsverider.</p>
+<p>Du kjenner faktisk allerede til et uttrykk som inneholder en funksjon og dens deriverte, nemlig definisjonen av den deriverte! Vi bruker den numeriske definisjonen der vi tilnærmer grenseverdiene med en <em>dx</em> (<span class="math notranslate nohighlight">\(\Delta x\)</span>) som er så liten som mulig:</p>
+<div class="math notranslate nohighlight">
+\[f'(x) \approx \frac{f(x+dx) - f(x)}{dx}\]</div>
+<p>Til å begynne med kjenner vi <span class="math notranslate nohighlight">\(f(x)\)</span> (<span class="math notranslate nohighlight">\(v(t)\)</span>), altså <span class="math notranslate nohighlight">\(f(x_0)\)</span>. Dette er initialbetingelsen, for eksempel startfarten <span class="math notranslate nohighlight">\(v(t_0)\)</span>. Vi kjenner også et uttrykk for den deriverte av farten (akselerasjonen) gjennom Newtons 2. lov. I tillegg bestemmer vi selv tidssteget, <em>dx</em> (<em>dt</em>), men husk at det verken bør være for lite eller for stort. Den eneste ukjente i likningen ovenfor er altså <span class="math notranslate nohighlight">\(f(x+dx)\)</span>, og det er jo nettopp dette vi prøver å finne. Med litt enkel algebra får vi omformet uttrykket slik at det blir et uttrykk for <span class="math notranslate nohighlight">\(f(x+dx)\)</span>. Vi ganger først med <span class="math notranslate nohighlight">\(dx\)</span> på begge sider:</p>
+<div class="math notranslate nohighlight">
+\[f'(x)\cdot dx \approx f(x+dx) - f(x)\]</div>
+<p>Deretter får vi <span class="math notranslate nohighlight">\(f(x+dx)\)</span> aleine på høyre side og ender opp med følgende likning:</p>
+<div class="math notranslate nohighlight">
+\[f(x+dx) \approx f(x) + f'(x)\cdot dx\]</div>
+<p>Dette kalles <em>Eulers metode</em>. Den  brukes til å løse differensiallikninger, det vil si å integrere den deriverte slik at vi finner funksjonsverdiene. Siden vi ofte har med funksjoner av <em>tid</em> å gjøre, kaller vi gjerne <em>dx</em> for <em>dt</em>.</p>
+<p>c) Implementer modellen ovenfor og bruk Eulers metode til å simulere utviklingen av konsentrasjonene til <span class="math notranslate nohighlight">\(I_2\)</span>, <span class="math notranslate nohighlight">\(H_2\)</span> og <span class="math notranslate nohighlight">\(HI\)</span>. For denne reaksjonen er ratekonstanten for dannelse av HI <span class="math notranslate nohighlight">\(k_r = 4.84 \cdot 10^{-2}\)</span> ved 400 grader Celsius. Du kan ta utgangspunkt i programmet nedenfor eller lage et helt nytt et. Eksperimenter med ulike verdier av <span class="math notranslate nohighlight">\(k\)</span>. Hvis du ikke lager programmet fra grunnen av, må du forklare hva som skjer på de ulike linjene.</p>
+<iframe src="https://trinket.io/embed/python3/d29bc28718" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<p>d) Prøv å simulere reaksjonen for 750 sekunder. Beskriv hva som skjer i reaksjonen.</p>
+<p>Ved høye temperaturer vil flere og flere HI-molekyler kollidere og rives løs igjen til <span class="math notranslate nohighlight">\(I_2\)</span> og <span class="math notranslate nohighlight">\(H_2\)</span>. Reaksjonen er derfor egentlig reversibel, selv om vi har gjort en forenkling og beskrevet den som irreversibel ovenfor. Det viser seg at den motsatte reaksjonen følger denne rateloven:</p>
+<div class="math notranslate nohighlight">
+\[c'(t) = k_{bakover}[HI]^2\]</div>
+<p>Reaksjonen er altså andreordens med hensyn på konsentrasjonen av hydrogenjodid. Den totale rateloven for hydrogenjodid blir derfor:</p>
+<div class="math notranslate nohighlight">
+\[c'(t) = k_{framover}[H_2][I_2] - k_{bakover}[HI]^2\]</div>
+<p>Dersom vi kjenner likevektskonstanten <span class="math notranslate nohighlight">\(K\)</span> ved den gitte temperaturen, kan vi finne <span class="math notranslate nohighlight">\(k_{bakover}\)</span> ved å benytte følgende sammenheng:</p>
+<div class="math notranslate nohighlight">
+\[K = \frac{k_{framover}}{k_{bakover}}\]</div>
+<p>e) Lag et program som simulerer reaksjonen mellom <span class="math notranslate nohighlight">\(I_2\)</span> og <span class="math notranslate nohighlight">\(H_2\)</span> ved 450<span class="math notranslate nohighlight">\(^\circ\)</span>C. Sett likevektskontstanten til å være 100 og <span class="math notranslate nohighlight">\(k_{framover}\)</span> til å være <span class="math notranslate nohighlight">\(4.8\cdot 10^{-2}\)</span>. Lag et plott som viser konsentrasjonen som funksjon av tid, og et plott som viser reaksjonsraten/reaksjonshastigheten som funksjon av tid. Kommenter plottene. Stemmer dette med det du kan om likevekter?</p>
+</div>
+<div class="section" id="rapport">
+<h3>Rapport<a class="headerlink" href="#rapport" title="Permalink to this headline">¶</a></h3>
+<p>Skriv en rapport i Jupyter notebook der du redegjør gradvis for de ulike modellene dine. Lag også en konklusjon.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs/ekstra"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Andreas Haraldsrud<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,529 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelleringsoppgave: Kinematikk (fysikk) &#8212; Programmering og modellering</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/datalogo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programmering og modellering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Tema 1 - Grunnleggende programmering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+   Tall og variabler (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/kontrollstrukturer.html">
+   Kontrollstrukturer (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+   Programmeringsverktøy (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/grunnleggende_programmering.html">
+   Grunnleggende programmering (oppgaver)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/quiz1.html">
+   Quiz 1: Variabler og aritmetikk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/quiz2.html">
+   Quiz 2: Lister
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/quiz3.html">
+   Quiz 3: Vilkår (if-tester)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema1_grunnleggende_programmering/quiz4.html">
+   Quiz 4: Løkker
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 2 - Kodestrukturering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema2_kodestrukturering/funksjoner.html">
+   Funksjoner (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+   Gjennomgang: Klasser og objekter
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 3 - Datahåndtering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema3_datahandtering/datasamlinger.html">
+   Datasamlinger (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema3_datahandtering/plotting.html">
+   Plotting (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema3_datahandtering/datahandtering.html">
+   Datahåndtering (teori)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 4 - Grafikk
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema4_grafikk/tilfeldige_tall_grafikk.html">
+   Tilfeldige tall og grafikk (teori)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 5 - Algoritmer
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema5_algoritmer/derivasjon.html">
+   Numerisk derivasjon (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema5_algoritmer/numeriske_biblioteker.html">
+   Numeriske biblioteker
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema5_algoritmer/symbolsk_utregning.html">
+   Symbolsk utregning (CAS)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tema 6 - Modellering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema6_modellering/diskret_modellering.html">
+   Differenslikninger (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema6_modellering/smittemodellering_diskret.html">
+   Modelleringsoppgave I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema6_modellering/differensiallikninger.html">
+   Differensiallikninger (teori)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema6_modellering/differensiallikninger_oppgaver.html">
+   Differensiallikninger (oppgaver)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema6_modellering/pingviner.html">
+   Maskinlæring (med pingviner)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tema6_modellering/maskinlaring_titanic_oppgaver.html">
+   Maskinlæring med Titanic (oppgave)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Datafiler
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../datafiler.html">
+   Datafiler
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/ekstra/modellering_kinematikk.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/andreasdh/programmering-og-modellering/master?urlpath=tree/mini_book/docs/ekstra/modellering_kinematikk.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#del-1-kinematikk-diskrete-modeller">
+   Del 1 – Kinematikk: Diskrete modeller
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#differenslikninger">
+     Differenslikninger
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#del-2-kinematikk-kontinuerlig-modeller">
+   Del 2 – Kinematikk: Kontinuerlig modeller
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#newtons-2-lov-som-differensiallikning">
+     Newtons 2. lov som differensiallikning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#en-metode-for-losing-av-differensiallikninger">
+     En metode for løsing av differensiallikninger
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="modelleringsoppgave-kinematikk-fysikk">
+<h1>Modelleringsoppgave: Kinematikk (fysikk)<a class="headerlink" href="#modelleringsoppgave-kinematikk-fysikk" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="del-1-kinematikk-diskrete-modeller">
+<h2>Del 1 – Kinematikk: Diskrete modeller<a class="headerlink" href="#del-1-kinematikk-diskrete-modeller" title="Permalink to this headline">¶</a></h2>
+<p>I fysikken jobber vi ofte med forenklede modeller fordi vi er begrenset av matematikken. Vi kan fort ende opp med uttrykk som er svært vanskelige eller umulige å løse for hånd. Med programmering kan vi øke modellkompleksiteten og dermed utforske mer virkelighetsnære modeller.</p>
+<p>La oss begynne med en enkel modell for fritt fall av en kule. Modellen kan løses med penn og papir, så det er en god indikasjon på om framgangsmåten vår stemmer.</p>
+<p>For en kule i fritt fall kan vi modellere bevegelsen ved å ta hensyn til kun gravitasjonskreftene. Vi tar utgangspunkt i Newtons 2. lov:</p>
+<div class="math notranslate nohighlight">
+\[\sum F = ma\]</div>
+<p>Her er summen av kreftene kun gravitasjonskraften:</p>
+<div class="math notranslate nohighlight">
+\[G = ma\]</div>
+<p>Vi trenger nå en modell for gravitasjonskraften <em>G</em>. Vi kjenner fra fysikk at vi ofte uttrykker <em>G</em> slik:</p>
+<div class="math notranslate nohighlight">
+\[G = mg\]</div>
+<p>der <span class="math notranslate nohighlight">\(g = 9.8\)</span> m/s<span class="math notranslate nohighlight">\(^2\)</span> er tyngdeakselerasjonen ved havnivå på jorda og <span class="math notranslate nohighlight">\(m\)</span> er massen til legemet på jorda. Dette er en modell som kan utledes fra Newtons gravitasjonslov.</p>
+<p>a) Klikk på boksen nedenfor for å se begrunnelsen for modellen for gravitasjonskrefter. Prøv deretter å forklare for hverandre med ord hvordan <span class="math notranslate nohighlight">\(G = mg\)</span> utledes og hvilke forutsetninger denne modellen har.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Hint 1</p>
+<p>Gravitasjonskreftene beskrives av Newtons gravitasjonslov:</p>
+<div class="math notranslate nohighlight">
+\[G = k_G \frac{m_1m_2}{r^2}\]</div>
+<p>der <span class="math notranslate nohighlight">\(F_G\)</span> er gravitasjonskreftene som virker mellom to legemer med henholdsvis masse <span class="math notranslate nohighlight">\(m_1\)</span> og <span class="math notranslate nohighlight">\(m_2\)</span> med avstand <span class="math notranslate nohighlight">\(r\)</span> mellom hverandres tyngdesentre. <span class="math notranslate nohighlight">\(k_G\)</span> er gravitasjonskonstanten (<span class="math notranslate nohighlight">\(k_G = 6,674\cdot 10^{-11} N\cdot (m/kg)^2\)</span>).</p>
+<p>En forenkling vi kan gjøre for legemer på jorda, er å løse Newtons gravitasjonslov ved å bruke massen til jorda (<span class="math notranslate nohighlight">\(5,972\cdot 10^{24} kg\)</span>) og avstanden fra jordas massesenter til legemet. Dette gjør vi fordi vi kan si at gravitasjonskraften virker fra masssesenteret til et legeme. Avstanden fra jordas massesenter til overflaten, er 6371 km. Så for et punktlegeme som står på overflaten av jorda, får vi da:</p>
+<div class="math notranslate nohighlight">
+\[G = 6,674\cdot 10^{-11} \frac{m_1 \cdot 5,972\cdot 10^{24}}{6371000^2} \approx m_1 \cdot 9,8\]</div>
+<p>Dette kjenner vi igjen som tyngdeakselerasjonen <span class="math notranslate nohighlight">\(g\)</span> multiplisert med massen til legemet: <span class="math notranslate nohighlight">\(G = mg\)</span>. Siden vi regner fra jordas overflate, varierer selvsagt <span class="math notranslate nohighlight">\(g\)</span> med avstanden legemet befinner seg fra jorda.</p>
+</div>
+<p>I <em>diskrete</em> modeller tar vi utgangspunkt i et endelig steg, f.eks. tidssteg, mellom hver verdi. Vi skal her operere med konstant akselerasjon og anta at farten og posisjonen også er konstante innenfor et lite tidsrom <em>dt</em>. For konstant posisjon har vi at:</p>
+<div class="math notranslate nohighlight">
+\[s_{t+dt} = s_t + v_t\cdot dt\]</div>
+<p>som du kanskje kjenner igjen som “formelen” <span class="math notranslate nohighlight">\(s = v\cdot t\)</span>. Tilsvarende kan vi anta for hastigheten:</p>
+<div class="math notranslate nohighlight">
+\[v_{t+dt} = v_t + a_t\cdot dt\]</div>
+<p>b) Lag et program som regner ut hvor langt ballen har falt etter en viss tid. Velg startverdier og tid selv. Du kan ta utgangspunkt i dette programmet, eller lage et helt fra scratch:</p>
+<iframe src="https://trinket.io/embed/python3/3c6a2d6edc" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<p>c) Hvilke antakelser har vi tatt og hvilke forutsetninger tar modellene våre utgangspunkt i? Kommenter både hvordan vi regner ut posisjon og fart, i tillegg til modellen for gravitasjon.</p>
+<p>d) Utvid programmet slik at det plotter posisjonen som funksjon av tid.</p>
+<p>La oss nå utvide programmet ved å ta hensyn til flere krefter, for eksempel luftmotstand. Vi har mange ulike modeller for luftmotstand, avhengig av hva slags legeme vi har med å gjøre og hvor stor hastighet legemet faller. Følgende modell er mye brukt:</p>
+<div class="math notranslate nohighlight">
+\[L = k\cdot v^2\]</div>
+<p>e) Diskuter hva som menes med parameteren <span class="math notranslate nohighlight">\(k\)</span>. Hvordan finner man slike parametere? Hvorfor er <span class="math notranslate nohighlight">\(v\)</span> kvadrert?</p>
+<p>Vi kan nå sette denne modellen inn i Newtons andre lov sammen med gravitasjonskreftene. Vi velger positiv retning nedover, så <em>G</em> får positivt fortegn og <em>L</em> får negativt fortegn.</p>
+<p>f) Lag et program som plotter både hastighet og posisjon for et legeme på 1,0 kg som faller. Bruk <span class="math notranslate nohighlight">\(k = 0.1\)</span>.</p>
+<p>g) Lag et program som finner ut <em>når</em> et legeme treffer bakken gitt en starthøyde <span class="math notranslate nohighlight">\(s_0\)</span>.</p>
+<p>En alternativ måte å lagre verdier på, er å bruke arrayer.</p>
+<p>f) Løs <a class="reference external" href="http://parsons.problemsolving.io/puzzle/638e48fe2d594c77a29f347591cd9e80">dette programmeringspuslespillet</a>. Puslespillet beregner akselerasjon, hastighet og posisjon til et legeme som faller med luftmotstand. Noen steder er rekkefølgen angitt som kommentar. Når rekkefølgen ikke er entydig, skal du angi <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(v\)</span>, <span class="math notranslate nohighlight">\(s\)</span> og <span class="math notranslate nohighlight">\(t\)</span> i denne rekkefølgen.</p>
+<p>g) Eksperimenter med modellene i programmet ditt ved å systematisk variere <span class="math notranslate nohighlight">\(k\)</span>, endre på luftmotstandsmodellen eller tilsvarende. Redegjør for resultatene dine og drøft det du ser.</p>
+<p>h) La legemet bli kastet oppover med en startfart istedenfor at den slippes. Fungerer programmet nå? Hva må du ta hensyn til når du beregner luftmotstanden? Hint: Tegn en tegning som viser kreftene på en ball når den faller nedover og når den er på vei oppover.</p>
+<div class="section" id="differenslikninger">
+<h3>Differenslikninger<a class="headerlink" href="#differenslikninger" title="Permalink to this headline">¶</a></h3>
+<p>Når vi bruker sammenhenger som <span class="math notranslate nohighlight">\(s_{t+dt} = s_t + v_t\cdot dt\)</span>, formulerer vi sammenhengene mellom ulike størrelser som <em>differenslikninger</em>. En differenslikning er en likning der verdien til en størrelse (f.eks. posisjon) avhenger av den forrige verdien til størrelsen (f.eks. posisjonen ved forrige tidssteg). Et annet eksempel på dette er tallfølger. Se videoen nedenfor for en liten innføring i numerisk løsing av differenslikninger.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="950" height="600" src="https://www.youtube.com/embed/u6wgr0GRoLM? autoplay=0&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="del-2-kinematikk-kontinuerlig-modeller">
+<h2>Del 2 – Kinematikk: Kontinuerlig modeller<a class="headerlink" href="#del-2-kinematikk-kontinuerlig-modeller" title="Permalink to this headline">¶</a></h2>
+<p>Newtons 2. lov kan også formuleres som en <em>differensiallikning</em> fordi den beskriver den momentane endringen i posisjon og fart, det vil si den deriverte, som funksjon av tid. Dette er fordi <span class="math notranslate nohighlight">\(a(t) = v'(t) = s''(t)\)</span>. Da går vi fra en <em>diskret</em> modell til en <em>kontinuerlig</em> modell med et tidssteg som i utgangspunktet er så lite som mulig:</p>
+<div class="math notranslate nohighlight">
+\[a(t) = v'(t) = g - \frac{kv(t)}{g}\]</div>
+<p>En differensiallikning er en likning som inneholder den deriverte av en funksjon, <span class="math notranslate nohighlight">\(f'(x)\)</span>. I de fleste praktiske situasjoner beskriver slike likninger sammenhengen mellom endringen, <span class="math notranslate nohighlight">\(f'(t)\)</span>, og tilstanden, <span class="math notranslate nohighlight">\(f(t)\)</span>, til et system ved tida <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Vi har altså en differensiallikning som beskriver endringen i systemet <span class="math notranslate nohighlight">\(v'(t)\)</span>, men ingen informasjon om selve farten <span class="math notranslate nohighlight">\(v(t)\)</span>. Vi ønsker med andre ord å finne farten (og etterpå posisjonen) ved enhver tid gitt en eller annen startbetingelse (startfart og startposisjon). Det er det samme som å si at vi ønsker å finne funksjonsverdien <span class="math notranslate nohighlight">\(v(t + dt)\)</span> for hvert tidssteg <span class="math notranslate nohighlight">\(dt\)</span>.</p>
+<p>I teorien er ingen modeller kontinuerlige på en datamaskin, men vi gjør modellene “mindre diskrete” ved å velge tidssteg som er små.</p>
+<div class="section" id="newtons-2-lov-som-differensiallikning">
+<h3>Newtons 2. lov som differensiallikning<a class="headerlink" href="#newtons-2-lov-som-differensiallikning" title="Permalink to this headline">¶</a></h3>
+<p>Vi formulerer nå Newtons 2. lov slik:</p>
+<div class="math notranslate nohighlight">
+\[\sum F = ma(t) = mv'(t) = ms''(t)\]</div>
+<p>det betyr at:</p>
+<div class="math notranslate nohighlight">
+\[v'(t) = \frac{\sum F}{m}\]</div>
+<div class="math notranslate nohighlight">
+\[s''(t) = \frac{\sum F}{m}\]</div>
+<p>Programmene våre blir egentlig ikke noe annerledes fra slik vi lagde dem da vi hadde diskrete modeller. Det er kun <em>graden</em> av <em>diskretisering</em> som skiller modellene. For kontinuerlige modeller må vi bare passe på å velge en <em>dt</em> som er liten nok.</p>
+</div>
+<div class="section" id="en-metode-for-losing-av-differensiallikninger">
+<h3>En metode for løsing av differensiallikninger<a class="headerlink" href="#en-metode-for-losing-av-differensiallikninger" title="Permalink to this headline">¶</a></h3>
+<p>Nå vi skal løse en differensiallikning, har vi en initalbetingelse <span class="math notranslate nohighlight">\(y_0\)</span> og et uttrykk for den deriverte <span class="math notranslate nohighlight">\(y'\)</span>. Vi ønsker derfor å finne <span class="math notranslate nohighlight">\(y_1\)</span> og alle andre funksjonsverider.</p>
+<p>Du kjenner faktisk allerede til et uttrykk som inneholder en funksjon og dens deriverte, nemlig definisjonen av den deriverte! Vi bruker den numeriske definisjonen der vi tilnærmer grenseverdiene med en <em>dx</em> (<span class="math notranslate nohighlight">\(\Delta x\)</span>) som er så liten som mulig:</p>
+<div class="math notranslate nohighlight">
+\[f'(x) \approx \frac{f(x+dx) - f(x)}{dx}\]</div>
+<p>Til å begynne med kjenner vi <span class="math notranslate nohighlight">\(f(x)\)</span> (<span class="math notranslate nohighlight">\(v(t)\)</span>), altså <span class="math notranslate nohighlight">\(f(x_0)\)</span>. Dette er initialbetingelsen, for eksempel startfarten <span class="math notranslate nohighlight">\(v(t_0)\)</span>. Vi kjenner også et uttrykk for den deriverte av farten (akselerasjonen) gjennom Newtons 2. lov. I tillegg bestemmer vi selv tidssteget, <em>dx</em> (<em>dt</em>), men husk at det verken bør være for lite eller for stort. Den eneste ukjente i likningen ovenfor er altså <span class="math notranslate nohighlight">\(f(x+dx)\)</span>, og det er jo nettopp dette vi prøver å finne. Med litt enkel algebra får vi omformet uttrykket slik at det blir et uttrykk for <span class="math notranslate nohighlight">\(f(x+dx)\)</span>. Vi ganger først med <span class="math notranslate nohighlight">\(dx\)</span> på begge sider:</p>
+<div class="math notranslate nohighlight">
+\[f'(x)\cdot dx \approx f(x+dx) - f(x)\]</div>
+<p>Deretter får vi <span class="math notranslate nohighlight">\(f(x+dx)\)</span> aleine på høyre side og ender opp med følgende likning:</p>
+<div class="math notranslate nohighlight">
+\[f(x+dx) \approx f(x) + f'(x)\cdot dx\]</div>
+<p>Dette kalles <em>Eulers metode</em>. Den  brukes til å løse differensiallikninger, det vil si å integrere den deriverte slik at vi finner funksjonsverdiene. Siden vi ofte har med funksjoner av tid å gjøre, kaller vi gjerne <em>dx</em> for <em>dt</em>.</p>
+<p>i) Forklar hva en differensiallikning er. Hvorfor er Newtons 2. lov en differensiallikning?</p>
+<p>j) Er det noen forskjell på å bruke Eulers metode og bevegelseslikningene vi brukte i programmene våre (<span class="math notranslate nohighlight">\(v = v_0 + at\)</span> og <span class="math notranslate nohighlight">\(s = s_0 + vt\)</span>)?</p>
+<p>k) <strong>Frivillig (Fysikk 2):</strong> Lag et program som simulerer todimensjonalt kast av ball. Ta hensyn til luftmotstand og gravitasjon.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs/ekstra"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Andreas Haraldsrud<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -58,7 +58,7 @@
       },
       {
         "answer": "Skriver ut alle oddetall fra og med 3 til 11",
-        "correct": false,
+        "correct": true,
         "feedback": "Riktig."
       }
     ]
@@ -85,7 +85,7 @@
       },
       {
         "answer": "i = 10",
-        "correct": false,
+        "correct": true,
         "feedback": "Riktig. Men da forlater vi løkka etter én utskrift."
       },
       {
@@ -307,7 +307,7 @@
       {
         "answer": "1, 5",
         "correct": false,
-        "feedback": "Riktig."
+        "feedback": "Feil."
       },
       {
         "answer": "1, 6",
@@ -436,81 +436,7 @@
   },
   {
     "question": "Hva mangler i programmet nedenfor for å få output 1 av 5, 2 av 5, 3 av 5, 4 av 5 og 5 av 5?",
-    "code": "for n in range(5):\n print(____________)",
-    "type": "many_choice",
-    "answers": [
-      {
-        "answer": "n + 1, av 5",
-        "correct": false,
-        "feedback": "Feil. \"av 5\" må være en streng."
-      },
-      {
-        "answer": "n + 1 av 5",
-        "correct": false,
-        "feedback": "Feil. \"av 5\" må være en streng. Vi trenger komma som separerer ulike variabler ved utskrift."
-      },
-      {
-        "answer": "n + 1, \"av\", 5",
-        "correct": true,
-        "feedback": "Riktig. Vi kan skrive ut et dynamisk tall, en streng og til slutt et fast tall."
-      },
-      {
-        "answer": "n + 1, \"av 5\"",
-        "correct": true,
-        "feedback": "Riktig. Vi kan skrive ut et tall og så en streng."
-      },
-      {
-        "answer": "n + 1 + \" av 5\"",
-        "correct": false,
-        "feedback": "Feil. Vi kan ikke addere tall og strenger"
-      },
-      {
-        "answer": "str(n + 1) + \" av 5\"",
-        "correct": true,
-        "feedback": "Riktig. Vi kan addere to strenger."
-      }
-    ]
-  },
-  {
-    "question": "Hva mangler i programmet nedenfor for å få output 1 av 5, 2 av 5, 3 av 5, 4 av 5 og 5 av 5?",
-    "code": "for n in range(5):\n print(____________)",
-    "type": "many_choice",
-    "answers": [
-      {
-        "answer": "n + 1, av 5",
-        "correct": false,
-        "feedback": "Feil. \"av 5\" må være en streng."
-      },
-      {
-        "answer": "n + 1 av 5",
-        "correct": false,
-        "feedback": "Feil. \"av 5\" må være en streng. Vi trenger komma som separerer ulike variabler ved utskrift."
-      },
-      {
-        "answer": "n + 1, \"av\", 5",
-        "correct": true,
-        "feedback": "Riktig. Vi kan skrive ut et dynamisk tall, en streng og til slutt et fast tall."
-      },
-      {
-        "answer": "n + 1, \"av 5\"",
-        "correct": true,
-        "feedback": "Riktig. Vi kan skrive ut et tall og så en streng."
-      },
-      {
-        "answer": "n + 1 + \" av 5\"",
-        "correct": false,
-        "feedback": "Feil. Vi kan ikke addere tall og strenger"
-      },
-      {
-        "answer": "str(n + 1) + \" av 5\"",
-        "correct": true,
-        "feedback": "Riktig. Vi kan addere to strenger."
-      }
-    ]
-  },
-  {
-    "question": "Hva mangler i programmet nedenfor for å få output 1 av 5, 2 av 5, 3 av 5, 4 av 5 og 5 av 5?",
-    "code": "for n in range(5):\n print(____________)",
+    "code": "for n in range(5):\n    print(____________)",
     "type": "many_choice",
     "answers": [
       {

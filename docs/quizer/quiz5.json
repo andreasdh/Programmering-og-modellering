@@ -65,7 +65,7 @@
   },
   {
     "question": "Hva blir output når dette programmet kjører?",
-    "code": "def f(x): \nreturn x + 1 \ndef g(y): \nreturn(y**2) \n \nx=2 \nprint(g(f(g(x)))",
+    "code": "def f(x): \n    return x + 1 \ndef g(y): \n    return(y**2) \n \nx=2 \nprint(g(f(g(x)))",
     "type": "numeric",
     "precision": 0,
     "answers": [
@@ -80,7 +80,7 @@
 
   {
     "question": "Hva skal stå på den tomme, understrekede linja i programmet?",
-    "code": "def utskrift(________):\n    print(x) \n \num = 42\n utskrift(num)",
+    "code": "def utskrift(________):\n    print(x) \n \nnum = 42\nutskrift(num)",
     "type": "multiple_choice",
     "answers": [
       {
@@ -135,7 +135,7 @@
   },
   {
     "question": "Hva skal stå på de tomme linjene slik at output fra programmet blir 6? ",
-    "code": "def multiplikasjon(_____, _____):\n    produkt = a * b \n_____(product)\n \nprint(multiplikasjon(2, 3))",
+    "code": "def multiplikasjon(_____, _____):\n    produkt = a * b \n    _____(product)\n \nprint(multiplikasjon(2, 3))",
     "type": "multiple_choice",
     "answers": [
       {
@@ -162,7 +162,7 @@
   },
   {
     "question": "Hva er output fra følgende program?",
-    "code": "a = 3 \nb = 5 \n \ndef prod(a, b): \n    return(a*b)\n \ns=prod(a,a)\n a = 5\n \nprint(a,s)",
+    "code": "a = 3 \nb = 5 \n \ndef prod(a, b): \n    return(a*b)\n \ns = prod(a,a)\na = 5\n \nprint(a,s)",
     "type": "numeric",
     "precision": 0,
     "answers": [

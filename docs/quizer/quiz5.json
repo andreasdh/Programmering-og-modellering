@@ -1,0 +1,181 @@
+[
+  {
+    "question": "Hva blir output når dette programmet kjører?",
+    "code": "def leggtil(a,b):\n    a + b \nprint(leggtil(1,2))",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "ingenting",
+        "correct": true,
+        "feedback": "Riktig. Funksjonen returnerer ikke noe."
+      },
+      {
+        "answer": "1",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "2",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "3",
+        "correct": false,
+        "feedback": "Feil. Nøkkelordet \"return\" må være med."
+      },
+      {
+        "answer": "vi får en feilmelding",
+        "correct": false,
+        "feedback": "Feil. Denne operasjonen er tillatt."
+      }
+    ]
+  },
+  {
+    "question": "Hva blir output når dette programmet kjører?",
+    "code": "def leggtil(a,b):\n    return a + b \nprint(leggtil([1,2,3],[2,1,2]))",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "ingenting",
+        "correct": false,
+        "feedback": "Feil. Her returnerer funksjonen en verdi som skrives ut."
+      },
+      {
+        "answer": "[2, 3, 4]",
+        "correct": false,
+        "feedback": "Feil. Lister adderes ikke på denne måten."
+      },
+      {
+        "answer": "[1, 2, 3, 2, 1, 2]",
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "11",
+        "correct": false,
+        "feedback": "Feil. Lister adderes ikke på denne måten."
+      },
+      {
+        "answer": "vi får en feilmelding",
+        "correct": false,
+        "feedback": "Feil. Det er mulig å addere lister."
+      }
+    ]
+  },
+  {
+    "question": "Hva blir output når dette programmet kjører?",
+    "code": "def f(x): \nreturn x + 1 \ndef g(y): \nreturn(y**2) \n \nx=2 \nprint(g(f(g(x)))",
+    "type": "numeric",
+    "precision": 0,
+    "answers": [
+      {
+        "type": "value",
+        "value": 25,
+        "correct": true,
+        "feedback": "Riktig."
+      }
+    ]
+  },
+
+  {
+    "question": "Hva skal stå på den tomme, understrekede linja i programmet?",
+    "code": "def utskrift(________):\n    print(x) \n \num = 42\n utskrift(num)",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "num",
+        "correct": false,
+        "feedback": "Feil. Det er x som skrives ut i funksjonen, og vi må derfor gi variabelen x den ønskede verdien."
+      },
+      {
+        "answer": "Ingenting",
+        "correct": false,
+        "feedback": "Feil. Variabelen x må defineres, enten som en parameter eller som en variabel inni eller utenfor funksjonen."
+      },
+      {
+        "answer": "42",
+        "correct": false,
+        "feedback": "Feil. Parametere må være variabelnavn, ikke verdier."
+      },
+      {
+        "answer": "x",
+        "correct": true,
+        "feedback": "Riktig. Variabelen x skrives ut i funksjonen, og blir gitt verdien til num i siste linje i programmet."
+      }
+    ]
+  },
+
+  {
+    "question": "Hva blir output når dette programmet kjører?",
+    "code": "def func():\n    var = 6 \nvar = 5 \nfunc() \nprint(var)",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "5 6",
+        "correct": false,
+        "feedback": "Feil. Det er kun én verdien som er tilordnet variabelen var."
+      },
+      {
+        "answer": "5",
+        "correct": true,
+        "feedback": "Riktig. Verdien 6 er tilordnet inni funksjonen, og er derfor ikke tilgjengelig utenfor funksjonen."
+      },
+      {
+        "answer": "6",
+        "correct": false,
+        "feedback": "Feil. Verdien 6 er tilordnet inni funksjonen, og er derfor ikke tilgjengelig utenfor funksjonen."
+      },
+      {
+        "answer": "6 5",
+        "correct": false,
+        "feedback": "Feil. Det er kun én verdien som er tilordnet variabelen var."
+      }
+    ]
+  },
+  {
+    "question": "Hva skal stå på de tomme linjene slik at output fra programmet blir 6? ",
+    "code": "def multiplikasjon(_____, _____):\n    produkt = a * b \n_____(product)\n \nprint(multiplikasjon(2, 3))",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "2, 3, print",
+        "correct": false,
+        "feedback": "Feil. Parametere må være variabelnavn, ikke verdier. Vi printer funksjonsverdien i nederste linje. Funksjonen må derfor returnere en verdi, ikke printe den."
+      },
+      {
+        "answer": "a, b, print",
+        "correct": false,
+        "feedback": "Feil. Vi printer funksjonsverdien i nederste linje. Funksjonen må da returnere en verdi, ikke printe den."
+      },
+      {
+        "answer": "a, b, return",
+        "correct": true,
+        "feedback": "Riktig. Parametere må være variabelnavn, ikke verdier. Vi printer funksjonsverdien i nederste linje. Funksjonen må derfor returnere en verdi, ikke printe den."
+      },
+      {
+        "answer": "2, 3, return",
+        "correct": false,
+        "feedback": "Feil. Parametere til funksjoner må være variabelnavn, ikke verdier."
+      }
+    ]
+  },
+  {
+    "question": "Hva er output fra følgende program?",
+    "code": "a = 3 \nb = 5 \n \ndef prod(a, b): \n    return(a*b)\n \ns=prod(a,a)\n a = 5\n \nprint(a,s)",
+    "type": "numeric",
+    "precision": 0,
+    "answers": [
+      {
+        "type": "value",
+        "value": 14,
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "type": "default",
+        "feedback": "Feil. Pass på hva som er variabler inni funksjonen og hvilke variabler vi har utenfor funksjonen (globalt)."
+      }
+    ]
+  }
+]

@@ -1,0 +1,221 @@
+[
+  {
+    "question": "Hva er output?",
+    "code": "print(array([1,2,3]) + array([1,2,3]))",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "feilmelding",
+        "correct": false,
+        "feedback": "Feil. Dette er en gyldig syntaks."
+      },
+      {
+        "answer": "12",
+        "correct": false,
+        "feedback": "Feil. Alle tall blir ikke summert."
+      },
+      {
+        "answer": "[1, 2, 3, 1, 2, 3]",
+        "correct": false,
+        "feedback": "Feil. Arrayaddisjon fungerer ikke som listeaddisjon."
+      },
+      {
+        "answer": "[2. 4. 6.]",
+        "correct": true,
+        "feedback": "Riktig. Arrayer blir addert som vektorer. Vi får punktum bak fordi de behandles som flyttall. I arrayer mangler også kommaene som er i lister."
+      }
+    ]
+  },
+
+  {
+    "question": "Hva er verdien til a og b?",
+    "code": "a = [1, 2 ,3] + 4 \nb = array([1, 2, 3]) + 4",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": " a = [1, 2, 3, 4] og b = [1, 2, 3, 4]",
+        "correct": false,
+        "feedback": "Feil. Feil for a og feil for b. Arrayaddisjon skiller seg fra listeaddisjon. Dessuten betyr komma mellom elementer at det er en liste, og det er det ikke."
+      },
+      {
+        "answer": "a = [1, 2, 3, 4] og b = [1 2 3 4]",
+        "correct": false,
+        "feedback": "Feil. Feil for a og feil for b. Arrayaddisjon skiller seg fra listeaddisjon. Dessuten kan en liste kun adderes med en annen lise."
+      },
+      {
+        "answer": "a = [5, 6, 7] og b = [5 6 7]",
+        "correct": false,
+        "feedback": "Feil. Feil for a, riktig for b. En liste kan kun adderes med en annen lise."
+      },
+      {
+        "answer": "vi får en feilmelding fra første linje, og b = [5 6 7]",
+        "correct": true,
+        "feedback": "Riktig. En liste kan kun adderes med en annen lise. Arrayer adderes som vektorer."
+      }
+    ]
+  },
+  {
+    "question": "Hva blir output når dette programmet kjører?",
+    "code": "a = arange(3, 11, 2)\nprint(a[2:]**2)",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "[49 81 121]",
+        "correct": false,
+        "feedback": "Feil. Arange gir verdien fra og med en verdi, til (men ikke med) en verdi."
+      },
+      {
+        "answer": "[49, 81]",
+        "correct": false,
+        "feedback": "Feil. Komma markerer at det er en liste. Dette er en array, så da er ikke komma brukt som skilletegn."
+      },
+      {
+        "answer": "[49 81]",
+        "correct": true,
+        "feedback": "Riktig. Arange gir verdien fra og med en verdi, til (men ikke med) en verdi."
+      },
+      {
+        "answer": "[25 49 81]",
+        "correct": false,
+        "feedback": "Feil. a[2:] betyr fra og med element 2, men husk at elementnummeret starter på 0."
+      }
+    ]
+  },
+  {
+    "question": "Hva blir output fra følgende kode?",
+    "code": "a = linspace(2,6,5) \nb = a + 2.0 \nprint(sum(b))",
+    "type": "numeric",
+    "precision": 0,
+    "answers": [
+      {
+        "type": "value",
+        "value": 30,
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "type": "default",
+        "feedback": "Feil. Husk at linspace er fra og med, og til og med en verdi, og at det skal være 5 tall i dette intervallet."
+      }
+    ]
+  },
+
+  {
+    "question": "Hvilke(n) av følgende kodelinjer vil gi output [3 5 7 9] (eller [3. 5. 7. 9.])?",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "print(linspace(3,10,2))",
+        "correct": false,
+        "feedback": "Feil. Linspace gir verdien fra og med en verdi, til og med en verdi. Siste parameter angir antall tall, ikke steglengde."
+      },
+      {
+        "answer": "print(linspace(3,9,4))",
+        "correct": true,
+        "feedback": "Riktig. Linspace gir verdien fra og med en verdi, til og med en verdi. Siste parameter angir antall tall, ikke steglengde."
+      },
+      {
+        "answer": "print(arange(3,9,2))",
+        "correct": false,
+        "feedback": "Feil. Arange gir verdien fra og med en verdi, til (men ikke med) en verdi."
+      },
+      {
+        "answer": "print(arange(3,10,2))",
+        "correct": true,
+        "feedback": "Riktig. Arange gir verdien fra og med en verdi, til (men ikke med) en verdi. Siste parameter er steglengden."
+      },
+      {
+        "answer": "print(linspace(3,10,4))",
+        "correct": false,
+        "feedback": "Feil. Linspace gir verdien fra og med en verdi, til og med en verdi."
+      },
+      {
+        "answer": "print(arange(3,9))",
+        "correct": false,
+        "feedback": "Feil. Arange gir verdien fra og med en verdi, til (men ikke med) en verdi. Vi mangler også en steglengde på 2."
+      }
+    ]
+  },
+
+  {
+    "question": "Hvilke av følgende alternativer gir \"190.2\" som output når vi har følgende kode?",
+    "code": "grunnstoffer = {\"hydrogen\": 1.008, \"svovel\": 32.07, \"kobber\": 58.93, \"osmium\": 190.2, \"jod\": 126.9}",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "print(grunnstoffer[3])",
+        "correct": false,
+        "feedback": "Feil. I dictionarier er nøkkelen (indeksene) en streng, ikke et tall."
+      },
+      {
+        "answer": "print(grunnstoffer[osmium])",
+        "correct": false,
+        "feedback": "Feil. I dictionarier er nøkkelen (indeksene) en streng, ikke et variabelnavn."
+      },
+      {
+        "answer": "print(grunnstoffer[\"osmium\"])",
+        "correct": true,
+        "feedback": "Riktig. I dictionarier er nøkkelen (indeksene) en streng"
+      },
+      {
+        "answer": "print(grunnstoffer[osmium])",
+        "correct": false,
+        "feedback": "Feil. Vi får tilgang til indekser med klammeparenteser, [], ikke runde parenteser. Dessuten må nøkkelen være en streng."
+      }
+    ]
+  },
+  {
+    "question":"Hva skal stå på den tomme linja slik at output fra programmet blir: \nhydrogen er gass \nsvovel er fast stoff \nkvikksølv er væske",
+    "code": "aggregattilstand = {\"hydrogen\": \"gass\", \"svovel\": \"fast stoff\", \"kvikksølv\": \"væske\" \nfor grunnstoff in aggregattilstand: \n    _______",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "print(grunnstoff, \"er\", aggregattilstand[grunnstoff])",
+        "correct": false,
+        "feedback": "Feil. "
+      },
+      {
+        "answer": "print(aggregattilstand[grunnstoff], \"er\", grunnstoff)",
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "print(grunnstoff, \"er en\", aggregattilstand.key(grunnstoff))",
+        "correct": false,
+        "feedback": "Feil."
+      },
+      {
+        "answer": "print(aggregattilstand[grunnstoff], \"er en\", aggregattilstand.value(grunnstoff))",
+        "correct": false,
+        "feedback": "Feil. Parametere til funksjoner må være variabelnavn, ikke verdier."
+      }
+    ]
+  },
+  {
+    "question": "Hvilket alternativ skriver ut alle atommassene i dictionarien nedenfor?",
+    "code": "grunnstoffer = {\"hydrogen\": 1.008, \"svovel\": 32.07, \"kobber\": 58.93, \"osmium\": 190.2, \"jod\": 126.9} \nprint(grunnstoffer.",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "print(grunnstoffer.keys())",
+        "correct": false,
+        "feedback": "Feil. Dette gir nøklene (indeksene), altså navnene til grunnstoffene."
+      },
+      {
+        "answer": "print(grunnstoffer.values())",
+        "correct": true,
+        "feedback": "Riktig."
+      },
+      {
+        "answer": "print(keys(grunnstoffer))",
+        "correct": false,
+        "feedback": "Feil. Dette er feil syntaks."
+      },
+      {
+        "answer": "print(values(grunnstoffer))",
+        "correct": false,
+        "feedback": "Feil. Dette er feil syntaks."
+      }
+    ]
+  }
+]

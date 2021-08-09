@@ -74,6 +74,10 @@
         "value": 25,
         "correct": true,
         "feedback": "Riktig."
+      },
+      {
+        "type": "default",
+        "feedback": "Feil."
       }
     ]
   },

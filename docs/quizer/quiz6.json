@@ -92,6 +92,11 @@
         "value": 30,
         "correct": true,
         "feedback": "Riktig."
+      },
+      {
+        "type": "default",
+        "correct": false,
+        "feedback": "Feil. Husk at linspace er fra og med, og til og med en verdi, og at det skal være 5 tall i dette intervallet."
       }
     ]
   },

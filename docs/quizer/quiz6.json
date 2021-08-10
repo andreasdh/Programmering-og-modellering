@@ -166,7 +166,7 @@
   },
   {
     "question":"Hva skal stå på den tomme linja slik at output fra programmet blir: \nhydrogen er gass \nsvovel er fast stoff \nkvikksølv er væske",
-    "code": "aggregattilstand = {\"hydrogen\": \"gass\", \"svovel\": \"fast stoff\", \"kvikksølv\": \"væske\" \nfor grunnstoff in aggregattilstand: \n    _______",
+    "code": "aggregattilstand = {\"hydrogen\": \"gass\", \"svovel\": \"fast stoff\", \"kvikksølv\": \"væske\"} \nfor grunnstoff in aggregattilstand: \n    _______",
     "type": "multiple_choice",
     "answers": [
       {

@@ -18,7 +18,7 @@ parts:
   chapters:
   - file: docs/tema2_kodestrukturering/funksjoner
   - file: docs/tema2_kodestrukturering/klasser_objekter
-- caption: "Tema 3 - Datahåndtering
+- caption: Tema 3 - DatahÃ¥ndtering
   chapters:
   - file: docs/tema3_datahandtering/datasamlinger
   - file: docs/tema3_datahandtering/plotting

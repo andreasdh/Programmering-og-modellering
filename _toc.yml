@@ -2,7 +2,6 @@ format: jb-book
 root: docs/intro
 options:
   numbered: true
-
 parts:
 - caption: Tema 1 - Grunnleggende programmering
   chapters:
@@ -12,10 +11,10 @@ parts:
     - file: docs/tema1_grunnleggende_programmering/quiz1
     - file: docs/tema1_grunnleggende_programmering/quiz2
   - file: docs/tema1_grunnleggende_programmering/kontrollstrukturer
+    sections:
     - file: docs/tema1_grunnleggende_programmering/quiz3
     - file: docs/tema1_grunnleggende_programmering/quiz4
   - file: docs/tema1_grunnleggende_programmering/programmeringsverktoy
-  - file: docs/tema1_grunnleggende_programmering/grunnleggende_programmering
 - caption: Tema 2 - Kodestrukturering
   chapters:
   - file: docs/tema2_kodestrukturering/funksjoner

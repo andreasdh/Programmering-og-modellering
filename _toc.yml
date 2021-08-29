@@ -7,7 +7,6 @@ parts:
   chapters:
   - file: docs/tema1_grunnleggende_programmering/kom_i_gang
   - file: docs/tema1_grunnleggende_programmering/tall_variabler
-  - file: docs/tema1_grunnleggende_programmering/tall_variabler_oppgaver
     sections:
     - file: docs/tema1_grunnleggende_programmering/quiz1
     - file: docs/tema1_grunnleggende_programmering/quiz2

@@ -1,26 +1,32 @@
 format: jb-book
 root: docs/intro
+options:
+  numbered: true
+
 parts:
 - caption: Tema 1 - Grunnleggende programmering
   chapters:
   - file: docs/tema1_grunnleggende_programmering/kom_i_gang
   - file: docs/tema1_grunnleggende_programmering/tall_variabler
+    sections:
+    - file: docs/tema1_grunnleggende_programmering/quiz1
+    - file: docs/tema1_grunnleggende_programmering/quiz2
   - file: docs/tema1_grunnleggende_programmering/kontrollstrukturer
+    - file: docs/tema1_grunnleggende_programmering/quiz3
+    - file: docs/tema1_grunnleggende_programmering/quiz4
   - file: docs/tema1_grunnleggende_programmering/programmeringsverktoy
   - file: docs/tema1_grunnleggende_programmering/grunnleggende_programmering
-  - file: docs/tema1_grunnleggende_programmering/quiz1
-  - file: docs/tema1_grunnleggende_programmering/quiz2
-  - file: docs/tema1_grunnleggende_programmering/quiz3
-  - file: docs/tema1_grunnleggende_programmering/quiz4
-  - file: docs/tema1_grunnleggende_programmering/quiz5
-  - file: docs/tema1_grunnleggende_programmering/quiz6
 - caption: Tema 2 - Kodestrukturering
   chapters:
   - file: docs/tema2_kodestrukturering/funksjoner
+    sections:
+      - file: docs/tema1_grunnleggende_programmering/quiz5
   - file: docs/tema2_kodestrukturering/klasser_objekter
 - caption: Tema 3 - Datahåndtering
   chapters:
   - file: docs/tema3_datahandtering/datasamlinger
+    sections:
+      - file: docs/tema1_grunnleggende_programmering/quiz6
   - file: docs/tema3_datahandtering/plotting
   - file: docs/tema3_datahandtering/datahandtering
 - caption: Tema 4 - Grafikk

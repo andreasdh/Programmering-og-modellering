@@ -7,14 +7,12 @@ parts:
   chapters:
   - file: docs/tema1_grunnleggende_programmering/kom_i_gang
   - file: docs/tema1_grunnleggende_programmering/tall_variabler
-  - file: docs/tema1_grunnleggende_programmering/if-tester
     sections:
     - file: docs/tema1_grunnleggende_programmering/quiz1
     - file: docs/tema1_grunnleggende_programmering/quiz2
-  - file: docs/tema1_grunnleggende_programmering/kontrollstrukturer
+  - file: docs/tema1_grunnleggende_programmering/if-tester
     sections:
     - file: docs/tema1_grunnleggende_programmering/quiz3
-    - file: docs/tema1_grunnleggende_programmering/quiz4
   - file: docs/tema1_grunnleggende_programmering/programmeringsverktoy
 - caption: Tema 2 - Kodestrukturering
   chapters:

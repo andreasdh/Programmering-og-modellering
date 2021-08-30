@@ -9,6 +9,7 @@ parts:
   - file: docs/tema1_grunnleggende_programmering/tall_variabler
     sections:
     - file: docs/tema1_grunnleggende_programmering/quiz1
+  - file: docs/tema1_grunnleggende_programmering/lister
     - file: docs/tema1_grunnleggende_programmering/quiz2
   - file: docs/tema1_grunnleggende_programmering/if-tester
     sections:

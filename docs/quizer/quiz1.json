@@ -22,7 +22,7 @@
             {
                 "answer": "12",
                 "correct": true,
-                "feedback": "Ja. Variablene inneholder strenger. Strenger slås sammen når de addderes."
+                "feedback": "Riktig. Variablene inneholder strenger. Strenger slås sammen når de addderes."
             },
             {
                 "answer": "error",
@@ -54,7 +54,7 @@
             {
                 "answer": "Ingenting skjer.",
                 "correct": true,
-                "feedback": "Ja. Det er fullt tillatt å skrive over print-funksjonen. Men nå finnes ikke print-funksjonen i programmet ditt mer, og du må restarte Python."
+                "feedback": "Riktig. Det er fullt tillatt å skrive over print-funksjonen. Men nå finnes ikke print-funksjonen i programmet ditt mer, og du må restarte Python."
             }
         ]
     },
@@ -76,7 +76,7 @@
            {
                "answer": "False.",
                "correct": true,
-               "feedback": "Ja. 3 er ikke større enn 4, og vi får den boolske verdien False (merk at det alltid er stor forbokstav)."
+               "feedback": "Riktig. 3 er ikke større enn 4, og vi får den boolske verdien False (merk at det alltid er stor forbokstav)."
            },
            {
                "answer": "Ingenting skjer.",
@@ -108,7 +108,7 @@
             {
                 "answer": "3",
                 "correct": true,
-                "feedback": "Feil. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
+                "feedback": "Riktig. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
             },
             {
                 "answer": "Feilmelding",
@@ -150,19 +150,19 @@
         "type": "multiple_choice",
         "answers": [
             {
+                "answer": "a = 20, b = 20",
+                "correct": true,
+                "feedback": "Riktig. I tredje linje får a verdien til b."
+            },
+            {
                 "answer": "a = 20, b = 10",
                 "correct": false,
                 "feedback": "Feil. I tredje linje får a verdien til b, men ikke motsatt."
             },
             {
-                "answer": "a = 20, b = 20",
-                "correct": false,
-                "feedback": "Feil. I tredje linje får a verdien til b, men ikke motsatt."
-            },
-            {
                 "answer": "a = 10, b = 10",
-                "correct": true,
-                "feedback": "Riktig. I tredje linje får a verdien til b."
+                "correct": false,
+                "feedback": "Feil. I tredje linje får a verdien til b."
             },
             {
                 "answer": "a = 10, b = 20",

@@ -15,6 +15,9 @@ parts:
   - file: docs/tema1_grunnleggende_programmering/if-tester
     sections:
     - file: docs/tema1_grunnleggende_programmering/quiz3
+  - file: docs/tema1_grunnleggende_programmering/lokker
+    sections:
+    - file: docs/tema1_grunnleggende_programmering/quiz4
   - file: docs/tema1_grunnleggende_programmering/programmeringsverktoy
 - caption: Tema 2 - Kodestrukturering
   chapters:

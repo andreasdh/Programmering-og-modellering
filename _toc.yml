@@ -53,4 +53,4 @@ parts:
   - file: docs/datafiler
 - caption: Programmeringskurs
   chapters:
-  - file: docs/ekstra/programmering_intro
+  - file: docs/kurs/programmering_intro

@@ -28,13 +28,13 @@ parts:
 - caption: Tema 3 - Datahåndtering
   chapters:
   - file: docs/tema3_datahandtering/datasamlinger
+    sections:
+      - file: docs/tema1_grunnleggende_programmering/quiz6
   - file: docs/tema3_datahandtering/plotting
   - file: docs/tema3_datahandtering/lese_filer
   - file: docs/tema3_datahandtering/statistikk
   - file: docs/tema3_datahandtering/maskinlaring
-    sections:
-      - file: docs/tema1_grunnleggende_programmering/quiz6
-- caption: Tema 4 - Grafikk
+- caption: Tema 4 - Tilfeldige tall og grafikk
   chapters:
   - file: docs/tema4_grafikk/tilfeldige_tall_grafikk
 - caption: Tema 5 - Algoritmer

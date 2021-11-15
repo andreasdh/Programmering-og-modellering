@@ -18,7 +18,6 @@ parts:
   - file: docs/tema1_grunnleggende_programmering/lokker
     sections:
     - file: docs/tema1_grunnleggende_programmering/quiz4
-  - file: docs/tema1_grunnleggende_programmering/programmeringsverktoy
 - caption: Tema 2 - Kodestrukturering
   chapters:
   - file: docs/tema2_kodestrukturering/funksjoner
@@ -27,6 +26,7 @@ parts:
   - file: docs/tema2_kodestrukturering/klasser_objekter
 - caption: Tema 3 - Datahåndtering
   chapters:
+  - file: docs/tema1_grunnleggende_programmering/programmeringsverktoy
   - file: docs/tema3_datahandtering/datasamlinger
     sections:
       - file: docs/tema1_grunnleggende_programmering/quiz6

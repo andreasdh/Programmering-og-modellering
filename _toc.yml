@@ -37,7 +37,9 @@ parts:
 - caption: Tema 4 - Algoritmer
   chapters:
   - file: docs/tema4_algoritmer/algoritmer
+  - file: docs/tema4_algoritmer/likninger
   - file: docs/tema4_algoritmer/derivasjon
+  - file: docs/tema4_algoritmer/integrasjon
   - file: docs/tema4_algoritmer/numeriske_biblioteker
   - file: docs/tema4_algoritmer/symbolsk_utregning
 - caption: Tema 5 - Modellering

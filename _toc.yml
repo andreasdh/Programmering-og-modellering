@@ -34,22 +34,20 @@ parts:
   - file: docs/tema3_datahandtering/lese_filer
   - file: docs/tema3_datahandtering/statistikk
   - file: docs/tema3_datahandtering/maskinlaring
-- caption: Tema 4 - Tilfeldige tall og grafikk
+- caption: Tema 4 - Algoritmer
   chapters:
-  - file: docs/tema4_grafikk/tilfeldige_tall_grafikk
-- caption: Tema 5 - Algoritmer
+  - file: docs/tema4_algoritmer/algoritmer
+  - file: docs/tema4_algoritmer/derivasjon
+  - file: docs/tema4_algoritmer/numeriske_biblioteker
+  - file: docs/tema4_algoritmer/symbolsk_utregning
+- caption: Tema 5 - Modellering
   chapters:
-  - file: docs/tema5_algoritmer/derivasjon
-  - file: docs/tema5_algoritmer/numeriske_biblioteker
-  - file: docs/tema5_algoritmer/symbolsk_utregning
-- caption: Tema 6 - Modellering
-  chapters:
-  - file: docs/tema6_modellering/diskret_modellering
-  - file: docs/tema6_modellering/smittemodellering_diskret
-  - file: docs/tema6_modellering/differensiallikninger
-  - file: docs/tema6_modellering/differensiallikninger_oppgaver
-  - file: docs/tema6_modellering/pingviner
-  - file: docs/tema6_modellering/maskinlaring_titanic_oppgaver
+  - file: docs/tema5_modellering/diskret_modellering
+  - file: docs/tema5_modellering/smittemodellering_diskret
+  - file: docs/tema5_modellering/differensiallikninger
+  - file: docs/tema5_modellering/differensiallikninger_oppgaver
+  - file: docs/tema5_modellering/pingviner
+  - file: docs/tema5_modellering/maskinlaring_titanic_oppgaver
 - caption: Datafiler
   chapters:
   - file: docs/datafiler

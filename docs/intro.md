@@ -25,13 +25,15 @@ Når du gjennomgår fagstoffet på sidene, bør du gjøre underveisoppgavene. Da
 | Maskinlæring | desember |
 | VURDERING | Prosjekt: Datahåndtering |
 |  | Juleferie |
-| Algoritmer 1: Numeriske metoder og algoritmer (derivasjon) | januar |
-| Algoritmer: Feilhåndtering| januar |
-| Algoritmer 2: Differens- og differensiallikninger | februar |
-| | Vinterferie |
-| Modellering 1: Diskrete modeller (differenslikninger) | februar-mars |
-| VURDERING | Prosjekt: Diskrete modeller |
-| Modellering 2: Kontinuerlige modeller (differensiallikninger) | mars-april |
-| Modellering 3: Maskinlæringsmodeller  | mai |
-| VURDERING | Prosjekt: Avsluttende modelleringsprosjekt |
-| Forberedelse til muntlig og avsluttende prosjekt | mai-juni |
+| Numeriske metoder (likninger og derivasjon) og algoritmer (stokastisk simulering og matematiske algoritmer) | januar |
+| Modellering I: Diskrete modeller | februar |
+| Fagdag: Modellering| 2. februar. Modelleringsprosjekt I starter. |
+| VURDERING | Innlevering modelleringsprosjekt I. Frist 18. februar kl. 12:00|
+| | Vinterferie (21.-25.februar) |
+| Modellering II: Differensiallikninger | februar + mars |
+| Fagdag: Ekskursjon? | 23. mars kl. 08:20 (NB!) til 15:20 |
+| VURDERING | Innlevering modelleringsprosjekt II. Frist 29. mars kl. 12:00 |
+| | Påskeferie (timen utgår både mandag 11. og 19. april) |
+| Modellering III: Maskinlæringsmodeller | april|
+| VURDERING | Muntlige høringer 23., 25. mai og 1. juni |
+| Avsluttende prosjekt og trening til muntlig eksamen| mai-juni |

@@ -21,9 +21,9 @@ Når du gjennomgår fagstoffet på sidene, bør du gjøre underveisoppgavene. Da
 | VURDERING | Prøve: Grunnleggende programmering |
 | Datasamlinger (arrayer, tupler og dictionarier) | november |
 | Visualiseringer | november |
-| Datahåndtering og statistikk | november/desember |
-| Maskinlæring | desember |
-| VURDERING | Prosjekt: Datahåndtering |
+| Datahåndtering og statistikk | desember |
+| Arbeid med prosjekt | desember |
+| VURDERING | Prosjekt: Datahåndtering (regresjonsmodeller og korrelasjonsanalyse) |
 |  | Juleferie |
 | Numeriske metoder (likninger og derivasjon) og algoritmer (stokastisk simulering og matematiske algoritmer) | januar |
 | Modellering I: Diskrete modeller | februar |

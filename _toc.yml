@@ -51,6 +51,8 @@ parts:
   - file: docs/tema5_modellering/differensiallikninger_oppgaver
   - file: docs/tema5_modellering/pingviner
   - file: docs/tema5_modellering/maskinlaring_titanic_oppgaver
+- caption: Prosjektoppgaver
+  - file: docs/tema5_modellering/modelleringsprosjekt1
 - caption: Datafiler
   chapters:
   - file: docs/datafiler

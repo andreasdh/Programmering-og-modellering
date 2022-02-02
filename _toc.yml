@@ -46,6 +46,7 @@ parts:
 - caption: Tema 5 - Modellering
   chapters:
   - file: docs/tema5_modellering/diskret_modellering
+  - file: docs/tema5_modellering/regresjonsmodeller
   - file: docs/tema5_modellering/smittemodellering_diskret
   - file: docs/tema5_modellering/differensiallikninger
   - file: docs/tema5_modellering/differensiallikninger_oppgaver

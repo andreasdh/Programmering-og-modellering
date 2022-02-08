@@ -60,3 +60,4 @@ parts:
 - caption: Programmeringskurs
   chapters:
   - file: docs/kurs/programmering_intro
+  - file: docs/kurs/smittemodellering

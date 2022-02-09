@@ -45,17 +45,17 @@ parts:
   chapters:
   - file: docs/tema5_modellering/diskret_modellering
   - file: docs/tema5_modellering/regresjonsmodeller
-  - file: docs/tema5_modellering/smittemodellering_diskret
   - file: docs/tema5_modellering/differensiallikninger
-
   - file: docs/tema5_modellering/pingviner
-  - file: docs/tema5_modellering/maskinlaring_titanic_oppgaver
+
 - caption: Oppgaver
   chapters:
   - file: docs/oppgaver/likninger_oppgaver
   - file: docs/oppgaver/differensiallikninger_oppgaver
+  - file: docs/oppgaver/maskinlaring_titanic_oppgaver
   - file: docs/oppgaver/statistikkprosjekt
   - file: docs/oppgaver/modelleringsprosjekt1
+  - file: docs/oppgaver/modelleringsprosjekt2
 - caption: Datafiler
   chapters:
   - file: docs/datafiler

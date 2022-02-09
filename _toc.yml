@@ -38,7 +38,6 @@ parts:
   chapters:
   - file: docs/tema4_algoritmer/algoritmer
   - file: docs/tema4_algoritmer/likninger
-  - file: docs/tema4_algoritmer/likninger_oppgaver
   - file: docs/tema4_algoritmer/derivasjon
   - file: docs/tema4_algoritmer/integrasjon
   - file: docs/tema4_algoritmer/symbolsk_utregning
@@ -48,12 +47,15 @@ parts:
   - file: docs/tema5_modellering/regresjonsmodeller
   - file: docs/tema5_modellering/smittemodellering_diskret
   - file: docs/tema5_modellering/differensiallikninger
-  - file: docs/tema5_modellering/differensiallikninger_oppgaver
+
   - file: docs/tema5_modellering/pingviner
   - file: docs/tema5_modellering/maskinlaring_titanic_oppgaver
-- caption: Prosjektoppgaver
+- caption: Oppgaver
   chapters:
-  - file: docs/tema5_modellering/modelleringsprosjekt1
+  - file: docs/oppgaver/likninger_oppgaver
+  - file: docs/oppgaver/differensiallikninger_oppgaver
+  - file: docs/oppgaver/statistikkprosjekt
+  - file: docs/oppgaver/modelleringsprosjekt1
 - caption: Datafiler
   chapters:
   - file: docs/datafiler

@@ -42,3 +42,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force_orphan: true
           publish_dir: ./_build/html
+          cname: progmod.no

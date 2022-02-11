@@ -25,7 +25,7 @@ notebook_interface            : "notebook"
 #######################################################################################
 # Launch button settings
 repository:
-  url                         : https://github.com/andreasdh/programmering-og-modellering
+  url                         : https://progmod.no
   path_to_book                : "mini_book"
 
 binder:

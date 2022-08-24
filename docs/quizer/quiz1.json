@@ -106,13 +106,8 @@
                 "feedback": "Feil. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
             },
             {
-                "answer": "3",
-                "correct": true,
-                "feedback": "Riktig. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
-            },
-            {
                 "answer": "Feilmelding",
-                "correct": false,
+                "correct": true,
                 "feedback": "Ja. Den ene variabelen er streng, og den andre er heltall. Disse kan ikke adderes."
             }
         ]

@@ -44,7 +44,7 @@
       {
         "answer": "\"Tallet er større enn eller lik 7.\"\n \"Tallet er 7.\" ",
         "correct": true,
-        "feedback": "Riktig. Feil. Begge if-testene utføres."
+        "feedback": "Riktig. Begge if-testene utføres."
       },
       {
         "answer": "\"Tallet er ikke 7.\"",

@@ -228,7 +228,7 @@
   },
   {
     "question": "Hvilke av følgende verdier for a, b, c og d vil skrive ut \"Vilkår a, c og d er sann\" gitt følgende program?",
-    "code": "l = [4, 5, 6, 1, 1, 2, 7] \nif a == l[3]: \n    if b == l[0]: \n        print(\"Vilkår a og b er sann\") \n     if c == l[5]: \n        if d == l[2]: \n            print(\"Vilkår a, c og d er sann\")",
+    "code": "l = [4, 5, 6, 1, 1, 2, 7] \nif a == l[3]: \n    if b == l[0]: \n        print(\"Vilkår a og b er sann\") \n    if c == l[5]: \n        if d == l[2]: \n            print(\"Vilkår a, c og d er sann\")",
     "type": "multiple_choice",
     "answers": [
       {

@@ -65,7 +65,7 @@
   },
   {
     "question": "Hva blir output når dette programmet kjører?",
-    "code": "def f(x): \n    return x + 1 \ndef g(y): \n    return(y**2) \n \nx=2 \nprint(g(f(g(x)))",
+    "code": "def f(x): \n    return x + 1 \ndef g(y): \n    return(y**2) \n \nx=2 \nprint(g(f(g(x))))",
     "type": "numeric",
     "precision": 0,
     "answers": [

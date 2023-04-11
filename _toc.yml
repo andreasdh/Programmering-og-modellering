@@ -54,7 +54,8 @@ parts:
   - file: docs/oppgaver/modelleringsprosjekt1
   - file: docs/oppgaver/modelleringsprosjekt2
 - caption: Repetisjonsoppgaver
-  chapters: docs/repetisjon/kjemioppgaver
+  chapters: 
+  - file: docs/repetisjon/kjemioppgaver
 - caption: Datafiler
   chapters:
   - file: docs/datafiler

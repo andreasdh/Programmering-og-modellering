@@ -53,8 +53,7 @@ parts:
   - file: docs/oppgaver/statistikkprosjekt
   - file: docs/oppgaver/modelleringsprosjekt1
   - file: docs/oppgaver/modelleringsprosjekt2
-  - file: docs/repetisjon/kjemioppgaver
-- caption: Repetisjonsoppgaver
+- caption: Fagoppgaver
   chapters: 
   - file: docs/repetisjon/kjemioppgaver
 - caption: Datafiler

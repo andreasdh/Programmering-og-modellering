@@ -48,12 +48,13 @@ parts:
   - file: docs/tema5_modellering/differensiallikninger
 - caption: Oppgaver
   chapters:
-  - file: docs/oppgaver/likninger_oppgaver
   - file: docs/oppgaver/differensiallikninger_oppgaver
   - file: docs/oppgaver/maskinlaring_titanic_oppgaver
   - file: docs/oppgaver/statistikkprosjekt
   - file: docs/oppgaver/modelleringsprosjekt1
   - file: docs/oppgaver/modelleringsprosjekt2
+- caption: Repetisjonsoppgaver
+  chapters: docs/repetisjon/kjemioppgaver
 - caption: Datafiler
   chapters:
   - file: docs/datafiler

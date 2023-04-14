@@ -58,6 +58,7 @@ parts:
 - caption: Fagoppgaver
   chapters: 
   - file: docs/fagoppgaver/kjemioppgaver
+  - file: docs/fagoppgaver/biologioppgaver
   - file: docs/fagoppgaver/teknologi
 - caption: Datafiler
   chapters:

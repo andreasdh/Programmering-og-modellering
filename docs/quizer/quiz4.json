@@ -38,13 +38,13 @@
   },
   {
     "question": "Hva gjør dette programmet?",
-    "code": "a = 1 \nwhile a < 11: \n     a += 2 \n    print(a)",
+    "code": "a = 1 \nwhile a < 11: \n    a += 2 \n    print(a)",
     "type": "multiple_choice",
     "answers": [
       {
         "answer": "Skriver ut alle oddetall fra og med 1 til og med 11.",
-        "correct": false,
-        "feedback": "Feil. Kontroller når den første utskriften skjer."
+        "correct": true,
+        "feedback": "Riktig."
       },
       {
         "answer": "Skriver ut alle oddetall fra og med 1 til 11.",
@@ -58,8 +58,8 @@
       },
       {
         "answer": "Skriver ut alle oddetall fra og med 3 til 11",
-        "correct": true,
-        "feedback": "Riktig."
+        "correct": false,
+        "feedback": "Feil. Kontroller når den første utskriften skjer."
       }
     ]
   },

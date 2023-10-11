@@ -38,28 +38,28 @@
   },
   {
     "question": "Hva gjør dette programmet?",
-    "code": "a = 1 \nwhile a < 11: \n    a += 2 \n    print(a)",
+    "code": "a = 1 \nwhile a < 11: \n    a = a + 2 \n    print(a)",
     "type": "multiple_choice",
     "answers": [
       {
         "answer": "Skriver ut alle oddetall fra og med 1 til og med 11.",
-        "correct": true,
-        "feedback": "Riktig."
+        "correct": false,
+        "feedback": "Feil. Kontroller når den første utskriften skjer. " 
       },
       {
         "answer": "Skriver ut alle oddetall fra og med 1 til 11.",
         "correct": false,
-        "feedback": "Feil. Kontroller når den første utskriften skjer."
+        "feedback": "Feil. Kontroller når den første og siste utskriften skjer."
       },
       {
         "answer": "Skriver ut alle oddetall fra og med 3 til og med 11.",
-        "correct": false,
-        "feedback": "Feil. Kontroller hva a er siste gang den skrives ut."
+        "correct": true,
+        "feedback": "Riktig."
       },
       {
         "answer": "Skriver ut alle oddetall fra og med 3 til 11",
         "correct": false,
-        "feedback": "Feil. Kontroller når den første utskriften skjer."
+        "feedback": "Feil. Kontroller når den siste utskriften skjer."
       }
     ]
   },
@@ -106,12 +106,12 @@
     "type": "multiple_choice",
     "answers": [
       {
-        "answer": "Vi vet ikke på forhånd hvor mange ganger en for-løkke vil kjøre. Den kjører til en betingelse er oppfylt. En while-løkke kjører et bestemt antall ganger.",
+        "answer": "Vi vet ikke på forhånd hvor mange ganger en for-løkke vil kjøre. Den kjører så lenge en betingelse er oppfylt. En while-løkke kjører et bestemt antall ganger.",
         "correct": false,
         "feedback": "Feil. Det er heller motsatt."
       },
       {
-        "answer": "Vi vet ikke på forhånd mange ganger en while-løkke vil kjøre. Den kjører til en betingelse er oppfylt. En for-løkke kjører et bestemt antall ganger.",
+        "answer": "Vi vet ikke på forhånd mange ganger en while-løkke vil kjøre. Den kjører så lenge en betingelse er oppfylt. En for-løkke kjører et bestemt antall ganger.",
         "correct": true,
         "feedback": "Riktig. Vi kaller ofte while-løkker for \"tilstandsløkker\" og for-løkker for \"telle-løkker\"."
       },
@@ -129,27 +129,27 @@
   },
 
   {
-    "question": "Hvilken av følgende programmer gir følgende output?",
+    "question": "Hvilken av følgende programmer gir følgende output? (merk at semikolon markerer linjeskift her)",
     "code": "1 \n2 \n3 \n4 \n5 \n6 ",
     "type": "multiple_choice",
     "answers": [
       {
-        "answer": "index = 0\n while index < 6:    print(index) \nindex = index + 1",
+        "answer": "index = 0; while index < 6:;   print(index); index = index + 1",
         "correct": false,
         "feedback": "Feil. Sjekk hva det første vi printer ut, er."
       },
       {
-        "answer": "index = 0\n while index < 6:\n    index = index + 1\n    print(index)",
+        "answer": "index = 0; while index < 6:;    index = index + 1;    print(index)",
         "correct": true,
         "feedback": "Riktig."
       },
       {
-        "answer": "index = 1\n while index < 6:\n    print(index)\n    index = index + 1",
+        "answer": "index = 1; while index < 6:;    print(index);    index = index + 1",
         "correct": false,
         "feedback": "Feil. Sjekk hva det siste vi printer ut, er."
       },
       {
-        "answer": "index = 0\n while index <= 6:\n    index = index + 1 \n    print(index)",
+        "answer": "index = 0; while index <= 6:;    index = index + 1;    print(index)",
         "correct": false,
         "feedback": "Feil. Her vil vi få med tallet 7 (hvorfor?)."
       }
@@ -249,7 +249,7 @@
   },
   {
     "question": "Hva er output fra følgende program?",
-    "code": "s = 0 \ntall = 2 \nfor i in range(3):\n    s = s + tall\n    tall = tall + 3\n print(s) ",
+    "code": "s = 0 \ntall = 2 \nfor i in range(3):\n    s = s + tall\n    tall = tall + 3\nprint(s) ",
     "type": "numeric",
     "precision": 0,
     "answers": [
@@ -496,7 +496,7 @@
   },
   {
     "question": "Hva skrives ut når dette programmet kjører?",
-    "code": "a = 0\nfor i in range(4):\n    for j in range(2,5,2):\n        a += i+j\nprint(a)",
+    "code": "a = 0\nfor i in range(4):\n    for j in range(2,5,2):\n        a = a + i + j\nprint(a)",
     "type": "numeric",
     "answers": [
       {

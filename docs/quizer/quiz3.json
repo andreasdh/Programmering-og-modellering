@@ -111,7 +111,7 @@
 
   {
     "question": "Hvilken av følgende kodelinjer sjekker om a er en streng?",
-    "code": "\"a = \"potet\"\"",
+    "code": "a = \"potet\"",
     "type": "multiple_choice",
     "answers": [
       {
@@ -164,7 +164,7 @@
     ]
   },
   {
-    "question": "Hva må vi sette inn i koden for å få 15 som output?",
+    "question": "Hva kan vi sette inn i koden for å få 15 som output?",
     "code": "a = 10 \nb = 5 \nif a ___ b: \n    print(a + b)",
     "type": "many_choice",
     "answers": [

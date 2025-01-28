@@ -46,7 +46,6 @@ parts:
   - file: docs/tema5_modellering/diskret_modellering
   - file: docs/tema5_modellering/regresjonsmodeller
   - file: docs/tema5_modellering/differensiallikninger
-  - file: docs/tema5_modellering/modelleringsrapport
 
 - caption: Oppgaver
   chapters:

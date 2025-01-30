@@ -1,0 +1,1456 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Teknologi og programmering &#8212; Programmering og modellering</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/fagoppgaver/teknologi';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Datafiler" href="../datafiler.html" />
+    <link rel="prev" title="Repetisjon II: Biologioppgaver" href="biologioppgaver.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lokker.html">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/statistikk.html">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/likninger.html">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/differensiallikninger.html">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt2.html">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lokker.html">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/statistikk.html">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/likninger.html">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/differensiallikninger.html">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt2.html">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 1 - Grunnleggende programmering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">En første kodesnutt</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">Variabler og datatyper</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz1.html">Quiz 1: Variabler og aritmetikk</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/lister.html">Lister</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz2.html">Quiz 2: Lister</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/if-tester.html">Vilkår (if-tester)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz3.html">Quiz 3: Vilkår (if-tester)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/lokker.html">Løkker</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz4.html">Quiz 4: Løkker</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 2 - Kodestrukturering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema2_kodestrukturering/funksjoner.html">Funksjoner</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz5.html">Quiz 5: Funksjoner</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tema2_kodestrukturering/klasser_objekter.html">Klasser og objekter</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 3 - Datahåndtering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">Programmeringsverktøy</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema3_datahandtering/datasamlinger.html">Datasamlinger</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz6.html">Quiz 6: Datasamlinger (arrayer og dictionarier)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/plotting.html">Datahåndtering I: Visualisering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/lese_filer.html">Datahåndering II: Håndtere og visualisere data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/statistikk.html">Datahåndering III: Statistikk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/maskinlaring.html">Datahåndtering IV: Maskinlæring</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 - Algoritmer</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/algoritmer.html">Matematiske algoritmer og stokastiske simuleringer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/likninger.html">Likninger og nullpunkter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/derivasjon.html">Numerisk derivasjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/integrasjon.html">Numerisk integrasjon (ekstrastoff)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/symbolsk_utregning.html">Symbolsk utregning (CAS)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 - Modellering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/diskret_modellering.html">Modellering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/regresjonsmodeller.html">Regresjonsmodeller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/differensiallikninger.html">Differensiallikninger og kontinuerlige modeller</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/differensiallikninger_oppgaver.html">Differensiallikninger (oppgaver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">Maskinlæring med Titanic (oppgave)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/statistikkprosjekt.html">Statistikkprosjekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/modelleringsprosjekt1.html">Modelleringsoppgave I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/modelleringsprosjekt2.html">Modelleringsoppgave II</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Fagoppgaver</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="kjemioppgaver.html">Repetisjon I: Kjemioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biologioppgaver.html">Repetisjon II: Biologioppgaver</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Teknologi og programmering</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datafiler</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../datafiler.html">Datafiler</a></li>
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../../_sources/docs/fagoppgaver/teknologi.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Teknologi og programmering</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#teknologi-i-et-baerekraftig-perspektiv">
+   Teknologi i et bærekraftig perspektiv
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programmering-med-mikrokontrollere">
+   Programmering med mikrokontrollere
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduksjon-til-micro-bit">
+   Introduksjon til micro:bit
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#elektronikken">
+     Elektronikken
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grunnleggende-programmering">
+   Grunnleggende programmering
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#led-skjermen">
+   LED-skjermen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#knapper">
+   Knapper
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#radio">
+   Radio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eksterne-tilkoblinger-pins">
+   Eksterne tilkoblinger (pins)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spenning-strom-og-resistans">
+     Spenning, strøm og resistans
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lese-av-og-skrive-til-eksterne-tilkoblinger">
+     Lese av og skrive til eksterne tilkoblinger
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sensorer">
+   Sensorer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oppgaver">
+   Oppgaver
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <section class="tex2jax_ignore mathjax_ignore" id="teknologi-og-programmering">
+<h1>Teknologi og programmering<a class="headerlink" href="#teknologi-og-programmering" title="Permalink to this heading">#</a></h1>
+<div class="admonition-laeringsutbytte admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>Etter å ha arbeidet med dette temaet, skal du kunne:</p>
+<ol class="arabic simple">
+<li><p>lage enkle programmer på en micro:bit</p></li>
+<li><p>bruke knapper, radio og sensorer på micro:bit</p></li>
+<li><p>illustrere hvordan sensorer fungerer ved å bruke micro:bit</p></li>
+</ol>
+</div>
+<section id="teknologi-i-et-baerekraftig-perspektiv">
+<h2>Teknologi i et bærekraftig perspektiv<a class="headerlink" href="#teknologi-i-et-baerekraftig-perspektiv" title="Permalink to this heading">#</a></h2>
+<p>Utvikling og bruk av teknologi lider av et dårlig rykte i miljøsammenheng. Støy, giftige utslipp, <span class="math notranslate nohighlight">\(CO_2\)</span>-utslipp og avfall er noen av problemene med bruk av teknologi og teknologiproduksjon. Men i tillegg til å være et potensielt miljøproblem kan teknologi også være en av løsningene mot en bærekraftig framtid med nok energi og ressurser til å dekke alles grunnleggende behov. Ikke minst kan teknologi hjelpe til med å rette opp i feil vi har gjort. Plastfangere kan samle inn avfall i havet. Sporere og kamera kan hjelpe til med å kartlegge det biologiske mangfoldet slik at vi kan sette inn tiltak der det trengs. Intelligente avfallsanlegg sorterer ulike plasttyper slik at de kan gjenvinnes fornuftig med minst mulig energitap.</p>
+<p>Sett i et større perspektiv er det ikke teknologien som er et problem, det er menneskene bak den. Dermed blir gode valg og fornuftig bruk av teknologi essensielt for å sikre en bærekraftig framtid for alle.</p>
+</section>
+<section id="programmering-med-mikrokontrollere">
+<h2>Programmering med mikrokontrollere<a class="headerlink" href="#programmering-med-mikrokontrollere" title="Permalink to this heading">#</a></h2>
+<p>Vi kan utforske programmering i en teknologisk sammenheng gjennom <em>mikrokontrollere</em>. En mikrokontroller er en liten datamaskin i én enkel integrert krets. Den viktigste komponenten i en slik krets, er transistorene. Det er disse som styrer strømmen av informasjon gjennom en datamaskin. “Hjernen” i en datamaskin kalles for en <em>CPU</em> (Central Processing Unit) og består i dag av flere hundretalls millioner transistorer (ja, de er små!).</p>
+<p>En transistor fungerer som en slags bryter og kan representere 0 (av) eller 1 (på). Det vil si at alt vi programmerer, må oversettes til et språk datamaskinen forstår, og det er et språk som består av kun 0-er og 1-ere. Dette tallsystemet kalles <em>det binære tallsystemet</em> eller <em>totallsystemet</em>. Men det hadde vært tungvint å programmere en datamaskin ved å kun gi den instruksjoner med 0 og 1. Heldigvis er moderne programmeringsspråk enklere å bruke fordi et program som kalles en <em>kompilator</em> oversetter dem til binær kode.</p>
+<p>Det finnes mange ulike mikrokontrollere: Arduino, Raspberry Pi og micro:bit er noen av de mest kjente. Det finnes utrolig mye utstyr til disse mikronkontrollerne, og de har til dels ganske kraftige prosessorer. Spesielt gjelder dette Arduino og Raspbery Pi. Micro:bit har en del lavere kapasitet, men den er til gjengjeld veldig enkel å bruke. Disse mikrokontrollerne skal vi lære oss å programmere.</p>
+</section>
+<section id="introduksjon-til-micro-bit">
+<h2>Introduksjon til micro:bit<a class="headerlink" href="#introduksjon-til-micro-bit" title="Permalink to this heading">#</a></h2>
+<p>Micro:bit blei designa av det britiske selskapet BBC i 2014 for å lære britiske ungdommer programmering. De blei sendt ut gratis til britiske grunnskoler i 2016, og den ideelle foreningen Lær kidsa koding har i samarbeid med  Vitensentrene  og Sparebankstiftelsen sendt ut micro:bit til grunnskoler over hele Norge.</p>
+<p>Det går an å programmere micro:bit med <a class="reference external" href="https://makecode.microbit.org/">blokkbaserte kodesnutter</a>. Blokkbasert koding baserer seg på å flytte ferdigdefinerte blokker i en logisk rekkefølge slik at et program fungerer. Det går også an å programmere dem i <a class="reference external" href="https://python.microbit.org/v/3">Python</a> (eller JavaScript). Vi skal se på både blokk og tekst (Python) her.</p>
+<section id="elektronikken">
+<h3>Elektronikken<a class="headerlink" href="#elektronikken" title="Permalink to this heading">#</a></h3>
+<p>Vi starter med å se litt på hvordan micro:bit-en er bygd opp:</p>
+<img src="https://github.com/andreasdh/realprog/blob/master/docs/bilder/microbit_hardware.jpg?raw=true" title="Primtall" height = 500px/>
+<p>Vi ser følgende komponenter på figuren:</p>
+<ol class="arabic simple">
+<li><p>USB-tilkobling: Her kobles micro:bit med en USB til en datamaskin når vi skal programmere den.</p></li>
+<li><p>LED-lys: 25 LED-lys utgjør en slags “skjerm” på micro:bit-en.</p></li>
+<li><p>Knapper: A-knappen og B-knappen kan programmeres til å styre sekvenser på micro:bit-en.</p></li>
+<li><p>Innganger: Det finnes 5 hovedinnganger for tilkobling av eksternt utstyr, merka med 0, 1, 2, 3V og GND (ground = jording).</p></li>
+<li><p>Batteriinngang: Her kobles batteripakka på to AA-batterier (2 x 1,5 V) til.</p></li>
+<li><p>Omstartsknapp: Starter programmet på micro:bit-en på nytt.</p></li>
+<li><p>Radio og Bluetooth: Liten innebygd antenne som blant annet kan brukes til å kommunisere mellom to enheter.</p></li>
+<li><p>Prosessor: Norskprodusert lettvekterprosessor med svært lavt strømforbruk. Lav hastighet, men har også integrert midlertidig minne (RAM) og lagringsminne (flash).</p></li>
+<li><p>Kompass og akselerometer: Måler retning, posisjon og akselerasjon i de ulike retningene. Integrerte sensorer som en kan hente data fra.</p></li>
+</ol>
+<p>Vi kommer til å bruke all denne elektronikken i prosjektene vi skal se på seinere. Men la oss først se litt på hvordan vi kan programmere i både blokk og med Python.</p>
+</section>
+</section>
+<section id="grunnleggende-programmering">
+<h2>Grunnleggende programmering<a class="headerlink" href="#grunnleggende-programmering" title="Permalink to this heading">#</a></h2>
+<p>Med blokkspråket til micro:bit kan vi definere variabler slik:</p>
+<img src="https://github.com/andreasdh/realprog/blob/master/docs/bilder/variabler.png?raw=truee" title="variabler" width="400">
+<p>Disse blokkene velges fra menyer, og legg merke til at de har “puslespillender”. Det betyr at vi må ha en blokk uten “knagger”, slik som <em>gjenta for alltid</em>-blokka (utføres hele tida) eller <em>ved start</em>-blokka (utføres når micro:bit startes opp) som vi kan putte andre blokker inni. Programmet ovenfor lager en variabel <em>a</em> som den lagrer verdien 0 i, for deretter å legge til 1 i variabelen. Den tilsvarende Python-koden for dette kan skrives slik:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Vilkår kan programmeres slik med blokker:</p>
+<img src="https://github.com/andreasdh/realprog/blob/master/docs/bilder/variabler.png?raw=truee" title="vilkår" width="400">
+<p>I dette programmet settes variabelen til 10. Deretter testes det om tallet er mindre enn eller større enn 0. Hvis tallet verken er større eller mindre enn 0, må det være null, og det er det siste som inntreffer hvis de andre ikke inntraff. Merk at her skrives ikke noe ut, men teksten vises på “skjermen” av LED på micro:bit-en. Dette kan vi få til i Python slik:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">tall</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">if</span> <span class="n">tall</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+	<span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="s1">&#39;Tallet er negativt!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">tall</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+	<span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="s1">&#39;Tallet er positivt!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+	<span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="s1">&#39;Tallet er 0!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Micro:bit inneholder en del spesialfunksjoner som vi må importere inn i programmet med linja <em>from microbit import *</em>. Deretter får vi tilgang til all micro:bit-elektronikken, som vi skal se på seinere. Når vi laster dette programmet over på micro:bit-en, ruller teksten over skjermen. Hvis vi vil vise teksten med én bokstav om gangen, bruker vi <em>display.show()</em> isteden.</p>
+<p>Løkker kan også enkelt programmeres med blokk. En evig løkke kan lages med en enkelt blokk kalt <em>gjenta for alltid</em> på samme måte som <em>ved start</em>-blokka:</p>
+<img src="https://github.com/andreasdh/realprog/blob/master/docs/bilder/evigwhile.png?raw=true" title="evig løkke" width="400">
+<p>Koden ovenfor er en evig løkke som for alltid viser et hjerte på skjermen. Dette kan skrives slik i Python:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+	<span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">HEART</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>“while True” betyr “så lenge sant” og sant er jo sant så lenge sant ikke blir usant. Dette er nesten litt filosofisk, men sant blir aldri usant av seg selv i datamaskinens verden, så løkka kjører til evig tid. Hvis vi ønsker at løkka skal stoppe, velger vi en annen betingelse for løkka vår, f.eks. slik:</p>
+<img src="https://github.com/andreasdh/realprog/blob/master/docs/bilder/loop.png?raw=true" title="løkke" width="400">
+<p>Kodesnutten gir følgende output: <em>0 2 4 6 8</em>. Merk at løkka her har en annen farge, i tillegg til at den må pusles sammen med en annen brikke. En tilsvarende kode i Python kan være slik:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">partall</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">partall</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+	<span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">partall</span><span class="p">)</span>
+	<span class="n">partall</span> <span class="o">=</span> <span class="n">partall</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Nå har vi raskt vært innom grunnleggende programmeringskonsepter i både blokk og tilsvarende Python-kode. La oss nå begynne å bruke dette for fullt på micro:bit-en!</p>
+</section>
+<section id="led-skjermen">
+<h2>LED-skjermen<a class="headerlink" href="#led-skjermen" title="Permalink to this heading">#</a></h2>
+<p>LED-lampene på micro:bit-en kan vi bruke til å vise eller rulle tekst over en slags skjerm. Vi har sett på noe av det før, men la oss kort oppsummere gjennom et kodeeksempel.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span> 
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+	<span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">GHOST</span><span class="p">)</span>
+	<span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="s1">&#39;Du er kul!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>I blokk kan vi gjøre f.eks. som nedenfor. I tillegg kan du enkelt tegne hvilke LED-er som skal lyse. Dette kan du også gjør i Python, men det er litt mer komplisert, så det skal vi ikke vise her (men du kan enkelt finne det på internett!).</p>
+<img src="https://github.com/andreasdh/realprog/blob/master/docs/bilder/led.png?raw=true" title="løkke" width="400">
+<p>Prøv å forstå hva programmet ovenfor gjør. Du kan programmere pause i Python ved å skrive <em>display.pause(1000)</em>, der det som angis i parentes, er pausen i kjøringen gitt i antall millisekunder. Skjermen kan tømmes ved å skrive <em>display.clear()</em>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Lag et Python-program som gjør omtrent det samme som blokkprogrammet ovenfor.</p>
+</div>
+</section>
+<section id="knapper">
+<h2>Knapper<a class="headerlink" href="#knapper" title="Permalink to this heading">#</a></h2>
+<p>Siden micro:bit har to knapper, kan vi bruke disse til å styre beslutninger og sette i gang prosesser. Det kan en enkelt gjøre i blokk slik:</p>
+<img src="https://github.com/andreasdh/realprog/blob/master/docs/bilder/knapp.png?raw=true" title="løkke" width="400">
+<p>Her kan vi selvfølgelig bytte ut knapp A med knapp B, og vi kan også angi at knapp A + B skal trykkes samtidig. I Python kan vi gjøre det slik:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">button_a</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">button_b</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">button_a</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">()</span> <span class="ow">and</span> <span class="n">button_b</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="s1">&#39;AB&#39;</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Lag et program som gjør et eller annet (f.eks. tegner en figur eller viser en tekst) når du trykker på én eller flere knapper.</p>
+</div>
+<p>Det fins også mulighet for å telle antall trykk, f.eks. ved å skrive <em>antall = button_a.get_presses()</em>. Hvis vi da trykker på A-knappen 4 ganger, blir verdien til variabelen <em>antall</em> lik 4.</p>
+</section>
+<section id="radio">
+<h2>Radio<a class="headerlink" href="#radio" title="Permalink to this heading">#</a></h2>
+<p>Det er ganske enkelt å sette opp micro:bit til å sende og motta informasjon. Nedenfor er et enkelt blokkprogram som sender en melding:</p>
+<img src="https://github.com/andreasdh/realprog/blob/master/docs/bilder/radio.png?raw=true" title="løkke" width="400">
+<p>Det meste ovenfor er kanskje enkelt å forstå, men <em>radio sett gruppe</em> er litt spesiell. Den oppretter en kanal mellom 0 og 255 slik at mange micro:bit-er kan kommunisere  sammen uten at det blir kollisjon i meldingene. Et tilsvarende program vil i Python kunne se slik ut:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">radio</span>  <span class="c1"># Importerer radio-funksjonaliteten</span>
+
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>  <span class="c1"># Slår på radioen</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span> <span class="c1"># Setter kanalen/gruppa til 42</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">button_a</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+        <span class="n">radio</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;Hei!&#39;</span><span class="p">)</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="s1">&#39;SENDT&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">button_b</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+        <span class="n">melding</span> <span class="o">=</span> <span class="n">radio</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="n">melding</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Lag et program som sender en beskjed eller et hemmelig tall til en annen micro:bit.</p>
+</div>
+</section>
+<section id="eksterne-tilkoblinger-pins">
+<h2>Eksterne tilkoblinger (pins)<a class="headerlink" href="#eksterne-tilkoblinger-pins" title="Permalink to this heading">#</a></h2>
+<p>Det er egentlig veldig mange måter en kan feste ting til en micro:bit på. Inngangene heter “pins”, og det er flere av dem enn du først kanskje antar. Bildet nedenfor illustrerer mulighetene for tilkobling:</p>
+<img src="https://github.com/andreasdh/realprog/blob/master/docs/bilder/pins.png?raw=true" title="løkke" width="400">
+<p>Vi skal konsentrere oss om utgangene som er formet som store, runde hull (0, 1, 2, 3V og GND).</p>
+<section id="spenning-strom-og-resistans">
+<h3>Spenning, strøm og resistans<a class="headerlink" href="#spenning-strom-og-resistans" title="Permalink to this heading">#</a></h3>
+<p>La oss først repetere litt om spenning, strøm og motstand (resistans). <em>Spenning</em> er den elektriske potensielle energien mellom to punkter. Det vil si at desto høyere spenning, desto høyere potensiell energi er det f.eks. mellom to ladninger. Høy potensiell energi kan føre til bevegelse, f.eks. av ladninger som elektroner. Når slike ladninger beveger seg, får vi <em>strøm</em>.</p>
+<div class="admonition-spenning admonition">
+<p class="admonition-title">Spenning</p>
+<p>Spenning, <em>U</em>, er elektrisk potensiell energi mellom to punkter og måles i V (volt).</p>
+</div>
+<div class="admonition-strom admonition">
+<p class="admonition-title">Strøm</p>
+<p>Strøm, <em>I</em>, er antallet ladninger som passerer et visst punkt hvert sekund og måles i ampere (A).</p>
+</div>
+<p>Siden spenning får elektroner til å bevege seg, kan det ses på som et slags “elektrisk trykk”. Desto høyere trykk, desto flere elektroner går igjennom en leder (f.eks. en kobbertråd/ledning), altså får vi en høyere strøm av elektroner.</p>
+<p>Noe som kan hindre en slik strøm av ladninger, er <em>motstand</em>. En elektrisk leder har lav motstand. Dette er typisk for metaller, f.eks. kobber og gull. Dette er fordi det er metallbinding mellom metallatomene. Du husker kanskje at dette er en binding der atomene deler på alle elektronene i en “elektronsjø”? Siden elektronene er så udefinert bundet, kan de lett flytte på seg. Det vil si at en spenning lett lager en strøm av elektroner gjennom et slikt metall.</p>
+<p>Plast, porselen og tre er eksempler på materialer som ikke leder strøm godt pga. liten mulighet for elektronflyt gjennom kovalente bindinger. Vi sier at disse materialene har <em>høy resistans</em>. Når vi kobler elektriske kretser, ønsker vi ofte å sette inn ulike motstander for å ikke få for høy strøm gjennom de elektriske komponentene våre.  Disse motstandene ser ofte slik ut i småelektronikk:</p>
+<img src="https://github.com/andreasdh/realprog/blob/master/docs/bilder/motstand.jpg?raw=true" title="løkke" width="400">
+<div class="admonition-resistans admonition">
+<p class="admonition-title">Resistans</p>
+<p>Resistans, <em>R</em>, er motstand mot strøm i en elektrisk krets og måles i ohm (<span class="math notranslate nohighlight">\(\Omega\)</span>).</p>
+</div>
+</section>
+<section id="lese-av-og-skrive-til-eksterne-tilkoblinger">
+<h3>Lese av og skrive til eksterne tilkoblinger<a class="headerlink" href="#lese-av-og-skrive-til-eksterne-tilkoblinger" title="Permalink to this heading">#</a></h3>
+<p>For å sette spenning på pins, og/eller lese av spenningen, kan vi i blokk gjøre slik:</p>
+<img src="https://github.com/andreasdh/realprog/blob/master/docs/bilder/pins2.png?raw=true" title="løkke" width="500">
+<p>Her skrives verdien 1 til P0. Når vi skriver <em>digitalt</em>, betyr det at vi enten setter strømmen på (1) eller av (0). Det vil si 0 V eller 3 V. Hvis vi vil variere  strømmen mellom disse verdiene, må vi bruke “skriv analog” isteden. Når vi setter på analog strøm, kan vi variere ved å sette verdien mellom 0 (0 V) og 1023 (3 V).</p>
+<p>I den andre linja i programmet leses analogverdi fra P1, dvs. at det leses av en verdi mellom 0 og 1023 og lagres i variabelen <em>spenning</em>. Hvis vi f.eks. har kobla pin0 med pin1 med en motstand imellom, kan vi lese av spenningen mellom pin-ene. Husk derimot at 1023 ikke betyr 1023 V, men 3 V!</p>
+<p>Vi skal konsentrere oss om pin0, pin1 og pin2 + GND. Pin-en som er merka med 3V er litt spesiell, så den skal vi kun bruke hvis vi må. I Python-kode kan vi lese av og sette på strøm slik:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+	<span class="n">pin0</span><span class="o">.</span><span class="n">write_digital</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+	<span class="n">spenning</span> <span class="o">=</span> <span class="n">pin1</span><span class="o">.</span><span class="n">read_analog</span><span class="p">()</span>
+	<span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="n">spenning</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Legg derimot merke til at Python-funksjonene som brukes, kan gi en helt annen følsomhet og spenning enn blokkene! Det er altså ikke 100 % samsvar mellom de ulike måtene å kode på og elektronikken.</p>
+<p>Vi kan også sende strøm igjennom kroppen (!) ved hjelp av f.eks. <em>pin0.is_touched</em>. Hvis vi da tar på pin0 og GND samtidig (lukka krets), aktiveres denne funksjonen. Blokkprogrammet nedenfor viser en beskjed når du gjør nettopp dette:</p>
+<img src="https://github.com/andreasdh/realprog/blob/master/docs/bilder/touch.png?raw=true" title="løkke" width="400">
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Lag programmet ovenfor i Python.</p>
+</div>
+</section>
+</section>
+<section id="sensorer">
+<h2>Sensorer<a class="headerlink" href="#sensorer" title="Permalink to this heading">#</a></h2>
+<p>En elektrisk sensor er et instrument som tolker et elektrisk signal om til en størrelse vi ønsker å måle. En temperatursensor kan for eksempel sende strøm gjennom en leder, for eksempel en platinatråd. Ved høye temperaturer øker motstanden i en slik leder, og det vil dermed være mer strøm som kommer igjennom tråden ved lave temperaturer. Hvis vi måler spenningen som har gått tapt, kan vi dermed oversette dette til temperatur. Men dette krever <em>kalibrering</em>.</p>
+<p>Kalibrering er en prosess som kreves for alle sensorer. Det vil si å måle (minst) to kjente  størrelser. F.eks. kan temperatursensoren vår ovenfor testes i isvann. Dette vannet holder 0 <span class="math notranslate nohighlight">\(^\circ\)</span>C. Vi leser av spenningen i dette vannet. Deretter tester vi i kokende vann (100  <span class="math notranslate nohighlight">\(^\circ\)</span>C) og leser av spenningen der også. Disse to spenningene utgjør målepunkter vi er sikre på, også kan vi anta at spenningen er lineær mellom disse to punktene (og kanskje utenfor også?).</p>
+<p>La oss si at vi setter på en spenning, måler strømmen og regner om til resistans (<span class="math notranslate nohighlight">\(U = RI\)</span>). Vi sier at resistansen ved 0 <span class="math notranslate nohighlight">\(^\circ\)</span>C var 100 <span class="math notranslate nohighlight">\(\Omega\)</span> og resistansen ved 100 <span class="math notranslate nohighlight">\(^\circ\)</span>C var ca 140 <span class="math notranslate nohighlight">\(\Omega\)</span>. Vi trekker en rett linje gjennom disse punktene, og hvis vi f.eks. neste gang leser av 120 <span class="math notranslate nohighlight">\(\Omega\)</span>, veit vi at temperaturen er 50 <span class="math notranslate nohighlight">\(^\circ\)</span>C. Dette vil ikke stemme for alle temperaturer, og vi sier at sensoren har et <em>lineært gyldighetsområde</em>. Derfor står det ofte på sensorer i hvilket intervall sensoren måler korrekt. Figuren nedenfor viser en temperatursensor med gyldighetsområde fra ca. -50 til 300 <span class="math notranslate nohighlight">\(^\circ\)</span>C</p>
+<img src="https://github.com/andreasdh/realprog/blob/master/docs/bilder/tempkarakteristikk.png?raw=true" title="karakteristikk" width="600">
+<p>La oss nå bruke de innebygde sensorene i micro:bit først, så skal vi prøve å lage egne sensorer litt seinere. Vi kan hente data fra de ulike innebygde sensorene slik:</p>
+<img src="https://github.com/andreasdh/realprog/blob/master/docs/bilder/sensorer.png?raw=true" title="sensorer" width="600">
+<p>Akselerasjonen gir akselerasjon i milli-g (<span class="math notranslate nohighlight">\(1 \ g = 9.81 \ m/s^2\)</span>) i <em>x</em>-, <em>y</em>- eller <em>z</em>-retning. Kompasset gir retning i grader (360<span class="math notranslate nohighlight">\(^\circ\)</span> er nord, 90<span class="math notranslate nohighlight">\(^\circ\)</span> er øst, osv.). Temperaturen gir temperaturen på prosessoren i <span class="math notranslate nohighlight">\(^\circ\)</span>C, men den er ikke kalibrert, og vil ofte gi for høy temperatur. Men den er grei for å se på enkle temperaturendringer.</p>
+<p>I Python kan du gjøre slik:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+	<span class="n">akselerasjon</span> <span class="o">=</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span>
+	<span class="n">kompassretning</span> <span class="o">=</span>  <span class="n">compass</span><span class="o">.</span><span class="n">heading</span><span class="p">()</span>
+	<span class="n">temperatur</span> <span class="o">=</span> <span class="n">temperature</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Programmene ovenfor viser ikke variablene på skjermen. Modifiser dem slik at de viser det du måler, f.eks. ved ulike tastetrykk.</p>
+</div>
+<p>Nå har du lært nok til å kunne bryne deg på noen litt mer utforskende og kreative oppgaver. Lykke til!</p>
+</section>
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 1</p>
+<p>Lag et program som logger temperaturen og sender den til en annen micro:bit.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 2</p>
+<p>Lag et program som teller antall ganger du trykker på en knapp, og viser deg hvor mange ganger du trykker på knappen.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 3</p>
+<p>Et <em>vaterpass</em>, eller bare <em>vater</em>, er et instrument som måler om noe står eller ligger vinkelrett. Lag ditt eget vater ved hjelp av akselerasjons-sensoren på micro:bit-en. Tips: Det er virkelig vanskelig å få micro:bit-en til å ligge 100 % flatt – prøv med et intervall du synes er greit.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4</p>
+<p>Lag en skritteller ved hjelp av akselerometeret.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 5</p>
+<p>Programmet nedenfor gjør micro:bit om til en krystallkule. Fyll inn og modfiser som du ønsker, og lag dine egne beskjeder.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">microbit</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">svar</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Det er sikkert&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Tvilsomt&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Mine kilder sier nei&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Du har blitt el-overfølsom&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">accelerometer</span><span class="o">.</span><span class="n">was_gesture</span><span class="p">(</span><span class="s1">&#39;shake&#39;</span><span class="p">):</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">svar</span><span class="p">))</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave: Overlev på Mars!</p>
+<p>Du er ansatt som astrobiolog og har fått ansvar for det eneste drivhuset på Mars. Siden både vann og mat er en begrenset ressurs, må du overvåke systemene nøye for å få mest mulig optimal avling med minst mulig bruk av ressurser. Først får du som oppdrag å lage en fuktighetssensor som måler fuktigheten i jorda.</p>
+<p><img alt="dyrking på mars" src="https://github.com/andreasdh/Programmering-og-modellering/blob/master/docs/bilder/mars.png?raw=true" /></p>
+<p>Sensoren du skal lage, baserer seg på at vi kobler to spikere til hver sin pin i en micro:bit. Disse spikerne setter vi ned i jorda. Deretter setter vi på en spenning (pin 0) og måler spenningsfallet (pin 1) som forårsakes av motstanden i jorda.</p>
+<ol class="arabic simple">
+<li><p>Hvordan kan måling av strøm/spenning være et mål på fuktighet i jorda?</p></li>
+<li><p>Foreslå en måte vi kan oversette spenning til prosentvis fuktighet.</p></li>
+<li><p>Koble en ledning med bananplugg til pin1 og en annen til pin2.</p></li>
+<li><p>Fest en spiker i den frie enden av hver av bananpluggene med en krokodilleklemme.</p></li>
+<li><p>Diskuter hvordan du vil kalibrere sensoren, altså vite hva som er høyest og hva som er lavest fuktighet.</p></li>
+<li><p>Lag et program som:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Setter spenning på via pin0.</p></li>
+<li><p>Leser av spenningen via pin1 når du f.eks. trykker på en knapp.</p></li>
+<li><p>Viser spenningen til displayet. Her kan du gjerne oversette spenningen til prosent fuktighet. Spenningen blir gitt som et tall mellom 0 og 1023, der 0 er 0 V og 1023 er 3 V.</p></li>
+</ul>
+<ol class="arabic simple" start="7">
+<li><p>Test sensoren på ulike planter med tørr og våt jord. Hva viser sensoren?</p></li>
+<li><p>Modifiser programmet som du ønsker, f.eks. slik at det:</p>
+<ul class="simple">
+<li><p>Sier fra når det er for lite vann.</p></li>
+<li><p>Gir tommel opp/smilefjes når det er nok vann.</p></li>
+<li><p>Kommuniserer med en annen micro:bit som fungerer som mottaker.</p></li>
+</ul>
+</li>
+<li><p>Ekstra: Koble til en liten motor som setter på vanning når fuktigheten i jorda er under en viss verdi. Dette må legges til i programmet ditt.</p></li>
+<li><p>Utvid programmet og oppsettet med andre sensorer, for eksempel luftfuktighetssensor og temperatursensor.</p></li>
+</ol>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/fagoppgaver"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="biologioppgaver.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Repetisjon II: Biologioppgaver</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="../datafiler.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Datafiler</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#teknologi-i-et-baerekraftig-perspektiv">
+   Teknologi i et bærekraftig perspektiv
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programmering-med-mikrokontrollere">
+   Programmering med mikrokontrollere
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduksjon-til-micro-bit">
+   Introduksjon til micro:bit
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#elektronikken">
+     Elektronikken
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grunnleggende-programmering">
+   Grunnleggende programmering
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#led-skjermen">
+   LED-skjermen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#knapper">
+   Knapper
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#radio">
+   Radio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eksterne-tilkoblinger-pins">
+   Eksterne tilkoblinger (pins)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spenning-strom-og-resistans">
+     Spenning, strøm og resistans
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lese-av-og-skrive-til-eksterne-tilkoblinger">
+     Lese av og skrive til eksterne tilkoblinger
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sensorer">
+   Sensorer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oppgaver">
+   Oppgaver
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Andreas Haraldsrud
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>

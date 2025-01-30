@@ -1,0 +1,1526 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Likninger og nullpunkter &#8212; Programmering og modellering</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/tema4_algoritmer/likninger';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Numerisk derivasjon" href="derivasjon.html" />
+    <link rel="prev" title="Matematiske algoritmer og stokastiske simuleringer" href="algoritmer.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lokker.html">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/statistikk.html">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/differensiallikninger.html">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt2.html">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/teknologi.html">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lokker.html">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/statistikk.html">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/differensiallikninger.html">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt2.html">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/teknologi.html">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 1 - Grunnleggende programmering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">En første kodesnutt</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">Variabler og datatyper</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz1.html">Quiz 1: Variabler og aritmetikk</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/lister.html">Lister</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz2.html">Quiz 2: Lister</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/if-tester.html">Vilkår (if-tester)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz3.html">Quiz 3: Vilkår (if-tester)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/lokker.html">Løkker</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz4.html">Quiz 4: Løkker</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 2 - Kodestrukturering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema2_kodestrukturering/funksjoner.html">Funksjoner</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz5.html">Quiz 5: Funksjoner</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tema2_kodestrukturering/klasser_objekter.html">Klasser og objekter</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 3 - Datahåndtering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">Programmeringsverktøy</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema3_datahandtering/datasamlinger.html">Datasamlinger</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz6.html">Quiz 6: Datasamlinger (arrayer og dictionarier)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/plotting.html">Datahåndtering I: Visualisering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/lese_filer.html">Datahåndering II: Håndtere og visualisere data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/statistikk.html">Datahåndering III: Statistikk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/maskinlaring.html">Datahåndtering IV: Maskinlæring</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 - Algoritmer</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="algoritmer.html">Matematiske algoritmer og stokastiske simuleringer</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Likninger og nullpunkter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivasjon.html">Numerisk derivasjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integrasjon.html">Numerisk integrasjon (ekstrastoff)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="symbolsk_utregning.html">Symbolsk utregning (CAS)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 - Modellering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/diskret_modellering.html">Modellering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/regresjonsmodeller.html">Regresjonsmodeller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/differensiallikninger.html">Differensiallikninger og kontinuerlige modeller</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/differensiallikninger_oppgaver.html">Differensiallikninger (oppgaver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">Maskinlæring med Titanic (oppgave)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/statistikkprosjekt.html">Statistikkprosjekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/modelleringsprosjekt1.html">Modelleringsoppgave I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/modelleringsprosjekt2.html">Modelleringsoppgave II</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Fagoppgaver</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/kjemioppgaver.html">Repetisjon I: Kjemioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/biologioppgaver.html">Repetisjon II: Biologioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/teknologi.html">Teknologi og programmering</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datafiler</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../datafiler.html">Datafiler</a></li>
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../../_sources/docs/tema4_algoritmer/likninger.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Likninger og nullpunkter</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#likninger">
+   Likninger
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#praktiske-anvendelser">
+   Praktiske anvendelser
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualisere-losningen">
+   Visualisere løsningen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#en-enkel-metode-for-a-finne-nullpunktet">
+   En enkel metode for å finne nullpunktet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#halveringsmetoden">
+   Halveringsmetoden
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#forbedringer-av-metoden">
+     Forbedringer av metoden
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#newtons-metode">
+   Newtons metode
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#likningssett">
+   Likningssett
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oppgaver">
+   Oppgaver
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videoer">
+   Videoer
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <section class="tex2jax_ignore mathjax_ignore" id="likninger-og-nullpunkter">
+<h1>Likninger og nullpunkter<a class="headerlink" href="#likninger-og-nullpunkter" title="Permalink to this heading">#</a></h1>
+<div class="admonition-laeringsutbytte admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>Etter å ha arbeidet med denne delen av emnet, skal du kunne:</p>
+<ol class="arabic simple">
+<li><p>forklare den teoretisk bakgrunnen for halveringsmetoden og Newtons metode</p></li>
+<li><p>implementere halveringsmetoden og Newtons metode</p></li>
+<li><p>drøfte feil og begrensninger ved metodene</p></li>
+<li><p>bruke metodene til å finne nullpunkter og løse likninger</p></li>
+</ol>
+</div>
+<section id="likninger">
+<h2>Likninger<a class="headerlink" href="#likninger" title="Permalink to this heading">#</a></h2>
+<p>Å finne nullpunktene til en funksjon er det samme som å løse en likning <span class="math notranslate nohighlight">\(f(x) = 0\)</span>. Dersom vi for eksempel ønsker å løse en likning <span class="math notranslate nohighlight">\(x^4 + 3x = 2x^2 - 10\)</span>, kan vi løse denne ved å finne nullpunktet til funksjonen <span class="math notranslate nohighlight">\(f(x) = x^4 + 3x - 2x^2 + 10\)</span>. Vi kan si at vi formulerer likningen som et nullpunktsproblem.</p>
+<p>Likninger kan løses med mange spesialiserte løsningsmetoder og algebraiske “triks”, for eksempel kjenner vi en løsningsformel for andregradslikninger:</p>
+<div class="math notranslate nohighlight">
+\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</div>
+<p>Denne funksjonen kan kun brukes til å løse andregradslikninger. Det kreves andre funksjoner for å løse likninger av tredje og fjerde grad, og likninger av femte grad og over er ikke analytisk løsbare. Når vi løser likninger numerisk på en datamaskin, bruker vi derimot generelle metoder som i prinsippet kan brukes på alle typer likninger.</p>
+<p>Det finnes mange ulike måter å løse slike likninger på, og hver av metodene har sine styrker og svakheter. To metoder som er basert på relativt enkle prinsipper, er halveringsmetoden og Newtons metode. Vi skal se på implementering av disse metodene. I tillegg ser vi litt på styrker og svakheter ved metodene. Til slutt ser vi hvordan vi kan løse likninger ved å bruke ferdige algoritmer som finnes i scipy-biblioteket.</p>
+</section>
+<section id="praktiske-anvendelser">
+<h2>Praktiske anvendelser<a class="headerlink" href="#praktiske-anvendelser" title="Permalink to this heading">#</a></h2>
+<p>Det finnes flere praktiske anvendelser med likninger. Hvis vi for eksempel skal finne ut hvor to funksjoner skjærer hverandre, kan vi løse likningen <span class="math notranslate nohighlight">\(f(x) = g(x)\)</span> som et nullpunktsproblem: <span class="math notranslate nohighlight">\(f(x) - g(x) = 0\)</span>. Disse funksjonene kan representere mange ulike ting.</p>
+<p>La oss for eksempel si at vi har to uttrykk som for eksempel beskriver konsentrasjon til to produkter over tid:</p>
+<div class="math notranslate nohighlight">
+\[c_1(t) = e^{-t} + t + 5\]</div>
+<div class="math notranslate nohighlight">
+\[c_2(t) = \ln(0.006t + 1) + t^{0.3} + 10\]</div>
+<p>For å finne ut ved hvilken tid de to produktene har lik konsentrasjon, kan vi løse likningen <span class="math notranslate nohighlight">\(c_1(t) = c_2(t)\)</span>. Formulert som et nullpunktsproblem får vi:</p>
+<div class="math notranslate nohighlight">
+\[e^{-t} + t + 5 - \ln(0.006t + 1) - t^{0.3} - 10 = 0\]</div>
+<p>Dette er en likning som ikke er analytisk løsbar. Her skal vi se på metoder for å finne nullpunktene til funksjoner. Dette er en strategi som også kan brukes til å løse likninger.</p>
+</section>
+<section id="visualisere-losningen">
+<h2>Visualisere løsningen<a class="headerlink" href="#visualisere-losningen" title="Permalink to this heading">#</a></h2>
+<p>Før vi løser likninger, kan det være lurt å visualisere funksjonene som representerer likningen. For eksempel kan vi plotte funksjonen <span class="math notranslate nohighlight">\(f(t) = e^{-t} + t + 5 - \ln(0.006t + 1) - t^{0.3} - 10\)</span> og se hvor den skjærer <em>x</em>-aksen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">t</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">0.006</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">t</span><span class="o">**</span><span class="mf">0.3</span> <span class="o">-</span> <span class="mi">10</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span> <span class="c1"># x-akse</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3d21dfafc76d930af24b8faf02ad81e560a8daf269c958d8e9aaaeb23693e751.png" src="../../_images/3d21dfafc76d930af24b8faf02ad81e560a8daf269c958d8e9aaaeb23693e751.png" />
+</div>
+</div>
+<p>Vi ser at grafen skjærer <em>x</em>-aksen i omtrent <span class="math notranslate nohighlight">\(x \approx 6.5\)</span>. Vi kan også plotte <span class="math notranslate nohighlight">\(c_1(t) = e^{-t} + t + 5\)</span> og <span class="math notranslate nohighlight">\(c_2(t) = \ln(0.006t + 1) + t^{0.3} + 10\)</span> i samme koordinatsystem for å se hvor de skjærer hverandre. Vi ser at dette gir samme estimat for <em>x</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">t</span> <span class="o">+</span> <span class="mi">5</span> 
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">0.006</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">t</span><span class="o">**</span><span class="mf">0.3</span> <span class="o">+</span> <span class="mi">10</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5474ca83bc2ccfa6657b098b103299c24bc69e9aaf03f3532fc117543d207bc5.png" src="../../_images/5474ca83bc2ccfa6657b098b103299c24bc69e9aaf03f3532fc117543d207bc5.png" />
+</div>
+</div>
+</section>
+<section id="en-enkel-metode-for-a-finne-nullpunktet">
+<h2>En enkel metode for å finne nullpunktet<a class="headerlink" href="#en-enkel-metode-for-a-finne-nullpunktet" title="Permalink to this heading">#</a></h2>
+<p>Nå har vi en viss peiling på hvor nullpunktet befinner seg, som er løsningen på likninga. La oss prøve en veldig enkel metode for å finne dette nullpunktet. Metoden vi viser nå, brukes ikke i særlig grad, fordi den både er langsom og lite robust. Den er derimot ganske intuitiv og fin å starte med. La oss begynne med en pseudokode som beskriver algoritmen:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>x = startverdi
+y = f(x)
+dx = steglengde (avstand mellom punktene vi vil sjekke)
+
+gjenta så lenge y*y_forrige &gt; 0: (det vil si inntil produktet er mindre enn 0).
+    x_forrige = x
+    x = x + dx
+
+nullpunkt = (x+x_forrige)/2
+skriv ut nullpunktet
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Tolk pseudokoden ovenfor og forklar hvordan algoritmen fungerer.</p>
+</div>
+<p>Vi kan illustrere metoden med følgende figur:</p>
+<img src="https://github.com/andreasdh/programmering-i-kjemi/blob/master/docs/bilder/brute_force_likninger.png?raw=true" width="500"/>
+<p>Vi beveger oss altså oppover (eller nedover) grafen ved å gradvis øke <em>x</em>-verdiene med en steglengde <em>dx</em>. Underveis sjekker vi om funksjonsverdien til de to <em>x</em>-verdiene (<em>x</em> og <em>x + dx</em>) har motsatt fortegn. Dersom de har det, må nullpunktet ligge mellom de to <em>x</em>-verdiene. I figuren ser vi at <span class="math notranslate nohighlight">\(f(x_7)\)</span> og <span class="math notranslate nohighlight">\(f(x_8)\)</span> har motsatt fortegn, altså ligger nullpunktet mellom disse verdiene et sted. Ofte kan det være lurt å tippe på midtpunktet mellom de to, men her ser vi at det ikke stemmer helt – nullpunktet ligger svært nært <span class="math notranslate nohighlight">\(x_7\)</span>. Dette kan vi bøte på ved å velge en <em>dx</em> som er mye mindre. Vi har valgt en stor avstand mellom <em>x</em>-verdiene i figuren for å gjøre den tydeligere, men du bør velge en <em>dx</em> som er liten nok til å få et godt svar. Hva som er “liten nok” <em>dx</em>, er avhengig av funksjonen. Dette er en åpenbar svakhet med metoden.</p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Vi kan implementere algoritmen som nedenfor. Fyll inn det som mangler.</p>
+<iframe src="https://trinket.io/embed/python3/7cd27a61af" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<iframe src="https://trinket.io/embed/python3/ba7775606b" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Diskuter fordeler og svakheter med algoritmen ovenfor.</p>
+</div>
+</section>
+<section id="halveringsmetoden">
+<h2>Halveringsmetoden<a class="headerlink" href="#halveringsmetoden" title="Permalink to this heading">#</a></h2>
+<p>La oss se på en annen metode for å finne nullpunkter og dermed løse likninger. Vi går rett til programkoden:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
+
+<span class="c1"># Intervallet vi skal lete etter nullpunktet i</span>
+<span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># Regner ut midtpunktet mellom a og b</span>
+
+<span class="k">while</span> <span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">m</span>
+    <span class="k">elif</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">m</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nullpunktet er x =&quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nullpunktet er x = 1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Metoden som er brukt ovenfor, heter <em>halveringsmetoden</em>. Halveringsmetoden går ut på å velge et intervall <span class="math notranslate nohighlight">\([a, b]\)</span> der <span class="math notranslate nohighlight">\(f(a)\)</span> og <span class="math notranslate nohighlight">\(f(b)\)</span> har motsatte fortegn. Vi kan bruke grafen til å vurdere hvilket intervall som egner seg dersom vi plotter den først. Deretter skal vi finne et nytt intervall <span class="math notranslate nohighlight">\([a, b]\)</span> som er mindre, men slik at <span class="math notranslate nohighlight">\(f(a)\)</span> og <span class="math notranslate nohighlight">\(f(b)\)</span> fortsatt har motsatte fortegn. Det kan vi gjøre ved å finne midten mellom <em>a</em> og <em>b</em>. Da får vi et punkt <span class="math notranslate nohighlight">\(m = (a + b)/2\)</span>, og vi kan finne <span class="math notranslate nohighlight">\(f(m)\)</span>.</p>
+<p>Vi undersøker så om <span class="math notranslate nohighlight">\(f(m_1) = 0\)</span>. Hvis ikke, evaluerer vi fortegnene til <span class="math notranslate nohighlight">\(f(a)\)</span>, <span class="math notranslate nohighlight">\(f(b)\)</span> og <span class="math notranslate nohighlight">\(f(m)\)</span>. Dersom <span class="math notranslate nohighlight">\(f(a)\)</span> og <span class="math notranslate nohighlight">\(f(m)\)</span> har samme fortegn, setter vi det nye intervallet til <span class="math notranslate nohighlight">\([m, b]\)</span> fordi da må <span class="math notranslate nohighlight">\(f(m)\)</span> og <span class="math notranslate nohighlight">\(f(b)\)</span> ha motsatte fortegn. Motsatt setter vi intervallet til <span class="math notranslate nohighlight">\([a, m]\)</span> dersom <span class="math notranslate nohighlight">\(f(b)\)</span> og <span class="math notranslate nohighlight">\(f(m)\)</span> har samme fortegn. Prosessen gjentas <em>n</em> ganger til vi har at <span class="math notranslate nohighlight">\(f(m_n) \approx 0\)</span>. Figuren nedenfor illustrerer metoden med to trinn</p>
+<img src="https://raw.githubusercontent.com/andreasdh/programmering-i-kjemi/master/docs/bilder/halveringsmetoden.png" width="500"/>
+<p>Algoritmen kan mer generelt beskrives slik:</p>
+<div class="admonition-halveringsmetoden admonition">
+<p class="admonition-title">Halveringsmetoden</p>
+<p>La <em>f</em> være en kontinuerlig funksjon med motsatte fortegn på funksjonsverdiene <span class="math notranslate nohighlight">\(f(a)\)</span> og <span class="math notranslate nohighlight">\(f(b)\)</span> i intervallet <span class="math notranslate nohighlight">\([a,b]\)</span>. Da kan nullpunktene finnes slik:</p>
+<ol class="arabic simple">
+<li><p>Finn midtpunktet <span class="math notranslate nohighlight">\(c_k\)</span> mellom punktene <em>a</em> og <em>b</em>.</p></li>
+<li><p>Undersøk hvilke av <span class="math notranslate nohighlight">\(f(a)\)</span> og <span class="math notranslate nohighlight">\(f(b)\)</span> som har motsatt fortegn til <span class="math notranslate nohighlight">\(f(c_k)\)</span>, og sett det nye intervallet til <span class="math notranslate nohighlight">\([a,c_k]\)</span> eller <span class="math notranslate nohighlight">\([c_k, b]\)</span>, der start- og sluttverdien i intervallet skal ha motsatt fortegn.</p></li>
+<li><p>Gjenta prosessen <em>n</em> ganger til <span class="math notranslate nohighlight">\(f(c_k) \approx 0\)</span>.</p></li>
+</ol>
+</div>
+<section id="forbedringer-av-metoden">
+<h3>Forbedringer av metoden<a class="headerlink" href="#forbedringer-av-metoden" title="Permalink to this heading">#</a></h3>
+<p>Når vi bruker numeriske metoder, får vi sjeldent nøyaktige svar. Derfor er det aldri en god idé å undersøke hvorvidt <span class="math notranslate nohighlight">\(f(x) = 0\)</span> helt nøyaktig. Vi bør heller sjekke om <span class="math notranslate nohighlight">\(f(x) \approx 0\)</span>. Dette kan vi gjøre med å innføre en <em>toleranse</em> som forteller programmet hvor nærme nullpunktet vi vil være. Dette kan vi gjøre slik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
+
+<span class="c1"># Intervallet vi skal lete etter nullpunktet i</span>
+<span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">toleranse</span> <span class="o">=</span> <span class="mf">1E-8</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># Regner ut midtpunktet mellom a og b</span>
+
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">))</span> <span class="o">&gt;=</span> <span class="n">toleranse</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">m</span>
+    <span class="k">elif</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">m</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nullpunktet er x =&quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nullpunktet er x = 0.9999999962747097
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Her ser du en mulig løsning der alle punktene ovenfor er lagt inn. I tillegg er det lagt inn en “docstring”, altså en forklaring på hva funksjonen gjør øverst i funksjonen.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span><span class="mi">2</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">halveringsmetoden</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">tol</span><span class="o">=</span><span class="mf">1E-10</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Algoritme som benytter halveringsmetoden til å </span>
+<span class="sd">    finne nullpunktet til en funksjon f i intervallet [a,b].</span>
+<span class="sd">    </span>
+<span class="sd">    Parametre</span>
+<span class="sd">    ---------</span>
+<span class="sd">    f: funksjonen</span>
+<span class="sd">    a: laveste x-verdi i intervallet</span>
+<span class="sd">    b: høyeste x-verdi i intervallet</span>
+<span class="sd">    tol: toleranseparameter/feilmargin</span>
+<span class="sd">    n: maks antall iterasjoner</span>
+<span class="sd">    </span>
+<span class="sd">    Returnerer</span>
+<span class="sd">    ----------</span>
+<span class="sd">    m: nullpunktet</span>
+<span class="sd">    i: antall iterasjoner brukt</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>			<span class="c1"># Finner første halveringspunkt</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span>	
+        <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">m</span>
+        <span class="k">elif</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">m</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">m</span><span class="p">,</span> <span class="n">i</span>
+
+<span class="n">m</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="n">halveringsmetoden</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nullpunktet er x =&quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="s2">&quot;og løkka gikk&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;ganger.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>La oss nå se om vi kan benytte halveringsmetoden til å finne ut ved hvilken tid konsentrasjonen er lik i reaksjonene representert ved likningene vi startet med i dette kapitlet. Vi lager en litt enklere utgave av funksjonen i løsningsforslaget ovenfor, men vi legger i tillegg inn en standardverdi for toleransen (her <span class="math notranslate nohighlight">\(10^{-8}\)</span>). Det betyr at hvis vi ikke spesifiserer toleransen når vi kaller på funksjonen, vil toleransen automatisk settes til dette.</p>
+<iframe src="https://trinket.io/embed/python3/20dc1b3551" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave</p>
+<p>Test og studer programmet ovenfor og forklar hva som skjer. Modifiser programmet slik at det også plotter nullpunktet og funksjonen for å sjekke at løsningen stemmer.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Du kan legge til følgende plottekommandoer for å visualisere løsningen:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">c</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># Plotter funksjonen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">c</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span> <span class="c1"># Plotter nullpunktet</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="newtons-metode">
+<h2>Newtons metode<a class="headerlink" href="#newtons-metode" title="Permalink to this heading">#</a></h2>
+<p>Det finnes flere måter å løse likninger på. En metode som ofte fungerer godt, og som er mye raskere enn halveringsmetoden, er <em>Newtons metode</em>, også kalt <em>Newton-Raphsons metode</em>. Den bruker nullpunktet til <em>tangenten</em> i et punkt på en funksjon <em>f</em> som en tilnærming til nullpunktet til <em>f</em>. Metoden fungerer slik:</p>
+<ol class="arabic simple">
+<li><p>Vi velger oss først et startpunkt <span class="math notranslate nohighlight">\(x_0\)</span> og regner ut nullpunktet til tangenten i <span class="math notranslate nohighlight">\(f(x_0)\)</span>. Dette punktet kaller vi <span class="math notranslate nohighlight">\(x_1\)</span>.</p></li>
+<li><p>Dersom <span class="math notranslate nohighlight">\(x_1\)</span> tilsvarer nullpunktet til funksjonen <span class="math notranslate nohighlight">\(f\)</span>, sier vi oss ferdige.</p></li>
+<li><p>Hvis ikke, regner vi ut nullpunktet til en ny tangent i <span class="math notranslate nohighlight">\(f(x_1)\)</span> og kaller det <span class="math notranslate nohighlight">\(x_2\)</span>.</p></li>
+<li><p>Slik fortsetter vi til vi er så nært nullpunktet til <span class="math notranslate nohighlight">\(f\)</span> som vi ønsker.</p></li>
+</ol>
+<p>Figuren nedenfor viser to iterasjoner av metoden med funksjonen <span class="math notranslate nohighlight">\(f(x) = x^2 - x - 2\)</span> og startgjett <span class="math notranslate nohighlight">\(x_0 = 5\)</span>:</p>
+<img src="https://github.com/andreasdh/programmering-i-kjemi/blob/master/docs/bilder/newtonsmetode.png?raw=true" width="500"/>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Bruk figuren ovenfor til å forklare hvorfor Newtons metode konvergerer mot (går mot) nullpunktet raskt.</p>
+</div>
+<p>La oss utlede en algoritme for metoden. Stigningen til en linje kan gis ved:</p>
+<div class="math notranslate nohighlight">
+\[a = \frac{\Delta y}{\Delta x} = \frac{f(x) - f(x_0)}{x - x_0}\]</div>
+<p>Her setter vi <span class="math notranslate nohighlight">\(x\)</span> til å være en variabel størrelse og <span class="math notranslate nohighlight">\(x_0\)</span> til et fast punkt. Dersom vi gjør om dette til et uttrykk for linja <span class="math notranslate nohighlight">\(f(x)\)</span>, får vi følgende:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = f(x_0) + a(x - x_0)\]</div>
+<p>Dette er likningen for ei linje som går igjennom punktet <span class="math notranslate nohighlight">\((x_0, f(x_0))\)</span>. Siden den deriverte i et punkt er lik stigningen i det samme punktet, kan vi skrive:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = f(x_0) + f'(x_0)(x - x_0)\]</div>
+<p>som er likningen til en tangent gjennom punktet <span class="math notranslate nohighlight">\((x_0, f(x_0))\)</span> på funksjonen <span class="math notranslate nohighlight">\(f\)</span>. Vi ønsker å finne nullpunktet til tangenten, og setter derfor <span class="math notranslate nohighlight">\(f(x) = 0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[f(x_0) + f'(x_0)(x - x_0) = 0\]</div>
+<p>Dersom vi omformer uttrykket slik at den ukjente er nullpunktet <span class="math notranslate nohighlight">\(x\)</span>, får vi:</p>
+<div class="math notranslate nohighlight">
+\[x = x_0 - \frac{f(x_0)}{f'(x_0)}\]</div>
+<p>Dette er Newtons metode. Siden vi ønsker å gjenta prosessen med å finne nullpunktene til tangentene i <span class="math notranslate nohighlight">\((x_0, f(x_0))\)</span>, <span class="math notranslate nohighlight">\((x_1, f(x_1))\)</span>, <span class="math notranslate nohighlight">\((x_2, f(x_2))\)</span> og så videre, kan vi formulere algoritmen iterativt:</p>
+<div class="admonition-newtons-metode admonition">
+<p class="admonition-title">Newtons metode</p>
+<p>La <em>f</em> være en kontinuerlig, deriverbar funksjon, og la <span class="math notranslate nohighlight">\((x_n, f(x_n))\)</span> være et punkt på funksjonen. Nullpunktet til funksjonen <em>f</em> kan tilnærmes ved nullpunktet til den <span class="math notranslate nohighlight">\(n\)</span>-te tangenten til funksjonen. Bruk først et startgjett, <span class="math notranslate nohighlight">\(x_0\)</span>. Finn så nullpunktet <span class="math notranslate nohighlight">\(x_{n+1}\)</span> til den <span class="math notranslate nohighlight">\(n\)</span>-te tangenten ved å bruke nullpunktet, <span class="math notranslate nohighlight">\(x_n\)</span>, til den forrige tangenten. Gjenta til <span class="math notranslate nohighlight">\(f(x_{n+1}) \approx 0\)</span></p>
+<div class="math notranslate nohighlight">
+\[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\]</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Bruk beskrivelsen ovenfor og prøv å implementere Newtons metode før du ser på hvordan vi gjør det nedenfor.</p>
+</div>
+<p>Vi ser at vi trenger den deriverte for å beregne nullpunktet. Det er en åpenbar ulempe ved metoden dersom den deriverte er vanskelig å finne. Vi kan bruke en tilnærming til den deriverte med numeriske metoder, men da får vi enda en feil i beregningen vår. En fordel med Newtons metode er at den konvergerer raskt mot nullpunktet, og at vi kun trenger å oppgi ett punkt som vi skal starte med. Halveringsmetoden konvergerer mer langsomt og trenger to punkter (et intervall) for å fungere. Hastigheten har lite å si når vi gjør så enkle beregninger som her, men dersom vi skal gjøre tunge beregninger, er Newtons metode, og varianter av denne, mye brukt.</p>
+<p>Et annet problem med Newtons metode kan oppstå ved lokale ekstremalpunkter. Her kan metoden gi tangenter på hver sin side av for eksempel bunnpunktet, uten at de konvergerer mot nullpunktet. Vi kan for så vidt også få et problem dersom <span class="math notranslate nohighlight">\(f'(x) = 0\)</span> et eller annet sted i iterasjonen, fordi vi da må dele på null i algoritmen. Dette oppstår ikke så ofte, men det kan være lurt å tenke på, spesielt med hensyn til startgjettet vårt.</p>
+<p>Her er en enkel implementering av Newtons metode uten å pakke metoden inn i en funksjon:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fder</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span>
+
+<span class="n">toleranse</span> <span class="o">=</span> <span class="mf">1E-8</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># startgjett</span>
+
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">toleranse</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">fder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nullpunktet er x =&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nullpunktet er x = 1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hvis vi ønsker å lage en funksjon av Newtons metode, kan vi gjøre det slik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">newtons_metode</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">fder</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">tol</span><span class="o">=</span><span class="mf">1E-10</span><span class="p">):</span>
+    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">fder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Både Newtons metode og halveringsmetoden er grunnleggende, men relativt robuste metoder som kan gi gode nok tilnærminger i mange tilfeller. Newtons metode er en såkalt <em>Householder-metode</em> av første orden. Vi kan få enda bedre tilnærminger ved å bruke metoder av høyere orden <span class="math notranslate nohighlight">\(n\)</span>. Med <span class="math notranslate nohighlight">\(n=2\)</span> får vi en algoritme som kalles <em>Halleys metode</em>. Ulempen med slike metoder er at vi trenger den <span class="math notranslate nohighlight">\(n-\)</span>te-deriverte av funksjonen. Fordelen er at de trenger svært få iterasjoner for å oppnå veldig gode tilnærminger.</p>
+<p>Vi kan også benytte numeriske biblioteker som allerede inneholder implementeringer av metodene. Et mye brukt bibliotek for numeriske metoder er <em>Scipy</em> (forkortelse for <em>Scientific Python</em>). Her er et eksempel på hvordan vi kan bruke noen metoder for å løse likninger og finne nullpunkter med funksjoner fra dette biblioteket:</p>
+<iframe src="https://trinket.io/embed/python3/30a1ede2e3" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe><p>Returverdien “root” viser nullpunktet vi får fra metodene. Metodene gir her “converged: True” hvis den finner nullpunktene. Da står det også “converged” under “flag” hvis alt gikk som det skulle. Hvis vi får “converged: False”, dukker det opp en beskjed om feilen under “flag”. “Iterations” angir antall ganger løkka går, altså hvor mange ganger metoden gjentas. Dette skiller seg litt fra “function calls”, som ofte er høyere fordi flere funksjoner blir brukt, blant annet <span class="math notranslate nohighlight">\(f(x)\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span> i Newtons metode, og <span class="math notranslate nohighlight">\(f(x)\)</span>, <span class="math notranslate nohighlight">\(f'(x)\)</span> og <span class="math notranslate nohighlight">\(f''(x)\)</span> i Halleys metode.</p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Kjør programmet ovenfor og forklar hvordan funksjonen <em>root_scalar</em> fungerer. Prøv å endre parametrene og test funksjonen på andre problemer med ulike metoder.</p>
+</div>
+</section>
+<section id="likningssett">
+<h2>Likningssett<a class="headerlink" href="#likningssett" title="Permalink to this heading">#</a></h2>
+<p>Likningssett kan løses med litt ulike metoder. Broydens metode fungerer stort sett fint for både lineære og ikke-lineære likningssett. Vi må definere likningene på formen <span class="math notranslate nohighlight">\(f(x) = 0\)</span>, og variablene skal settes som elementer av en array. Nedenfor har vi f.eks. disse likningene:</p>
+<div class="math notranslate nohighlight">
+\[x + 2y + 3z - 6 = 0\]</div>
+<div class="math notranslate nohighlight">
+\[y + 2z - 2 = 0\]</div>
+<div class="math notranslate nohighlight">
+\[x + 6y + 2z - 5 = 0\]</div>
+<p>Vi definerer variablene slik: <span class="math notranslate nohighlight">\(x = x[0]\)</span>, <span class="math notranslate nohighlight">\(y = x[1]\)</span> og <span class="math notranslate nohighlight">\(z = x[2]\)</span>. Vi må også velge noen punkter vi skal starte i, slik som vi gjør med halveringsmetoden og Newtons metode. Her velger vi vilkårlig startverdiene <span class="math notranslate nohighlight">\((1, 1, 1)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">opt</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fun</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">6</span><span class="p">,</span> 
+            <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="n">løsning</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">broyden1</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3.00000000e+00 3.55271368e-15 1.00000000e+00]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="1000"
+            height="750"
+            src="https://parsons.herokuapp.com/puzzle/267d396f643145f6891e3965b75b93b2"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        </div></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 2</p>
+<p>Bruk halveringsmetoden og vis at løsningene til likningen <span class="math notranslate nohighlight">\(x^5 = 5x^3 + 3\)</span> er <span class="math notranslate nohighlight">\(x_1 \approx -2.169, x_2 \approx -0.894\)</span> og <span class="math notranslate nohighlight">\(x_3 \approx 2.291\)</span>. Sammenlikn med “bisect” (halveringsmetoden) fra Scipy-biblioteket.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 3</p>
+<p>Implementer Newtons metode som en Python-funksjon med toleranse, maks antall iterasjoner og relevant feilhåndtering dersom vi når maks iterasjoner uten å nå gitt toleranse. Test funksjonen på likningen <span class="math notranslate nohighlight">\(x^2 = x^3 - 4\)</span>.</p>
+</div>
+</section>
+<section id="videoer">
+<h2>Videoer<a class="headerlink" href="#videoer" title="Permalink to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Halveringsmetoden</label><div class="sd-tab-content docutils">
+<iframe width="890" height="500" src="https://www.youtube.com/embed/Ut7hUwPrHwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Newtons metode</label><div class="sd-tab-content docutils">
+<iframe width="890" height="500" src="https://www.youtube.com/embed/7gCA5Per73g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/tema4_algoritmer"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="algoritmer.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Matematiske algoritmer og stokastiske simuleringer</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="derivasjon.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Numerisk derivasjon</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#likninger">
+   Likninger
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#praktiske-anvendelser">
+   Praktiske anvendelser
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualisere-losningen">
+   Visualisere løsningen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#en-enkel-metode-for-a-finne-nullpunktet">
+   En enkel metode for å finne nullpunktet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#halveringsmetoden">
+   Halveringsmetoden
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#forbedringer-av-metoden">
+     Forbedringer av metoden
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#newtons-metode">
+   Newtons metode
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#likningssett">
+   Likningssett
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oppgaver">
+   Oppgaver
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videoer">
+   Videoer
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Andreas Haraldsrud
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>

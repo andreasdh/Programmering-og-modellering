@@ -1,0 +1,2077 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Løkker &#8212; Programmering og modellering</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/tema1_grunnleggende_programmering/lokker';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Quiz 4: Løkker" href="quiz4.html" />
+    <link rel="prev" title="Quiz 3: Vilkår (if-tester)" href="quiz3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/statistikk.html">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/likninger.html">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/differensiallikninger.html">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt2.html">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/teknologi.html">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/statistikk.html">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/likninger.html">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/differensiallikninger.html">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt2.html">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/teknologi.html">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 1 - Grunnleggende programmering</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="kom_i_gang.html">En første kodesnutt</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tall_variabler.html">Variabler og datatyper</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="quiz1.html">Quiz 1: Variabler og aritmetikk</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="lister.html">Lister</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="quiz2.html">Quiz 2: Lister</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="if-tester.html">Vilkår (if-tester)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="quiz3.html">Quiz 3: Vilkår (if-tester)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Løkker</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="quiz4.html">Quiz 4: Løkker</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 2 - Kodestrukturering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema2_kodestrukturering/funksjoner.html">Funksjoner</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="quiz5.html">Quiz 5: Funksjoner</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tema2_kodestrukturering/klasser_objekter.html">Klasser og objekter</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 3 - Datahåndtering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="programmeringsverktoy.html">Programmeringsverktøy</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema3_datahandtering/datasamlinger.html">Datasamlinger</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="quiz6.html">Quiz 6: Datasamlinger (arrayer og dictionarier)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/plotting.html">Datahåndtering I: Visualisering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/lese_filer.html">Datahåndering II: Håndtere og visualisere data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/statistikk.html">Datahåndering III: Statistikk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/maskinlaring.html">Datahåndtering IV: Maskinlæring</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 - Algoritmer</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/algoritmer.html">Matematiske algoritmer og stokastiske simuleringer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/likninger.html">Likninger og nullpunkter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/derivasjon.html">Numerisk derivasjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/integrasjon.html">Numerisk integrasjon (ekstrastoff)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/symbolsk_utregning.html">Symbolsk utregning (CAS)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 - Modellering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/diskret_modellering.html">Modellering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/regresjonsmodeller.html">Regresjonsmodeller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/differensiallikninger.html">Differensiallikninger og kontinuerlige modeller</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/differensiallikninger_oppgaver.html">Differensiallikninger (oppgaver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">Maskinlæring med Titanic (oppgave)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/statistikkprosjekt.html">Statistikkprosjekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/modelleringsprosjekt1.html">Modelleringsoppgave I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/modelleringsprosjekt2.html">Modelleringsoppgave II</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Fagoppgaver</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/kjemioppgaver.html">Repetisjon I: Kjemioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/biologioppgaver.html">Repetisjon II: Biologioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/teknologi.html">Teknologi og programmering</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datafiler</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../datafiler.html">Datafiler</a></li>
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../../_sources/docs/tema1_grunnleggende_programmering/lokker.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Løkker</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definisjon">
+   Definisjon
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skilpaddegrafikk">
+   Skilpaddegrafikk
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skilpadder-i-lokker">
+     Skilpadder i løkker
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while-lokker">
+   While-løkker
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-lokker">
+   For-løkker
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-tenke-i-lokker">
+   Å tenke i løkker
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tallfolger">
+     Tallfølger
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tallrekker">
+     Tallrekker
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#naturvitenskapelige-problemer">
+     Naturvitenskapelige problemer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nostede-lokker">
+   Nøstede løkker
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oppgaver">
+   Oppgaver
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videoer">
+   Videoer
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <section class="tex2jax_ignore mathjax_ignore" id="lokker">
+<h1>Løkker<a class="headerlink" href="#lokker" title="Permalink to this heading">#</a></h1>
+<div class="admonition-laeringsutbytte admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>Etter å ha arbeidet med dette temaet, skal du kunne:</p>
+<ol class="arabic simple">
+<li><p>bruke while- og for-løkker til å gjenta kode</p></li>
+<li><p>tegne geometriske mønstre med turtle-grafikk</p></li>
+<li><p>beregne rekkesummer</p></li>
+<li><p>løse naturvitenskapelige problemer med løkker</p></li>
+</ol>
+</div>
+<section id="definisjon">
+<h2>Definisjon<a class="headerlink" href="#definisjon" title="Permalink to this heading">#</a></h2>
+<p>Den kanskje viktigste strukturen i programmering er løkker. De lar datamaskinen gjenta en operasjon så mange ganger vi vil. Det er dette som er datamaskinens styrke.</p>
+<div class="admonition-lokker admonition">
+<p class="admonition-title">Løkker</p>
+<p>En løkke er en struktur som gjør at vi kan gjenta kode. Ofte skiller vi mellom en <em>telleløkke</em>, som gjentar noe et visst antall ganger, og en <em>tilstandsløkke</em>, som gjentar seg så lenge noe er sant. I Python heter disse henholdsvis <em>for</em>-løkke og <em>while</em>-løkke.</p>
+</div>
+</section>
+<section id="skilpaddegrafikk">
+<h2>Skilpaddegrafikk<a class="headerlink" href="#skilpaddegrafikk" title="Permalink to this heading">#</a></h2>
+<p>Vi skal se hvordan løkker fungerer ved å introdusere deg for en skilpadde. Han heter Gunnar. Her er han:</p>
+<iframe src="https://trinket.io/embed/python/e00b86de83?font=1.5em" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<p>Gunnar følger enkle kommandoer, som “forward”, “backward”, “right” og “left”.</p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Endre programmet ovenfor slik at Gunnar tegner en trekant. Hva er sammenhengen mellom vinkelen som skilpadden snur og vinklene i trekanten?</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Du kan tegne hvilken som helst trekant, men dersom vi velger en likesidet trekant, må alle vinkler være 60 grader (slik at summen av de tre vinklene er 180 grader). Men vi kan ikke snu skilpadden 60 grader mot venstre. Da blir ikke den indre vinkelen i trekanten 60 grader. Det er altså forskjell på å snu 60 grader og lage en vinkel på 60 grader. Siden en helomvending er 180 grader, må skilpadden snu 180 - 60 = 120 grader for at vinklene i trekanten skal være 60 grader.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">turtle</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">shape</span><span class="p">(</span><span class="s2">&quot;turtle&quot;</span><span class="p">)</span>    <span class="c1"># gir pekeren skilpaddeform </span>
+<span class="n">color</span><span class="p">(</span><span class="s2">&quot;limegreen&quot;</span><span class="p">)</span> <span class="c1"># gjør skilpadden limegrønn</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>       <span class="c1"># går framover 100 steg</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>          <span class="c1"># vender 30 grader mot høyre (går ikke framover)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>       <span class="c1"># går framover 100 steg</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<section id="skilpadder-i-lokker">
+<h3>Skilpadder i løkker<a class="headerlink" href="#skilpadder-i-lokker" title="Permalink to this heading">#</a></h3>
+<p>Å tegne en trekant krever få linjer kode, men hva hvis du vil tegne en åttekant, en førtitokant, eller en nittisekskant? Det er slitsomt og kjedelig å skrive samme kommando hundrevis av ganger. Og det er totalt unøvdendig. Vi bruker nemlig løkker til å gjenta kode, for eksempel slik:</p>
+<iframe src="https://trinket.io/embed/python/f047f7a36d?font=1.5em" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Prøv å forklare hvordan programmet ovenfor fungerer. Hva tror du “for i in range(n)” betyr? Hva tror du <em>i</em> er?</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Programmet tegner en regulær (likesidet) mangekant. Vi velger først antall sider og en sidelengde. Vi regner så ut hva vinklene i mangekanten må være. Deretter går vi inn i en løkke. Helt enkelt kan vi si at løkka repeterer alt som står rykket inn (med tab) <em>n</em> ganger. Skilpadden går altså framover (50) og snur (45), og dette gjentas <em>n</em> ganger.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Mer komplisert/grundig løsning</p>
+<p>Vi kan forklare programmet ovenfor litt grundigere med at “for i in range(n)” betyr at for hver verdi av en variabel <em>i</em>, skal løkka gjentas. Variabelen <em>i</em> får hver verdi i intervallet [0, 1, 2, 3, …, n-1], som lages med funksjonen <em>range</em>. Det betyr at første gang løkka kjører, er <span class="math notranslate nohighlight">\(i = 0\)</span>, andre gang <span class="math notranslate nohighlight">\(i = 1\)</span> og så videre. Løkka gjentas helt til <span class="math notranslate nohighlight">\(i = n - 1\)</span>, altså til, men ikke med verdien <em>n</em>.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Modifiser programmet ovenfor slik at skilpadden Gunnar tegner en 20-kant.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Det er så enkelt som å endre <em>n</em> til 20. Problemet er at 20-kanten blir litt stor, så vi kan også med fordel endre sidelengden, for eksempel til 25.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave</p>
+<p>Få Gunnar til å tegne et menneske eller en blomst.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Mulighetene er uendelige, men her er et vakkert eksemplar av et menneske</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">turtle</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">vinkel</span> <span class="o">=</span> <span class="mi">360</span><span class="o">/</span><span class="n">n</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="n">forward</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+  <span class="n">left</span><span class="p">(</span><span class="n">vinkel</span><span class="p">)</span>
+  
+<span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+  <span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+  <span class="n">forward</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+  <span class="n">backward</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+
+<span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="n">right</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+<span class="n">backward</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="while-lokker">
+<h2>While-løkker<a class="headerlink" href="#while-lokker" title="Permalink to this heading">#</a></h2>
+<p>Vi har to typer løkker i Python: while-løkker (tilstandsløkker) og for-løkker (telleløkker). While-løkker gjentar noe helt til et kriterium er nådd. Her er et eksempel:</p>
+<iframe src="https://trinket.io/embed/python3/aae1a3f582?font=1.5em" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<p>Programmet kjører så lenge variabelen <em>partall</em> har en verdi som er mindre enn eller lik 10. Alt som er rykket inn, gjentas hver gang løkka går. Programmet skriver derfor ut alle positive partall (og 0) som er mindre enn eller lik 10.</p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Modifiser programmet ovenfor slik at programmet skriver ut alle positive <em>oddetall</em> under 10.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">oddetall</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="n">oddetall</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">oddetall</span><span class="p">)</span>
+    <span class="n">oddetall</span> <span class="o">=</span> <span class="n">oddetall</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="for-lokker">
+<h2>For-løkker<a class="headerlink" href="#for-lokker" title="Permalink to this heading">#</a></h2>
+<p>I for-løkker lager vi en <em>teller</em> eller <em>tellevariabel</em> som går igjennom en slags liste med tall. Denne listeliknende tallmengden kan vi lage med funksjonen <em>range</em>. Her er noen eksempler:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>kommando</p></th>
+<th class="head"><p>liste</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>range(3)</p></td>
+<td><p>[0, 1, 2]</p></td>
+</tr>
+<tr class="row-odd"><td><p>range(2,4)</p></td>
+<td><p>[2, 3]</p></td>
+</tr>
+<tr class="row-even"><td><p>range(1,8,2)</p></td>
+<td><p>[1, 3, 5, 7]</p></td>
+</tr>
+</tbody>
+</table>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Forklar hvordan <em>range</em>-funksjonen fungerer med utgangspunkt i eksemplene ovenfor.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Vi kan skrive en generell range-kommando slik: range(fra og med, til, steglengde). Vi kaller de tre tallene i range-funksjonen for <em>argumenter</em>. Dersom vi kun bruker ett argument, for eksempel <em>range(3)</em>, får vi en mengde fra 0 til, men ikke med, 3 (som er spesifisert), med steglengde 1, altså er hvert heltall med. Dersom vi bruker to argumenter, som i <em>range(2,4)</em>, får vi en tallmengde fra 2 til, men ikke med, 4, med en automatisk steglengde på 1. Dersom vi bruker tre argumenter, gir vi også steglengden, for eksempel hvert andre tall mellom 1 og 8, som i <em>range(1,8,2)</em>.</p>
+</div>
+<p>Et enkelt eksempel på en for-løkke er slik:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Vi kan også gjøre noe mer enn å telle i løkka:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">i</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Så hva betyr dette? Helt enkelt betyr det at alt som er rykket inn (med tab eller fire mellomrom), blir gjentatt 5 ganger. Operasjonen der vi oppdaterer <em>a</em> er</p>
+<p>Hvis vi skal forklare litt mer presist hva som skjer, kan vi si at <em>range</em>-funksjonen lager en tallmengde [0, 1, 2, 3, 4], og at <em>i</em> blir tilordnet hver av disse verdiene etter tur. Første gang løkka går, er <span class="math notranslate nohighlight">\(i = 0\)</span>. Da printes denne verdien, og <span class="math notranslate nohighlight">\(a = 2 + 0 = 2\)</span>. Deretter gjentas alt inni løkka på nytt, og <em>i</em> får verdien 1. Så gjentas det som står rykket inn en gang til: Vi printer 1, og <span class="math notranslate nohighlight">\(a = 2 + 1 = 3\)</span>. Slik fortsetter det til og med <span class="math notranslate nohighlight">\(i = 4\)</span>. Når <em>i</em> har hatt alle verdiene i tallmengden, avsluttes løkka.</p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Vi kan systematisere løkkene med en <em>løkketabell</em>. Den holder styr på hva verdien til de ulike variablene er underveis i løkka. Fyll inn resten av løkketabellen for løkka ovenfor.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Løkkerunde</p></th>
+<th class="head"><p>i</p></th>
+<th class="head"><p>a</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Startverdi</p></td>
+<td><p>-</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Løkkerunde</p></th>
+<th class="head"><p>i</p></th>
+<th class="head"><p>a</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Startverdi</p></td>
+<td><p>-</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>8</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>4</p></td>
+<td><p>12</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>I for-løkker kaller vi ofte tellevariabelen for <em>i</em>, <em>j</em>, <em>k</em> eller liknende, men den kan egentlig hete hva som helst. I tillegg trenger vi ikke å <em>gjøre</em> noe med tellevariabelen. Mange ganger brukes den bare for å telle. Her er et eksempel:</p>
+<iframe src="https://trinket.io/embed/python3/8596417056?font=1.5em" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Modifiser programmet ovenfor slik at det skriver ut hvor mye penger du har etter et visst antall år. Lag en variabel som inneholder antall år, og som du bruker i løkka. Legg også inn hensiktsmessige kommentarer.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">penger</span> <span class="o">=</span> <span class="mi">100</span>   <span class="c1"># kroner i banken</span>
+<span class="n">renter</span> <span class="o">=</span> <span class="mf">1.025</span> <span class="c1"># Rente (1+x%/100) </span>
+<span class="n">tid</span> <span class="o">=</span> <span class="mi">25</span>       <span class="c1"># Antall år pengene står i banken</span>
+
+<span class="k">for</span> <span class="n">år</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tid</span><span class="p">):</span>
+    <span class="n">penger</span> <span class="o">=</span> <span class="n">penger</span><span class="o">*</span><span class="n">renter</span>
+  
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Etter&quot;</span><span class="p">,</span> <span class="n">tid</span><span class="p">,</span> <span class="s2">&quot;år har du&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">penger</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;kroner i banken.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="a-tenke-i-lokker">
+<h2>Å tenke i løkker<a class="headerlink" href="#a-tenke-i-lokker" title="Permalink to this heading">#</a></h2>
+<p>Løkker kan brukes til alt fra å summere tallrekker i matematikk til å finne ut hvor mange harer det er i økosystem etter en viss tid, finne posisjonen til et legeme eller utforske hvordan kjemiske reaksjoner foregår. Når vi skal bruke løkker, må vi dele opp problemer slik at de kan utføres trinnvis. I matematikk og naturvitenskapelige fag er det ofte slik at vi representerer sammenhenger med kontinuerlige funksjoner og formler, men når vi løser problemene med løkker, gjør vi det trinnvis. For hvert trinn, gjør vi en bestemt operasjon. Dette kalles å løse noe <em>iterativt</em>, fordi <em>iterasjon</em> betyr gjentakelse. Litt mer uformelt kan vi kalle det å løse noe trinnvis med små, repeterende operasjoner “å tenke i løkker”. La oss se på noen eksempler fra både matematikk og naturvitenskap.</p>
+<section id="tallfolger">
+<h3>Tallfølger<a class="headerlink" href="#tallfolger" title="Permalink to this heading">#</a></h3>
+<p>En tallfølge er en oppramsing av tall som kan være enten endelig eller uendelig. Et eksempel på en endelig tallfølge er 2, 4, 6, 8, 10, som er en tallfølge av de 5 første partallene. En berømt uendelig tallfølge er <em>Fibonacci-tallene</em>: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, …, der de tre siste prikkene sier oss at rekka er uendelig lang. Fibonacci-tallene starter på 1, og hvert tall er deretter summen av de to foregående tallene.</p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Beskriv mønsteret i følgen 1, 4, 7, … og skriv opp det neste tallet i følgen.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Hvert tall er lik summen av det forrige tallet og 3. Det neste tallet må derfor være 7 + 3 = 10.</p>
+</div>
+<p>Hvert tall i en tallfølge kalles et <em>ledd</em>. Vi kan beskrive hvert ledd i en følge med symboler, for eksempel <span class="math notranslate nohighlight">\(a_n\)</span>, der <em>n</em> er en indeks som beskriver leddnummeret. I tallfølgen 1, 3, 5, 7, … kan for vi for eksempel si at <span class="math notranslate nohighlight">\(a_1 = 1\)</span> og <span class="math notranslate nohighlight">\(a_2 = 3\)</span>. Poenget med å beskrive en følge med symboler, er at vi kan lage formler for hvert generelle ledd <span class="math notranslate nohighlight">\(a_n\)</span>. Følgen 1, 3, 5, 7, … kan beskrives med den generelle formelen <span class="math notranslate nohighlight">\(a_{n+1} = a_n + 2\)</span>, der <span class="math notranslate nohighlight">\(a_1 = 1\)</span>. En slik formel kalles en <em>rekursiv formel</em> fordi vi tar utgangspunkt i en tidligere verdi for å regne ut neste verdi.</p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Forklar hvorfor <span class="math notranslate nohighlight">\(a_{n+1} = a_n + 2\)</span> er det samme som <span class="math notranslate nohighlight">\(a_n = a_{n-1} + 2\)</span>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Formlene beskriver det samme, men med ulike indekser. Begge sier at neste tall er lik forrige tall + 2. Den første formelen vil starte med <em>n = 0</em>. Da har vi at <span class="math notranslate nohighlight">\(a_1 = a_0 + 2\)</span>. Den andre formelen vil starte med <em>n = 1</em>. Da har vi også at <span class="math notranslate nohighlight">\(a_1 = a_0 + 2\)</span>.</p>
+</div>
+<p>Når vi først har kommet fram til en generell formel for en tallfølge, kan vi finne det <em>n</em>-te leddet ved hjelp av programmering. Vi bruker tallfølgen 1, 3, 7, 15, 31, … som eksempel. Denne følgen kan vi beskrive med formelen <span class="math notranslate nohighlight">\(a_{n+1} = a_n + 2^n\)</span>. La oss finne det hundrede leddet i denne følgen:</p>
+<iframe src="https://trinket.io/embed/python3/112c41d19b?font=1.5em" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe><div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Forklar hva som skjer i programmet ovenfor. For å sjekke om programmet vårt fungerer, kan det være lurt å beregne tall som vi kjenner i følgen. Prøv å finne tall nr. 3, 4 og 5 for å sjekke at programmet gjør det det skal.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Programmet definerer først et tall som er med i tallfølgen, deretter hvilket ledd (nummer) vi ønsker å finne i følgen. Løkka går fra 1 til (men ikke med) <em>n</em>. Det er fordi vi allerede har et tall i følgen, <span class="math notranslate nohighlight">\(a_0 = 1\)</span>. Da trenger bare løkka å gå to ganger for å finne ledd nr. 3, og for eksempel 6 ganger for å finne ledd nr. 7, og så videre. Hvis vi teller fra 0, er tall nummer 3 lik <span class="math notranslate nohighlight">\(a_2 = 7\)</span>, tall 4 er <span class="math notranslate nohighlight">\(a_3 = 15\)</span> og tall 5 er <span class="math notranslate nohighlight">\(a_4 = 31\)</span></p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Endre programmet ovenfor slik at det finner det 20. elementet i tallfølgen 1, 5, 11, 19, 29, …</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Tallfølgen ovenfor kan beskrives med den rekursive formelen <span class="math notranslate nohighlight">\(a_{n+1} = a_{n} + 2n + 2\)</span>. Vi kan finne det tjuende elementet slik:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>   <span class="c1"># første verdi i tallfølgen</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># n-te ledd i tallfølgen</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tall nummer&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s2">&quot;i følgen er:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Det tjuende elementet er 419.</p>
+</div>
+</section>
+<section id="tallrekker">
+<h3>Tallrekker<a class="headerlink" href="#tallrekker" title="Permalink to this heading">#</a></h3>
+<p>Når vi beskriver en tallfølge som en serie med tall som adderes med hverandre, kaller vi det for en <em>rekke</em>. For eksempel er 1, 5, 11, 19, 29, … en tallfølge, mens 1 + 5 + 11 + 19 + 29 + … er en tallrekke. Vi kan summere slike rekker, selv om de er uendelige.</p>
+<p>Noen rekkesummer går mot uendelig  mens andre går mot en bestemt verdi. Vi kan utlede formler for å regne ut summen av slike rekker, men vi kan også lage programmer som gjør det. La oss si at vi har denne rekka (ei såkalt uendelig geometrisk rekke):</p>
+<p><span class="math notranslate nohighlight">\(1 + \frac{2}{3} + \frac{4}{9} + \frac{8}{27} + ...\)</span></p>
+<p>Vi kan regne ut summen av denne rekka ved å først kjenne igjen et mønster i tallmengden. Vi kan vise at det <em>n</em>-te tallet i rekka er <span class="math notranslate nohighlight">\(\left(\frac{2}{3}\right)^n\)</span>. Deretter kan vi programmere ei løkke som legger sammen så mange av disse tallene som mulig. Vi tilnærmer altså den uendelige rekka med et endelig antall ledd. Det kan vi gjøre slik</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">S</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">S</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="n">n</span>  <span class="c1"># summen er lik forrige sum + sum av nytt tall</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.9999999999999987
+</pre></div>
+</div>
+</div>
+</div>
+<p>Den nøyaktive, analytiske verdien vi kan få dersom vi uleder en summeformel for rekka, er 3 (uten desimaltall). Men når vi legger sammen de 100 første tallene i programmet ovenfor, får vi faktisk  et tall som er ganske nærme. Det er ikke verst! Vi får sjeldent helt nøyaktige svar når vi bruker slike metoder, men vi kommer ganske nærme.</p>
+</section>
+<section id="naturvitenskapelige-problemer">
+<h3>Naturvitenskapelige problemer<a class="headerlink" href="#naturvitenskapelige-problemer" title="Permalink to this heading">#</a></h3>
+<p>Det som er ekstra morsomt med å løse problemer iterativt, er at vi ofte løser ting på samme måte på tvers av ulike fag. Se bare på de tre ulike programmene nedenfor, fra fagområdene fysikk og biologi. Du kan også sammenlikne med det du har lært om følger og rekker.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fysikkeksempel</span>
+
+<span class="n">tid</span> <span class="o">=</span> <span class="mi">10</span>    <span class="c1"># slutt-tid i sekunder</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.001</span>  <span class="c1"># tidssteg mellom hver iterasjon</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1"># start-tid</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">9.8</span>     <span class="c1"># akselerasjonen til et legeme</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1"># startfart i m/s</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1"># startposisjon i m</span>
+
+<span class="k">while</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="n">tid</span><span class="p">:</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">v</span> <span class="o">+</span> <span class="n">a</span><span class="o">*</span><span class="n">dt</span> <span class="c1"># bevegelsesformel for hastighet (konstant a)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">v</span><span class="o">*</span><span class="n">dt</span> <span class="c1"># bevegelsesformel for posisjon (konstant v)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">dt</span>   <span class="c1"># oppdaterer tida med dt</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I løpet av&quot;</span><span class="p">,</span> <span class="n">tid</span><span class="p">,</span> <span class="s2">&quot;sekunder falt steinen&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="s2">&quot;m.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I løpet av 10 sekunder falt steinen 490.01960014606396 m.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Beskriv hva programmet ovenfor gjør. Problemet kan løses relativt enkelt ved hjelp av formler, men kan du tenke deg hvorfor denne måten å gjøre det på kan være nyttig likevel?</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B0</span> <span class="o">=</span> <span class="mi">100</span>          <span class="c1"># antall bakterier ved t = 0</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">B0</span>
+<span class="n">antall_timer</span> <span class="o">=</span> <span class="mi">30</span> <span class="c1"># slutt-tid i timer</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>             <span class="c1"># start-tid</span>
+<span class="n">vekst</span> <span class="o">=</span> <span class="mf">1.20</span>      <span class="c1"># vekstfaktor</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_timer</span><span class="p">):</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">B</span><span class="o">*</span><span class="n">vekst</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Antall bakterier er:&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Antall bakterier er: 23737
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Forklar hva programmet ovenfor gjør. Dette programmet gjør det samme som å sette t = 30 inn i funksjonen <span class="math notranslate nohighlight">\(B(t) = 100\cdot 1.20^t\)</span>. Hva beskriver denne funksjonen, og hvorfor kan det være nyttig å lage et program for å regne ut dette når det er såpass lett å løse analytisk?</p>
+</div>
+<p>De to programmene ovenfor benytter samme løsningsstrategi: Ut fra en startbetingelse (startposisjon og startfart eller antall bakterier til å begynne med) regner vi ut utviklingen over tid i et system (enten posisjonen til en stein som faller, eller antall bakterier til slutt), gitt noen premisser for systemet (henholdsvis akselerasjon og vekstfaktor). Det er altså mange likheter mellom måten vi løser problemene på.</p>
+<p>Fordelen ved å bruke programmering til å løse slike problemer, er at det er lett generaliserbart. Selv om det finnes formler som ganske nøyaktig kan beskrive posisjonen til steinen ved enhver tid, er det ikke så lett å forutse posisjonen til en fallskjermhopper, der akselerasjonen varierer ganske mye, eller veksten til bakterier hvis den avhenger av temperatur. Alt dette er relativt enkelt å legge til i programmene våre, mens de analytiske (formelbaserte) løsningene blir veldig kompliserte, og ofte uløselige.</p>
+<p>For eksempel kan vi enkelt legge inn en temperaturavhengighet i bakterieveksten vår slik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">antall_timer</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">vekst_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.20</span><span class="p">,</span> <span class="mf">1.30</span><span class="p">,</span> <span class="mf">1.42</span><span class="p">,</span> <span class="mf">1.48</span><span class="p">]</span>
+<span class="n">temperatur</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">antall_timer</span><span class="p">):</span> 
+    <span class="k">if</span> <span class="mi">30</span> <span class="o">&lt;=</span> <span class="n">temperatur</span> <span class="o">&lt;=</span> <span class="mi">40</span><span class="p">:</span> 
+        <span class="n">vekst</span> <span class="o">=</span> <span class="n">vekst_liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="mi">40</span> <span class="o">&lt;</span> <span class="n">temperatur</span> <span class="o">&lt;</span> <span class="mi">52</span><span class="p">:</span> 
+        <span class="n">vekst</span> <span class="o">=</span> <span class="n">vekst_liste</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="mi">53</span> <span class="o">&lt;=</span> <span class="n">temperatur</span> <span class="o">&lt;=</span> <span class="mi">65</span><span class="p">:</span> 
+        <span class="n">vekst</span> <span class="o">=</span> <span class="n">vekst_liste</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">vekst</span> <span class="o">=</span> <span class="n">vekst_liste</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> 
+    <span class="n">B</span> <span class="o">=</span> <span class="n">B</span><span class="o">*</span><span class="n">vekst</span> 
+    <span class="n">temperatur</span> <span class="o">=</span> <span class="n">temperatur</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Antall bakterier er:&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Antall bakterier er: 229430
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nå har vi egentlig lagd ulike modeller for to forskjellige systemer. Utvikling, testing og utforsking av modeller skal vi se mye på seinere. Her er hovedpoenget at du skal se hvordan løkker kan brukes til å løse problemer på en effektiv, robust og relativt intuitiv måte.</p>
+</section>
+</section>
+<section id="nostede-lokker">
+<h2>Nøstede løkker<a class="headerlink" href="#nostede-lokker" title="Permalink to this heading">#</a></h2>
+<p>Nøstede løkker er løkker inni løkker. Da gjelder det å holde tunga rett i munnen. La oss bruke et eksempel for å forklare hvordan det virker:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i | j&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;|&quot;</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i | j
+-----
+0 | 1
+0 | 2
+1 | 1
+1 | 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi ser at den innerste løkka, som bruker <em>j</em> som tellevariabel, gjentas to ganger for hver gang den ytterste løkka går. Først er altså <em>i = 0</em>. Det er første runde i den ytre løkka. Mens <em>i = 0</em> går den indre løkka to ganger, en gang for <em>j = 1</em> og en gang for <em>j = 2</em>. Deretter går neste runde i den ytre løkka, og <em>i = 1</em>. Den indre løkka går igjen to ganger, en gang for <em>j = 1</em> og en gang for <em>j = 2</em>. Totalt har vi altså gått fire løkkerunder.</p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Lag et program som printer ut denne løkketabellen:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>a</p></th>
+<th class="head"><p>b</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i | j&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;|&quot;</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Grunnleggende oppgaver</label><div class="sd-tab-content docutils">
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.1</p>
+<p>Sammenlikn programmene nedenfor. Beskriv eventuelle forskjeller og likheter.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">partall</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">partall</span> <span class="o">=</span> <span class="n">partall</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">partall</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">partall</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">partall</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">partall</span> <span class="o">=</span> <span class="n">partall</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">partall</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Begge programmene gir samme input. I det første programmet bruker vi en telleløkke som gjentar en operasjon (legger til 2 til variabelen partall) 5 ganger. I det andre programmet bruker vi en tilstandsløkke som legger 2 til partallsvariabelene helt til partall ikke er mindre enn 10.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.2</p>
+<p>Lag en løkketabell med utgangspunkt i følgende kode:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">i</span>
+</pre></div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningforslag</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Løkkerunde</p></th>
+<th class="head"><p>i</p></th>
+<th class="head"><p>a</p></th>
+<th class="head"><p>b</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Startverdi</p></td>
+<td><p>-</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>20</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.3</p>
+<p>Lag et program som skriver ut “Du er flink til å programmere!” tusen ganger. Hvilken funksjon har “tellevariabelen” (<em>i</em>) her?</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Du er flink til å programmere!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Vi bruker ikke tellevariabelen til utregning eller output, men den teller i bakgrunnen slik at løkka går 1000 ganger. Hver gang løkka går, får variabelen <em>i</em> en ny verdi (først 0, så 1, så 2, osv. opp til 999).</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.4</p>
+<p>Programmet nedenfor skal finne summen av de 100 første tallene i en tallfølge der hvert ledd er den dobbelte av det forrige. Forklar hvordan programmet fungerer. Endre gjerne på ulike variabler og test hva utfallet blir for å forstå hvordan programmet fungerer.</p>
+<iframe src="https://trinket.io/embed/python3/51f01c11f8?font=1.5em" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Vi starter med å definere variablene våre. Variabelen <em>tall</em> representerer et tall som dobles hver gang vi kjører løkka, <em>summen</em> inneholder summen av alle disse tallene, og øker med <em>tall</em> hver gang løkka kjører. Tellevariabelen <em>i</em> sørger for at vi legger sammen 100 tall (den går fra 0 til 99), og har ingen funksjon utenom dette. Til slutt skriver vi ut summen av alle disse tallene.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.5</p>
+<p>Skriv om programmet ovenfor slik at du benytter en while-løkke istedenfor en for-løkke.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">tall</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">summen</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+  <span class="n">summen</span> <span class="o">=</span> <span class="n">summen</span> <span class="o">+</span> <span class="n">tall</span>
+  <span class="n">tall</span> <span class="o">=</span> <span class="n">tall</span><span class="o">*</span><span class="mi">2</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">summen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.6</p>
+<p>Hva skrives ut i følgende program? Prøv å undersøke dette for hånd. Til slutt kan du sjekke ved å kopiere programmet inn i en editor og kjøre det.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">i</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Husk at print som skjer inni løkka gjør at vi får output hver gang løkka går, mens print utenfor løkka gir sluttverdien til variabelen etter at løkka har kjørt. Siden <em>i</em> får verdien 0, 1, 2, 3 og 4, får <em>b</em> verdien 0, 1, 4, 9 og 16, siden <em>a</em> øker med 1 hver gang løkka går. Det betyr at 0, 1, 4, 9, 16 skrives ut, etterfulgt av sluttverdien til <em>a</em>, 5.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.7</p>
+<p>Bruk turtle-grafikk til å tegne et hus. Du bestemmer selv hvor detaljert huset skal være.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Mulighetene er uendelige, men her er et enkelt forslag:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">turtle</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+  <span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+  <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+  
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+  <span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+  <span class="n">left</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Matematikk</label><div class="sd-tab-content docutils">
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.8</p>
+<p>Bruk turtle-grafikk til å tegne en hundrekant. Hva slags form minner dette deg om?</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">turtle</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">sidelengde</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">vinkel</span> <span class="o">=</span> <span class="mi">360</span><span class="o">/</span><span class="n">n</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="n">forward</span><span class="p">(</span><span class="n">sidelengde</span><span class="p">)</span>
+  <span class="n">left</span><span class="p">(</span><span class="n">vinkel</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hundrekanten minner om en sirkel. Det er faktisk slik at når <em>n</em> nærmer seg uendelig, får vi en perfekt sirkel! En sirkel er altså en slags uendeligkant.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.9</p>
+<p>Programmet nedenfor skal regne ut hvor lang tid det tar før du har doblet beløpet ditt i banken gitt en årlig rente på 5 % og en startkapital på 5000 kroner, men programmet fungerer ikke som det skal. Hva er feil? Rett opp programmet slik at det fungerer.</p>
+<iframe src="https://trinket.io/embed/python3/156cd31940?font=1.5em" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Feilen er ikke kodeteknisk, men matematisk. Vi må enten definere rente som 1.05 eller gjøre slik i løkka:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">startkapital</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">penger</span> <span class="o">=</span> <span class="n">startkapital</span>
+<span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">rente</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="k">while</span> <span class="n">penger</span> <span class="o">&lt;</span> <span class="n">startkapital</span><span class="o">*</span><span class="mi">2</span><span class="p">:</span>
+  <span class="n">penger</span> <span class="o">=</span> <span class="n">penger</span> <span class="o">+</span> <span class="n">penger</span><span class="o">*</span><span class="n">rente</span>
+  <span class="n">år</span> <span class="o">=</span> <span class="n">år</span> <span class="o">+</span> <span class="mi">1</span>
+  
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Det tar&quot;</span><span class="p">,</span> <span class="n">år</span><span class="p">,</span> <span class="s2">&quot;år å doble beløpet.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.10</p>
+<p>Lag et program som regner ut denne summen:
+<span class="math notranslate nohighlight">\(\sum_{n = 0}^{50} \frac{1}{2^n}\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Summen er lik:&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.11</p>
+<p>Lag et program som regner ut denne summen:</p>
+<p><span class="math notranslate nohighlight">\(\sum_{n = 2}^{16} n^2 + n + 1\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">16</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Summen er lik:&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.12</p>
+<p>Fibonnacifølgen er en kjent tallfølge med heltall der hvert tall etter det første er summen av de to foregående. Følgen starter slik: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, …</p>
+<p>Lag et program som finner tall nr. <em>n</em> i rekka.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Fibonaccitall nr. </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1"> er: </span><span class="si">{</span><span class="n">x1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">x0_ny</span> <span class="o">=</span> <span class="n">x1</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x0</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="n">x0_ny</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.13</p>
+<p>Lag et program som viser at summen av denne rekka er 4.5:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle 3 + 1 + \frac{1}{3} + \frac{1}{9} + \frac{1}{27} + ...\)</span></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Rekka kan skrives slik: <span class="math notranslate nohighlight">\(3 + \sum^{\infty}{i=0} \frac{1}{3**i}\)</span>. Vi kan ikke summere et uendelig antall ledd på en datamaskin. Derfor tilnærmer vi svaret ved å bruke svært mange ledd, for eksempel 10 000.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># for at rekka summes fra og med 0 til og med N</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="o">**</span><span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.14</p>
+<p>I kombinatorikk er <em>n-fakultet</em> definert som produktet av alle heltall fra og med 1 til og med <em>n</em>. Dette kan vi skrive slik:</p>
+<p><span class="math notranslate nohighlight">\(n! = \prod_{k=1}^{n} k\)</span></p>
+<p>Lag en funksjon som regner ut fakultetet av et tall.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn n:&quot;</span><span class="p">))</span>
+<span class="n">fakultet</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">fakultet</span> <span class="o">=</span> <span class="n">fakultet</span><span class="o">*</span><span class="n">k</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n! =&quot;</span><span class="p">,</span> <span class="n">fakultet</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Naturvitenskap</label><div class="sd-tab-content docutils">
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.15 (biologi)</p>
+<p>Tøffeldyr formerer seg ukjønnet annenhver time dersom de befinner seg i en omgivelse med temperatur på <span class="math notranslate nohighlight">\(20 ^{\circ}C\)</span>.</p>
+<p>Skriv et program som regner ut og skriver ut hvor mange tøffeldyr det vil være dersom vi begynner med 5 tøffeldyr som formerer seg ukjønnet i løpet av 24 timer. Du kan anta at ingen tøffeldyr dør.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">toeffeldyr</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="n">toeffeldyr</span> <span class="o">=</span> <span class="n">toeffeldyr</span><span class="o">*</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Antall tøffeldyr etter 24 timer :&quot;</span><span class="p">,</span> <span class="n">toeffeldyr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.16 (fysikk)</p>
+<p>Vi kan bruke Bohrs formel til å regne ut frekvensen til et foton som emitteres når et elektron i et hydrogenatom deeksiterer fra skall <span class="math notranslate nohighlight">\(n\)</span> til <span class="math notranslate nohighlight">\(m\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[f =\frac{B}{h}\cdot \left( \frac{1}{m^2} - \frac{1}{n^2} \right)\]</div>
+<p>der <span class="math notranslate nohighlight">\(B = 2.18\cdot 10^{-18} J\)</span> er Bohrs konstant, <span class="math notranslate nohighlight">\(h = 6.63\cdot 10^{-34}\)</span> m<span class="math notranslate nohighlight">\(^2\)</span>kg s<span class="math notranslate nohighlight">\(^{-1}\)</span>. Vi har også en sammenheng mellom frekvens og bølgelengden til fotonene:</p>
+<div class="math notranslate nohighlight">
+\[\lambda = \frac{c}{f}\]</div>
+<p>der <span class="math notranslate nohighlight">\(c = 3.00\cdot10^8\)</span> m/s er lysets hastighet i vakuum.</p>
+<p>a) Lag et program som skriver ut bølgelengden ti lyset som emitteres ved en gitt deeksitasjon. Test programmet ved deeksitasjon fra <span class="math notranslate nohighlight">\(n = 5\)</span> til <span class="math notranslate nohighlight">\(n = 2\)</span>. Dette skal gi <span class="math notranslate nohighlight">\(\lambda = 434.47 \ nm\)</span>.</p>
+<p>b) Lag et program som regner ut alle bølgelengdene til fotonene som emitteres når atomet deeksiterer fra et skall <em>n</em> til alle mulige energinivåer <em>m</em>.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>a)</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">B</span> <span class="o">=</span> <span class="mf">2.18E-18</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">6.63E-34</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">3e8</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">B</span><span class="o">/</span><span class="n">h</span> <span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span> <span class="n">m</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">n</span> <span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">bl</span> <span class="o">=</span> <span class="n">c</span><span class="o">/</span><span class="n">f</span>            <span class="c1"># bølgelengde i meter</span>
+<span class="n">bl_nm</span> <span class="o">=</span> <span class="n">bl</span><span class="o">*</span><span class="mf">1E9</span>      <span class="c1"># bølgelengde i nanometer</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bølgelengden til fotonet fra n =&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s2">&quot;til m =&quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">bl_nm</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;nm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>b)</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Skriv inn en verdi for n:&quot;</span><span class="p">))</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="mf">2.18E-18</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">6.63E-34</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">3e8</span>
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span> <span class="c1"># Går baklengs, men kan godt gå forlengs med range(1, n)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">B</span><span class="o">/</span><span class="n">h</span> <span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span> <span class="n">m</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">n</span> <span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">bl</span> <span class="o">=</span> <span class="n">c</span><span class="o">/</span><span class="n">f</span>            <span class="c1"># bølgelengde i meter</span>
+    <span class="n">bl_nm</span> <span class="o">=</span> <span class="n">bl</span><span class="o">*</span><span class="mf">1E9</span>      <span class="c1"># bølgelengde i nanometer</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bølgelengden til fotonet fra n =&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s2">&quot;til m =&quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">bl_nm</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;nm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4.17 (fysikk)</p>
+<p>Over tid vil den radioaktive strålingen i et radioaktivt stoff reduseres. Dette skjer fordi atomene i det radioaktive stoffet vil omdannes til andre grunnstoffer. Mengden <span class="math notranslate nohighlight">\(N(t)\)</span> som gjenstår av det radioaktive stoffet etter ei tid <span class="math notranslate nohighlight">\(t\)</span> kan finnes ved:</p>
+<p><span class="math notranslate nohighlight">\(N(t) = N_0e^{-at}\)</span></p>
+<p>der <span class="math notranslate nohighlight">\(N_0\)</span> er hvor mye radioaktivt stoff vi starter med ved tida <span class="math notranslate nohighlight">\(t = 0\)</span>. Verdien til <span class="math notranslate nohighlight">\(a\)</span> forteller hvor raskt det radioaktive stoffet omdannes til andre grunnstoffer. Hvis vi kjenner halveringstida <span class="math notranslate nohighlight">\(T\)</span>, vil <span class="math notranslate nohighlight">\(a = \frac{\ln(2)}{T}\)</span>.</p>
+<p>Plutonium-239 har halveringstid på omtrent <span class="math notranslate nohighlight">\(T = 24\ 000\)</span> år.
+Skriv et program som skriver ut hvor mye Plutonium-239 som gjenstår etter hvert 5000. år over en periode på 50 000 år dersom <span class="math notranslate nohighlight">\(N_0 = 4\)</span> kg.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">log</span><span class="p">,</span> <span class="n">exp</span>
+<span class="n">N0</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">24000</span>
+
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50001</span><span class="p">,</span> <span class="mi">5000</span><span class="p">):</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">N0</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Etter &quot;</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="s2">&quot;år gjenstår&quot;</span><span class="p">,</span> <span class="n">N0</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="p">),</span> <span class="s2">&quot;kg av Plutonium-239.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="videoer">
+<h2>Videoer<a class="headerlink" href="#videoer" title="Permalink to this heading">#</a></h2>
+<p>I videoene nedenfor kan du få en innføring eller repetisjon i den grunnleggende teorien bak løkker:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+For-løkker</label><div class="sd-tab-content docutils">
+<iframe width="800" height="600" src="https://www.youtube.com/embed/C3W_5_NjHFw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Når du har sett videoen, kan du gjøre følgende oppgave for å sjekke om du forstår innholdet:</p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Skriv et program som regner ut summen av alle heltallene fra og med 1 til og med 449 ved hjelp av en for-løkke.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">tall</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">450</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">tall</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Summen er:&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+While-løkker</label><div class="sd-tab-content docutils">
+<iframe width="800" height="600" src="https://www.youtube.com/embed/8VXQ2jw6Dpw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Når du har sett videoen, kan du gjøre følgende oppgave for å sjekke om du forstår innholdet:</p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Skriv et program som regner ut summen av tallene fra og med 1 til og med 449 ved hjelp av en while-løkke.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">tall</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="n">tall</span> <span class="o">&lt;=</span> <span class="mi">449</span><span class="p">:</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">tall</span>
+  <span class="n">tall</span> <span class="o">=</span> <span class="n">tall</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Summen er:&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/tema1_grunnleggende_programmering"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="quiz3.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Quiz 3: Vilkår (if-tester)</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="quiz4.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Quiz 4: Løkker</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definisjon">
+   Definisjon
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skilpaddegrafikk">
+   Skilpaddegrafikk
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skilpadder-i-lokker">
+     Skilpadder i løkker
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while-lokker">
+   While-løkker
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-lokker">
+   For-løkker
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-tenke-i-lokker">
+   Å tenke i løkker
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tallfolger">
+     Tallfølger
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tallrekker">
+     Tallrekker
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#naturvitenskapelige-problemer">
+     Naturvitenskapelige problemer
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nostede-lokker">
+   Nøstede løkker
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oppgaver">
+   Oppgaver
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videoer">
+   Videoer
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Andreas Haraldsrud
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>

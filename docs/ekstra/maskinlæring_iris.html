@@ -1,0 +1,3025 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Maskinlæring &#8212; Programmering og modellering</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/ekstra/maskinlæring_iris';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lokker.html">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/statistikk.html">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/likninger.html">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/differensiallikninger.html">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt2.html">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/teknologi.html">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lokker.html">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/statistikk.html">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/likninger.html">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/differensiallikninger.html">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt2.html">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/teknologi.html">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 1 - Grunnleggende programmering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">En første kodesnutt</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">Variabler og datatyper</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz1.html">Quiz 1: Variabler og aritmetikk</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/lister.html">Lister</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz2.html">Quiz 2: Lister</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/if-tester.html">Vilkår (if-tester)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz3.html">Quiz 3: Vilkår (if-tester)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/lokker.html">Løkker</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz4.html">Quiz 4: Løkker</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 2 - Kodestrukturering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema2_kodestrukturering/funksjoner.html">Funksjoner</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz5.html">Quiz 5: Funksjoner</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tema2_kodestrukturering/klasser_objekter.html">Klasser og objekter</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 3 - Datahåndtering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">Programmeringsverktøy</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema3_datahandtering/datasamlinger.html">Datasamlinger</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz6.html">Quiz 6: Datasamlinger (arrayer og dictionarier)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/plotting.html">Datahåndtering I: Visualisering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/lese_filer.html">Datahåndering II: Håndtere og visualisere data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/statistikk.html">Datahåndering III: Statistikk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/maskinlaring.html">Datahåndtering IV: Maskinlæring</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 - Algoritmer</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/algoritmer.html">Matematiske algoritmer og stokastiske simuleringer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/likninger.html">Likninger og nullpunkter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/derivasjon.html">Numerisk derivasjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/integrasjon.html">Numerisk integrasjon (ekstrastoff)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/symbolsk_utregning.html">Symbolsk utregning (CAS)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 - Modellering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/diskret_modellering.html">Modellering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/regresjonsmodeller.html">Regresjonsmodeller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/differensiallikninger.html">Differensiallikninger og kontinuerlige modeller</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/differensiallikninger_oppgaver.html">Differensiallikninger (oppgaver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">Maskinlæring med Titanic (oppgave)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/statistikkprosjekt.html">Statistikkprosjekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/modelleringsprosjekt1.html">Modelleringsoppgave I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/modelleringsprosjekt2.html">Modelleringsoppgave II</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Fagoppgaver</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/kjemioppgaver.html">Repetisjon I: Kjemioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/biologioppgaver.html">Repetisjon II: Biologioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/teknologi.html">Teknologi og programmering</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datafiler</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../datafiler.html">Datafiler</a></li>
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../../_sources/docs/ekstra/maskinlæring_iris.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Maskinlæring</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Maskinlæring
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utforsking-av-datasettet">
+     Utforsking av datasettet
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualiseringer">
+     Visualiseringer
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Maskinlæring
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-og-validering-av-modellen">
+     Test og validering av modellen
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#knn-modell">
+     KNN-modell
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#svm-modell">
+     SVM-modell
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#k-means-cluster">
+     K-means cluster
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regresjonsmodeller">
+     Regresjonsmodeller
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nevrale-nettverk">
+   Nevrale nettverk
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bestemmelse-av-art">
+   Bestemmelse av art
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <section class="tex2jax_ignore mathjax_ignore" id="maskinlaering">
+<h1>Maskinlæring<a class="headerlink" href="#maskinlaering" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Lese dataene</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Datafiler/iris.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="utforsking-av-datasettet">
+<h2>Utforsking av datasettet<a class="headerlink" href="#utforsking-av-datasettet" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Skriver ut fem første linjer</span>
+<span class="n">iris</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Id</th>
+      <th>SepalLengthCm</th>
+      <th>SepalWidthCm</th>
+      <th>PetalLengthCm</th>
+      <th>PetalWidthCm</th>
+      <th>Species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="visualiseringer">
+<h2>Visualiseringer<a class="headerlink" href="#visualiseringer" title="Permalink to this heading">#</a></h2>
+<p>La oss først visualisere noen sammenhenger som kan gi oss noen hypoteser.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#sns.regplot(data=iris, x=&#39;SepalLengthCm&#39;,y=&quot;PetalLengthCm&quot;)</span>
+<span class="c1">#sns.histplot(data=iris, x=&quot;PetalLengthCm&quot;)</span>
+<span class="c1">#sns.jointplot(data=iris, x=&quot;SepalLengthCm&quot;, y=&quot;PetalLengthCm&quot;, hue=&quot;Species&quot;)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">iris</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Species&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;PetalLengthCm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Species&#39;, ylabel=&#39;PetalLengthCm&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/82b0112ac0d65af2c6f948ee1cb8bcf960abb3ceaa33fba5b7b19d2774da4ade.png" src="../../_images/82b0112ac0d65af2c6f948ee1cb8bcf960abb3ceaa33fba5b7b19d2774da4ade.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">iris</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;Species&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x232e0b53af0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/daf942dd43adcf70ff832d44f3a1db5b4b7da5be1cdc3eb604efda45203db813.png" src="../../_images/daf942dd43adcf70ff832d44f3a1db5b4b7da5be1cdc3eb604efda45203db813.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Id</th>
+      <th>SepalLengthCm</th>
+      <th>SepalWidthCm</th>
+      <th>PetalLengthCm</th>
+      <th>PetalWidthCm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+      <td>150.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>75.500000</td>
+      <td>5.843333</td>
+      <td>3.054000</td>
+      <td>3.758667</td>
+      <td>1.198667</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>43.445368</td>
+      <td>0.828066</td>
+      <td>0.433594</td>
+      <td>1.764420</td>
+      <td>0.763161</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>4.300000</td>
+      <td>2.000000</td>
+      <td>1.000000</td>
+      <td>0.100000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>38.250000</td>
+      <td>5.100000</td>
+      <td>2.800000</td>
+      <td>1.600000</td>
+      <td>0.300000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>75.500000</td>
+      <td>5.800000</td>
+      <td>3.000000</td>
+      <td>4.350000</td>
+      <td>1.300000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>112.750000</td>
+      <td>6.400000</td>
+      <td>3.300000</td>
+      <td>5.100000</td>
+      <td>1.800000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>150.000000</td>
+      <td>7.900000</td>
+      <td>4.400000</td>
+      <td>6.900000</td>
+      <td>2.500000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="id1">
+<h2>Maskinlæring<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Plottene ovenfor kan si oss noe om at beger- og kronbladlengden for ulike irisblomstarter er forskjellig. Vi skal nå lage en modell som kan forutsi hvilken art vi har med å gjøre gitt ulike bredder og lengder av kron- og begerblad. Vi velger ut hvilke data vi ønsker å bruke som kriterium for arten, spesifiserer kategorien “species” som målkategorien vår:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span><span class="p">,</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">tree</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kriterier</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[[</span><span class="s1">&#39;SepalLengthCm&#39;</span><span class="p">,</span> <span class="s1">&#39;SepalWidthCm&#39;</span><span class="p">,</span> <span class="s1">&#39;PetalLengthCm&#39;</span><span class="p">,</span> <span class="s1">&#39;PetalWidthCm&#39;</span><span class="p">]]</span> <span class="c1"># features</span>
+<span class="n">kategorier</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">]</span> <span class="c1"># labels</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I maskinlæring er det viktig at modellen vår klarer å forutsi data som kommer utenfra datasettet vi trener modellen med. Derfor deler vi ofte opp dataene i et treningssett og et testsett. Treningssettet bruker vi til å trene modellen, testsettet til å teste og evaluere modellen i etterkant. Vi blander ikke disse dataene. Vi kan generere slike data med funksjonen <em>train_test_split()</em>. Her bruker vi 80 % av dataene til trening og 20 % til testing. Du bør bruke minst 70 % av dataene dine til trening.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">testandel</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="c1"># Andel brukt til testing</span>
+<span class="n">ml_data</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">kriterier</span><span class="p">,</span> <span class="n">kategorier</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="n">testandel</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">treningskriterier</span> <span class="o">=</span> <span class="n">ml_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">testkriterier</span> <span class="o">=</span> <span class="n">ml_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">treningskategorier</span> <span class="o">=</span> <span class="n">ml_data</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">testkategorier</span> <span class="o">=</span> <span class="n">ml_data</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nå kan vi lage modellen vår. Vi bruker en algoritme som heter <em>Decision Tree Classifier</em>. Det er basert på sammensatte og forgreinede valgtrær, der alle kombinasjoner av kriterier blir utforsket. Betingede sannsynligheter for ulike hendelser blir beregnet, og de mest sannsynlige utfallene blir framhevet basert på kombinasjonen av kriteriene. Først trener vi modellen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modell</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">modell</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">treningskriterier</span><span class="p">,</span> <span class="n">treningskategorier</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier()
+</pre></div>
+</div>
+</div>
+</div>
+<p>Det var det - da har vi en modell! Den ligger nå i et objekt som vi har kalt <em>modell</em>. La oss sjekke hvordan modellen takler testsettet vårt.</p>
+</section>
+<section id="test-og-validering-av-modellen">
+<h2>Test og validering av modellen<a class="headerlink" href="#test-og-validering-av-modellen" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modellkategorier_forutsett</span> <span class="o">=</span> <span class="n">modell</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testkriterier</span><span class="p">)</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">testkategorier</span><span class="p">,</span> <span class="n">modellkategorier_forutsett</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>For å få bedre oversikt over hva modellen forutsier riktig og hva den feiler på, kan vi konstruere en såkalt “Confusion Matrix” (forvirringsmatrise/feilmatrise):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">modellkategorier_forutsett</span><span class="p">,</span> <span class="n">testkategorier</span><span class="p">)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Forvirringsmatrise&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Predikerte verdier&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Sanne verdier&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/695988a6d8dcb461f5535c63df103f5b0b4bec26e1c47da232dc7a779f2b5a8c.png" src="../../_images/695988a6d8dcb461f5535c63df103f5b0b4bec26e1c47da232dc7a779f2b5a8c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Id</th>
+      <th>SepalLengthCm</th>
+      <th>SepalWidthCm</th>
+      <th>PetalLengthCm</th>
+      <th>PetalWidthCm</th>
+      <th>Species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>La oss helt til sist visualisere modellen vår.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">modell</span><span class="p">,</span><span class="n">feature_names</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">class_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Iris-setosa&#39;</span><span class="p">,</span> <span class="s1">&#39;Iris-versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;Iris-virginica&#39;</span><span class="p">],</span> <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> 
+<span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/06f0f3a8df685a4acaa1272bdaaa2c21c8d96ddeb4900849eaec8a88afc192de.png" src="../../_images/06f0f3a8df685a4acaa1272bdaaa2c21c8d96ddeb4900849eaec8a88afc192de.png" />
+</div>
+</div>
+</section>
+<section id="knn-modell">
+<h2>KNN-modell<a class="headerlink" href="#knn-modell" title="Permalink to this heading">#</a></h2>
+<p>K-nearest neighbor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">neighbors</span><span class="p">,</span> <span class="n">metrics</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">knn</span> <span class="o">=</span> <span class="n">neighbors</span><span class="o">.</span><span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="s1">&#39;uniform&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">treningskriterier</span><span class="p">,</span> <span class="n">treningskategorier</span><span class="p">)</span> <span class="c1"># features, labels</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNeighborsClassifier(n_neighbors=20)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prediksjon_knn</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testkriterier</span><span class="p">)</span>
+<span class="n">presisjon_knn</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">testkategorier</span><span class="p">,</span> <span class="n">prediksjon_knn</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Presisjon: &quot;</span><span class="p">,</span> <span class="n">presisjon_knn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presisjon:  1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bruker modellen på en tilfeldig valgt blomst</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">6.1</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mf">4.9</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">]]</span>
+<span class="c1">#t2 = np.random.uniform(0,15,(100,4))*np.ones([100,4])</span>
+<span class="n">prediksjon</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">prediksjon</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Iris-versicolor&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="svm-modell">
+<h2>SVM-modell<a class="headerlink" href="#svm-modell" title="Permalink to this heading">#</a></h2>
+<p>Support vector machine-modell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">svm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svm_modell</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">()</span>
+<span class="n">svm_modell</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">treningskriterier</span><span class="p">,</span> <span class="n">treningskategorier</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SVC()
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prediksjon_svm</span> <span class="o">=</span> <span class="n">svm_modell</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testkriterier</span><span class="p">)</span>
+<span class="n">presisjon_svm</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">testkategorier</span><span class="p">,</span> <span class="n">prediksjon_svm</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Presisjon: &quot;</span><span class="p">,</span> <span class="n">presisjon_svm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presisjon:  1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="k-means-cluster">
+<h2>K-means cluster<a class="headerlink" href="#k-means-cluster" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">KMeans</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">scale</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_breast_cancer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#bc = load_breast_cancer()</span>
+<span class="c1">#x = bc.data</span>
+<span class="c1">#y = bc.target</span>
+<span class="n">bc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Datafiler/brystkreft.csv&quot;</span><span class="p">)</span>
+<span class="n">bc</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">bc</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">bc</span><span class="p">[[</span><span class="s1">&#39;radius_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;texture_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;perimeter_mean&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;area_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;smoothness_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;compactness_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;concavity_mean&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;concave points_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;symmetry_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;fractal_dimension_mean&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;radius_se&#39;</span><span class="p">,</span> <span class="s1">&#39;texture_se&#39;</span><span class="p">,</span> <span class="s1">&#39;perimeter_se&#39;</span><span class="p">,</span> <span class="s1">&#39;area_se&#39;</span><span class="p">,</span> <span class="s1">&#39;smoothness_se&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;compactness_se&#39;</span><span class="p">,</span> <span class="s1">&#39;concavity_se&#39;</span><span class="p">,</span> <span class="s1">&#39;concave points_se&#39;</span><span class="p">,</span> <span class="s1">&#39;symmetry_se&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;fractal_dimension_se&#39;</span><span class="p">,</span> <span class="s1">&#39;radius_worst&#39;</span><span class="p">,</span> <span class="s1">&#39;texture_worst&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;perimeter_worst&#39;</span><span class="p">,</span> <span class="s1">&#39;area_worst&#39;</span><span class="p">,</span> <span class="s1">&#39;smoothness_worst&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;compactness_worst&#39;</span><span class="p">,</span> <span class="s1">&#39;concavity_worst&#39;</span><span class="p">,</span> <span class="s1">&#39;concave points_worst&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;symmetry_worst&#39;</span><span class="p">,</span> <span class="s1">&#39;fractal_dimension_worst&#39;</span><span class="p">]]</span>
+
+<span class="n">diagnose</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;M&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">bc</span><span class="p">[</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bc</span><span class="p">[</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">diagnose</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">bc</span><span class="p">[</span><span class="s1">&#39;diagnosis&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="n">testandel</span><span class="p">)</span>
+
+<span class="n">modell_kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modell_kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KMeans(n_clusters=2, random_state=42)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prediksjon_kmeans</span> <span class="o">=</span> <span class="n">modell_kmeans</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">modell_kmeans</span><span class="o">.</span><span class="n">labels_</span>
+<span class="n">presisjon_kmeans</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">prediksjon_kmeans</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Presisjon: &quot;</span><span class="p">,</span> <span class="n">presisjon_kmeans</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presisjon:  0.8596491228070176
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="regresjonsmodeller">
+<h2>Regresjonsmodeller<a class="headerlink" href="#regresjonsmodeller" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">linear_model</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kriterier_lr</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[[</span><span class="s1">&#39;SepalLengthCm&#39;</span><span class="p">]]</span><span class="c1"># features</span>
+<span class="n">kategorier_lr</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;PetalLengthCm&#39;</span><span class="p">]</span> <span class="c1"># labels</span>
+
+<span class="n">ml_data_lr</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">kriterier_lr</span><span class="p">,</span> <span class="n">kategorier_lr</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="n">testandel</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">treningskriterier_lr</span> <span class="o">=</span> <span class="n">ml_data_lr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">testkriterier_lr</span> <span class="o">=</span> <span class="n">ml_data_lr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">treningskategorier_lr</span> <span class="o">=</span> <span class="n">ml_data_lr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">testkategorier_lr</span> <span class="o">=</span> <span class="n">ml_data_lr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l_reg</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">linreg_modell</span> <span class="o">=</span> <span class="n">l_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">treningskriterier_lr</span><span class="p">,</span> <span class="n">treningskategorier_lr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prediksjon_linreg</span> <span class="o">=</span> <span class="n">linreg_modell</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testkriterier_lr</span><span class="p">)</span>
+<span class="n">R2_verdi</span> <span class="o">=</span> <span class="n">l_reg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">kriterier_lr</span><span class="p">,</span> <span class="n">kategorier_lr</span><span class="p">)</span>
+<span class="n">stigning</span> <span class="o">=</span> <span class="n">l_reg</span><span class="o">.</span><span class="n">coef_</span>
+<span class="n">skjæring</span> <span class="o">=</span> <span class="n">l_reg</span><span class="o">.</span><span class="n">intercept_</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Presisjon: &quot;</span><span class="p">,</span> <span class="n">R2_verdi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Presisjon:  0.7595012769586207
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="nevrale-nettverk">
+<h1>Nevrale nettverk<a class="headerlink" href="#nevrale-nettverk" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">iris</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Species&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x2330474a4c0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/daf942dd43adcf70ff832d44f3a1db5b4b7da5be1cdc3eb604efda45203db813.png" src="../../_images/daf942dd43adcf70ff832d44f3a1db5b4b7da5be1cdc3eb604efda45203db813.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.layers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Activation</span><span class="p">,</span> <span class="n">Dense</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.optimizers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Adam</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modell</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+<span class="n">modell</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">læringsrate</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># Hvor fort modellen skal lære</span>
+<span class="n">modell</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">Adam</span><span class="p">(</span><span class="n">læringsrate</span><span class="p">),</span> <span class="n">loss</span> <span class="o">=</span> <span class="s1">&#39;mse&#39;</span><span class="p">)</span> <span class="c1"># Optimizer = metode for å minimere loss</span>
+<span class="n">modell</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: &quot;sequential&quot;
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense (Dense)                (None, 1)                 2         
+=================================================================
+Total params: 2
+Trainable params: 2
+Non-trainable params: 0
+_________________________________________________________________
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Id</th>
+      <th>SepalLengthCm</th>
+      <th>SepalWidthCm</th>
+      <th>PetalLengthCm</th>
+      <th>PetalWidthCm</th>
+      <th>Species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>146</td>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>147</td>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>148</td>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>149</td>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>Iris-virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>150</td>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>Iris-virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s2">&quot;PetalLengthCm&quot;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s2">&quot;PetalWidthCm&quot;</span><span class="p">]</span>
+<span class="n">modell</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">epochs</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/500
+4/4 [==============================] - 1s 259ms/step - loss: 12.7000 - val_loss: 8.7175
+Epoch 2/500
+4/4 [==============================] - 0s 9ms/step - loss: 3.1857 - val_loss: 0.5209
+Epoch 3/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.1834 - val_loss: 1.0541
+Epoch 4/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.8373 - val_loss: 2.6848
+Epoch 5/500
+4/4 [==============================] - 0s 9ms/step - loss: 1.4279 - val_loss: 1.9636
+Epoch 6/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.8666 - val_loss: 0.5318
+Epoch 7/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.2094 - val_loss: 0.1158
+Epoch 8/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0971 - val_loss: 0.4665
+Epoch 9/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.2577 - val_loss: 0.5435
+Epoch 10/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.2737 - val_loss: 0.2443
+Epoch 11/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.1090 - val_loss: 0.0997
+Epoch 12/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0441 - val_loss: 0.1675
+Epoch 13/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0760 - val_loss: 0.2009
+Epoch 14/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0849 - val_loss: 0.1378
+Epoch 15/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0466 - val_loss: 0.0984
+Epoch 16/500
+4/4 [==============================] - 0s 10ms/step - loss: 0.0404 - val_loss: 0.1018
+Epoch 17/500
+4/4 [==============================] - 0s 10ms/step - loss: 0.0520 - val_loss: 0.1000
+Epoch 18/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0455 - val_loss: 0.0962
+Epoch 19/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0332 - val_loss: 0.1050
+Epoch 20/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0349 - val_loss: 0.1147
+Epoch 21/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0393 - val_loss: 0.1114
+Epoch 22/500
+4/4 [==============================] - 0s 10ms/step - loss: 0.0348 - val_loss: 0.1047
+Epoch 23/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0293 - val_loss: 0.0999
+Epoch 24/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0255 - val_loss: 0.1002
+Epoch 25/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0308 - val_loss: 0.1035
+Epoch 26/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0315 - val_loss: 0.1070
+Epoch 27/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0336 - val_loss: 0.1058
+Epoch 28/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0256 - val_loss: 0.1045
+Epoch 29/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0292 - val_loss: 0.1058
+Epoch 30/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0249 - val_loss: 0.1052
+Epoch 31/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0262 - val_loss: 0.1051
+Epoch 32/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0306 - val_loss: 0.1046
+Epoch 33/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0248 - val_loss: 0.1072
+Epoch 34/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0240 - val_loss: 0.1103
+Epoch 35/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0265 - val_loss: 0.1100
+Epoch 36/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0250 - val_loss: 0.1072
+Epoch 37/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0247 - val_loss: 0.1079
+Epoch 38/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0270 - val_loss: 0.1061
+Epoch 39/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0303 - val_loss: 0.1092
+Epoch 40/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0267 - val_loss: 0.1138
+Epoch 41/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0253 - val_loss: 0.1132
+Epoch 42/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0235 - val_loss: 0.1082
+Epoch 43/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0276 - val_loss: 0.1061
+Epoch 44/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0221 - val_loss: 0.1091
+Epoch 45/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0316 - val_loss: 0.1087
+Epoch 46/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0304 - val_loss: 0.1066
+Epoch 47/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0271 - val_loss: 0.1113
+Epoch 48/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0272 - val_loss: 0.1131
+Epoch 49/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0315 - val_loss: 0.1116
+Epoch 50/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0295 - val_loss: 0.1113
+Epoch 51/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0266 - val_loss: 0.1089
+Epoch 52/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0255 - val_loss: 0.1092
+Epoch 53/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0269 - val_loss: 0.1063
+Epoch 54/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0285 - val_loss: 0.1062
+Epoch 55/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0292 - val_loss: 0.1114
+Epoch 56/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0311 - val_loss: 0.1105
+Epoch 57/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0239 - val_loss: 0.1142
+Epoch 58/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0252 - val_loss: 0.1102
+Epoch 59/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0275 - val_loss: 0.1048
+Epoch 60/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0273 - val_loss: 0.1096
+Epoch 61/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0264 - val_loss: 0.1110
+Epoch 62/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0318 - val_loss: 0.1104
+Epoch 63/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0286 - val_loss: 0.1116
+Epoch 64/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0269 - val_loss: 0.1103
+Epoch 65/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0282 - val_loss: 0.1082
+Epoch 66/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0268 - val_loss: 0.1083
+Epoch 67/500
+4/4 [==============================] - 0s 10ms/step - loss: 0.0259 - val_loss: 0.1088
+Epoch 68/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0267 - val_loss: 0.1095
+Epoch 69/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0292 - val_loss: 0.1106
+Epoch 70/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0234 - val_loss: 0.1105
+Epoch 71/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0239 - val_loss: 0.1131
+Epoch 72/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0281 - val_loss: 0.1076
+Epoch 73/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0269 - val_loss: 0.1011
+Epoch 74/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0277 - val_loss: 0.1113
+Epoch 75/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0283 - val_loss: 0.1198
+Epoch 76/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0251 - val_loss: 0.1097
+Epoch 77/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0315 - val_loss: 0.1015
+Epoch 78/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0267 - val_loss: 0.1093
+Epoch 79/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0278 - val_loss: 0.1162
+Epoch 80/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0248 - val_loss: 0.1090
+Epoch 81/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0246 - val_loss: 0.1065
+Epoch 82/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0234 - val_loss: 0.1104
+Epoch 83/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0277 - val_loss: 0.1113
+Epoch 84/500
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4/4 [==============================] - 0s 8ms/step - loss: 0.0243 - val_loss: 0.1079
+Epoch 85/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0214 - val_loss: 0.1102
+Epoch 86/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0317 - val_loss: 0.1092
+Epoch 87/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0297 - val_loss: 0.1146
+Epoch 88/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0259 - val_loss: 0.1137
+Epoch 89/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0290 - val_loss: 0.1072
+Epoch 90/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0266 - val_loss: 0.1058
+Epoch 91/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0239 - val_loss: 0.1194
+Epoch 92/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0253 - val_loss: 0.1033
+Epoch 93/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0267 - val_loss: 0.1026
+Epoch 94/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0295 - val_loss: 0.1143
+Epoch 95/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0316 - val_loss: 0.1176
+Epoch 96/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0237 - val_loss: 0.1173
+Epoch 97/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0307 - val_loss: 0.1018
+Epoch 98/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0264 - val_loss: 0.1090
+Epoch 99/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0231 - val_loss: 0.1116
+Epoch 100/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0272 - val_loss: 0.1094
+Epoch 101/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0256 - val_loss: 0.1079
+Epoch 102/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0252 - val_loss: 0.1084
+Epoch 103/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0330 - val_loss: 0.1075
+Epoch 104/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0263 - val_loss: 0.1141
+Epoch 105/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0249 - val_loss: 0.1072
+Epoch 106/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0254 - val_loss: 0.1100
+Epoch 107/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0298 - val_loss: 0.1140
+Epoch 108/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0262 - val_loss: 0.1110
+Epoch 109/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0268 - val_loss: 0.1028
+Epoch 110/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0236 - val_loss: 0.1113
+Epoch 111/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0246 - val_loss: 0.1149
+Epoch 112/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0265 - val_loss: 0.1079
+Epoch 113/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0263 - val_loss: 0.1069
+Epoch 114/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0278 - val_loss: 0.1074
+Epoch 115/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0238 - val_loss: 0.1151
+Epoch 116/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0257 - val_loss: 0.1087
+Epoch 117/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0215 - val_loss: 0.1031
+Epoch 118/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0247 - val_loss: 0.1083
+Epoch 119/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0317 - val_loss: 0.1099
+Epoch 120/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0307 - val_loss: 0.1075
+Epoch 121/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0272 - val_loss: 0.1127
+Epoch 122/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0288 - val_loss: 0.1110
+Epoch 123/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0247 - val_loss: 0.1103
+Epoch 124/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0263 - val_loss: 0.1097
+Epoch 125/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0308 - val_loss: 0.1108
+Epoch 126/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0246 - val_loss: 0.1124
+Epoch 127/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0279 - val_loss: 0.1076
+Epoch 128/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0279 - val_loss: 0.1086
+Epoch 129/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0254 - val_loss: 0.1161
+Epoch 130/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0318 - val_loss: 0.1073
+Epoch 131/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0266 - val_loss: 0.1042
+Epoch 132/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0253 - val_loss: 0.1144
+Epoch 133/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0245 - val_loss: 0.1100
+Epoch 134/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0270 - val_loss: 0.1085
+Epoch 135/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0250 - val_loss: 0.1080
+Epoch 136/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0274 - val_loss: 0.1119
+Epoch 137/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0299 - val_loss: 0.1061
+Epoch 138/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0244 - val_loss: 0.1092
+Epoch 139/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0231 - val_loss: 0.1124
+Epoch 140/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0336 - val_loss: 0.1057
+Epoch 141/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0268 - val_loss: 0.1085
+Epoch 142/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0267 - val_loss: 0.1147
+Epoch 143/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0253 - val_loss: 0.1098
+Epoch 144/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0300 - val_loss: 0.1039
+Epoch 145/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0293 - val_loss: 0.1084
+Epoch 146/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0267 - val_loss: 0.1159
+Epoch 147/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0295 - val_loss: 0.1116
+Epoch 148/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0236 - val_loss: 0.1064
+Epoch 149/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0307 - val_loss: 0.1021
+Epoch 150/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0292 - val_loss: 0.1177
+Epoch 151/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0281 - val_loss: 0.1187
+Epoch 152/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0270 - val_loss: 0.1045
+Epoch 153/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0286 - val_loss: 0.1035
+Epoch 154/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0291 - val_loss: 0.1095
+Epoch 155/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0295 - val_loss: 0.1218
+Epoch 156/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0289 - val_loss: 0.1077
+Epoch 157/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0248 - val_loss: 0.1052
+Epoch 158/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0248 - val_loss: 0.1116
+Epoch 159/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0312 - val_loss: 0.1132
+Epoch 160/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0279 - val_loss: 0.1098
+Epoch 161/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0277 - val_loss: 0.1048
+Epoch 162/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0270 - val_loss: 0.1080
+Epoch 163/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0268 - val_loss: 0.1169
+Epoch 164/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0290 - val_loss: 0.1144
+Epoch 165/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0270 - val_loss: 0.1178
+Epoch 166/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0256 - val_loss: 0.0996
+Epoch 167/500
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4/4 [==============================] - 0s 9ms/step - loss: 0.0313 - val_loss: 0.1114
+Epoch 168/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0253 - val_loss: 0.1109
+Epoch 169/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0326 - val_loss: 0.1125
+Epoch 170/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0302 - val_loss: 0.1073
+Epoch 171/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0267 - val_loss: 0.1115
+Epoch 172/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0294 - val_loss: 0.1126
+Epoch 173/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0247 - val_loss: 0.1085
+Epoch 174/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0298 - val_loss: 0.1061
+Epoch 175/500
+4/4 [==============================] - 0s 10ms/step - loss: 0.0246 - val_loss: 0.1121
+Epoch 176/500
+4/4 [==============================] - 0s 10ms/step - loss: 0.0283 - val_loss: 0.1085
+Epoch 177/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0297 - val_loss: 0.1167
+Epoch 178/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0323 - val_loss: 0.1055
+Epoch 179/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0257 - val_loss: 0.1150
+Epoch 180/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0277 - val_loss: 0.1061
+Epoch 181/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0250 - val_loss: 0.1094
+Epoch 182/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0247 - val_loss: 0.1116
+Epoch 183/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0262 - val_loss: 0.1068
+Epoch 184/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0273 - val_loss: 0.1087
+Epoch 185/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0254 - val_loss: 0.1132
+Epoch 186/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0334 - val_loss: 0.1084
+Epoch 187/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0311 - val_loss: 0.1109
+Epoch 188/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0257 - val_loss: 0.1158
+Epoch 189/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0231 - val_loss: 0.1049
+Epoch 190/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0275 - val_loss: 0.0998
+Epoch 191/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0306 - val_loss: 0.1137
+Epoch 192/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0237 - val_loss: 0.1163
+Epoch 193/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0234 - val_loss: 0.1049
+Epoch 194/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0265 - val_loss: 0.1042
+Epoch 195/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0320 - val_loss: 0.1121
+Epoch 196/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0317 - val_loss: 0.1091
+Epoch 197/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0289 - val_loss: 0.1159
+Epoch 198/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0327 - val_loss: 0.0998
+Epoch 199/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0269 - val_loss: 0.1191
+Epoch 200/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0250 - val_loss: 0.1197
+Epoch 201/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0234 - val_loss: 0.0989
+Epoch 202/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0263 - val_loss: 0.1040
+Epoch 203/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0279 - val_loss: 0.1266
+Epoch 204/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0356 - val_loss: 0.1052
+Epoch 205/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0300 - val_loss: 0.1183
+Epoch 206/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0299 - val_loss: 0.1123
+Epoch 207/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0258 - val_loss: 0.1065
+Epoch 208/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0313 - val_loss: 0.1075
+Epoch 209/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0243 - val_loss: 0.1117
+Epoch 210/500
+4/4 [==============================] - 0s 10ms/step - loss: 0.0302 - val_loss: 0.1102
+Epoch 211/500
+4/4 [==============================] - 0s 10ms/step - loss: 0.0313 - val_loss: 0.1141
+Epoch 212/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0253 - val_loss: 0.1095
+Epoch 213/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0274 - val_loss: 0.1176
+Epoch 214/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0251 - val_loss: 0.1084
+Epoch 215/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0310 - val_loss: 0.0984
+Epoch 216/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0276 - val_loss: 0.1184
+Epoch 217/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0329 - val_loss: 0.1151
+Epoch 218/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0267 - val_loss: 0.1068
+Epoch 219/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0293 - val_loss: 0.1078
+Epoch 220/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0289 - val_loss: 0.1137
+Epoch 221/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0260 - val_loss: 0.1130
+Epoch 222/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0287 - val_loss: 0.1019
+Epoch 223/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0303 - val_loss: 0.1110
+Epoch 224/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0285 - val_loss: 0.1238
+Epoch 225/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0265 - val_loss: 0.1085
+Epoch 226/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0306 - val_loss: 0.0992
+Epoch 227/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0289 - val_loss: 0.1283
+Epoch 228/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0316 - val_loss: 0.1073
+Epoch 229/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0242 - val_loss: 0.1018
+Epoch 230/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0271 - val_loss: 0.1204
+Epoch 231/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0279 - val_loss: 0.1072
+Epoch 232/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0256 - val_loss: 0.1037
+Epoch 233/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0253 - val_loss: 0.1099
+Epoch 234/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0241 - val_loss: 0.1147
+Epoch 235/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0229 - val_loss: 0.1039
+Epoch 236/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0280 - val_loss: 0.1062
+Epoch 237/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0300 - val_loss: 0.1206
+Epoch 238/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0285 - val_loss: 0.1059
+Epoch 239/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0282 - val_loss: 0.1023
+Epoch 240/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0298 - val_loss: 0.1285
+Epoch 241/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0265 - val_loss: 0.1059
+Epoch 242/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0271 - val_loss: 0.1009
+Epoch 243/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0297 - val_loss: 0.1251
+Epoch 244/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0326 - val_loss: 0.1078
+Epoch 245/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0306 - val_loss: 0.1123
+Epoch 246/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0265 - val_loss: 0.1106
+Epoch 247/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0295 - val_loss: 0.1040
+Epoch 248/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0299 - val_loss: 0.1070
+Epoch 249/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0256 - val_loss: 0.1303
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 250/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0280 - val_loss: 0.1051
+Epoch 251/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0308 - val_loss: 0.1023
+Epoch 252/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0280 - val_loss: 0.1234
+Epoch 253/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0306 - val_loss: 0.1027
+Epoch 254/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0319 - val_loss: 0.1039
+Epoch 255/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0251 - val_loss: 0.1274
+Epoch 256/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0260 - val_loss: 0.0990
+Epoch 257/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0287 - val_loss: 0.1044
+Epoch 258/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0271 - val_loss: 0.1144
+Epoch 259/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0217 - val_loss: 0.1168
+Epoch 260/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0271 - val_loss: 0.0975
+Epoch 261/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0263 - val_loss: 0.1182
+Epoch 262/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0249 - val_loss: 0.1152
+Epoch 263/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0357 - val_loss: 0.1003
+Epoch 264/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0242 - val_loss: 0.1241
+Epoch 265/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0273 - val_loss: 0.1089
+Epoch 266/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0301 - val_loss: 0.1092
+Epoch 267/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0272 - val_loss: 0.1195
+Epoch 268/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0233 - val_loss: 0.1029
+Epoch 269/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0355 - val_loss: 0.1064
+Epoch 270/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0335 - val_loss: 0.1200
+Epoch 271/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0288 - val_loss: 0.1108
+Epoch 272/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0313 - val_loss: 0.1063
+Epoch 273/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0266 - val_loss: 0.1141
+Epoch 274/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0297 - val_loss: 0.1023
+Epoch 275/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0214 - val_loss: 0.1214
+Epoch 276/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0324 - val_loss: 0.0978
+Epoch 277/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0260 - val_loss: 0.1185
+Epoch 278/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0255 - val_loss: 0.1139
+Epoch 279/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0239 - val_loss: 0.0969
+Epoch 280/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0275 - val_loss: 0.1174
+Epoch 281/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0300 - val_loss: 0.1155
+Epoch 282/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0292 - val_loss: 0.1063
+Epoch 283/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0309 - val_loss: 0.1102
+Epoch 284/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0314 - val_loss: 0.1326
+Epoch 285/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0305 - val_loss: 0.0966
+Epoch 286/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0293 - val_loss: 0.1134
+Epoch 287/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0254 - val_loss: 0.1130
+Epoch 288/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0267 - val_loss: 0.0982
+Epoch 289/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0291 - val_loss: 0.1227
+Epoch 290/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0285 - val_loss: 0.1058
+Epoch 291/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0309 - val_loss: 0.1059
+Epoch 292/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0336 - val_loss: 0.1250
+Epoch 293/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0357 - val_loss: 0.1033
+Epoch 294/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0273 - val_loss: 0.1151
+Epoch 295/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0232 - val_loss: 0.1073
+Epoch 296/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0272 - val_loss: 0.1117
+Epoch 297/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0251 - val_loss: 0.1113
+Epoch 298/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0227 - val_loss: 0.1081
+Epoch 299/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0319 - val_loss: 0.1027
+Epoch 300/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0230 - val_loss: 0.1153
+Epoch 301/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0289 - val_loss: 0.1072
+Epoch 302/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0253 - val_loss: 0.1128
+Epoch 303/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0286 - val_loss: 0.1082
+Epoch 304/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0284 - val_loss: 0.1080
+Epoch 305/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0249 - val_loss: 0.1095
+Epoch 306/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0287 - val_loss: 0.1165
+Epoch 307/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0236 - val_loss: 0.1086
+Epoch 308/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0276 - val_loss: 0.1006
+Epoch 309/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0328 - val_loss: 0.1193
+Epoch 310/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0330 - val_loss: 0.1123
+Epoch 311/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0283 - val_loss: 0.1117
+Epoch 312/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0274 - val_loss: 0.1069
+Epoch 313/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0235 - val_loss: 0.1091
+Epoch 314/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0256 - val_loss: 0.1066
+Epoch 315/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0283 - val_loss: 0.1071
+Epoch 316/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0264 - val_loss: 0.1098
+Epoch 317/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0332 - val_loss: 0.1197
+Epoch 318/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0298 - val_loss: 0.1148
+Epoch 319/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0245 - val_loss: 0.1014
+Epoch 320/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0254 - val_loss: 0.1214
+Epoch 321/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0220 - val_loss: 0.1007
+Epoch 322/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0308 - val_loss: 0.1027
+Epoch 323/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0267 - val_loss: 0.1365
+Epoch 324/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0257 - val_loss: 0.1004
+Epoch 325/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0237 - val_loss: 0.1056
+Epoch 326/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0263 - val_loss: 0.1133
+Epoch 327/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0309 - val_loss: 0.1112
+Epoch 328/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0272 - val_loss: 0.1092
+Epoch 329/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0329 - val_loss: 0.1121
+Epoch 330/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0296 - val_loss: 0.1201
+Epoch 331/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0253 - val_loss: 0.1005
+Epoch 332/500
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4/4 [==============================] - 0s 9ms/step - loss: 0.0248 - val_loss: 0.1095
+Epoch 333/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0277 - val_loss: 0.1096
+Epoch 334/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0248 - val_loss: 0.1073
+Epoch 335/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0285 - val_loss: 0.1109
+Epoch 336/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0243 - val_loss: 0.1239
+Epoch 337/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0319 - val_loss: 0.1028
+Epoch 338/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0304 - val_loss: 0.1170
+Epoch 339/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0303 - val_loss: 0.1131
+Epoch 340/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0262 - val_loss: 0.0999
+Epoch 341/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0304 - val_loss: 0.1167
+Epoch 342/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0307 - val_loss: 0.1113
+Epoch 343/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0263 - val_loss: 0.1022
+Epoch 344/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0292 - val_loss: 0.1166
+Epoch 345/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0298 - val_loss: 0.1032
+Epoch 346/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0240 - val_loss: 0.1231
+Epoch 347/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0284 - val_loss: 0.1008
+Epoch 348/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0264 - val_loss: 0.1137
+Epoch 349/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0269 - val_loss: 0.1156
+Epoch 350/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0258 - val_loss: 0.1000
+Epoch 351/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0252 - val_loss: 0.1036
+Epoch 352/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0267 - val_loss: 0.1187
+Epoch 353/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0281 - val_loss: 0.0970
+Epoch 354/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0301 - val_loss: 0.1275
+Epoch 355/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0338 - val_loss: 0.1098
+Epoch 356/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0323 - val_loss: 0.1084
+Epoch 357/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0277 - val_loss: 0.1206
+Epoch 358/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0307 - val_loss: 0.1068
+Epoch 359/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0307 - val_loss: 0.1147
+Epoch 360/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0268 - val_loss: 0.1073
+Epoch 361/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0361 - val_loss: 0.1094
+Epoch 362/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0302 - val_loss: 0.1167
+Epoch 363/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0283 - val_loss: 0.0992
+Epoch 364/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0284 - val_loss: 0.1234
+Epoch 365/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0300 - val_loss: 0.1025
+Epoch 366/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0265 - val_loss: 0.1225
+Epoch 367/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0236 - val_loss: 0.0973
+Epoch 368/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0261 - val_loss: 0.1248
+Epoch 369/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0301 - val_loss: 0.1039
+Epoch 370/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0262 - val_loss: 0.1067
+Epoch 371/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0280 - val_loss: 0.1186
+Epoch 372/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0248 - val_loss: 0.0966
+Epoch 373/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0347 - val_loss: 0.1105
+Epoch 374/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0346 - val_loss: 0.1215
+Epoch 375/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0279 - val_loss: 0.0981
+Epoch 376/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0263 - val_loss: 0.1289
+Epoch 377/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0351 - val_loss: 0.1155
+Epoch 378/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0271 - val_loss: 0.0973
+Epoch 379/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0234 - val_loss: 0.1323
+Epoch 380/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0263 - val_loss: 0.0997
+Epoch 381/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0256 - val_loss: 0.1058
+Epoch 382/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0256 - val_loss: 0.1256
+Epoch 383/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0301 - val_loss: 0.0968
+Epoch 384/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0291 - val_loss: 0.1265
+Epoch 385/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0282 - val_loss: 0.1038
+Epoch 386/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0259 - val_loss: 0.1022
+Epoch 387/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0342 - val_loss: 0.1145
+Epoch 388/500
+4/4 [==============================] - 0s 10ms/step - loss: 0.0264 - val_loss: 0.1147
+Epoch 389/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0324 - val_loss: 0.1008
+Epoch 390/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0303 - val_loss: 0.1186
+Epoch 391/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0297 - val_loss: 0.1056
+Epoch 392/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0234 - val_loss: 0.1113
+Epoch 393/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0237 - val_loss: 0.1043
+Epoch 394/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0245 - val_loss: 0.1083
+Epoch 395/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0279 - val_loss: 0.1156
+Epoch 396/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0244 - val_loss: 0.1038
+Epoch 397/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0228 - val_loss: 0.1140
+Epoch 398/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0247 - val_loss: 0.1048
+Epoch 399/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0264 - val_loss: 0.1213
+Epoch 400/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0256 - val_loss: 0.1066
+Epoch 401/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0253 - val_loss: 0.1010
+Epoch 402/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0295 - val_loss: 0.1262
+Epoch 403/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0311 - val_loss: 0.1027
+Epoch 404/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0267 - val_loss: 0.1120
+Epoch 405/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0287 - val_loss: 0.1094
+Epoch 406/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0272 - val_loss: 0.1031
+Epoch 407/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0277 - val_loss: 0.1196
+Epoch 408/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0234 - val_loss: 0.1049
+Epoch 409/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0278 - val_loss: 0.1060
+Epoch 410/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0349 - val_loss: 0.1138
+Epoch 411/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0249 - val_loss: 0.1040
+Epoch 412/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0291 - val_loss: 0.1059
+Epoch 413/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0264 - val_loss: 0.1206
+Epoch 414/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0253 - val_loss: 0.1029
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 415/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0232 - val_loss: 0.1140
+Epoch 416/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0251 - val_loss: 0.1037
+Epoch 417/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0254 - val_loss: 0.1057
+Epoch 418/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0265 - val_loss: 0.1248
+Epoch 419/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0258 - val_loss: 0.1063
+Epoch 420/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0339 - val_loss: 0.1056
+Epoch 421/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0311 - val_loss: 0.1180
+Epoch 422/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0309 - val_loss: 0.1066
+Epoch 423/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0239 - val_loss: 0.1056
+Epoch 424/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0245 - val_loss: 0.1080
+Epoch 425/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0248 - val_loss: 0.1088
+Epoch 426/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0266 - val_loss: 0.1055
+Epoch 427/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0260 - val_loss: 0.1122
+Epoch 428/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0294 - val_loss: 0.1053
+Epoch 429/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0247 - val_loss: 0.1188
+Epoch 430/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0298 - val_loss: 0.0994
+Epoch 431/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0264 - val_loss: 0.1386
+Epoch 432/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0336 - val_loss: 0.0939
+Epoch 433/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0319 - val_loss: 0.1251
+Epoch 434/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0302 - val_loss: 0.1292
+Epoch 435/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0317 - val_loss: 0.0922
+Epoch 436/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0294 - val_loss: 0.1543
+Epoch 437/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0223 - val_loss: 0.0946
+Epoch 438/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0348 - val_loss: 0.1072
+Epoch 439/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0360 - val_loss: 0.1357
+Epoch 440/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0275 - val_loss: 0.0919
+Epoch 441/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0262 - val_loss: 0.1380
+Epoch 442/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0324 - val_loss: 0.1039
+Epoch 443/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0235 - val_loss: 0.1099
+Epoch 444/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0292 - val_loss: 0.1140
+Epoch 445/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0343 - val_loss: 0.1051
+Epoch 446/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0268 - val_loss: 0.1261
+Epoch 447/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0332 - val_loss: 0.1030
+Epoch 448/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0255 - val_loss: 0.1119
+Epoch 449/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0293 - val_loss: 0.1125
+Epoch 450/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0264 - val_loss: 0.1074
+Epoch 451/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0238 - val_loss: 0.0991
+Epoch 452/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0304 - val_loss: 0.1118
+Epoch 453/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0262 - val_loss: 0.1189
+Epoch 454/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0265 - val_loss: 0.1052
+Epoch 455/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0287 - val_loss: 0.1127
+Epoch 456/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0300 - val_loss: 0.1099
+Epoch 457/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0347 - val_loss: 0.1084
+Epoch 458/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0282 - val_loss: 0.1144
+Epoch 459/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0257 - val_loss: 0.0983
+Epoch 460/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0295 - val_loss: 0.1192
+Epoch 461/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0252 - val_loss: 0.0998
+Epoch 462/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0233 - val_loss: 0.1180
+Epoch 463/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0303 - val_loss: 0.1008
+Epoch 464/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0262 - val_loss: 0.1092
+Epoch 465/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0316 - val_loss: 0.1115
+Epoch 466/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0306 - val_loss: 0.1105
+Epoch 467/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0261 - val_loss: 0.1076
+Epoch 468/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0225 - val_loss: 0.1100
+Epoch 469/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0252 - val_loss: 0.1053
+Epoch 470/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0282 - val_loss: 0.1143
+Epoch 471/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0308 - val_loss: 0.1185
+Epoch 472/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0244 - val_loss: 0.0957
+Epoch 473/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0281 - val_loss: 0.1272
+Epoch 474/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0235 - val_loss: 0.1026
+Epoch 475/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0304 - val_loss: 0.1177
+Epoch 476/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0299 - val_loss: 0.1138
+Epoch 477/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0312 - val_loss: 0.1068
+Epoch 478/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0305 - val_loss: 0.1371
+Epoch 479/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0307 - val_loss: 0.0924
+Epoch 480/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0323 - val_loss: 0.1389
+Epoch 481/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0249 - val_loss: 0.0964
+Epoch 482/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0308 - val_loss: 0.1180
+Epoch 483/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0248 - val_loss: 0.1091
+Epoch 484/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0269 - val_loss: 0.1013
+Epoch 485/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0290 - val_loss: 0.1264
+Epoch 486/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0281 - val_loss: 0.1013
+Epoch 487/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0313 - val_loss: 0.1177
+Epoch 488/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0323 - val_loss: 0.1165
+Epoch 489/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0271 - val_loss: 0.1026
+Epoch 490/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0232 - val_loss: 0.1155
+Epoch 491/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0277 - val_loss: 0.1069
+Epoch 492/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0259 - val_loss: 0.1103
+Epoch 493/500
+4/4 [==============================] - 0s 8ms/step - loss: 0.0294 - val_loss: 0.1076
+Epoch 494/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0287 - val_loss: 0.1009
+Epoch 495/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0289 - val_loss: 0.1132
+Epoch 496/500
+4/4 [==============================] - 0s 10ms/step - loss: 0.0243 - val_loss: 0.1145
+Epoch 497/500
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4/4 [==============================] - 0s 9ms/step - loss: 0.0296 - val_loss: 0.0943
+Epoch 498/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0253 - val_loss: 0.1318
+Epoch 499/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0295 - val_loss: 0.0964
+Epoch 500/500
+4/4 [==============================] - 0s 9ms/step - loss: 0.0264 - val_loss: 0.1196
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;tensorflow.python.keras.callbacks.History at 0x23312d56820&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y_fit</span> <span class="o">=</span> <span class="n">modell</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_fit</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_fit</span><span class="p">,</span> <span class="n">y_fit</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;regresjonskurve&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Kronbladlengde (cm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Kronbladbredde (cm)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;regresjonsdata_iris.pdf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/8db497e1e4e19f6dc7688345fba54b8eab8346696a6be78c4be28838eb9c6d1e.png" src="../../_images/8db497e1e4e19f6dc7688345fba54b8eab8346696a6be78c4be28838eb9c6d1e.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="bestemmelse-av-art">
+<h1>Bestemmelse av art<a class="headerlink" href="#bestemmelse-av-art" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span><span class="p">[</span><span class="s2">&quot;Species&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s2">&quot;Species&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;Iris-setosa&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> 
+                                       <span class="s2">&quot;Iris-versicolor&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Iris-virginica&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kriterier</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[[</span><span class="s1">&#39;SepalLengthCm&#39;</span><span class="p">,</span> <span class="s1">&#39;SepalWidthCm&#39;</span><span class="p">,</span> <span class="s1">&#39;PetalLengthCm&#39;</span><span class="p">,</span> <span class="s1">&#39;PetalWidthCm&#39;</span><span class="p">]]</span>
+<span class="n">kategorier</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;Species&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">corr</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span> <span class="n">annot</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/b624a85440b2f8f8b896392111317ab2b4f394a2ebc93fa8483e6dc56d70354a.png" src="../../_images/b624a85440b2f8f8b896392111317ab2b4f394a2ebc93fa8483e6dc56d70354a.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/ekstra"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Maskinlæring
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utforsking-av-datasettet">
+     Utforsking av datasettet
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualiseringer">
+     Visualiseringer
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Maskinlæring
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-og-validering-av-modellen">
+     Test og validering av modellen
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#knn-modell">
+     KNN-modell
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#svm-modell">
+     SVM-modell
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#k-means-cluster">
+     K-means cluster
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regresjonsmodeller">
+     Regresjonsmodeller
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nevrale-nettverk">
+   Nevrale nettverk
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bestemmelse-av-art">
+   Bestemmelse av art
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Andreas Haraldsrud
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>

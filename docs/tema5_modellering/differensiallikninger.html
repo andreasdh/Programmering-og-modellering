@@ -1,0 +1,1827 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Differensiallikninger og kontinuerlige modeller &#8212; Programmering og modellering</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/tema5_modellering/differensiallikninger';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Differensiallikninger (oppgaver)" href="../oppgaver/differensiallikninger_oppgaver.html" />
+    <link rel="prev" title="Regresjonsmodeller" href="regresjonsmodeller.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lokker.html">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/statistikk.html">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/likninger.html">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt2.html">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/teknologi.html">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lokker.html">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/statistikk.html">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/likninger.html">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt2.html">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/teknologi.html">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 1 - Grunnleggende programmering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">En første kodesnutt</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">Variabler og datatyper</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz1.html">Quiz 1: Variabler og aritmetikk</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/lister.html">Lister</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz2.html">Quiz 2: Lister</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/if-tester.html">Vilkår (if-tester)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz3.html">Quiz 3: Vilkår (if-tester)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/lokker.html">Løkker</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz4.html">Quiz 4: Løkker</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 2 - Kodestrukturering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema2_kodestrukturering/funksjoner.html">Funksjoner</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz5.html">Quiz 5: Funksjoner</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tema2_kodestrukturering/klasser_objekter.html">Klasser og objekter</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 3 - Datahåndtering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">Programmeringsverktøy</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema3_datahandtering/datasamlinger.html">Datasamlinger</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz6.html">Quiz 6: Datasamlinger (arrayer og dictionarier)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/plotting.html">Datahåndtering I: Visualisering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/lese_filer.html">Datahåndering II: Håndtere og visualisere data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/statistikk.html">Datahåndering III: Statistikk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/maskinlaring.html">Datahåndtering IV: Maskinlæring</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 - Algoritmer</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/algoritmer.html">Matematiske algoritmer og stokastiske simuleringer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/likninger.html">Likninger og nullpunkter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/derivasjon.html">Numerisk derivasjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/integrasjon.html">Numerisk integrasjon (ekstrastoff)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/symbolsk_utregning.html">Symbolsk utregning (CAS)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 - Modellering</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="diskret_modellering.html">Modellering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regresjonsmodeller.html">Regresjonsmodeller</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Differensiallikninger og kontinuerlige modeller</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/differensiallikninger_oppgaver.html">Differensiallikninger (oppgaver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">Maskinlæring med Titanic (oppgave)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/statistikkprosjekt.html">Statistikkprosjekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/modelleringsprosjekt1.html">Modelleringsoppgave I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/modelleringsprosjekt2.html">Modelleringsoppgave II</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Fagoppgaver</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/kjemioppgaver.html">Repetisjon I: Kjemioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/biologioppgaver.html">Repetisjon II: Biologioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/teknologi.html">Teknologi og programmering</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datafiler</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../datafiler.html">Datafiler</a></li>
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../../_sources/docs/tema5_modellering/differensiallikninger.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Differensiallikninger og kontinuerlige modeller</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differensiallikninger">
+   Differensiallikninger
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eksempler-pa-differensiallikninger">
+     Eksempler på differensiallikninger
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#newtons-2-lov">
+     Newtons 2. lov
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eulers-metode">
+   Eulers metode
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementering">
+     Implementering
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ulike-initialbetingelser">
+     Ulike initialbetingelser
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kontinuerlige-modeller">
+   Kontinuerlige modeller
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Newtons 2. lov
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ode-losere">
+   ODE-løsere
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oppgaver">
+   Oppgaver
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videoer">
+   Videoer
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <section class="tex2jax_ignore mathjax_ignore" id="differensiallikninger-og-kontinuerlige-modeller">
+<h1>Differensiallikninger og kontinuerlige modeller<a class="headerlink" href="#differensiallikninger-og-kontinuerlige-modeller" title="Permalink to this heading">#</a></h1>
+<div class="admonition-laeringsutbytte admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>Etter å ha arbeidet med dette temaet, skal du kunne:</p>
+<ol class="arabic simple">
+<li><p>Forklare hva som menes med differensiallikninger, og hvordan slike likninger kan brukes til å modellere ulike systemer.</p></li>
+<li><p>Forklare og implementere Eulers metode (Forward Euler).</p></li>
+<li><p>Løse ordinære differensiallikninger med egne Python-funksjoner og funksjoner fra Scipy-biblioteket.</p></li>
+</ol>
+</div>
+<section id="differensiallikninger">
+<h2>Differensiallikninger<a class="headerlink" href="#differensiallikninger" title="Permalink to this heading">#</a></h2>
+<p>Vi har tidligere sett på modeller som beskriver endringer ved bestemte tidssteg, for eksempel den enkleste modellen for utviklingen i antall smittede ved et influensautbrudd:</p>
+<div class="math notranslate nohighlight">
+\[I_{n+1}=I_n+aI_n\]</div>
+<p>Vi kan beskrive modellen ovenfor med ord slik: Antall smittede ved neste tidspunkt er lik antall smittede ved forrige tidspunkt pluss en endring i antall smittede. Endringen er her gitt ved en vekstfaktor ganger antall smittede ved forrige tidspunkt. Det betyr at endringen er proporsjonal med antall smittede. Dette er et eksempel på en <em>differenslikning</em>, der vi finner en tallfølge, som for eksempel beskriver antall smittede i en populasjon eller antall gauper i et økosystem. Differenslikninger kan brukes der vi kan nøye oss med å beskrive systemet vårt på <em>diskrete</em>, altså bestemte, tider. Men hva hvis vi ønsker å beskrive systemet på ethvert tidspunkt, altså den <em>momentane endringen</em>? Da må vi bruke den deriverte. La oss første skrive differenslikningen på en annen form:</p>
+<div class="math notranslate nohighlight">
+\[I_{n+1} - I_n = aI_n\]</div>
+<div class="math notranslate nohighlight">
+\[\Delta I = aI_n\]</div>
+<p>Nå har vi et uttrykk for endringen i systemet. Delta (<span class="math notranslate nohighlight">\(\Delta\)</span>) betyr her endring eller forskjell. Dersom denne endringen skjer mellom to tidspunkter som er så nær hverandre som mulig (<span class="math notranslate nohighlight">\(\Delta t\)</span> nærmer seg null), får vi den momentane endringen. Dette skriver vi slik:</p>
+<div class="math notranslate nohighlight">
+\[I'(t) = aI(t)\]</div>
+<p>Dette er ikke lenger en differenslikning, for her beskriver vi systemet med en kontinuerlig funksjon, og ikke funksjonsverdier på bestemte tidspunkter. Vi kaller slike likninger for <em>differensiallikninger</em>. En differensiallikning (også kalt <em>difflikning</em>) er en likning som inneholder den deriverte av en funksjon. Det vil si at differensiallikninger beskriver den momentane endringen i et system, altså endringen på ethvert tidspunkt. Når vi løser en differensiallikning, får vi en funksjon, eller funksjonsverdiene til en funksjon.</p>
+<p>Differensiallikninger er svært anvendelige. De brukes til å beskrive endring i alt fra molekyler i en kjemisk reaksjon til bakterier i en petriskål eller bevegelsen til satelitter og planeter. De brukes også til å modellere overføring av informasjon i hjernen, smitteutvikling, økonomisk vekst, inntekt og investeringer, klima, miljø og vær. De fleste difflikninger er ikke løsbare for hånd. Derfor er det svært nyttig å kunne løse dem numerisk.</p>
+<div class="admonition-differensiallikninger admonition">
+<p class="admonition-title">Differensiallikninger</p>
+<p>En differensiallikning er en likning som inneholder den deriverte av en funksjon. I de fleste praktiske situasjoner beskriver slike likninger sammenhengen mellom endringen, <span class="math notranslate nohighlight">\(f'(t)\)</span>, og tilstanden, <span class="math notranslate nohighlight">\(f(t)\)</span>, til et system ved tida <span class="math notranslate nohighlight">\(t\)</span>.</p>
+</div>
+<p>Det vil altså si at en difflikning er en sammenheng mellom den deriverte til en funksjon, altså endringen i funksjonen, og funksjonen selv. Når vi løser en difflikning, får vi ikke et uttrykk for <span class="math notranslate nohighlight">\(x\)</span>, som når vi løser likninger – vi får et uttrykk for <span class="math notranslate nohighlight">\(f(x)\)</span>. Siden vi som oftest løser difflikninger på datamaskinen, får vi heller ikke et <em>uttrykk</em> for <span class="math notranslate nohighlight">\(f(x)\)</span>, men vi får funksjons_verdier_.</p>
+<p>Siden både endringen og tilstanden i et system er avhengig av hvordan systemet er til å begynne med, trenger vi alltid <em>initialbetingelser</em> (startbetingelser) for å løse difflikninger. For eksempel trenger vi antall smittede ved t = 0 for å kunne regne ut antall smittede ved neste tidssteg. Vi må derfor alltid oppgi initialbetingelser når vi skal simulere et system.</p>
+<section id="eksempler-pa-differensiallikninger">
+<h3>Eksempler på differensiallikninger<a class="headerlink" href="#eksempler-pa-differensiallikninger" title="Permalink to this heading">#</a></h3>
+<p>Dersom du møter på differensiallikninger i matematikk, er de ofte satt opp som enkle uttrykk, for eksempel slik:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(y' = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y' = y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y' - 2x = -1\)</span></p></li>
+</ol>
+<p>Dersom likningene betyr noe praktisk, pleier vi å skrive dem litt annerledes. Her er eksempler på differensiallikninger som kan brukes til å beskrive ulike systemer:</p>
+<ol class="arabic simple">
+<li><p>Bakterievekst: <span class="math notranslate nohighlight">\(B'(t) = kB(t)\)</span></p></li>
+<li><p>CO<span class="math notranslate nohighlight">\(_2\)</span>-utslipp: <span class="math notranslate nohighlight">\(U'(t) = aU(t)\left(1 - \frac{U(t)}{b}\right)\)</span></p></li>
+<li><p>Fallende ball: <span class="math notranslate nohighlight">\(v'(t) = -g - \frac{kv(t)^2}{m}\)</span></p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Studer differensiallikningene ovenfor og forklar med ord hva de beskriver (både overordnet og hvert ledd for seg).</p>
+</div>
+<p>Legg merke til at modellene ikke kan bevises eller utledes. Det er matematiske modeller som vi kan ha en hypotese om at stemmer godt med virkeligheten. Hvis vi for eksempel tror at veksten til bakteriene vil flate ut, justerer vi dette ved å legge til et ledd som gir logistisk vekst. Modellene må så etterprøves ved for eksempel å sammenlikne med reelle data. Modellering er derfor en prosess der vi kontinuerlig sammenlikner modell med virkelighet for å forbedre modellen.</p>
+</section>
+<section id="newtons-2-lov">
+<h3>Newtons 2. lov<a class="headerlink" href="#newtons-2-lov" title="Permalink to this heading">#</a></h3>
+<p>Et annet viktig eksempel på en differensiallikning er Newtons 2. lov.  Newtons 2. lov er grunnlaget for simuleringer av alt fra satellitt- og planetbaner til molekyler, som vi snart skal se eksempler på. Loven sier at summen (<span class="math notranslate nohighlight">\(\Sigma\)</span>) av krefter som virker på et legeme er lik produktet av massen og akselerasjonen til legemet:</p>
+<div class="math notranslate nohighlight">
+\[\sum F = ma\]</div>
+<div class="math notranslate nohighlight">
+\[a = \frac{\sum F}{m}\]</div>
+<p>Dersom vi har en modell som beskriver kreftene som virker på et legeme, kan vi derfor regne ut akselerasjonen. Og siden <span class="math notranslate nohighlight">\(a(t) = v'(t) = s''(t)\)</span>, kan vi formulere Newtons 2. lov som en differensiallikning. Da kan vi løse denne likningen og finne farten og posisjonen til et legeme på en hvilken som helst tid, gitt en startposisjon og en startfart (initialverdier).</p>
+<div class="math notranslate nohighlight">
+\[v'(t) = \frac{\sum F}{m}\]</div>
+<p>Vi kan til og med formulere dette som en difflikning som inneholder den andrederiverte. Dette kaller vi en <em>andreordens</em> difflikning:</p>
+<div class="math notranslate nohighlight">
+\[s''(t) = \frac{\sum F}{m}\]</div>
+<p>La oss modellere et enkelt system, for eksempel en fallende kule. I modellen vår ønsker vi å ta hensyn til både gravitasjon og luftmotstand. Da er <span class="math notranslate nohighlight">\(\sum F = - G + L\)</span>, dersom vi velger positiv retning oppover. Vi skriver også akselerasjonen som en funksjon, siden den varierer med tida. Da får vi at:</p>
+<p><span class="math notranslate nohighlight">\(\sum F = ma(t)\)</span></p>
+<p><span class="math notranslate nohighlight">\(a(t) = \frac{\sum F}{m}\)</span></p>
+<p><span class="math notranslate nohighlight">\(a(t) = - \frac{G}{m} + \frac{L}{m}\)</span></p>
+<p>Deretter må vi sette inn modeller for gravitasjonskraften og luftmotstanden. Gravitasjonen på jorda kan enkelt beskrives med modellen <span class="math notranslate nohighlight">\(G = mg\)</span>, der <span class="math notranslate nohighlight">\(m\)</span> er massen i kg og <span class="math notranslate nohighlight">\(g \approx 9.8\)</span> m/s<span class="math notranslate nohighlight">\(^2\)</span>, som er tyngdeakselerasjonen. En enkel modell for luftmotstand er <span class="math notranslate nohighlight">\(L = -kv\)</span>, der <em>k</em> er en konstant som varierer med legemets form og massetetthet, og <span class="math notranslate nohighlight">\(v\)</span> er farten til legemet. Konstanten <span class="math notranslate nohighlight">\(k\)</span> må bestemmes eksperimentelt.</p>
+<p><span class="math notranslate nohighlight">\(a(t) = \frac{mg}{m} - \frac{kv(t)}{m}\)</span></p>
+<p><span class="math notranslate nohighlight">\(v'(t) = g - \frac{kv(t)}{m}\)</span></p>
+<p>Her ser vi at den siste likningen inneholder den deriverte av farten (altså akselerasjonen). Altså er dette en differensiallikning.</p>
+</section>
+</section>
+<section id="eulers-metode">
+<h2>Eulers metode<a class="headerlink" href="#eulers-metode" title="Permalink to this heading">#</a></h2>
+<p>Vi har altså en startverdi <span class="math notranslate nohighlight">\(f(x_0)\)</span> og ønsker å finne <span class="math notranslate nohighlight">\(f(x_0 + dx)\)</span>, altså neste funksjonsverdi. I tillegg har vi et uttrykk for den deriverte av funksjonen, nemlig differensiallikningen. Du kjenner faktisk allerede til et uttrykk som inneholder en funksjon og dens deriverte, nemlig definisjonen av den deriverte. La oss bruke den til å utlede en metode for å finne <span class="math notranslate nohighlight">\(f(x + dx)\)</span>. Vi bruker den numeriske definisjonen der vi tilnærmer grenseverdiene med en <em>dx</em> (<span class="math notranslate nohighlight">\(\Delta x\)</span>) som er så liten som mulig:</p>
+<div class="math notranslate nohighlight">
+\[f'(x) \approx \frac{f(x+dx) - f(x)}{dx}\]</div>
+<p>Til å begynne med kjenner vi <span class="math notranslate nohighlight">\(f(x)\)</span>, altså <span class="math notranslate nohighlight">\(f(x_0)\)</span>. Dette er initialbetingelsen, for eksempel startkonsentrasjonen <span class="math notranslate nohighlight">\(c(t_0)\)</span> i eksempelet ovenfor. Vi kjenner også et uttrykk for den deriverte, nemlig differensiallikningen. I tillegg bestemmer vi selv tidssteget <em>dx</em>, men husk at det verken bør være for lite eller for stort. Den eneste ukjente i den numeriske tilnærmingen til den deriverte er altså <span class="math notranslate nohighlight">\(f(x+dx)\)</span>. Det er jo nettopp <span class="math notranslate nohighlight">\(f(x+dx)\)</span> vi prøver å finne, fordi det beskriver tilstanden til systemet ved neste tidssteg. Med litt enkel algebra får vi omformet uttrykket slik at det blir et uttrykk for <span class="math notranslate nohighlight">\(f(x+dx)\)</span>. Vi ganger først med <span class="math notranslate nohighlight">\(dx\)</span> på begge sider:</p>
+<div class="math notranslate nohighlight">
+\[f'(x)\cdot dx \approx f(x+dx) - f(x)\]</div>
+<p>Deretter får vi <span class="math notranslate nohighlight">\(f(x+dx)\)</span> aleine på høyre side og ender opp med følgende likning:</p>
+<div class="math notranslate nohighlight">
+\[f(x+dx) \approx f(x) + f'(x)\cdot dx\]</div>
+<p>Dette er <em>Eulers metode</em>, eller nærmere bestemt <em>Forward Euler</em>. Metoden kalles dette fordi den tar utgangspunkt i framoverdifferansen til den deriverte. Den  brukes til å løse differensiallikninger, det vil si å <em>integrere</em> den deriverte slik at vi finner funksjonsverdiene. Siden vi ofte har å gjøre med funksjoner som varierer med tid, kaller vi gjerne <em>dx</em> for <em>dt</em>.</p>
+<p>Eulers metode er en iterativ algoritme. Vi starter derfor med <span class="math notranslate nohighlight">\(f(x_0)\)</span> og finner de påfølgende funksjonsverdiene slik:</p>
+<div class="math notranslate nohighlight">
+\[f(x_1) \approx f(x_0) + f'(x_0)\cdot \Delta x\]</div>
+<div class="math notranslate nohighlight">
+\[f(x_2) \approx f(x_1) + f'(x_1)\cdot \Delta x\]</div>
+<div class="math notranslate nohighlight">
+\[f(x_3) \approx f(x_2) + f'(x_2)\cdot \Delta x\]</div>
+<div class="math notranslate nohighlight">
+\[...\]</div>
+<div class="admonition-eulers-metode-forward-euler admonition">
+<p class="admonition-title">Eulers metode (Forward Euler)</p>
+<p>Vi kan finne funksjonsverdiene <span class="math notranslate nohighlight">\(f(t_{k+1})\)</span> ved å bruke funksjonsverdien <span class="math notranslate nohighlight">\(f(t_k)\)</span> og den deriverte av funksjonen ved tida <span class="math notranslate nohighlight">\(t_k\)</span>, <span class="math notranslate nohighlight">\(f'(t_k)\)</span> sammen med en steglengde <span class="math notranslate nohighlight">\(dt\)</span> som representerer en liten <span class="math notranslate nohighlight">\(\Delta t\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[f(t_{k+1}) = f(t_k) + f'(t_k)\cdot dt\]</div>
+</div>
+<section id="implementering">
+<h3>Implementering<a class="headerlink" href="#implementering" title="Permalink to this heading">#</a></h3>
+<p>Vi starter med et enkelt eksempel der vi løser difflikningen <span class="math notranslate nohighlight">\(f'(x) = x\)</span> (som er det samme som <span class="math notranslate nohighlight">\(y' = x\)</span>). Vi gjør det først med en while-løkke der vi appender til lister for å spare på og til slutt plotte verdiene. Stort sett er det sammme framgangsmåte hver gang vi løser en difflikning:</p>
+<ol class="arabic simple">
+<li><p>Definer initialbetingelser (for eksempel <span class="math notranslate nohighlight">\(y_0\)</span>).</p></li>
+<li><p>Definer hvilke verdier vi skal evaluere funksjonen i, altså et intervall <span class="math notranslate nohighlight">\([x_0, x_{slutt}]\)</span>. Husk at vi bare kan derivere og integrere numerisk i bestemte <em>punkter</em>. Vi får altså ikke funksjoner når vi integrerer en differensiallikning – vi får funksjonsverdier.</p></li>
+<li><p>Definer en steglengde. Denne bør være “ganske” liten, som da vi så på numerisk derivasjon. Som regel er <span class="math notranslate nohighlight">\(dx = 1\cdot 10^{-8}\)</span> en god verdi, men du kan gjerne kjøre med for eksempel <span class="math notranslate nohighlight">\(dx = 1\cdot 10^{-3}\)</span>, slik at det ikke skal ta så lang tid å kjøre programmet.</p></li>
+<li><p>Lag lister eller arrayer og legg initialbetingelser og startverdier inn i disse. Disse trenger vi for å kunne plotte resultatene til slutt. Dersom du bare er interessert i slutt-tilstanden, trenger du ikke dette trinnet.</p></li>
+<li><p>Lag ei løkke som går igjennom hele det definerte intervallet:</p>
+<ul class="simple">
+<li><p>Regn ut neste verdi av endringen <span class="math notranslate nohighlight">\(f'(x)\)</span>, gitt av differensiallikninga vår.</p></li>
+<li><p>Løs difflikninga med Eulers metode (eller en annen metode, når du lærer om det).</p></li>
+<li><p>Oppdater den uavhengige variabelen (<em>x</em>, <em>t</em> eller liknende) med tidssteget.</p></li>
+</ul>
+</li>
+<li><p>Skriv ut eller visualiser resultatene.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">1</span>                         <span class="c1"># intitialbetingelse for y</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>                         <span class="c1"># startverdi for x</span>
+<span class="n">x_slutt</span> <span class="o">=</span> <span class="mf">5.0</span>                  <span class="c1"># sluttverdi for x</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mf">1E-5</span>                      <span class="c1"># steglengde</span>
+
+<span class="n">x_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">]</span>     <span class="c1"># Legger inn første x-verdi i en liste for å spare på verdiene</span>
+<span class="n">y_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">y0</span><span class="p">]</span>     <span class="c1"># Legger inn initalbetingelsen for y i en liste for å spare på verdiene</span>
+
+<span class="c1"># Disse variablene skal oppdateres i løkka, mens x0 og y0 holdes konstante</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>             
+<span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
+
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">x_slutt</span><span class="p">:</span>
+    <span class="n">yder</span> <span class="o">=</span> <span class="n">x</span>        <span class="c1"># Difflikningen vi skal løse</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">yder</span><span class="o">*</span><span class="n">dx</span> <span class="c1"># Eulers metode for å finne neste y-verdi</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>      <span class="c1"># Oppdaterer x-verdien med steglengden</span>
+    <span class="n">x_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">y_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_liste</span><span class="p">,</span><span class="n">y_liste</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/43ebfd6b7b35a3e45cc6585150e9044e5e174e7e5d327281e3d6a391075cb09a.png" src="../../_images/43ebfd6b7b35a3e45cc6585150e9044e5e174e7e5d327281e3d6a391075cb09a.png" />
+</div>
+</div>
+<p>For å rydde opp litt i programmet vårt, kunne vi også definert difflikninga som en funksjon. Dette gjør det litt enklere å finne igjen og endre likningen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">1</span>                         <span class="c1"># intitialbetingelse for y</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>                         <span class="c1"># startverdi for x</span>
+<span class="n">x_slutt</span> <span class="o">=</span> <span class="mf">5.0</span>                  <span class="c1"># sluttverdi for x</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mf">1E-5</span>                      <span class="c1"># steglengde</span>
+
+<span class="n">x_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">]</span>     <span class="c1"># Legger inn første x-verdi i en liste for å spare på verdiene</span>
+<span class="n">y_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">y0</span><span class="p">]</span>     <span class="c1"># Legger inn initalbetingelsen for y i en liste for å spare på verdiene</span>
+
+<span class="c1"># Disse variablene skal oppdateres i løkka, mens x0 og y0 holdes konstante</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>             
+<span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
+
+<span class="c1"># Definerer difflikningen som en funksjon</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fder</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">x_slutt</span><span class="p">:</span>
+    <span class="n">yder</span> <span class="o">=</span> <span class="n">fder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>   <span class="c1"># Difflikningen vi skal løse</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">yder</span><span class="o">*</span><span class="n">dx</span> <span class="c1"># Eulers metode for å finne neste y-verdi</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>      <span class="c1"># Oppdaterer x-verdien med steglengden</span>
+    <span class="n">x_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">y_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_liste</span><span class="p">,</span><span class="n">y_liste</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/90689173cfb73ca2d496af6d98329d29d44f823c984a1cb677c21307cd67c0f7.png" src="../../_images/90689173cfb73ca2d496af6d98329d29d44f823c984a1cb677c21307cd67c0f7.png" />
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Modifiser programmet ovenfor slik at du løser difflikningen <span class="math notranslate nohighlight">\(f'(x) = \frac{1}{y+1} - lg(x+2)\)</span>. Bruk samme initialbetingelse og løsningsintervall.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Her er det bare å endre funksjonen slik at den representerer den nye difflikninga. Husk å importere tierlogaritmen.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">1</span>                         <span class="c1"># intitialbetingelse for y</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>                         <span class="c1"># startverdi for x</span>
+<span class="n">x_slutt</span> <span class="o">=</span> <span class="mf">5.0</span>                  <span class="c1"># sluttverdi for x</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mf">1E-5</span>                      <span class="c1"># steglengde</span>
+
+<span class="n">x_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">]</span>     <span class="c1"># Legger inn første x-verdi i en liste for å spare på verdiene</span>
+<span class="n">y_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">y0</span><span class="p">]</span>     <span class="c1"># Legger inn initalbetingelsen for y i en liste for å spare på verdiene</span>
+
+<span class="c1"># Disse variablene skal oppdateres i løkka, mens x0 og y0 holdes konstante</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>             
+<span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
+
+<span class="c1"># Definerer difflikningen som en funksjon</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fder</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">x_slutt</span><span class="p">:</span>
+    <span class="n">yder</span> <span class="o">=</span> <span class="n">fder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>   <span class="c1"># Difflikningen vi skal løse</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">yder</span><span class="o">*</span><span class="n">dx</span> <span class="c1"># Eulers metode for å finne neste y-verdi</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>      <span class="c1"># Oppdaterer x-verdien med steglengden</span>
+    <span class="n">x_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">y_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_liste</span><span class="p">,</span><span class="n">y_liste</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Vi kan også bruke arrayer istedenfor lister. Dette gir en raskere kode, og kan være en fordel i mange tilfeller. Da appender vi ikke til lister, men bruker indeksering. Vi bruker også gjerne en for-løkke, og da må vi vite hvor mange ganger løkka skal gå. Dette kan vi regne ut ved å ta differansen mellom <span class="math notranslate nohighlight">\(x_0\)</span> og <span class="math notranslate nohighlight">\(x_{slutt}\)</span>, som vi dividerer på steglengden <span class="math notranslate nohighlight">\(dx\)</span>. Da får vi antall intervaller mellom <span class="math notranslate nohighlight">\(x_0\)</span> og <span class="math notranslate nohighlight">\(x_{slutt}\)</span> med avstand <span class="math notranslate nohighlight">\(dx\)</span>. For å finne antall punkter, må vi derfor ta antall intervaller og legge til 1:</p>
+<p><span class="math notranslate nohighlight">\(N_{punkter} = \frac{x_{slutt} - x_0}{dx} + 1\)</span></p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Forklar hvorfor antallet punkter <em>N</em> kan regnes ut som ovenfor.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Plotteverdier</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>                         <span class="c1"># startverdi for x</span>
+<span class="n">x_slutt</span> <span class="o">=</span> <span class="mf">5.0</span>                  <span class="c1"># sluttverdi for x</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mf">1E-5</span>                      <span class="c1"># steglengde</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">x_slutt</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span><span class="o">/</span><span class="n">dx</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># antall punkter</span>
+
+<span class="c1"># Initialbetingelser</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">1</span>                  <span class="c1"># intitialbetingelse for y</span>
+
+<span class="c1"># Differensiallikningen</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">yder</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="c1"># Lager arrayer for å spare på verdiene</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span>     <span class="c1"># Legger inn initalbetingelsen for y</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span>
+
+<span class="c1"># Eulers metode</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">yder</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">*</span><span class="n">dx</span>
+    <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">dx</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e41f560e6efb11cecf94f7d9b80cf2fc3fe96085c27ce725460717be44708d9c.png" src="../../_images/e41f560e6efb11cecf94f7d9b80cf2fc3fe96085c27ce725460717be44708d9c.png" />
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Forklar programmet ovenfor linje for linje. Modifiser også programmet slik at det løser difflikninga <span class="math notranslate nohighlight">\(f'(x) = 1\)</span>.</p>
+</div>
+</section>
+<section id="ulike-initialbetingelser">
+<h3>Ulike initialbetingelser<a class="headerlink" href="#ulike-initialbetingelser" title="Permalink to this heading">#</a></h3>
+<p>Dersom vi endrer initialbetingelsene, får vi naturlig nok andre løsninger. Her har vi et program som regner ut og plotter ut</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotteverdier</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>                         <span class="c1"># startverdi for x</span>
+<span class="n">x_slutt</span> <span class="o">=</span> <span class="mf">5.0</span>                  <span class="c1"># sluttverdi for x</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mf">1E-3</span>                      <span class="c1"># steglengde</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">x_slutt</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span><span class="o">/</span><span class="n">dx</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># antall punkter</span>
+
+<span class="c1"># Initialbetingelser</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">1</span>                  <span class="c1"># intitialbetingelse for y</span>
+
+<span class="c1"># Differensiallikningen y&#39; = 1</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">yder</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span> 
+
+<span class="c1"># Lager arrayer for å spare på verdiene</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span>
+
+<span class="n">y_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">y0</span> <span class="ow">in</span> <span class="n">y_liste</span><span class="p">:</span>
+    <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span> 
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">yder</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">*</span><span class="n">dx</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">dx</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;y0=</span><span class="si">{</span><span class="n">y0</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f5122c9722337dcdd40e9f3b8e0a6635c872a67a3f1403d11bdc77d8969b95ce.png" src="../../_images/f5122c9722337dcdd40e9f3b8e0a6635c872a67a3f1403d11bdc77d8969b95ce.png" />
+</div>
+</div>
+<p>Det er enkelt å se at funksjonene vi får ovenfor er <span class="math notranslate nohighlight">\(y = x + C\)</span>, der <span class="math notranslate nohighlight">\(C\)</span> avhenger av initialbetingelsene. Vi får derimot ikke selve funksjonsuttrykket som output, men vi får, som nevnt før, <em>funksjonsverdiene</em>. Vi kan også løse likningen <span class="math notranslate nohighlight">\(y' = y + x\)</span> på samme måte. Den analytiske løsningen for denne likningen er <span class="math notranslate nohighlight">\(y = Ce^x - x - 1\)</span>. Resultatene blir da slik for de samme initialbetingelsene som ovenfor:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">yder</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">y</span> <span class="o">+</span> <span class="n">x</span>
+
+<span class="n">y_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">y0</span> <span class="ow">in</span> <span class="n">y_liste</span><span class="p">:</span>
+    <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span> 
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">yder</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">*</span><span class="n">dx</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">dx</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;y0=</span><span class="si">{</span><span class="n">y0</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/fa1f5774a5a1badb497922da7b485ff31172d95d88a144988128c1ea08e776ac.png" src="../../_images/fa1f5774a5a1badb497922da7b485ff31172d95d88a144988128c1ea08e776ac.png" />
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Løs differensiallikninga <span class="math notranslate nohighlight">\(y' + y^3 = \sin(x)\)</span> med Eulers metode fra <span class="math notranslate nohighlight">\(x = 0\)</span> til <span class="math notranslate nohighlight">\(x = 10\)</span>. Bruk initialbetingelsen <span class="math notranslate nohighlight">\(y(0) = 0\)</span>. Vær nøye med hvordan du definerer funksjonen.</p>
+</div>
+</section>
+</section>
+<section id="kontinuerlige-modeller">
+<h2>Kontinuerlige modeller<a class="headerlink" href="#kontinuerlige-modeller" title="Permalink to this heading">#</a></h2>
+<p>Modeller som er basert på differensiallikninger, er kontinuerlige. Det betyr at de har funksjonsverdier for alle verdier av <em>x</em> (eller tilsvarende variabler). Nå skal det sies at når vi simulerer med utgangspunkt i kontinuerlige matematiske modeller på en datamaskin, blir resultatene ikke helt kontinuerlig. Det er fordi datamaskinen ikke kan operere med uendelig mange eller uendelig små (eller store) verdier. Vi sier at vi <em>diskretiserer</em> problemet når vi benytter en numerisk algoritme for å løse det. Men dersom stegene er tilstrekkelig små, er det en god <em>tilnærming</em> til en kontinuerlig løsning.</p>
+<p>Vi har allerede sett på diskrete modeller for blant annet CO<span class="math notranslate nohighlight">\(_2\)</span>-utslipp. Da tok vi utgangspunkt i følgende diskrete modell:</p>
+<div class="math notranslate nohighlight">
+\[u_{n+1} = u_n + au_n\]</div>
+<p>som er det samme som:</p>
+<div class="math notranslate nohighlight">
+\[u_{n+1} - u_n = au_n\]</div>
+<p>Vi ser at vi på venstresiden har forskjellen i utslipp fra en tid til en annen. Det kan vi skrive som <span class="math notranslate nohighlight">\(\Delta u\)</span>, som jo er et uttrykk for (gjennomsnittlig) endring. Da får vi:</p>
+<div class="math notranslate nohighlight">
+\[\Delta u = au_n\]</div>
+<p>Dersom vi ønsker den <em>momentane</em> endringen istedenfor den gjennomsnittlige, kan vi uttrykke dette ved den deriverte:</p>
+<div class="math notranslate nohighlight">
+\[u'(t) = au(t)\]</div>
+<p>Dermed har vi en kontinuerlig modell som beskriver den momentane endringen i et system! Vi kan da bruke denne modellen til å finne tilstanden til systemet ved ethvert lite tidssteg <em>dt</em>. Da kan vi bruke Eulers metode, som ovenfor. Her er et eksempel på hvordan vi kan løse modellen ovenfor:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span> 
+
+<span class="n">tid_slutt</span> <span class="o">=</span> <span class="mi">2100</span>  <span class="c1"># År etter 1825</span>
+<span class="n">tid</span> <span class="o">=</span> <span class="mi">1825</span>        <span class="c1"># Startår</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.045</span>         <span class="c1"># Utslippsrate</span>
+<span class="n">u</span> <span class="o">=</span> <span class="mf">0.01</span>          <span class="c1"># Utslipp i 1825 (tonn per innbygger)</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">1E-5</span>
+
+<span class="n">utslipp</span> <span class="o">=</span> <span class="p">[</span><span class="n">u</span><span class="p">]</span>
+<span class="n">årstall</span> <span class="o">=</span> <span class="p">[</span><span class="n">tid</span><span class="p">]</span>
+
+<span class="k">while</span> <span class="n">tid</span> <span class="o">&lt;=</span> <span class="n">tid_slutt</span><span class="p">:</span>
+    <span class="n">uder</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">u</span>      <span class="c1"># Differensiallikningen</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">u</span> <span class="o">+</span> <span class="n">uder</span><span class="o">*</span><span class="n">dt</span> <span class="c1"># Eulers metode</span>
+    <span class="n">tid</span> <span class="o">=</span> <span class="n">tid</span> <span class="o">+</span> <span class="n">dt</span>  <span class="c1"># Går fram ett tidssteg</span>
+    <span class="n">utslipp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+    <span class="n">årstall</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tid</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">årstall</span><span class="p">,</span> <span class="n">utslipp</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Utslipp av CO$_2$ i Norge&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Tonn CO$_2$ per innbygger&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/bd62d9b7a0632af407cc578af2075fb922a4e8f14f3d062eefa34d2cb05f134f.png" src="../../_images/bd62d9b7a0632af407cc578af2075fb922a4e8f14f3d062eefa34d2cb05f134f.png" />
+</div>
+</div>
+<p>Hvis vi sammenlikner med den diskrete modellen for det samme systemet, kan vi se at de to modellene ikke gir det samme resultatet. Dette er fordi utslippsraten <em>a</em> ikke har samme enhet. I det diskrete systemet representerte <em>a</em> vekstraten <em>per uke</em>, mens i den kontinuerlige modellen gir <em>a</em> den momentane vekstraten. De to parameterne må derfor bestemmes uavhengig av hverandre.</p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Følgende modell kan beskrive størrelsen til en populasjon med bæreevnen <em>b</em>, vekstrate <em>a</em> og populasjonsstørrelse <em>N</em>:</p>
+<div class="math notranslate nohighlight">
+\[N'(t) = aN(t)\left(1-\frac{N(t)}{b}\right)\]</div>
+<p>Tida <em>t</em> er gitt i timer.</p>
+<ol class="arabic simple">
+<li><p>Lag et program som simulerer utviklingen i en bakteriekoloni med N(t<span class="math notranslate nohighlight">\(_0\)</span>) = 100, <em>a</em> = 0,005 og en bæreevne på 120 000 bakterier.</p></li>
+<li><p>Hvilke forutsetninger og begrensninger ligger til grunn for modellen?</p></li>
+<li><p>Når vil populasjonen nå bæreevnen?</p></li>
+<li><p>Lag programmet med arrayer istedenfor lister. Husk at <em>append</em> ikke fungerer med arrayer, og at vi må forhåndsdefinere størrelsen til disse arrayene på forhånd. Størrelsen på disse bør være gitt ved (forklar hvorfor!):</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">tid_slutt</span><span class="o">-</span><span class="n">tid_start</span><span class="p">)</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Antall punkter</span>
+</pre></div>
+</div>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag (deloppgave 4)</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.045</span>               <span class="c1"># Utslippsrate</span>
+<span class="n">u0</span> <span class="o">=</span> <span class="mf">0.01</span>               <span class="c1"># Utslipp i 1825 (tonn per innbygger)</span>
+
+<span class="n">tid_slutt</span> <span class="o">=</span> <span class="mi">2100</span>        <span class="c1"># År etter 1825</span>
+<span class="n">tid_start</span> <span class="o">=</span> <span class="mi">1825</span>        <span class="c1"># Startår</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">1E-3</span>               <span class="c1"># tidssteg</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">tid_slutt</span><span class="o">-</span><span class="n">tid_start</span><span class="p">)</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Antall punkter</span>
+
+<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">u0</span>
+<span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">tid_start</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">uder</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>               <span class="c1"># Differensiallikningen</span>
+    <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">uder</span><span class="o">*</span><span class="n">dt</span>     <span class="c1"># Eulers metode</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span>          <span class="c1"># Går fram ett tidssteg</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">u</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Utslipp av CO$_2$ i Norge&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Tonn CO$_2$ per innbygger&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>Newtons 2. lov<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Vi så at Newtons 2. lov gir oss differensiallikninger når vi omformulerer akselerasjonen som den deriverte av farten.</p>
+<div class="math notranslate nohighlight">
+\[a(t) = v'(t) = s''(t)\]</div>
+<p>Vi kan altså få både en førsteordens og en andreordens difflikning ut av Newtons 2. lov. Det betyr også at vi kan finne akselerasjon og fart ut fra strekning ved å derivere, og motsatt finne fart og posisjon fra akselerasjon ved å integrere (løse difflikningen). Vi kan med andre ord skrive Newtons 2. lov slik:</p>
+<div class="math notranslate nohighlight">
+\[\sum F = ma(t) = mv'(t) = ms''(t)\]</div>
+<p>La oss løse Newtons 2. lov for det enkle systemet vi så på tidligere: Når vi slipper ei kule fra en viss høyde, kan vi regne med at to krefter virker på kula, nemlig tyngdekraften og luftmotstand. For en lett ball som faller, kan vi si at summen av krefter er summen av gravitasjonskraften og luftmotstanden i <span class="math notranslate nohighlight">\(y\)</span>-retning på en graf. Vi definerer positiv retning oppover <span class="math notranslate nohighlight">\(y\)</span>-aksen.</p>
+<div class="math notranslate nohighlight">
+\[\sum F = - G + L = ma(t) = mv'(t) = ms''(t)\]</div>
+<p>Vi ser at vi nå har den deriverte av hastigheten, som er akselerasjonen. For å kunne løse denne likningen, må vi finne ut hva summen av kreftene er. Du husker kanskje at <span class="math notranslate nohighlight">\(G = mg\)</span>, og at en mulig modell for luftmotstand er <span class="math notranslate nohighlight">\(L = -kv\)</span>, der <span class="math notranslate nohighlight">\(k\)</span> er en konstant som blant annet er avhengig av legemets form. Da kan vi skrive uttrykket slik:</p>
+<div class="math notranslate nohighlight">
+\[ma(t) = - mg + (- kv(t))\]</div>
+<div class="math notranslate nohighlight">
+\[a(t) = \frac{- mg - kv(t)}{m} = - g - \frac{kv(t)}{m}\]</div>
+<p>Dette er en førsteordens difflikning der vi har en funksjon <span class="math notranslate nohighlight">\(v(t)\)</span>, og dens deriverte <span class="math notranslate nohighlight">\(a(t)\)</span> (det vil si <span class="math notranslate nohighlight">\(v'(t)\)</span>). La oss løse denne numerisk:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Konstanter</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">0.1</span>   <span class="c1"># Luftmotstand</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>  <span class="c1"># Tyngdeakselerasjon i m/s^2</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>     <span class="c1"># Masse i kg</span>
+<span class="n">v0</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1"># Starthastighet i m/s</span>
+<span class="n">s0</span> <span class="o">=</span> <span class="mi">0</span>    <span class="c1"># Startposisjon i m</span>
+
+<span class="c1"># Tidsvariabler</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">1E-5</span> <span class="c1"># Tidsintervall i s</span>
+<span class="n">tid_start</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">tid_slutt</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">tid_slutt</span><span class="o">-</span><span class="n">tid_start</span><span class="p">)</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Antall punkter</span>
+
+<span class="c1"># Arrayer</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="c1"># Startverdier</span>
+<span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">tid_start</span>
+<span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+<span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">s0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span> <span class="n">g</span> <span class="o">-</span> <span class="n">k</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">m</span>
+    <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">dt</span>
+    <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">dt</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">dt</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Fallende kule&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tid (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;strekning (m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/2e05f5a750b2558a8fb8e9ac2fdfc2b004e5d2e32e7a7200406b566cf098c810.png" src="../../_images/2e05f5a750b2558a8fb8e9ac2fdfc2b004e5d2e32e7a7200406b566cf098c810.png" />
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Studer programmet ovenfor og forklar hvordan det fungerer linje for linje. Test programmet med andre modeller for luftmotstand. Vurder de ulike modellene opp mot hverandre.</p>
+</div>
+</section>
+<section id="ode-losere">
+<h2>ODE-løsere<a class="headerlink" href="#ode-losere" title="Permalink to this heading">#</a></h2>
+<p>La oss se nå se på hvordan vi kan løse differensiallikninger med funksjoner fra scipy-biblioteket. De differensiallikningene vi har sett på, kaller vi for <em>ODE-er</em> (ordinary differential equations) for å skille dem fra <em>PDE-er</em> (partial differential equations). Vi skal ikke se på partielle differensiallikninger her, men mange av prinsippene for å løse dem er like som for ODE-er. Vi kommer til å bruke ODE som forkortelse videre.</p>
+<p>Vi starter med enkle differensiallikninger for å illustrere de grunnleggende prinsippene. En enkel differensiallikning vi kan begynne med, er:</p>
+<div class="math notranslate nohighlight">
+\[y' = t - y\]</div>
+<p>Denne kan vi ganske enkelt definere som en funksjon og løse med en annen funksjon som heter <em>solve_ivp</em> (“solve initial value problem”).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve_ivp</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">dy_dt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">t</span> <span class="o">-</span> <span class="n">y</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y_int</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">dy_dt</span><span class="p">,</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_int</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">y_int</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3117535104d683b7a607ce112e5ba9fe9a870830b64b39d5002384960ce99401.png" src="../../_images/3117535104d683b7a607ce112e5ba9fe9a870830b64b39d5002384960ce99401.png" />
+</div>
+</div>
+<p>Vi definerer her et sett med t-verdier slik at vi får et intervall å integrere over. Dernest er det viktig å ha en startbetingelse for <span class="math notranslate nohighlight">\(y\)</span> (husk: vi trenger den forrige <span class="math notranslate nohighlight">\(y\)</span>-verdien for å finne den neste). Funksjonen <em>solve_ivp</em> er en generell løser for differensiallikninger og tar som første parameter en funksjon av typen <span class="math notranslate nohighlight">\(f(t,y)\)</span> – legg merke til rekkefølgen på parameterne. Deretter legger vi inn tidsintervallet som vi skal integrere over. Dette legges inn som en liste.</p>
+<p>Etter tidsintervallet legges startbetingelsene inn. Siden <em>solve_ivp</em> er en løser som kan løse systemer av differensiallikninger, må vi lage startbetingelsen som en liste. Deretter har vi en del valgfrie parametre. Vi har brukt parameteren <em>t_eval</em> her fordi den sier hvilke <span class="math notranslate nohighlight">\(t\)</span>-verdier vi skal regne ut <span class="math notranslate nohighlight">\(y\)</span>-verdier for. Hvis vi ikke gjør dette, får vi integralet kun evaluert i noen få punkter. Det kan være greit hvis vi for eksempel bare ønsker sluttverdien, men ikke hvis vi ønsker å plotte resultatene.</p>
+<p>Dersom du prøver å printe ut resultatene fra <em>solve_ivp</em>, får du mye ulik informasjon. Derfor henter vi ut spesifikke <em>t-</em> og _y-_verdier ved  å skrive <em>y_int2.t</em>, som henter ut tidsverdiene, og <em>y_int2.y[0]</em>, som henter ut <em>y</em>-verdiene. Legg merke til at <span class="math notranslate nohighlight">\(y\)</span> kan inneholde flere elementer ettersom vi kan løse systemer av differensiallikninger. Her må vi eksplisitt be om det første elementet (element 0 med Python-språk), selv om arrayen ikke inneholder flere <span class="math notranslate nohighlight">\(y\)</span>-verdier.</p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Løs differensiallikningen <span class="math notranslate nohighlight">\(f'(t) = \cos(t)\)</span> med <span class="math notranslate nohighlight">\(f(t_0) = 0\)</span> med <em>solve_ivp</em> fra <span class="math notranslate nohighlight">\(t=0\)</span> til <span class="math notranslate nohighlight">\(t=\pi\)</span>. Plott den analytiske løsningen <span class="math notranslate nohighlight">\(f(t) = \sin(t)\)</span> i samme koordinatsystem for å sammenlikne.</p>
+</div>
+<p>Algoritmene som brukes i slike biblioteker, er ofte sammensatte algoritmer som benytter seg av flere prinsipper enn en enkelt metode. Som standard benytter <em>solve_ivp</em> seg av en blanding av Runge-Kutta 4 og Runge-Kutta 5, kalt RK45. Dette er gode “go to”-metoder.</p>
+</section>
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 1</p>
+<p>Utled Eulers metode og skriv et program for hånd som implementerer denne metoden.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 2</p>
+<p>Løs differensiallikningene nedenfor med Eulers metode (og analytisk hvis du får til). Bruk initialbetingelse <span class="math notranslate nohighlight">\(f(0) = 0\)</span>, og velg løsningsområde/løsningsintervall selv.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f'(x) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = 4 + 3\cdot f(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y' + 4y + 3x = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(xy' + y = 3x^2 + 4x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x) = x + y^2\)</span></p></li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 3</p>
+<p>Hvorfor må vi ha initialbetingelser for å løse en differensiallikning numerisk?</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 4</p>
+<p>Det er alltids fint å ha definert funksjoner i et program – da kan du gjenbruke dem i andre programmer!
+a. Skriv et program der Eulers metode er definert som en funksjon. Funksjonen skal ta inn som argument <em>yder</em>, som antas å være en funksjon av to variable <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span>. Funksjonen skal også ta inn en initialbetingelse <em>y0</em>, startverdien og sluttverdien til <em>x</em> og steglengden <em>dt</em>. Funksjonene skal så returnere resultatene, altså lister eller arrayer med verdier av <em>y</em> og <em>x</em>. <strong>Tips:</strong> For at en funksjon skal returnere to verdier, kan du skrive <em>return x,y</em>.</p>
+<p>b. Bruk funksjonen til å løse likninga <span class="math notranslate nohighlight">\(y'(x) = -\dfrac{xy}{x^2+1}\)</span> der <span class="math notranslate nohighlight">\(y(0) = 1\)</span> og <span class="math notranslate nohighlight">\(x \in [0,7]\)</span>.
+<strong>Tips:</strong> Funksjonen returnerer to verdier:<em>y</em> og <em>x</em>. Du kan hente to eller flere verdier fra en funksjon, ved å gjøre slik:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="c1"># Her kaller du på funksjonen din med riktige parametre</span>
+</pre></div>
+</div>
+<p>Da vil variabelen <em>x</em> settes til å være lik den returnerte verdien for <em>x</em>, og variabelen <em>y</em> settes til å være lik den returnerte verdien for <em>y</em>.</p>
+<p>c. Plott resultatet ditt sammen med den analytiske løsninga for å se om funksjonen din er implementert riktig:</p>
+<div class="math notranslate nohighlight">
+\[y(x) = \frac{1}{\sqrt{x^2 + 1}}\]</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 5</p>
+<p>Programmet under løser likninga <span class="math notranslate nohighlight">\(f'(x) = 2f(x)\)</span> der <span class="math notranslate nohighlight">\(f(0) = 2\)</span> for <span class="math notranslate nohighlight">\(x\in[0,1]\)</span>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">fder</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+	<span class="n">fder</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+	<span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">dx</span><span class="o">*</span><span class="n">fder</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;f(x)&quot;</span><span class="p">)</span>
+<span class="n">title</span><span class="p">(</span><span class="s2">&quot;Plott av f(x)&quot;</span><span class="p">)</span>
+<span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 6</p>
+<p>Kari begynner med å ha en årsinntekt på <span class="math notranslate nohighlight">\(I(0) = 500 000\)</span> kroner og har nylig oppretta en sparekonto. Hun har derfor <span class="math notranslate nohighlight">\(S(0) = 0\)</span> kroner i sparekontoen.</p>
+<p>Vi velger å prøve ut følgende modeller for forandringen i inntekten hennes <span class="math notranslate nohighlight">\(I'(t)\)</span> og sparekontoen hennes <span class="math notranslate nohighlight">\(S'(t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[I'(t) = I(0) \cdot \ln(1.006)\cdot 1.006^t\]</div>
+<div class="math notranslate nohighlight">
+\[S'(t) = 0.01\cdot I(t)\]</div>
+<p>Lag et program som finner ut hvordan <span class="math notranslate nohighlight">\(S(t)\)</span> vil utvikle seg i løpet av 15 år. Visualiser resultatet.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 7</p>
+<p>Lag et program som regner ut posisjon, hastighet og akselerasjon til et legeme som faller. Bruk luftmotstandskoeffisienten 0.1 og masse 1 kg.</p>
+<p>a. Benytt først en enkel modell uten luftmotstand, det vil si kun fritt fall.</p>
+<p>b. Legg inn luftmotstand og plott i samme koordinatsystem som beregninga uten luftmotstand. Sammenlikn resultatene og kommenter svaret.</p>
+<p>c. Varier systematisk massen og luftmotstandskoeffisienten og se hva dette gjør med resultatene.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 8</p>
+<p>Lag et program som modellerer en fiskepopulasjon. Du kan selv bestemme modellen du bruker og initialbetingelsene. Forklar hvorfor du brukte akkurat denne modellen.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 9</p>
+<p>Newtons avkjølingslov forteller oss at temperaturen <span class="math notranslate nohighlight">\(T(t)\)</span> etter ei tid <span class="math notranslate nohighlight">\(t\)</span> til et objekt i en omgivelse forandrer seg på følgende måte:</p>
+<div class="math notranslate nohighlight">
+\[T(t) = -k(T(t)  - T_o)\]</div>
+<p>der <span class="math notranslate nohighlight">\(k\)</span> er er en konstant som forteller hvor raskt temperaturen forandrer seg og <span class="math notranslate nohighlight">\(T_o\)</span> representerer temperaturen til omgivelsen objektet befinner seg i.</p>
+<p>a. Et varmeanlegg i en bil påvirker innetemperaturen <span class="math notranslate nohighlight">\(T(t)\)</span> i bilen. Temperaturen inni bilen kan uttrykkes ved:</p>
+<div class="math notranslate nohighlight">
+\[T'(t) = -0.16(T(t)  - 20)\]</div>
+<p>der <span class="math notranslate nohighlight">\(T(0) = 7^oC\)</span>.</p>
+<p>Lag et program som bruker Eulers metode til å finne funksjonsverdiene til <span class="math notranslate nohighlight">\(T(t)\)</span> for <span class="math notranslate nohighlight">\(t \in [0, 30]\)</span>. Plott resultatene.</p>
+<p>b. Som du kanskje så i deloppgave <em>a</em>, tar det fryktelig lang tid før temperaturen i bilen når vanlig romtemperatur som ligger på <span class="math notranslate nohighlight">\(20^oC\)</span>. Du finner derfor en som prøver å fikse på varmeanlegget billigst mulig. Uheldigvis greier personen å gjøre varmeanlegget verre. Etter noen målinger finner du at temperaturen forandrer seg på følgende måte:</p>
+<div class="math notranslate nohighlight">
+\[T'(t) = -0.16(T(t) - T_o(t))\]</div>
+<p>der <span class="math notranslate nohighlight">\(T_o(t) = 5\cdot\cos\left(\frac{\pi^2}{15}\cdot t\right) + 19\)</span></p>
+<p>Utvid programmet ditt slik at det plotter bilens temperatur med det (enda mer) ødelagte varmeanlegget. Sammenlikn utfallene.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Oppgave 10</p>
+<p>Arne skal på familiemiddag og har lovet familien sin å ta med sin smakfulle tilberedelse av en kalkun. Fem timer før middagen kommer han plutselig på middagsavtalen. Uheldigvis bruker han vanligvis fire timer på å kjøre til familien hvis han kjører omtrent 80 km i timen.</p>
+<p>Problemet er at kalkunen må være i en ovn på 180<span class="math notranslate nohighlight">\(^o\)</span>C i tre timer for å bli spiseklar. Han veit at under panseret på bilen kan det bli varmere enn dette. Han bestemmer seg derfor for å prøve å tilberede kalkunen under panseret mens han kjører.</p>
+<p>Arne har lagd følgende modell for temperaturen under panseret etter ei tid <span class="math notranslate nohighlight">\(t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[T_o(t) = 35\log(v(t)+1)+0.4v(t)\sin(2\pi p\cdot t) + 37.7\]</div>
+<p>der <span class="math notranslate nohighlight">\(v(t)\)</span> er farten til bilen og <span class="math notranslate nohighlight">\(p\)</span> er et tilfeldig flyttall mellom 1 og 2. Verdien til <span class="math notranslate nohighlight">\(p\)</span> forandrer seg for hver tid <span class="math notranslate nohighlight">\(t\)</span></p>
+<p>Fra Newtons avkjølingslov vil temperaturen <span class="math notranslate nohighlight">\(T(t)\)</span> til kalkunen forandre seg på følgende måte:</p>
+<div class="math notranslate nohighlight">
+\[T'(t) = -4\cdot(T(t) - T_o(t))\]</div>
+<p>Akselerasjonen <span class="math notranslate nohighlight">\(a(t)\)</span> til bilen etter ei tid <span class="math notranslate nohighlight">\(t\)</span> vil følge modellen</p>
+<div class="math notranslate nohighlight">
+\[a(t) = 2000e^{-500t^2}\]</div>
+<p>Lag et program som finner kalkunens temperatur etter fire timer under panseret. Plott temperaturen og forklar ut fra plottet om kalkunen vil være spiseklar eller ikke etter kjøreturen (I episoden <em>Food Fables</em> fra Mythbusters kan du se at dette faktisk er mulig!).</p>
+</div>
+</section>
+<section id="videoer">
+<h2>Videoer<a class="headerlink" href="#videoer" title="Permalink to this heading">#</a></h2>
+<iframe width="850" height="450" src="https://www.youtube.com/embed/O08ToTAqp5w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/tema5_modellering"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="regresjonsmodeller.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Regresjonsmodeller</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="../oppgaver/differensiallikninger_oppgaver.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Differensiallikninger (oppgaver)</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differensiallikninger">
+   Differensiallikninger
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eksempler-pa-differensiallikninger">
+     Eksempler på differensiallikninger
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#newtons-2-lov">
+     Newtons 2. lov
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eulers-metode">
+   Eulers metode
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementering">
+     Implementering
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ulike-initialbetingelser">
+     Ulike initialbetingelser
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kontinuerlige-modeller">
+   Kontinuerlige modeller
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Newtons 2. lov
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ode-losere">
+   ODE-løsere
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oppgaver">
+   Oppgaver
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videoer">
+   Videoer
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Andreas Haraldsrud
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>

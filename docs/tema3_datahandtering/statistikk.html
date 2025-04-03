@@ -1,0 +1,1659 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Datahåndering III: Statistikk &#8212; Programmering og modellering</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/tema3_datahandtering/statistikk';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Datahåndtering IV: Maskinlæring" href="maskinlaring.html" />
+    <link rel="prev" title="Datahåndering II: Håndtere og visualisere data" href="lese_filer.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lokker.html">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/likninger.html">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/differensiallikninger.html">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt2.html">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/teknologi.html">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lokker.html">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/likninger.html">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/differensiallikninger.html">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt2.html">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/teknologi.html">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 1 - Grunnleggende programmering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">En første kodesnutt</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">Variabler og datatyper</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz1.html">Quiz 1: Variabler og aritmetikk</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/lister.html">Lister</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz2.html">Quiz 2: Lister</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/if-tester.html">Vilkår (if-tester)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz3.html">Quiz 3: Vilkår (if-tester)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/lokker.html">Løkker</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz4.html">Quiz 4: Løkker</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 2 - Kodestrukturering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema2_kodestrukturering/funksjoner.html">Funksjoner</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz5.html">Quiz 5: Funksjoner</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tema2_kodestrukturering/klasser_objekter.html">Klasser og objekter</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 3 - Datahåndtering</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">Programmeringsverktøy</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="datasamlinger.html">Datasamlinger</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz6.html">Quiz 6: Datasamlinger (arrayer og dictionarier)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Datahåndtering I: Visualisering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lese_filer.html">Datahåndering II: Håndtere og visualisere data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Datahåndering III: Statistikk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maskinlaring.html">Datahåndtering IV: Maskinlæring</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 - Algoritmer</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/algoritmer.html">Matematiske algoritmer og stokastiske simuleringer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/likninger.html">Likninger og nullpunkter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/derivasjon.html">Numerisk derivasjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/integrasjon.html">Numerisk integrasjon (ekstrastoff)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/symbolsk_utregning.html">Symbolsk utregning (CAS)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 - Modellering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/diskret_modellering.html">Modellering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/regresjonsmodeller.html">Regresjonsmodeller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/differensiallikninger.html">Differensiallikninger og kontinuerlige modeller</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/differensiallikninger_oppgaver.html">Differensiallikninger (oppgaver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">Maskinlæring med Titanic (oppgave)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/statistikkprosjekt.html">Statistikkprosjekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/modelleringsprosjekt1.html">Modelleringsoppgave I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/modelleringsprosjekt2.html">Modelleringsoppgave II</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Fagoppgaver</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/kjemioppgaver.html">Repetisjon I: Kjemioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/biologioppgaver.html">Repetisjon II: Biologioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/teknologi.html">Teknologi og programmering</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datafiler</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../datafiler.html">Datafiler</a></li>
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../../_sources/docs/tema3_datahandtering/statistikk.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Datahåndering III: Statistikk</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deskriptiv-statistikk">
+   Deskriptiv statistikk
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mal-pa-spredning">
+     Mål på spredning
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#interkvartilbredde">
+       Interkvartilbredde
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#varians-og-standardavvik">
+   Varians og standardavvik
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualisering-av-feil">
+   Visualisering av feil
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regresjon">
+   Regresjon
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#korrelasjon">
+   Korrelasjon
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videoer">
+   Videoer
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <section class="tex2jax_ignore mathjax_ignore" id="datahandering-iii-statistikk">
+<h1>Datahåndering III: Statistikk<a class="headerlink" href="#datahandering-iii-statistikk" title="Permalink to this heading">#</a></h1>
+<div class="admonition-laeringsutbytte admonition">
+<p class="admonition-title">Læringsutbytte</p>
+<p>Etter å ha arbeidet med dette temaet, skal du kunne:</p>
+<ol class="arabic simple">
+<li><p>bruke deskriptiv statistikk til å beskrive data med tall og visualiseringer</p></li>
+<li><p>utføre regresjonsanalyse og tolke resultatene</p></li>
+</ol>
+</div>
+<blockquote class="epigraph">
+<div><p>If your experiment needs a statistician, you need a better experiment.</p>
+<p class="attribution">—Fysikeren Ernest Rutherford (1871–1937)</p>
+</div></blockquote>
+<section id="deskriptiv-statistikk">
+<h2>Deskriptiv statistikk<a class="headerlink" href="#deskriptiv-statistikk" title="Permalink to this heading">#</a></h2>
+<p>Vi kan bruke statistikk til å oppsummere, beskrive og tolke data. Vi skiller mellom to typer statistikk:</p>
+<ol class="arabic simple">
+<li><p>Deskriptiv statistikk: oppsummere og beskrive data</p></li>
+<li><p>Statistisk interferens: trekke slutninger fra data</p></li>
+</ol>
+<p>Vi skal mest se på deskriptiv statistikk her. La oss vende tilbake til pingvindataene våre. Vi kan få en enkel statistisk oversikt over datasettet vårt ved å bruke funksjonen <em>describe</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">pingvindata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/penguins.txt&quot;</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">pingvindata</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>342.000000</td>
+      <td>342.000000</td>
+      <td>342.000000</td>
+      <td>342.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>43.921930</td>
+      <td>17.151170</td>
+      <td>200.915205</td>
+      <td>4201.754386</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>5.459584</td>
+      <td>1.974793</td>
+      <td>14.061714</td>
+      <td>801.954536</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>32.100000</td>
+      <td>13.100000</td>
+      <td>172.000000</td>
+      <td>2700.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>39.225000</td>
+      <td>15.600000</td>
+      <td>190.000000</td>
+      <td>3550.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>44.450000</td>
+      <td>17.300000</td>
+      <td>197.000000</td>
+      <td>4050.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>48.500000</td>
+      <td>18.700000</td>
+      <td>213.000000</td>
+      <td>4750.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>59.600000</td>
+      <td>21.500000</td>
+      <td>231.000000</td>
+      <td>6300.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Vi kan forklare disse størrelsene slik:</p>
+<ul class="simple">
+<li><p>count = antall registrerte tilfeller</p></li>
+<li><p>mean = gjennomsnittet for alle individer</p></li>
+<li><p>std = standardavviket (dette skal vi se nærmere på seinere)</p></li>
+<li><p>min = minste registrerte verdi</p></li>
+<li><p>25 % = “nedre kvartil”. Her har 25 % av pingvinene for eksempel en kroppsmasse mellom 3550 og minste verdi (2700).</p></li>
+<li><p>50 % = “midtre kvartil”. Her har 50 % av pingvinene for eksempel en kroppsmasse mellom 3550 og 4050.</p></li>
+<li><p>75 % = “øvre kvartil”. Her har 75 % av pingvinene for eksempel en kroppsmasse på 4750 eller under. Det betyr også at 25 % har en kroppsmasse på 4750 til maksverdien 6300.</p></li>
+<li><p>max = høyeste registrerte verdi</p></li>
+</ul>
+<p>Vi kan også finne mange av disse størrelsene ved å bruke ulike funksjoner:</p>
+<iframe src="https://trinket.io/embed/python3/ca6c9fbddf" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Prøv ut programmet ovenfor og utforsk de ulike variablene slik at du forstår hva alle de statistiske størrelsene betyr. Forklar begrepet kvartil.</p>
+</div>
+<section id="mal-pa-spredning">
+<h3>Mål på spredning<a class="headerlink" href="#mal-pa-spredning" title="Permalink to this heading">#</a></h3>
+<p>Det finnes mange måter å beskrive spredningen i en variabel på. Vi skal se på følgende måter:</p>
+<ul class="simple">
+<li><p>Variasjonsbredde</p></li>
+<li><p>Interkvartilbredde</p></li>
+<li><p>Varians og standardavvik</p></li>
+</ul>
+<p>Variasjonsbredde er et enkelt mål på spredning, nemlig differansen mellom største og minste verdi (<span class="math notranslate nohighlight">\(x_{maks} - x_{min})\)</span>. De to andre målene må vi se litt nøyere på.</p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Regn ut variasjonsbredden i nebbdybde hos pingvinene.</p>
+</div>
+<section id="interkvartilbredde">
+<h4>Interkvartilbredde<a class="headerlink" href="#interkvartilbredde" title="Permalink to this heading">#</a></h4>
+<p>Vi har sett hvordan vi kan regne ut kvartiler.</p>
+<div class="admonition-kvartiler-og-persentiler admonition">
+<p class="admonition-title">Kvartiler og persentiler</p>
+<p>Kvartiler er fjerdedeler av et utvalg. For eksempel er nedre kvartil (<span class="math notranslate nohighlight">\(Q_1\)</span>) den høyeste verdien av en variabel som tilhører de 25 % minste verdiene innenfor en variabel. Midtre kvartil (<span class="math notranslate nohighlight">\(Q_2\)</span>) er verdien midt i datasettet, det vil si at 50 % av dataene ligger over og under dette punktet. Den midtre kvartilen kalles også for <em>medianen</em>. Tredje kvartil (<span class="math notranslate nohighlight">\(Q_3\)</span>) markerer verdien som 75 % av dataene ligger under (og de resterende 25 % av dataene ligger over).</p>
+<p>Dersom vi bruker en vilkårlig prosent som ikke representerer en fjerdedel, kaller vi det en <em>persentil</em>.</p>
+</div>
+<p>Differansen mellom første og tredje kvartil er et godt mål på spredning. Dette er et mål på spredningen til de 50 % midtre dataene, og påvirkes derfor ikke av data som ligger langt unna de andre dataene (såkalte “uteliggere”). Dette målet kalles <em>interkvartilbredde</em> (<em>IQR</em>) eller bare <em>kvartilbredde</em>:</p>
+<p><span class="math notranslate nohighlight">\(IQR = Q_3 - Q_1\)</span></p>
+<p>Kvartiler kan visualiseres enkelt med et <em>boksplott</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pingvindata</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;bill_depth_mm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;species&#39;, ylabel=&#39;bill_depth_mm&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/2f20ca85b4643f939e041a1d85e57cc0aff02bddcd62409e117ea3d553bd1451.png" src="../../_images/2f20ca85b4643f939e041a1d85e57cc0aff02bddcd62409e117ea3d553bd1451.png" />
+</div>
+</div>
+<p>Vi kan forklare dette plottet slik:</p>
+<ul class="simple">
+<li><p>Den svarte linja midt i boksene er medianen.</p></li>
+<li><p>50 % av verdiene ligger innenfor boksene. Boksene markerer altså interkvartilområdet, fra <span class="math notranslate nohighlight">\(Q_1\)</span> til <span class="math notranslate nohighlight">\(Q_3\)</span>.</p></li>
+<li><p>Vi har to utstikkere på hver side av boksen. De viser <span class="math notranslate nohighlight">\(IQR\cdot1.5 = 1.5(Q_3 - Q_1)\)</span> i begge retninger.</p></li>
+<li><p>Verdier som ligger utenfor disse utstikkerne, kalles <em>uteliggere</em>. Dette er unormalt store eller små verdier. Dette kan si oss noe om vi har mange unormale verdier eller om vi har noen få som vi kanskje kan fjerne ved nærmere statistisk analyse. Vi ser kun én uteligger hos Adelie-pingvinene, med unormalt dypt nebb.</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Lag et boksplott over kroppsmasse som funksjon av øya pingvinene er funnet på. Identifiser eventuelle uteliggere.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pingvindata</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;island&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;body_mass_g&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Et alternativ til boksplott er fiolinplott. Prinsippet er ganske likt som med boksplott, men det viser i tillegg fordelingen av de ulike verdiene ved å angi “tynne” og “tykke” områder. Medianen markeres med en hvit prikk, og IQR med en tykk, svart linje. Uteliggere markeres ofte ikke i fiolinplott.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">pingvindata</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;species&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;bill_depth_mm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;species&#39;, ylabel=&#39;bill_depth_mm&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/074d577fc0c2bdb7c44c14c82e16ae6172a4972bb34f3cd8ab67039e705ad80d.png" src="../../_images/074d577fc0c2bdb7c44c14c82e16ae6172a4972bb34f3cd8ab67039e705ad80d.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="varians-og-standardavvik">
+<h2>Varians og standardavvik<a class="headerlink" href="#varians-og-standardavvik" title="Permalink to this heading">#</a></h2>
+<p>I motsetning til IQR, som tar utgangspunkt i medianen, tar varians og standardavvik utgangspunkt i gjennomsnittet. Varians (<span class="math notranslate nohighlight">\(\sigma^2\)</span>) er et mål på variasjonen i et datasett og skrives ofte som <span class="math notranslate nohighlight">\(\sigma^2\)</span>. Det er definert som den gjennomsnittlige kvadrerte avstanden til gjennomsnittet av variabelen:</p>
+<p><span class="math notranslate nohighlight">\(\sigma^2  = \frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2\)</span></p>
+<p>Her er <em>n</em> totalt antall målinger, <span class="math notranslate nohighlight">\(x_i\)</span> er hver måleverdi og <span class="math notranslate nohighlight">\(\bar{x}\)</span> er gjennomsnittet av alle måleverdier. Egentlig bør vi jo dele på <span class="math notranslate nohighlight">\(n\)</span> når vi skal finne gjennomsnittet av denne differansen. Men vi deler på <span class="math notranslate nohighlight">\(n - 1\)</span> istedenfor <span class="math notranslate nohighlight">\(n\)</span> fordi datasettet vårt inneholder et utvalg måledata fra en tenkt fullstendig populasjon. Når vi deler på <span class="math notranslate nohighlight">\(n - 1\)</span> får vi en større varians enn når vi deler på <span class="math notranslate nohighlight">\(n\)</span>. En forklaring på dette er at dersom vi hadde samlet inn data fra hele populasjonen, eller gjort tusenvis av målinger av den samme parameteren, ville spredningen (variansen) av målingene vært litt mindre sammenliknet med når vi har færre datapunkter. Vi kaller derfor variansen som er definert ovenfor, for <em>empirisk varians</em>.</p>
+<p>Kort oppsummert gjør vi følgende for å regne ut varians:</p>
+<ol class="arabic simple">
+<li><p>Finner differansen mellom hver måleverdi/hvert datapunkt og trekker fra gjennomsnittet. Dette gir avstanden mellom et målepukt og den gjennomsnittlige verdien.</p></li>
+<li><p>Kvadrerer differansen for å kun få positive verdier. Om vi ikke hadde gjort dette, ville mange negative og positive verdier utlignet hverandre, slik at for eksempel to ekstreme verdier på hver sin side av gjennomsnittet ville gitt 0 i varians.</p></li>
+<li><p>Summerer alle de kvadrerte differansene og deler på antallet målinger (her antallet målinger minus 1). Dette gir den gjennomsnittlige variansen for hele variabelen.</p></li>
+</ol>
+<p>Siden vi kvadrerer avstanden mellom verdier og gjennomsnittet når vi regner ut varians, blir ofte variansen svært stor dersom det finnes noen verdier som ligger et stykke unna gjennomsnittet. I tillegg får den kvadrerte enheter (som <span class="math notranslate nohighlight">\(g^2\)</span> og <span class="math notranslate nohighlight">\(mm^2\)</span>, og det er vanskelig å sammenlikne den med måledataene. Derfor er det vanligere å bruke <em>standardavvik</em> som et mål på spredning. Det er definert som den posive kvadratrota av variansen:</p>
+<p><span class="math notranslate nohighlight">\(\sigma  = \sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2}\)</span></p>
+<p>Vi kan enkelt finne variansen og standardavviket med Pandas. Pandas deler på <span class="math notranslate nohighlight">\(n-1\)</span>, og ikke <span class="math notranslate nohighlight">\(n\)</span>, slik som vi også har gjort.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">varians</span> <span class="o">=</span> <span class="n">pingvindata</span><span class="p">[</span><span class="s2">&quot;bill_depth_mm&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+<span class="n">standardavvik</span> <span class="o">=</span> <span class="n">pingvindata</span><span class="p">[</span><span class="s2">&quot;bill_depth_mm&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-underveisoppgave admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Forklar hva varians og standardavvik er. Lag to Python-funksjoner som regner ut henholdsvis gjennomsnitt og standardavvik. Funksjonene skal gi samme svar som <em>std</em>- og <em>mean</em>-funksjonen i Pandas.</p>
+</div>
+</section>
+<section id="visualisering-av-feil">
+<h2>Visualisering av feil<a class="headerlink" href="#visualisering-av-feil" title="Permalink to this heading">#</a></h2>
+<p>En enkel visualisering av standardavviket når vi gjør flere ulike målinger, er ved hjelp av usikkerhetsstolper. Usikkerhetsstolper kan vi bruke når vi har gjort flere målinger på samme variabel. Vi kan ta som eksempel et eksperiment der vi skal konstruere en standardkurve for magnesiumkonsentrasjonen i en vannprøve. Vi bruker en serie på 0.2, 0.3, 0.4, 0.5 og 0.6 <span class="math notranslate nohighlight">\(\mu\)</span>g/mL Mg<span class="math notranslate nohighlight">\(^{2+}\)</span> som vi analyserer tre ganger hver med et flammeatomabsorpsjonsspektrofotometer (for øvrig et nydelig ord!). Da har vi tre målinger for absorpsjon per konsentrasjon. Nedenfor ser du en måte å gjøre dette på. Vi bruker funksjonen <em>errorbar</em> som tar <span class="math notranslate nohighlight">\(x\)</span>-verdier, gjennomsnittet og standardavviket som parametre. I tillegg kan vi sette streker på toppen av feilen med <em>capsize</em> i en ønsket størrelse. Hvis vi ikke ønsker strekene mellom datapunktene i plottet ovenfor, kan vi legge inn argumentet <em>fmt=’none’</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">konsentrasjon</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]</span>
+<span class="n">absorbans</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.22</span><span class="p">,</span> <span class="mf">0.19</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.26</span><span class="p">,</span> <span class="mf">0.29</span><span class="p">,</span> <span class="mf">0.24</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.33</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">,</span> <span class="mf">0.34</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.41</span><span class="p">,</span> <span class="mf">0.42</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.56</span><span class="p">,</span> <span class="mf">0.61</span><span class="p">,</span> <span class="mf">0.58</span><span class="p">]]</span>
+
+<span class="n">standardavvik</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">snitt</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">absorbans</span><span class="p">:</span>
+    <span class="n">snitt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">element</span><span class="p">))</span>
+    <span class="n">standardavvik</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">element</span><span class="p">,</span>  <span class="n">ddof</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># ddof = 1 betyr at vi deler på n - 1.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">konsentrasjon</span><span class="p">,</span> <span class="n">snitt</span><span class="p">,</span> <span class="n">yerr</span> <span class="o">=</span> <span class="n">standardavvik</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Konsentrasjon ($\mu g/mL$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Absorbans&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Magnesiuminnhold i vann&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b8fca37aab4876351bc90beb83c2c19158aa00b445878da5d8224c668cf7b17b.png" src="../../_images/b8fca37aab4876351bc90beb83c2c19158aa00b445878da5d8224c668cf7b17b.png" />
+</div>
+</div>
+<p>Det finnes også tilsvarende plott i seaborn-biblioteket, som er enklere å bruke dersom vi har dataene som en data frame:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">pingvindata</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;flipper_length_mm&quot;</span><span class="p">,</span>  <span class="n">capsize</span><span class="o">=</span><span class="mf">.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;species&#39;, ylabel=&#39;flipper_length_mm&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/e8ce4b1fd36c66752db69954058bfedc5712f4287e89d52a14f04caa5f46229e.png" src="../../_images/e8ce4b1fd36c66752db69954058bfedc5712f4287e89d52a14f04caa5f46229e.png" />
+</div>
+</div>
+</section>
+<section id="regresjon">
+<h2>Regresjon<a class="headerlink" href="#regresjon" title="Permalink to this heading">#</a></h2>
+<p>Alle måledata er <em>diskrete verdier</em>. Det betyr at de er ikke-kontinuerlige, altså at det ikke finnes uendelig mange verdier mellom punktene vi har. Vi representerer diskrete data som punkter dersom vi plotter det, mens kontinuerlige data/funksjoner plotter vi som linjer og kurver. Noen ganger kan vi derimot lage kontinuerlige modeller som representerer de diskrete dataene våre. En slik modell kan beskrive både verdier imellom datapunktene, men også utenfor datasettet vi har samlet. En enkel form for modellering er <em>regresjon</em>.</p>
+<div class="admonition-regresjon admonition">
+<p class="admonition-title">Regresjon</p>
+<p>Regresjon er en prosess der vi tilnærmer diskrete data med en kontinuerlig funksjonsmodell.</p>
+</div>
+<p>La oss ta et eksempel der vi har brukt et spektrometer til å måle absorbansen til ulike standardløsninger med permanganationer <span class="math notranslate nohighlight">\(MnO_4^{-}\)</span>. Vi har gjort dette fordi vi har en løsning med ukjent innhold av permanganationer. Da trenger vi å gjøre en lineær regresjon for å kunne avgjøre hvilken konsentrasjon absorbansen til den ukjente prøva tilsvarer. Programmet nedenfor lager en standardkurve/kalibreringskurve med funksjonen <em>polyfit</em> fra numpy-biblioteket. Denne funksjonen bruker <em>minste kvadraters metode</em> til å tilpasse funksjonsverdier til datapunktene på en måte som gir minst mulig varians.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">permanganat</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">,</span> <span class="mf">16.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">]</span> <span class="c1"># konsentrasjon i ppm</span>
+<span class="n">absorbans</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.18</span><span class="p">,</span> <span class="mf">0.32</span><span class="p">,</span> <span class="mf">0.51</span><span class="p">,</span> <span class="mf">0.68</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]</span>
+
+<span class="n">reg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">permanganat</span><span class="p">,</span> <span class="n">absorbans</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># får koeffisientene a og b i en lineær regresjon (grad 1)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>                 <span class="c1"># nye x-verdier for regresjonslinja</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">reg</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>                       <span class="c1"># gir et uttrykk på formen y = ax + b, der x = permanganatkonsentrasjonen</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">permanganat</span><span class="p">,</span><span class="n">absorbans</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Datapunkter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Tilpasset kurve&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Standardkurve&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Konsentrasjon av MnO$_4^-$ (ppm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Absorbans&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/3960a309d73a241d2315cf289a1ff61fce34d8adc41b3b62b015176d668cad9f.png" src="../../_images/3960a309d73a241d2315cf289a1ff61fce34d8adc41b3b62b015176d668cad9f.png" />
+</div>
+</div>
+<p>Funksjonen <em>polyfit</em> utfører polynomregresjon på dataene våre, og tar som argument <span class="math notranslate nohighlight">\(x\)</span>- og <span class="math notranslate nohighlight">\(y\)</span>-verdiene i datasettet, og deretter graden av polynomet. Her har vi brukt grad 1 for lineær regresjon. Dette gir en array med koeffisientene <em>a</em> og <em>b</em> for uttrykket <span class="math notranslate nohighlight">\(y = ax + b\)</span>. Tilsvarende vil en andregradsregresjon gi koeffisientene <em>a</em>, <em>b</em> og <em>c</em> for <span class="math notranslate nohighlight">\(ax^2 + bx + c\)</span> og så videre. Vi kan dermed bruke disse koeffisientene videre til å lage nye <span class="math notranslate nohighlight">\(y\)</span>-verdier basert på de opprinnelige <span class="math notranslate nohighlight">\(x\)</span>-verdiene. Til det kan vi bruke funksjonen <em>polyval</em>, som tar to parametre: koeffisientene som er gitt av polyfit-funksjonen og de nye <em>x</em>-verdiene som vi skal regne ut funksjonsverdier til.</p>
+<p>La oss si at den ukjente prøva med permanganationer ga en absorbans på 0.40. Vi kan bruke regresjonskurven vår til å finne hva slags konsentrasjon dette tilsvarer på følgende måte:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">permanganat</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">,</span> <span class="mf">16.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">]</span> <span class="c1"># konsentrasjon i ppm</span>
+<span class="n">absorbans</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.18</span><span class="p">,</span> <span class="mf">0.32</span><span class="p">,</span> <span class="mf">0.51</span><span class="p">,</span> <span class="mf">0.68</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]</span>
+<span class="n">ukjent_abs</span> <span class="o">=</span> <span class="mf">0.40</span>
+
+<span class="c1"># Gjør regresjonen</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">permanganat</span><span class="p">,</span> <span class="n">absorbans</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># får koeffisientene a og b i en lineær regresjon (grad 1)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>                 <span class="c1"># nye x-verdier for regresjonslinja</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">reg</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>                       <span class="c1"># gir et uttrykk på formen y = ax + b, der x = permanganatkonsentrasjonen</span>
+
+<span class="c1"># Regner ut den ukjente konsentrasjonen</span>
+<span class="n">ukjent_kons</span> <span class="o">=</span> <span class="p">(</span><span class="n">ukjent_abs</span> <span class="o">-</span> <span class="n">reg</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">reg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Konsentrasjonen til permanganat =&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">ukjent_kons</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;ppm.&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">permanganat</span><span class="p">,</span><span class="n">absorbans</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Datapunkter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Tilpasset kurve&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ukjent_kons</span><span class="p">,</span> <span class="n">ukjent_abs</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;seagreen&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Ukjent løsning&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Standardkurve&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Konsentrasjon av MnO$_4^-$ (ppm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Absorbans&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Konsentrasjonen til permanganat = 9.5 ppm.
+</pre></div>
+</div>
+<img alt="../../_images/8b8100aaa88d3519be2e0043360c4f3c0b35bdf7079122831a6d3e8cfd6cd7b0.png" src="../../_images/8b8100aaa88d3519be2e0043360c4f3c0b35bdf7079122831a6d3e8cfd6cd7b0.png" />
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>Fritt klor (<span class="math notranslate nohighlight">\(Cl_2\)</span>) finnes i en del drikkevann fordi klorforbindelser blir tilsatt klorforbindelser for å desinfisere vannet. I programmet nedenfor har vi lagt inn en serie målinger som er gjort på standardløsninger av konsentrasjonen av fritt klor i vann gitt i ppm. Gjør en regresjon av dataene og lag en standardkurve. Regn ut konsentrasjonen av fritt klor i en drikkevannsprøve med absorbans 0.656 ppm.</p>
+<iframe src="https://trinket.io/embed/python3/b0fe4c6774" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</div>
+<div class="admonition-losningsforslag admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="tip dropdown highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">klor</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="mf">1.50</span><span class="p">,</span> <span class="mf">2.00</span><span class="p">]</span> <span class="c1"># konsentrasjon i ppm</span>
+<span class="n">absorbans</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.000</span><span class="p">,</span> <span class="mf">0.270</span><span class="p">,</span> <span class="mf">0.543</span><span class="p">,</span> <span class="mf">0.813</span><span class="p">,</span> <span class="mf">1.084</span><span class="p">]</span>
+<span class="n">ukjent_abs</span> <span class="o">=</span> <span class="mf">0.656</span>
+
+<span class="c1"># Gjør regresjonen</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">klor</span><span class="p">,</span> <span class="n">absorbans</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># får koeffisientene a og b i en lineær regresjon (grad 1)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>                 <span class="c1"># nye x-verdier for regresjonslinja</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyval</span><span class="p">(</span><span class="n">reg</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>                       <span class="c1"># gir et uttrykk på formen y = ax + b, der x = permanganatkonsentrasjonen</span>
+
+<span class="c1"># Regner ut den ukjente konsentrasjonen</span>
+<span class="n">ukjent_kons</span> <span class="o">=</span> <span class="p">(</span><span class="n">ukjent_abs</span> <span class="o">-</span> <span class="n">reg</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">reg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Konsentrasjonen til fritt klor =&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">ukjent_kons</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;ppm.&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">klor</span><span class="p">,</span><span class="n">absorbans</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Datapunkter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Tilpasset kurve&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ukjent_kons</span><span class="p">,</span> <span class="n">ukjent_abs</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;seagreen&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Ukjent løsning&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Standardkurve&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Konsentrasjon av Cl$_2$ (ppm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Absorbans&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Når vi har utført regresjon, kan vi også forutsi datapunkter som er utenfor datapunktene våre. Dette kaller vi <em>ekstrapolering</em>. Ved å ekstrapolere kan vi forutsi hvordan et system <em>har vært</em> eller <em>kommer til å bli</em>. En skal derimot være svært forsiktig med å trekke slutninger basert på ekstrapolering! Det kan likevel være en god indikasjon på trender og utviklingen i et system.</p>
+<p>Vi kan også lage visualiseringer med automatiske regresjonskurver. La oss vende tilbake til pingvinene våre. For å se om det kan være noen sammenhenger som er verdt å lage en modell av, kan vi enkelt visualisere mange ulike variabler mot hverandre ved å bruke et parplott (<em>pairplot</em>) fra seaborn-biblioteket:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pingvindata</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;species&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x28083e73220&gt;
+</pre></div>
+</div>
+<img alt="../../_images/c9bfc9beb463a18026d32d86a2b0228a1f77c50924b74e339e89e13fdf191e63.png" src="../../_images/c9bfc9beb463a18026d32d86a2b0228a1f77c50924b74e339e89e13fdf191e63.png" />
+</div>
+</div>
+<p>Vi tar utgangspunkt i kroppsmasse og vingelengde, som ser ut til å være lineært avhengig av hverandre. Et plott med regresjonslinje kan vi lage ved å bruke funksjonen <em>lmplot</em> (eller <em>regplot</em>) fra seaborn-biblioteket:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pingvindata</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;body_mass_g&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;flipper_length_mm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x280879f8430&gt;
+</pre></div>
+</div>
+<img alt="../../_images/3f36174fe5766039b2e491b78bec06ee11ba7a5f79f07819526a61e80248ce3d.png" src="../../_images/3f36174fe5766039b2e491b78bec06ee11ba7a5f79f07819526a61e80248ce3d.png" />
+</div>
+</div>
+<p>Vi ser at vi får en regresjonslinje med et svakt blått område på hver side av linja. Dette området indikerer usikkerheten i verdiene. Desto større dette området er, desto mer usikkert er det at regresjonslinja er en god modell i dette området. Vi kan gjøre dette tydeligere ved å velge to variabler som ikke varierer så godt lineært:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pingvindata</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;bill_depth_mm&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;flipper_length_mm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x28087a06e20&gt;
+</pre></div>
+</div>
+<img alt="../../_images/e11c4f093345676678ed535b99d25e2358b6116c11b67e4e29faa82ad339bab2.png" src="../../_images/e11c4f093345676678ed535b99d25e2358b6116c11b67e4e29faa82ad339bab2.png" />
+</div>
+</div>
+<p>Vi kan også gjøre regresjon på ulike variabler, slik som ulike arter, for seg:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pingvindata</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;bill_depth_mm&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;flipper_length_mm&quot;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;species&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x280864bb970&gt;
+</pre></div>
+</div>
+<img alt="../../_images/0491e1e92319233093fd5e7fead7066803010bfb0e80f9c11e344fbf8313ef50.png" src="../../_images/0491e1e92319233093fd5e7fead7066803010bfb0e80f9c11e344fbf8313ef50.png" />
+</div>
+</div>
+</section>
+<section id="korrelasjon">
+<h2>Korrelasjon<a class="headerlink" href="#korrelasjon" title="Permalink to this heading">#</a></h2>
+<p>Korrelasjoner kan brukes til å analysere sammenhenger mellom parametre.  Korrelasjon beregnes som en verdi mellom -1 og 1. En verdi som brukes ofte som mål på korrelasjon, er <em>Pearsons korrelasjonskoeffisient</em>. Positiv korrelasjon betyr at det er en proporsjonal sammenheng mellom parametrene, og en negativ korrelasjon betyr at det er en omvendt proporsjonal sammenheng. Desto større absoluttverdien til korrelasjonen er, desto større sammenheng er det mellom parametrene. Vi kan visualisere korrelasjon gjennom et korrelasjonsplott:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corr</span> <span class="o">=</span> <span class="n">pingvindata</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>     <span class="c1"># Regner ut korrelasjonskoeffisientene</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Lager visualisering. Parameteren annot = True gir tallene i boksene.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>       <span class="c1"># Roterer x-akseteksten 45 grader</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/1ea2efb14933094823172c8e5321cb492583dcfdec0cf791340323982ed25a86.png" src="../../_images/1ea2efb14933094823172c8e5321cb492583dcfdec0cf791340323982ed25a86.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pingvindata</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bill_length_mm</th>
+      <th>bill_depth_mm</th>
+      <th>flipper_length_mm</th>
+      <th>body_mass_g</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>bill_length_mm</th>
+      <td>1.000000</td>
+      <td>-0.235053</td>
+      <td>0.656181</td>
+      <td>0.595110</td>
+    </tr>
+    <tr>
+      <th>bill_depth_mm</th>
+      <td>-0.235053</td>
+      <td>1.000000</td>
+      <td>-0.583851</td>
+      <td>-0.471916</td>
+    </tr>
+    <tr>
+      <th>flipper_length_mm</th>
+      <td>0.656181</td>
+      <td>-0.583851</td>
+      <td>1.000000</td>
+      <td>0.871202</td>
+    </tr>
+    <tr>
+      <th>body_mass_g</th>
+      <td>0.595110</td>
+      <td>-0.471916</td>
+      <td>0.871202</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Vi ser for eksempel at det er ganske stor positiv korrelasjon mellom nebblengde og lengden på vingene (luffene). Det betyr at dersom en pingvin har langt nebb, har den ofte også lange vinger. Det er derimot negativ korrelasjon mellom nebbdybde og vingelengde, som betyr at desto dypere nebb, desto kortere vinger har pingvinen.</p>
+<p>Det er derimot viktig å ikke blande korrelasjon med årsak-virkning (kausalitet). Den ene tingen forklarer ikke nødvendigvis den andre (selv om det kan gjøre det), det er bare en sammenheng mellom parametrene.</p>
+<div class="tip admonition">
+<p class="admonition-title">Underveisoppgave</p>
+<p>I programmet nedenfor finner du datasettet “iris.txt”. Les inn datasettet og gjør en korrelasjonsanalyse av variablene. Hvilke faktorerer korrelerer positivt og negativt med hverandre? Finnes det logiske forklaringer på det?</p>
+<iframe src="https://trinket.io/embed/python3/1818f7d4b2" width="100%" height="300" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="n">iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;iris.txt&quot;</span><span class="p">)</span>
+<span class="n">corr</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="videoer">
+<h2>Videoer<a class="headerlink" href="#videoer" title="Permalink to this heading">#</a></h2>
+<p>I videoen nedenfor kan du få en innføring eller repetisjon i den grunnleggende teorien bak regresjonsanalyse:</p>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/l7aAcyzA4VE? autoplay=0&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/tema3_datahandtering"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="lese_filer.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Datahåndering II: Håndtere og visualisere data</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="maskinlaring.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Datahåndtering IV: Maskinlæring</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deskriptiv-statistikk">
+   Deskriptiv statistikk
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mal-pa-spredning">
+     Mål på spredning
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#interkvartilbredde">
+       Interkvartilbredde
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#varians-og-standardavvik">
+   Varians og standardavvik
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualisering-av-feil">
+   Visualisering av feil
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regresjon">
+   Regresjon
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#korrelasjon">
+   Korrelasjon
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videoer">
+   Videoer
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Andreas Haraldsrud
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>

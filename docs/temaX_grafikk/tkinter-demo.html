@@ -1,0 +1,1237 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduksjon &#8212; Programmering og modellering</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/temaX_grafikk/tkinter-demo';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lokker.html">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/statistikk.html">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/likninger.html">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/differensiallikninger.html">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt2.html">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/teknologi.html">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lokker.html">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/statistikk.html">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/likninger.html">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/differensiallikninger.html">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../oppgaver/modelleringsprosjekt2.html">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/teknologi.html">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 1 - Grunnleggende programmering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">En første kodesnutt</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">Variabler og datatyper</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz1.html">Quiz 1: Variabler og aritmetikk</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/lister.html">Lister</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz2.html">Quiz 2: Lister</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/if-tester.html">Vilkår (if-tester)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz3.html">Quiz 3: Vilkår (if-tester)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/lokker.html">Løkker</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz4.html">Quiz 4: Løkker</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 2 - Kodestrukturering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema2_kodestrukturering/funksjoner.html">Funksjoner</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz5.html">Quiz 5: Funksjoner</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tema2_kodestrukturering/klasser_objekter.html">Klasser og objekter</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 3 - Datahåndtering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">Programmeringsverktøy</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema3_datahandtering/datasamlinger.html">Datasamlinger</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz6.html">Quiz 6: Datasamlinger (arrayer og dictionarier)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/plotting.html">Datahåndtering I: Visualisering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/lese_filer.html">Datahåndering II: Håndtere og visualisere data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/statistikk.html">Datahåndering III: Statistikk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/maskinlaring.html">Datahåndtering IV: Maskinlæring</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 - Algoritmer</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/algoritmer.html">Matematiske algoritmer og stokastiske simuleringer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/likninger.html">Likninger og nullpunkter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/derivasjon.html">Numerisk derivasjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/integrasjon.html">Numerisk integrasjon (ekstrastoff)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/symbolsk_utregning.html">Symbolsk utregning (CAS)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 - Modellering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/diskret_modellering.html">Modellering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/regresjonsmodeller.html">Regresjonsmodeller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/differensiallikninger.html">Differensiallikninger og kontinuerlige modeller</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/differensiallikninger_oppgaver.html">Differensiallikninger (oppgaver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/maskinlaring_titanic_oppgaver.html">Maskinlæring med Titanic (oppgave)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/statistikkprosjekt.html">Statistikkprosjekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/modelleringsprosjekt1.html">Modelleringsoppgave I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oppgaver/modelleringsprosjekt2.html">Modelleringsoppgave II</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Fagoppgaver</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/kjemioppgaver.html">Repetisjon I: Kjemioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/biologioppgaver.html">Repetisjon II: Biologioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/teknologi.html">Teknologi og programmering</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datafiler</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../datafiler.html">Datafiler</a></li>
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../../_sources/docs/temaX_grafikk/tkinter-demo.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduksjon</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduksjon
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gridsystem-rutenettsystem-rad-og-kolonner">
+   Gridsystem (rutenettsystem - rad og kolonner).
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <section id="introduksjon">
+<h1>Introduksjon<a class="headerlink" href="#introduksjon" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vindu</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="n">vindu</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Simuleringsplattform&quot;</span><span class="p">)</span>
+<span class="c1"># Lager Label-Widget.</span>
+ 
+<span class="n">lb</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">vindu</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hei på deg!&quot;</span><span class="p">)</span>
+<span class="n">lb</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">vindu</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gridsystem-rutenettsystem-rad-og-kolonner">
+<h1>Gridsystem (rutenettsystem - rad og kolonner).<a class="headerlink" href="#gridsystem-rutenettsystem-rad-og-kolonner" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vindu</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="n">vindu</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Simuleringsplattform&quot;</span><span class="p">)</span>
+<span class="c1"># Lager Label-Widget.</span>
+ 
+<span class="n">lb1</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">vindu</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Hei på deg!&quot;</span><span class="p">)</span>
+<span class="n">lb2</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">vindu</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Du er grei!&quot;</span><span class="p">)</span>
+<span class="n">lb1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">lb2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">vindu</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">vpython</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">vindu</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">Natoms</span> <span class="o">=</span> <span class="mi">200</span>  <span class="c1"># change this to have more or fewer atoms</span>
+
+<span class="c1"># Typical values</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># container is a cube L on a side</span>
+<span class="n">gray</span> <span class="o">=</span> <span class="n">color</span><span class="o">.</span><span class="n">gray</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span> <span class="c1"># color of edges of container</span>
+<span class="n">mass</span> <span class="o">=</span> <span class="mf">4E-3</span><span class="o">/</span><span class="mf">6E23</span> <span class="c1"># helium mass</span>
+<span class="n">Ratom</span> <span class="o">=</span> <span class="mf">0.03</span> <span class="c1"># wildly exaggerated size of helium atom</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">1.4E-23</span> <span class="c1"># Boltzmann constant</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">300</span> <span class="c1"># around room temperature</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">1E-5</span>
+
+<span class="n">animation</span> <span class="o">=</span> <span class="n">canvas</span><span class="p">(</span> <span class="n">width</span><span class="o">=</span><span class="n">win</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">win</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">animation</span><span class="o">.</span><span class="n">range</span> <span class="o">=</span> <span class="n">L</span>
+<span class="n">animation</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;A &quot;hard-sphere&quot; gas&#39;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;  Theoretical and averaged speed distributions (meters/sec).</span>
+<span class="s2">  Initially all atoms have the same speed, but collisions</span>
+<span class="s2">  change the speeds of the colliding atoms. One of the atoms is</span>
+<span class="s2">  marked and leaves a trail so you can follow its path.</span>
+<span class="s2">  </span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">animation</span><span class="o">.</span><span class="n">caption</span> <span class="o">=</span> <span class="n">s</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">L</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">Ratom</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.005</span>
+<span class="n">boxbottom</span> <span class="o">=</span> <span class="n">curve</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">gray</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
+<span class="n">boxbottom</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">vector</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">),</span> <span class="n">vector</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">),</span> <span class="n">vector</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">),</span> <span class="n">vector</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">),</span> <span class="n">vector</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">)])</span>
+<span class="n">boxtop</span> <span class="o">=</span> <span class="n">curve</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">gray</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
+<span class="n">boxtop</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">vector</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">),</span> <span class="n">vector</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">),</span> <span class="n">vector</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">),</span> <span class="n">vector</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">),</span> <span class="n">vector</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">)])</span>
+<span class="n">vert1</span> <span class="o">=</span> <span class="n">curve</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">gray</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
+<span class="n">vert2</span> <span class="o">=</span> <span class="n">curve</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">gray</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
+<span class="n">vert3</span> <span class="o">=</span> <span class="n">curve</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">gray</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
+<span class="n">vert4</span> <span class="o">=</span> <span class="n">curve</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">gray</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">r</span><span class="p">)</span>
+<span class="n">vert1</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">vector</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">),</span> <span class="n">vector</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">)])</span>
+<span class="n">vert2</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">vector</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">),</span> <span class="n">vector</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">)])</span>
+<span class="n">vert3</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">vector</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">),</span> <span class="n">vector</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">)])</span>
+<span class="n">vert4</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">vector</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">),</span> <span class="n">vector</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">)])</span>
+
+<span class="n">Atoms</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">p</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">apos</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">pavg</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mass</span><span class="o">*</span><span class="mf">1.5</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="p">)</span> <span class="c1"># average kinetic energy p**2/(2mass) = (3/2)kT</span>
+    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Natoms</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">L</span><span class="o">*</span><span class="n">random</span><span class="p">()</span><span class="o">-</span><span class="n">L</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">L</span><span class="o">*</span><span class="n">random</span><span class="p">()</span><span class="o">-</span><span class="n">L</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">L</span><span class="o">*</span><span class="n">random</span><span class="p">()</span><span class="o">-</span><span class="n">L</span><span class="o">/</span><span class="mi">2</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Atoms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sphere</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">vector</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="n">Ratom</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="o">.</span><span class="n">cyan</span><span class="p">,</span> <span class="n">make_trail</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">retain</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">trail_radius</span><span class="o">=</span><span class="mf">0.3</span><span class="o">*</span><span class="n">Ratom</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span> <span class="n">Atoms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sphere</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="n">vector</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="n">Ratom</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">gray</span><span class="p">))</span>
+    <span class="n">apos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vec</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">))</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">pi</span><span class="o">*</span><span class="n">random</span><span class="p">()</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">random</span><span class="p">()</span>
+    <span class="n">px</span> <span class="o">=</span> <span class="n">pavg</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+    <span class="n">py</span> <span class="o">=</span> <span class="n">pavg</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+    <span class="n">pz</span> <span class="o">=</span> <span class="n">pavg</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vector</span><span class="p">(</span><span class="n">px</span><span class="p">,</span><span class="n">py</span><span class="p">,</span><span class="n">pz</span><span class="p">))</span>
+
+<span class="n">deltav</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># binning for v histogram</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">barx</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="o">/</span><span class="n">deltav</span><span class="p">)</span> <span class="c1"># index into bars array</span>
+
+<span class="n">nhisto</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">4500</span><span class="o">/</span><span class="n">deltav</span><span class="p">)</span>
+<span class="n">histo</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nhisto</span><span class="p">):</span> <span class="n">histo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">histo</span><span class="p">[</span><span class="n">barx</span><span class="p">(</span><span class="n">pavg</span><span class="o">/</span><span class="n">mass</span><span class="p">)]</span> <span class="o">=</span> <span class="n">Natoms</span>
+
+<span class="n">gg</span> <span class="o">=</span> <span class="n">graph</span><span class="p">(</span> <span class="n">width</span><span class="o">=</span><span class="n">win</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.4</span><span class="o">*</span><span class="n">win</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span>
+    <span class="n">xtitle</span><span class="o">=</span><span class="s1">&#39;speed, m/s&#39;</span><span class="p">,</span> <span class="n">ytitle</span><span class="o">=</span><span class="s1">&#39;Number of atoms&#39;</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="n">Natoms</span><span class="o">*</span><span class="n">deltav</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">theory</span> <span class="o">=</span> <span class="n">gcurve</span><span class="p">(</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="o">.</span><span class="n">cyan</span> <span class="p">)</span>
+<span class="n">dv</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3001</span><span class="o">+</span><span class="n">dv</span><span class="p">,</span><span class="n">dv</span><span class="p">):</span>  <span class="c1"># theoretical prediction</span>
+    <span class="n">theory</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">v</span><span class="p">,</span> <span class="p">(</span><span class="n">deltav</span><span class="o">/</span><span class="n">dv</span><span class="p">)</span><span class="o">*</span><span class="n">Natoms</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="p">((</span><span class="n">mass</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="p">))</span><span class="o">**</span><span class="mf">1.5</span><span class="p">)</span> <span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">mass</span><span class="o">*</span><span class="p">(</span><span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">T</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">dv</span> <span class="p">)</span>
+
+<span class="n">accum</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">3000</span><span class="o">/</span><span class="n">deltav</span><span class="p">)):</span> <span class="n">accum</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">deltav</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">.5</span><span class="p">),</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">vdist</span> <span class="o">=</span> <span class="n">gvbars</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="o">.</span><span class="n">red</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="n">deltav</span> <span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">interchange</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">):</span>  <span class="c1"># remove from v1 bar, add to v2 bar</span>
+    <span class="n">barx1</span> <span class="o">=</span> <span class="n">barx</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+    <span class="n">barx2</span> <span class="o">=</span> <span class="n">barx</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">barx1</span> <span class="o">==</span> <span class="n">barx2</span><span class="p">:</span>  <span class="k">return</span>
+    <span class="k">if</span> <span class="n">barx1</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">histo</span><span class="p">)</span> <span class="ow">or</span> <span class="n">barx2</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">histo</span><span class="p">):</span> <span class="k">return</span>
+    <span class="n">histo</span><span class="p">[</span><span class="n">barx1</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="n">histo</span><span class="p">[</span><span class="n">barx2</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+<span class="k">def</span><span class="w"> </span><span class="nf">checkCollisions</span><span class="p">():</span>
+    <span class="n">hitlist</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">Ratom</span>
+    <span class="n">r2</span> <span class="o">*=</span> <span class="n">r2</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Natoms</span><span class="p">):</span>
+        <span class="n">ai</span> <span class="o">=</span> <span class="n">apos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">:</span>
+            <span class="n">aj</span> <span class="o">=</span> <span class="n">apos</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">dr</span> <span class="o">=</span> <span class="n">ai</span> <span class="o">-</span> <span class="n">aj</span>
+            <span class="k">if</span> <span class="n">mag2</span><span class="p">(</span><span class="n">dr</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">r2</span><span class="p">:</span> <span class="n">hitlist</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">hitlist</span>
+
+<span class="n">nhisto</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># number of histogram snapshots to average</span>
+<span class="nd">@numba</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">rate</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+    <span class="c1"># Accumulate and average histogram snapshots</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">accum</span><span class="p">)):</span> <span class="n">accum</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">nhisto</span><span class="o">*</span><span class="n">accum</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">histo</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">nhisto</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">nhisto</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">vdist</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">accum</span>
+    <span class="n">nhisto</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># Update all positions</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Natoms</span><span class="p">):</span> <span class="n">Atoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">apos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">apos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">mass</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span>
+    
+    <span class="c1"># Check for collisions</span>
+    <span class="n">hitlist</span> <span class="o">=</span> <span class="n">checkCollisions</span><span class="p">()</span>
+
+    <span class="c1"># If any collisions took place, update momenta of the two atoms</span>
+    <span class="k">for</span> <span class="n">ij</span> <span class="ow">in</span> <span class="n">hitlist</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">ij</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">ij</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">ptot</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">posi</span> <span class="o">=</span> <span class="n">apos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">posj</span> <span class="o">=</span> <span class="n">apos</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">vi</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">mass</span>
+        <span class="n">vj</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">/</span><span class="n">mass</span>
+        <span class="n">vrel</span> <span class="o">=</span> <span class="n">vj</span><span class="o">-</span><span class="n">vi</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">vrel</span><span class="o">.</span><span class="n">mag2</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="k">continue</span><span class="p">;</span>  <span class="c1"># exactly same velocities</span>
+        <span class="n">rrel</span> <span class="o">=</span> <span class="n">posi</span><span class="o">-</span><span class="n">posj</span>
+        <span class="k">if</span> <span class="n">rrel</span><span class="o">.</span><span class="n">mag</span> <span class="o">&gt;</span> <span class="n">Ratom</span><span class="p">:</span> <span class="k">continue</span> <span class="c1"># one atom went all the way through another</span>
+    
+        <span class="c1"># theta is the angle between vrel and rrel:</span>
+        <span class="n">dx</span> <span class="o">=</span> <span class="n">dot</span><span class="p">(</span><span class="n">rrel</span><span class="p">,</span> <span class="n">vrel</span><span class="o">.</span><span class="n">hat</span><span class="p">)</span>       <span class="c1"># rrel.mag*cos(theta)</span>
+        <span class="n">dy</span> <span class="o">=</span> <span class="n">cross</span><span class="p">(</span><span class="n">rrel</span><span class="p">,</span> <span class="n">vrel</span><span class="o">.</span><span class="n">hat</span><span class="p">)</span><span class="o">.</span><span class="n">mag</span> <span class="c1"># rrel.mag*sin(theta)</span>
+        <span class="c1"># alpha is the angle of the triangle composed of rrel, path of atom j, and a line</span>
+        <span class="c1">#   from the center of atom i to the center of atom j where atome j hits atom i:</span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="n">asin</span><span class="p">(</span><span class="n">dy</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">Ratom</span><span class="p">))</span> 
+        <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">Ratom</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">-</span><span class="n">dx</span> <span class="c1"># distance traveled into the atom from first contact</span>
+        <span class="n">deltat</span> <span class="o">=</span> <span class="n">d</span><span class="o">/</span><span class="n">vrel</span><span class="o">.</span><span class="n">mag</span>         <span class="c1"># time spent moving from first contact to position inside atom</span>
+        
+        <span class="n">posi</span> <span class="o">=</span> <span class="n">posi</span><span class="o">-</span><span class="n">vi</span><span class="o">*</span><span class="n">deltat</span> <span class="c1"># back up to contact configuration</span>
+        <span class="n">posj</span> <span class="o">=</span> <span class="n">posj</span><span class="o">-</span><span class="n">vj</span><span class="o">*</span><span class="n">deltat</span>
+        <span class="n">mtot</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">mass</span>
+        <span class="n">pcmi</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">ptot</span><span class="o">*</span><span class="n">mass</span><span class="o">/</span><span class="n">mtot</span> <span class="c1"># transform momenta to cm frame</span>
+        <span class="n">pcmj</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">ptot</span><span class="o">*</span><span class="n">mass</span><span class="o">/</span><span class="n">mtot</span>
+        <span class="n">rrel</span> <span class="o">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">rrel</span><span class="p">)</span>
+        <span class="n">pcmi</span> <span class="o">=</span> <span class="n">pcmi</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">pcmi</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">rrel</span><span class="p">)</span><span class="o">*</span><span class="n">rrel</span> <span class="c1"># bounce in cm frame</span>
+        <span class="n">pcmj</span> <span class="o">=</span> <span class="n">pcmj</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">pcmj</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">rrel</span><span class="p">)</span><span class="o">*</span><span class="n">rrel</span>
+        <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">pcmi</span><span class="o">+</span><span class="n">ptot</span><span class="o">*</span><span class="n">mass</span><span class="o">/</span><span class="n">mtot</span> <span class="c1"># transform momenta back to lab frame</span>
+        <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">pcmj</span><span class="o">+</span><span class="n">ptot</span><span class="o">*</span><span class="n">mass</span><span class="o">/</span><span class="n">mtot</span>
+        <span class="n">apos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">posi</span><span class="o">+</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">mass</span><span class="p">)</span><span class="o">*</span><span class="n">deltat</span> <span class="c1"># move forward deltat in time</span>
+        <span class="n">apos</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">posj</span><span class="o">+</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">/</span><span class="n">mass</span><span class="p">)</span><span class="o">*</span><span class="n">deltat</span>
+        <span class="n">interchange</span><span class="p">(</span><span class="n">vi</span><span class="o">.</span><span class="n">mag</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mag</span><span class="o">/</span><span class="n">mass</span><span class="p">)</span>
+        <span class="n">interchange</span><span class="p">(</span><span class="n">vj</span><span class="o">.</span><span class="n">mag</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">mag</span><span class="o">/</span><span class="n">mass</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Natoms</span><span class="p">):</span>
+        <span class="n">loc</span> <span class="o">=</span> <span class="n">apos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">loc</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">L</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">loc</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span>  <span class="nb">abs</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span>  <span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">loc</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">L</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">loc</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span>  <span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">loc</span><span class="o">.</span><span class="n">z</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">L</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">loc</span><span class="o">.</span><span class="n">z</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span>  <span class="nb">abs</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span>  <span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/temaX_grafikk"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduksjon
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gridsystem-rutenettsystem-rad-og-kolonner">
+   Gridsystem (rutenettsystem - rad og kolonner).
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Andreas Haraldsrud
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>

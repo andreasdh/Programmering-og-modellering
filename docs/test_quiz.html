@@ -1,0 +1,3533 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Review &#8212; Programmering og modellering</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/test_quiz';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema1_grunnleggende_programmering/kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema1_grunnleggende_programmering/tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema1_grunnleggende_programmering/lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema1_grunnleggende_programmering/if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema1_grunnleggende_programmering/lokker.html">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema1_grunnleggende_programmering/programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema3_datahandtering/datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema3_datahandtering/plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema3_datahandtering/lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema3_datahandtering/statistikk.html">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema3_datahandtering/maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema4_algoritmer/algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema4_algoritmer/likninger.html">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema4_algoritmer/derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema4_algoritmer/integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema4_algoritmer/symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema5_modellering/diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema5_modellering/regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema5_modellering/differensiallikninger.html">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="oppgaver/differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="oppgaver/maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="oppgaver/statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="oppgaver/modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="oppgaver/modelleringsprosjekt2.html">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="fagoppgaver/kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="fagoppgaver/biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="fagoppgaver/teknologi.html">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema1_grunnleggende_programmering/kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema1_grunnleggende_programmering/tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema1_grunnleggende_programmering/lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema1_grunnleggende_programmering/if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema1_grunnleggende_programmering/lokker.html">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema1_grunnleggende_programmering/programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema3_datahandtering/datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema3_datahandtering/plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema3_datahandtering/lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema3_datahandtering/statistikk.html">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema3_datahandtering/maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema4_algoritmer/algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema4_algoritmer/likninger.html">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema4_algoritmer/derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema4_algoritmer/integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema4_algoritmer/symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema5_modellering/diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema5_modellering/regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tema5_modellering/differensiallikninger.html">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="oppgaver/differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="oppgaver/maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="oppgaver/statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="oppgaver/modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="oppgaver/modelleringsprosjekt2.html">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="fagoppgaver/kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="fagoppgaver/biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="fagoppgaver/teknologi.html">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 1 - Grunnleggende programmering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tema1_grunnleggende_programmering/kom_i_gang.html">En første kodesnutt</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tema1_grunnleggende_programmering/tall_variabler.html">Variabler og datatyper</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tema1_grunnleggende_programmering/quiz1.html">Quiz 1: Variabler og aritmetikk</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tema1_grunnleggende_programmering/lister.html">Lister</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tema1_grunnleggende_programmering/quiz2.html">Quiz 2: Lister</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tema1_grunnleggende_programmering/if-tester.html">Vilkår (if-tester)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tema1_grunnleggende_programmering/quiz3.html">Quiz 3: Vilkår (if-tester)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tema1_grunnleggende_programmering/lokker.html">Løkker</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tema1_grunnleggende_programmering/quiz4.html">Quiz 4: Løkker</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 2 - Kodestrukturering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="tema2_kodestrukturering/funksjoner.html">Funksjoner</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tema1_grunnleggende_programmering/quiz5.html">Quiz 5: Funksjoner</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tema2_kodestrukturering/klasser_objekter.html">Klasser og objekter</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 3 - Datahåndtering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tema1_grunnleggende_programmering/programmeringsverktoy.html">Programmeringsverktøy</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tema3_datahandtering/datasamlinger.html">Datasamlinger</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="tema1_grunnleggende_programmering/quiz6.html">Quiz 6: Datasamlinger (arrayer og dictionarier)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tema3_datahandtering/plotting.html">Datahåndtering I: Visualisering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema3_datahandtering/lese_filer.html">Datahåndering II: Håndtere og visualisere data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema3_datahandtering/statistikk.html">Datahåndering III: Statistikk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema3_datahandtering/maskinlaring.html">Datahåndtering IV: Maskinlæring</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 - Algoritmer</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tema4_algoritmer/algoritmer.html">Matematiske algoritmer og stokastiske simuleringer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema4_algoritmer/likninger.html">Likninger og nullpunkter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema4_algoritmer/derivasjon.html">Numerisk derivasjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema4_algoritmer/integrasjon.html">Numerisk integrasjon (ekstrastoff)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema4_algoritmer/symbolsk_utregning.html">Symbolsk utregning (CAS)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 - Modellering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tema5_modellering/diskret_modellering.html">Modellering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema5_modellering/regresjonsmodeller.html">Regresjonsmodeller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tema5_modellering/differensiallikninger.html">Differensiallikninger og kontinuerlige modeller</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="oppgaver/differensiallikninger_oppgaver.html">Differensiallikninger (oppgaver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oppgaver/maskinlaring_titanic_oppgaver.html">Maskinlæring med Titanic (oppgave)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="oppgaver/statistikkprosjekt.html">Statistikkprosjekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oppgaver/modelleringsprosjekt1.html">Modelleringsoppgave I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oppgaver/modelleringsprosjekt2.html">Modelleringsoppgave II</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Fagoppgaver</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fagoppgaver/kjemioppgaver.html">Repetisjon I: Kjemioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fagoppgaver/biologioppgaver.html">Repetisjon II: Biologioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fagoppgaver/teknologi.html">Teknologi og programmering</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datafiler</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="datafiler.html">Datafiler</a></li>
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../_sources/docs/test_quiz.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Review</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spaced-repetition-review">
+   Spaced Repetition Review
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <section class="tex2jax_ignore mathjax_ignore" id="review">
+<h1>Review<a class="headerlink" href="#review" title="Permalink to this heading">#</a></h1>
+<p>In this Chapter, we started working with real data, introduced Pands, partitions, summary statistics, binary hypothesis testing via bootstrap resampling, and two-dimensional statistics.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="RlTpzgrrcZkc" data-shufflequestions="False" data-shuffleanswers="True" data-numquestions="1000000"><style>
+:root {
+    --medium-slate-blue: #6f78ffff;
+    --orange-pantone: #f75c03ff;
+    --russian-violet: #392061ff;
+    --maximum-yellow-red: #ffc857ff;
+    --viridian-green: #119da4ff;
+    --incorrect-red: #c80202;
+    --correct-green: #009113;
+}
+
+
+.Quiz {
+     max-width: 600px;
+     margin-top: 15px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 15px;
+     padding-bottom: 4px;
+     padding-top: 4px;
+     line-height: 1.1;
+     font-size: 16pt;
+}
+
+.QuizCode {
+    font-size: 14pt;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.QuizCode > pre {
+    padding: 4px;
+}
+.Answer{
+     margin: 10px 0;
+     display: grid;
+     grid-template-columns: auto auto;
+     grid-gap: 10px;
+}
+.Feedback{
+     font-size: 16pt;
+     text-align:center;
+ }
+
+.Input {
+    align:left;
+    font-size: 20pt;
+}
+.Input-text {
+    display: block;
+    margin: 10px;
+    color: inherit;
+    width: 140px;
+    background-color: #c0c0c0;
+    color: #fff;
+    padding: 5px;
+    padding-left: 10px;
+
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: inherit;
+    line-height: 20pt;
+    border: none;
+    border-radius: 0.2rem;
+    transition: box-shadow 0.1s);
+}
+
+ .Input-text:focus {
+     outline: none;
+     background-color: #c0c0c0;
+     box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem #999999;
+ }
+
+ .MCButton{
+     background: #fafafa;
+     border: 1px solid #eee;
+     border-radius: 10px;
+     padding: 10px;
+     font-size: 16px;
+     cursor: pointer;
+     text-align: center;
+ }
+ .MultipleChoiceQn {
+     padding: 10px;
+     background: var(--medium-slate-blue);
+     color: #fafafa;
+     border-radius: 10px;
+ }
+ .ManyChoiceQn {
+     padding: 10px;
+     background: var(--orange-pantone);
+     color: #fafafa;
+     border-radius: 10px;
+ }
+ .NumericQn {
+     padding: 10px;
+     background: var(--russian-violet);
+     color: #fafafa;
+     border-radius: 10px;
+ }
+.InpLabel {
+     line-height: 34px;
+     float:left;
+     margin-right: 10px;
+     color: #101010;
+     font-size: 15pt;
+}
+.incorrect {
+    color: var(--incorrect-red);
+}
+.correct {
+    color: var(--correct-green);
+}
+.correctButton {
+    background: var(--correct-green);
+    color: #fafafa;
+    box-shadow: inset 0px 0px 5px #555555;
+    outline: none;
+}
+.incorrectButton {
+    background: var(--incorrect-red);
+    color: #fafafa;
+    box-shadow: inset 0px 0px 5px #555555;
+    outline: none;
+}
+
+
+</style><script type="text/Javascript">questionsRlTpzgrrcZkc=[
+    {
+        "question": "Choose all of the following that are useful error metrics that can be minimized to create a summary statistic:",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "sum of absolute errors",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "total number of errors",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "sum of errors",
+                "correct": false,
+                "feedback": "There is no minimum value for this metric."
+            },
+            {
+                "answer": "sum of squared errors",
+                "correct": true,
+                "feedback": "Correct."
+            }
+        ]
+    },
+    {
+        "question": "Which of the following summary statistics minimizes the sum of squared errors to the data:",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "mode",
+                "correct": false,
+                "feedback": "Try again."
+            },
+            {
+                "answer": "median",
+                "correct": false,
+                "feedback": "Try again."
+            },
+            {
+                "answer": "average",
+                "correct": true,
+                "feedback": "Correct."
+            }
+        ]
+    },
+    {
+        "question": "Which of the following summary statistics minimizes the sum of absolute errors to the data:",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "average",
+                "correct": false,
+                "feedback": "Try again."
+            },
+            {
+                "answer": "median",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "mode",
+                "correct": false,
+                "feedback": "Try again."
+            }
+        ]
+    },
+    {
+        "question": "Which of the following summary statistics minimizes the number of non-zero errors to the data:",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "mode",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "average",
+                "correct": false,
+                "feedback": "Try again."
+            },
+            {
+                "answer": "median",
+                "correct": false,
+                "feedback": "Try again."
+            }
+        ]
+    },
+    {
+        "question": "Choose all of the following that are typical causes of outliers in data sets:",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "measurement errors",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "different population characteristics",
+                "correct": false,
+                "feedback": "Different population characteristics often produce variations in data, but these are not erroneous values and not considered outliers."
+            },
+            {
+                "answer": "data entry errors",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "unit conversion errors",
+                "correct": true,
+                "feedback": "Correct."
+            }
+        ]
+    }
+];
+    //var mydiv=document.getElementById("testDIV");//console.log(mydiv);// Make a random ID
+function makeid(length) {
+    var result           = [];
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
+    }
+    return result.join('');
+}
+
+// Choose a random subset of an array. Can also be used to shuffle the array
+function getRandomSubarray(arr, size) {
+    var shuffled = arr.slice(0), i = arr.length, temp, index;
+    while (i--) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+    }
+    return shuffled.slice(0, size);
+}
+function check_mc() {
+    var id=this.id.split('-')[0];
+
+    //console.log("In check_mc(), id="+id);
+    //console.log(event.srcElement.id)           
+    //console.log(event.srcElement.dataset.correct)   
+    //console.log(event.srcElement.dataset.feedback)
+
+    var label = event.srcElement;
+    //console.log(label, label.nodeName);
+    var depth=0;
+    while ((label.nodeName!="LABEL") && (depth<3)) {
+        label=label.parentElement;
+        //console.log(depth,label);
+        depth++;
+    }
+
+
+
+    var answers=label.parentElement.children;
+
+    //console.log(answers);
+
+
+    // Split behavior based on multiple choice vs many choice:
+    var fb = document.getElementById("fb"+id);
+    //console.log(id, ", got numcorrect=",fb.dataset.numcorrect);
+    if (fb.dataset.numcorrect==1) {
+        for (var i = 0; i < answers.length; i++) {
+            var child=answers[i];
+            //console.log(child);
+            child.className="MCButton";
+        }
+
+
+
+        if (label.dataset.correct=="true")   {
+            // console.log("Correct action");
+            if ("feedback" in label.dataset) {
+                fb.textContent=label.dataset.feedback;
+            } else{
+                fb.textContent="Correct!";
+            }
+            label.classList.add("correctButton");
+
+            fb.className="Feedback";
+            fb.classList.add("correct");
+
+        } else {
+            if ("feedback" in label.dataset) {
+                fb.textContent=label.dataset.feedback;
+            } else{
+                fb.textContent="Incorrect -- try again.";
+            }
+            //console.log("Error action");
+            label.classList.add("incorrectButton");
+            fb.className="Feedback";
+            fb.classList.add("incorrect");
+        }
+    }
+    else {
+        var reset = false;
+        var feedback;
+        if (label.dataset.correct=="true" )   {
+            if ("feedback" in label.dataset) {
+                feedback=label.dataset.feedback;
+            } else{
+                feedback="Correct!";
+            }
+            if (label.dataset.answered<=0) {
+                if (fb.dataset.answeredcorrect<0) {
+                    fb.dataset.answeredcorrect=1;
+                    reset=true;
+                } else {
+                    fb.dataset.answeredcorrect++;
+                }
+                if (reset) {
+                    for (var i = 0; i < answers.length; i++) {
+                        var child=answers[i];
+                        child.className="MCButton";
+                        child.dataset.answered=0;
+                    }
+                }
+                label.classList.add("correctButton");
+                label.dataset.answered=1;
+                fb.className="Feedback";
+                fb.classList.add("correct");
+
+            }
+        } else {
+            if ("feedback" in label.dataset) {
+                feedback=label.dataset.feedback;
+            } else{
+                feedback="Incorrect -- try again.";
+            }
+            if (fb.dataset.answeredcorrect>0) {
+                fb.dataset.answeredcorrect=-1;
+                reset=true;
+            } else {
+                fb.dataset.answeredcorrect--;
+            }
+
+            if (reset) {
+                for (var i = 0; i < answers.length; i++) {
+                    var child=answers[i];
+                    child.className="MCButton";
+                    child.dataset.answered=0;
+                }
+            }
+            label.classList.add("incorrectButton");
+            fb.className="Feedback";
+            fb.classList.add("incorrect");
+        }
+
+
+        var numcorrect=fb.dataset.numcorrect;
+        var answeredcorrect=fb.dataset.answeredcorrect;
+        if (answeredcorrect>=0) {
+            fb.textContent=feedback + " ["  + answeredcorrect + "/" + numcorrect + "]";
+        } else {
+            fb.textContent=feedback + " ["  + 0 + "/" + numcorrect + "]";
+        }
+
+
+    }
+
+    if (MathJax) {
+        var version=MathJax.version;
+        if (version[0]=="2") {
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        } else if (version[0] == "3") {
+            MathJax.typeset();
+        }
+    }
+
+}
+
+function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
+    var shuffled;
+    if (shuffle_answers=="True") {
+        //console.log(shuffle_answers+" read as true");
+        shuffled=getRandomSubarray(qa.answers, qa.answers.length);
+    } else {
+        //console.log(shuffle_answers+" read as false");
+        shuffled=qa.answers;
+    }
+    
+
+    var num_correct=0;
+
+
+
+    shuffled.forEach((item, index, ans_array) => {
+        //console.log(answer);
+
+        // Make input element
+        var inp = document.createElement("input");
+        inp.type="radio";
+        inp.id="quizo"+id+index;
+        inp.style="display:none;";
+        aDiv.append(inp);
+
+        //Make label for input element
+        var lab = document.createElement("label");
+        lab.className="MCButton";
+        lab.id=id+ '-' +index;
+        lab.onclick=check_mc;
+        var aSpan = document.createElement('span');
+        aSpan.classsName="";
+        //qDiv.id="quizQn"+id+index;
+        if ("answer" in item) {
+            aSpan.innerHTML=item.answer;
+        }
+        lab.append(aSpan);
+
+        // Create div for code inside question
+        var codeSpan;
+        if ("code" in item){
+            codeSpan = document.createElement('span');
+            codeSpan.id="code"+id+index;
+            codeSpan.className="QuizCode";
+            var codePre = document.createElement('pre');
+            codeSpan.append(codePre);
+            var codeCode = document.createElement('code');
+            codePre.append(codeCode);
+            codeCode.innerHTML=item.code;
+            lab.append(codeSpan);
+            //console.log(codeSpan);
+        }
+
+        //lab.textContent=item.answer;
+
+        // Set the data attributes for the answer
+        lab.setAttribute('data-correct', item.correct);
+        if (item.correct) {
+            num_correct++;
+        }
+        if ("feedback" in item){
+            lab.setAttribute('data-feedback', item.feedback);
+        }
+        lab.setAttribute('data-answered', 0);
+
+        aDiv.append(lab);
+
+    });
+
+    if (num_correct>1) {
+        outerqDiv.className="ManyChoiceQn";
+    } else {
+        outerqDiv.className="MultipleChoiceQn";
+    }
+
+    return num_correct;
+
+}
+function check_numeric(ths, event) {
+
+    if (event.keyCode === 13) {
+        ths.blur();
+
+        var id=ths.id.split('-')[0];
+
+        var submission=ths.value;
+				if (submission.indexOf('/') != -1) {
+            sub_parts=submission.split('/');
+            //console.log(sub_parts);
+            submission=sub_parts[0]/sub_parts[1];
+        }
+        console.log("Reader entered", submission);
+
+        if ("precision" in ths.dataset) {
+            precision=ths.dataset.precision;
+            // console.log("1:", submission)
+            submission=Math.round((1*submission + Number.EPSILON)*10**precision)/ 10**precision; 
+            // console.log("Rounded to ", submission, " precision=", precision  );
+        }
+
+
+        //console.log("In check_numeric(), id="+id);
+        //console.log(event.srcElement.id)           
+        //console.log(event.srcElement.dataset.feedback)
+
+        var fb = document.getElementById("fb"+id);
+        fb.style.display="none";
+        fb.textContent="Incorrect -- try again.";
+
+        answers=JSON.parse(ths.dataset.answers);
+        console.log(answers);
+
+        var defaultFB="";
+        var correct;
+        var done=false;
+        answers.every(answer => {
+            console.log(answer.type);
+
+            correct=false;
+            // if (answer.type=="value"){
+            if ('value' in answer){
+                if (submission == answer.value) {
+                    fb.textContent=answer.feedback;
+                    correct=answer.correct;
+                    console.log(answer.correct);
+                    done=true;
+                }
+            // } else if (answer.type=="range") {
+            } else if ('range' in answer) {
+                console.log(answer.range);
+                if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
+                    fb.textContent=answer.feedback;
+                    correct=answer.correct;
+                    console.log(answer.correct);
+                    done=true;
+                }
+            } else if (answer.type=="default") {
+                defaultFB=answer.feedback;
+            }
+            if (done) {
+                return false; // Break out of loop if this has been marked correct
+            } else {
+                return true; // Keep looking for case that includes this as a correct answer
+            }
+        });
+
+        if ((!done) && (defaultFB != "")) {
+            fb.textContent=defaultFB;
+            console.log("Default feedback", defaultFB);
+        }
+
+        fb.style.display="block";
+        if (correct) {
+            ths.className="Input-text";
+            ths.classList.add("correctButton");
+            fb.className="Feedback";
+            fb.classList.add("correct");
+        } else {
+            ths.className="Input-text";
+            ths.classList.add("incorrectButton");
+            fb.className="Feedback";
+            fb.classList.add("incorrect");
+        }
+
+        if (MathJax) {
+            var version=MathJax.version;
+            if (version[0]=="2") {
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            } else if (version[0] == "3") {
+                MathJax.typeset();
+            }
+        }
+        return false;
+    }
+
+}
+
+function isValid(el,  charC) {
+		if (charC == 46) {
+				if (el.value.indexOf('.') === -1) {
+					  return true;
+				} else if (el.value.indexOf('/') != -1) {
+            parts=el.value.split('/');
+				    if (parts[1].indexOf('.') === -1) {
+					      return true;
+            }
+        }
+        else{
+					  return false;
+				}
+		} else if (charC == 47) {
+				if (el.value.indexOf('/') === -1) {
+            if ((el.value != "") && (el.value != ".")) {
+					      return true;
+            } else {
+					  return false;
+				    }
+        } else {
+            return false;
+        }
+		} else if (charC == 45) {
+        if (el.value == "" ) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+				if (charC > 31 && (charC < 48 || charC > 57))
+					  return false;
+		}
+		return true;
+}
+
+function numeric_keypress( evnt) {
+		var charC = (evnt.which) ? evnt.which : evnt.keyCode;
+
+    if (charC==13) {
+        check_numeric(this, evnt);
+    } else{
+		    return isValid(this, charC);
+    }
+}
+
+
+
+
+
+function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
+
+
+
+        //console.log(answer);
+
+    
+    outerqDiv.className="NumericQn";
+    aDiv.style.display='block';
+
+    var lab = document.createElement("label");
+    lab.className="InpLabel";
+    lab.textContent="Type numeric answer here:";
+    aDiv.append(lab);
+
+    var inp = document.createElement("input");
+    inp.type="text";
+    //inp.id="input-"+id;
+    inp.id=id+"-0";
+    inp.className="Input-text";
+    inp.setAttribute('data-answers', JSON.stringify(qa.answers) );
+    if ("precision" in qa) {
+        inp.setAttribute('data-precision', qa.precision);
+    }
+    aDiv.append(inp);
+    console.log(inp);
+
+    //inp.addEventListener("keypress", check_numeric);
+    //inp.addEventListener("keypress", numeric_keypress);
+    /*
+    inp.addEventListener("keypress", function(event) {
+        return numeric_keypress(this, event);
+    }
+                        );
+                        */
+    //inp.onkeypress="return numeric_keypress(this, event)";
+    inp.onkeypress=numeric_keypress;
+    inp.onpaste= event => false;
+
+    inp.addEventListener("focus", function(event) {
+        this.value="";
+        return false;
+    }
+                        );
+
+
+}
+function show_questions (json, mydiv) {
+    //var mydiv=document.getElementById(myid);
+    var shuffle_questions=mydiv.dataset.shufflequestions;
+    var num_questions=mydiv.dataset.numquestions;
+    var shuffle_answers=mydiv.dataset.shuffleanswers;
+    
+    if (num_questions>json.length) {
+        num_questions=json.length;
+    }
+    
+    var questions;
+    if ( (num_questions<json.length) || (shuffle_questions=="True") ) {
+        //console.log(num_questions+","+json.length);
+        questions=getRandomSubarray(json, num_questions);
+    } else {
+        questions=json;
+    }
+    
+    //console.log("SQ: "+shuffle_questions+", NQ: " + num_questions + ", SA: ", shuffle_answers);
+    
+    // Iterate over questions
+    questions.forEach((qa, index, array) => {
+        //console.log(qa.question); 
+
+        var id = makeid(8);
+        //console.log(id);
+
+
+        // Create Div to contain question and answers
+        var iDiv = document.createElement('div');
+        iDiv.id = 'quizWrap'+id+index;
+        iDiv.className='Quiz';
+        mydiv.appendChild(iDiv);
+        // iDiv.innerHTML=qa.question;
+
+        var outerqDiv = document.createElement('div');
+        outerqDiv.id="OuterquizQn"+id+index;
+        //qDiv.textContent=qa.question;
+        iDiv.append(outerqDiv);
+
+        // Create div to contain question part
+        var qDiv = document.createElement('div');
+        qDiv.id="quizQn"+id+index;
+        //qDiv.textContent=qa.question;
+        qDiv.innerHTML=qa.question;
+        outerqDiv.append(qDiv);
+
+        // Create div for code inside question
+        var codeDiv;
+        if ("code" in qa){
+            codeDiv = document.createElement('div');
+            codeDiv.id="code"+id+index;
+            codeDiv.className="QuizCode";
+            var codePre = document.createElement('pre');
+            codeDiv.append(codePre);
+            var codeCode = document.createElement('code');
+            codePre.append(codeCode);
+            codeCode.innerHTML=qa.code;
+            outerqDiv.append(codeDiv);
+            console.log(codeDiv);
+        }
+
+
+        // Create div to contain answer part
+        var aDiv = document.createElement('div');
+        aDiv.id="quizAns"+id+index;
+        aDiv.className='Answer';
+        iDiv.append(aDiv);
+
+        console.log(qa.type);
+
+        var num_correct;
+        if (qa.type=="multiple_choice")  {
+            num_correct=make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id);
+        } else if   (qa.type=="many_choice"){
+            num_correct=make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id);
+        } else if  (qa.type=="numeric") {
+            console.log("numeric");
+            make_numeric(qa, outerqDiv, qDiv, aDiv, id);
+        }
+
+
+        //Make div for feedback
+        var fb = document.createElement("div");
+        fb.id="fb"+id;
+        //fb.style="font-size: 20px;text-align:center;";
+        fb.className="Feedback";
+        fb.setAttribute("data-answeredcorrect", 0);
+        fb.setAttribute("data-numcorrect", num_correct);
+        iDiv.append(fb);
+
+
+    });
+    if (MathJax) {
+        var version=MathJax.version;
+        if (version[0]=="2") {
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        } else if (version[0] == "3") {
+            MathJax.typeset();
+        }
+    }
+    return false;
+}
+
+        //console.log(element);
+        {
+        const jmscontroller = new AbortController();
+        const signal = jmscontroller.signal;
+
+        setTimeout(() => jmscontroller.abort(), 5000);
+
+        fetch("https://raw.githubusercontent.com/jmshea/intro-data-science-for-engineers/main/questions/ch3.json", {signal})
+        .then(response => response.json())
+        .then(json => show_questions(json, RlTpzgrrcZkc))
+        .catch(err => {
+        console.log("Fetch error or timeout");
+        show_questions(questionsRlTpzgrrcZkc, RlTpzgrrcZkc);
+        });
+        }
+        </script>
+        </div></div>
+</div>
+<section id="spaced-repetition-review">
+<h2>Spaced Repetition Review<a class="headerlink" href="#spaced-repetition-review" title="Permalink to this heading">#</a></h2>
+<p>Answer these questions to check your retention on knowledge from Chapters 1 and 2:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="aLEiiCKfOwsL" data-shufflequestions="False" data-shuffleanswers="True" data-numquestions="3"><style>
+:root {
+    --medium-slate-blue: #6f78ffff;
+    --orange-pantone: #f75c03ff;
+    --russian-violet: #392061ff;
+    --maximum-yellow-red: #ffc857ff;
+    --viridian-green: #119da4ff;
+    --incorrect-red: #c80202;
+    --correct-green: #009113;
+}
+
+
+.Quiz {
+     max-width: 600px;
+     margin-top: 15px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 15px;
+     padding-bottom: 4px;
+     padding-top: 4px;
+     line-height: 1.1;
+     font-size: 16pt;
+}
+
+.QuizCode {
+    font-size: 14pt;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.QuizCode > pre {
+    padding: 4px;
+}
+.Answer{
+     margin: 10px 0;
+     display: grid;
+     grid-template-columns: auto auto;
+     grid-gap: 10px;
+}
+.Feedback{
+     font-size: 16pt;
+     text-align:center;
+ }
+
+.Input {
+    align:left;
+    font-size: 20pt;
+}
+.Input-text {
+    display: block;
+    margin: 10px;
+    color: inherit;
+    width: 140px;
+    background-color: #c0c0c0;
+    color: #fff;
+    padding: 5px;
+    padding-left: 10px;
+
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: inherit;
+    line-height: 20pt;
+    border: none;
+    border-radius: 0.2rem;
+    transition: box-shadow 0.1s);
+}
+
+ .Input-text:focus {
+     outline: none;
+     background-color: #c0c0c0;
+     box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem #999999;
+ }
+
+ .MCButton{
+     background: #fafafa;
+     border: 1px solid #eee;
+     border-radius: 10px;
+     padding: 10px;
+     font-size: 16px;
+     cursor: pointer;
+     text-align: center;
+ }
+ .MultipleChoiceQn {
+     padding: 10px;
+     background: var(--medium-slate-blue);
+     color: #fafafa;
+     border-radius: 10px;
+ }
+ .ManyChoiceQn {
+     padding: 10px;
+     background: var(--orange-pantone);
+     color: #fafafa;
+     border-radius: 10px;
+ }
+ .NumericQn {
+     padding: 10px;
+     background: var(--russian-violet);
+     color: #fafafa;
+     border-radius: 10px;
+ }
+.InpLabel {
+     line-height: 34px;
+     float:left;
+     margin-right: 10px;
+     color: #101010;
+     font-size: 15pt;
+}
+.incorrect {
+    color: var(--incorrect-red);
+}
+.correct {
+    color: var(--correct-green);
+}
+.correctButton {
+    background: var(--correct-green);
+    color: #fafafa;
+    box-shadow: inset 0px 0px 5px #555555;
+    outline: none;
+}
+.incorrectButton {
+    background: var(--incorrect-red);
+    color: #fafafa;
+    box-shadow: inset 0px 0px 5px #555555;
+    outline: none;
+}
+
+
+</style><script type="text/Javascript">questionsaLEiiCKfOwsL=[
+    {
+        "question": "Choose all of the following that can be included in Jupyter notebooks?",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "Text and graphics output from Python",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "Typeset mathematics",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "Python executable code",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "Formatted text",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "Live snakes via Python",
+                "correct": false,
+                "feedback": "I hope not."
+            }
+        ]
+    },
+    {
+        "question": "Which of these are used to create formatted text in Jupyter notebooks?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "Wiki markup",
+                "correct": false,
+                "feedback": "False."
+            },
+            {
+                "answer": "SVG",
+                "correct": false,
+                "feedback": "False."
+            },
+            {
+                "answer": "Markdown",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "Rich Text",
+                "correct": false,
+                "feedback": "False."
+            }
+        ]
+    },
+    {
+        "question": "Which of these are used to typeset mathematics in Jupyter notebooks?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "SiliCoN",
+                "correct": false,
+                "feedback": "False."
+            },
+            {
+                "answer": "AcrYliC",
+                "correct": false,
+                "feedback": "False."
+            },
+            {
+                "answer": "MS Equation",
+                "correct": false,
+                "feedback": "False."
+            },
+            {
+                "answer": "LaTeX",
+                "correct": true,
+                "feedback": "Correct."
+            }
+        ]
+    },
+    {
+        "question": "Which of the following are used to create functional code blocks in Python?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "curly braces {}",
+                "correct": false,
+                "feedback": "Curly braces are used to group code in C, C++, and other languages, but not Python"
+            },
+            {
+                "answer": "parentheses ()",
+                "correct": false,
+                "feedback": "False."
+            },
+            {
+                "answer": "blank lines",
+                "correct": false,
+                "feedback": "Blank lines can help distinguish the end of code blocks visually, but do not affect the functional grouping"
+            },
+            {
+                "answer": "indentation",
+                "correct": true,
+                "feedback": "Correct."
+            }
+        ]
+    },
+    {
+        "question": "Choose all of the following that are used to create comments in Python:",
+        "type": "many_choice",
+        "answers": [
+            {
+                "answer": "//",
+                "correct": false,
+                "feedback": "Incorrect. This is the format of a single-line comment in C."
+            },
+            {
+                "answer": "# comment",
+                "correct": true,
+                "feedback": "Correct. A single hash is used to create a single-line comment"
+            },
+            {
+                "answer": "''' comment'''",
+                "correct": true,
+                "feedback": "Correct. This is used for multi-line comments."
+            },
+            {
+                "answer": "/* comment */",
+                "correct": false,
+                "feedback": "Incorrect. This is a C-style comment."
+            }
+        ]
+    },
+    {
+        "question": "Determine the output of the following Python code:",
+	      "code": "a=\"1\"\nb=\"2\"\nprint(a+b)",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "1",
+                "correct": false,
+                "feedback": "No. When strings are operated on by +, they are concatenated."
+            },
+            {
+                "answer": "2",
+                "correct": false,
+                "feedback": "No. When strings are operated on by +, they are concatenated."
+            },
+            {
+                "answer": "3",
+                "correct": false,
+                "feedback": "No. When strings are operated on by +, they are concatenated."
+            },
+            {
+                "answer": "12",
+                "correct": true,
+                "feedback": "Yes. The + operator will concatenate the strings \"1\" and \"2\"."
+            },
+            {
+                "answer": "error",
+                "correct": false,
+                "feedback": "No. The + operator for strings performs string concatenation."
+            }
+        ]
+    },
+    {
+        "question": "What is the output of the following Python program?",
+        "code": "dogs=['Amber', 'Madden', 'Roxy', 'Annie']\nprint(dogs[2])",
+        "answers": [
+            {
+                "answer": "Amber",
+                "correct": false,
+                "feedback": "Because of 0-based indexing, Amber would be dogs[0]"
+            },
+            {
+                "answer": "Madden",
+                "correct": false,
+                "feedback": "Because of 0-based indexing, Madden would be dogs[1]"
+            },
+            {
+                "answer": "Roxy",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "Annie",
+                "correct": false,
+                "feedback": "Because of 0-based indexing, Annie would be dogs[3]"
+            }
+        ],
+        "type": "multiple_choice"
+    },
+    {
+        "question": "What numbers are printed by the following Python program?",
+        "code": "for k in range(3,9,3):\n    print(k)",
+        "answers": [
+            {
+                "answer": "0, 3",
+                "correct": false,
+                "feedback": "No. The first argument is the starting value for the range. Try again."
+            },
+            {
+                "answer": "3, 6",
+                "correct": true,
+                "feedback": "Correct."
+            },
+            {
+                "answer": "3, 6, 9",
+                "correct": false,
+                "feedback": "No. Although the second argument (9) is the end of this range, remember that the end values are not included in the range."
+            },
+            {
+                "answer": "3, 9",
+                "correct": false,
+                "feedback": "No. The second argument (9) is the end of this range, and the third argument (3) is the increment."
+            }
+        ],
+        "type": "multiple_choice"
+    },
+    {
+        "question": "The variable mylist is a Python list. Choose which code snippet will append the item 3 to mylist.",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "code": "mylist+=3",
+                "correct": false,
+                "feedback": "The Python + operator is not defined for a list and an integer."
+            },
+            {
+                "code": "mylist+=[3]",
+                "correct": true,
+                "feedback": "Correct. When operating on two lists, the Python + operator performs list concatenation."
+            },
+            {
+                "code": "mylist+={3}",
+                "correct": false,
+                "feedback": "False. In Python, {3} will be a set, and the + operator is not defined for a list and a set."
+            }
+        ]
+    }
+]
+;
+    //var mydiv=document.getElementById("testDIV");//console.log(mydiv);// Make a random ID
+function makeid(length) {
+    var result           = [];
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
+    }
+    return result.join('');
+}
+
+// Choose a random subset of an array. Can also be used to shuffle the array
+function getRandomSubarray(arr, size) {
+    var shuffled = arr.slice(0), i = arr.length, temp, index;
+    while (i--) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+    }
+    return shuffled.slice(0, size);
+}
+function check_mc() {
+    var id=this.id.split('-')[0];
+
+    //console.log("In check_mc(), id="+id);
+    //console.log(event.srcElement.id)           
+    //console.log(event.srcElement.dataset.correct)   
+    //console.log(event.srcElement.dataset.feedback)
+
+    var label = event.srcElement;
+    //console.log(label, label.nodeName);
+    var depth=0;
+    while ((label.nodeName!="LABEL") && (depth<3)) {
+        label=label.parentElement;
+        //console.log(depth,label);
+        depth++;
+    }
+
+
+
+    var answers=label.parentElement.children;
+
+    //console.log(answers);
+
+
+    // Split behavior based on multiple choice vs many choice:
+    var fb = document.getElementById("fb"+id);
+    //console.log(id, ", got numcorrect=",fb.dataset.numcorrect);
+    if (fb.dataset.numcorrect==1) {
+        for (var i = 0; i < answers.length; i++) {
+            var child=answers[i];
+            //console.log(child);
+            child.className="MCButton";
+        }
+
+
+
+        if (label.dataset.correct=="true")   {
+            // console.log("Correct action");
+            if ("feedback" in label.dataset) {
+                fb.textContent=label.dataset.feedback;
+            } else{
+                fb.textContent="Correct!";
+            }
+            label.classList.add("correctButton");
+
+            fb.className="Feedback";
+            fb.classList.add("correct");
+
+        } else {
+            if ("feedback" in label.dataset) {
+                fb.textContent=label.dataset.feedback;
+            } else{
+                fb.textContent="Incorrect -- try again.";
+            }
+            //console.log("Error action");
+            label.classList.add("incorrectButton");
+            fb.className="Feedback";
+            fb.classList.add("incorrect");
+        }
+    }
+    else {
+        var reset = false;
+        var feedback;
+        if (label.dataset.correct=="true" )   {
+            if ("feedback" in label.dataset) {
+                feedback=label.dataset.feedback;
+            } else{
+                feedback="Correct!";
+            }
+            if (label.dataset.answered<=0) {
+                if (fb.dataset.answeredcorrect<0) {
+                    fb.dataset.answeredcorrect=1;
+                    reset=true;
+                } else {
+                    fb.dataset.answeredcorrect++;
+                }
+                if (reset) {
+                    for (var i = 0; i < answers.length; i++) {
+                        var child=answers[i];
+                        child.className="MCButton";
+                        child.dataset.answered=0;
+                    }
+                }
+                label.classList.add("correctButton");
+                label.dataset.answered=1;
+                fb.className="Feedback";
+                fb.classList.add("correct");
+
+            }
+        } else {
+            if ("feedback" in label.dataset) {
+                feedback=label.dataset.feedback;
+            } else{
+                feedback="Incorrect -- try again.";
+            }
+            if (fb.dataset.answeredcorrect>0) {
+                fb.dataset.answeredcorrect=-1;
+                reset=true;
+            } else {
+                fb.dataset.answeredcorrect--;
+            }
+
+            if (reset) {
+                for (var i = 0; i < answers.length; i++) {
+                    var child=answers[i];
+                    child.className="MCButton";
+                    child.dataset.answered=0;
+                }
+            }
+            label.classList.add("incorrectButton");
+            fb.className="Feedback";
+            fb.classList.add("incorrect");
+        }
+
+
+        var numcorrect=fb.dataset.numcorrect;
+        var answeredcorrect=fb.dataset.answeredcorrect;
+        if (answeredcorrect>=0) {
+            fb.textContent=feedback + " ["  + answeredcorrect + "/" + numcorrect + "]";
+        } else {
+            fb.textContent=feedback + " ["  + 0 + "/" + numcorrect + "]";
+        }
+
+
+    }
+
+    if (MathJax) {
+        var version=MathJax.version;
+        if (version[0]=="2") {
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        } else if (version[0] == "3") {
+            MathJax.typeset();
+        }
+    }
+
+}
+
+function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
+    var shuffled;
+    if (shuffle_answers=="True") {
+        //console.log(shuffle_answers+" read as true");
+        shuffled=getRandomSubarray(qa.answers, qa.answers.length);
+    } else {
+        //console.log(shuffle_answers+" read as false");
+        shuffled=qa.answers;
+    }
+    
+
+    var num_correct=0;
+
+
+
+    shuffled.forEach((item, index, ans_array) => {
+        //console.log(answer);
+
+        // Make input element
+        var inp = document.createElement("input");
+        inp.type="radio";
+        inp.id="quizo"+id+index;
+        inp.style="display:none;";
+        aDiv.append(inp);
+
+        //Make label for input element
+        var lab = document.createElement("label");
+        lab.className="MCButton";
+        lab.id=id+ '-' +index;
+        lab.onclick=check_mc;
+        var aSpan = document.createElement('span');
+        aSpan.classsName="";
+        //qDiv.id="quizQn"+id+index;
+        if ("answer" in item) {
+            aSpan.innerHTML=item.answer;
+        }
+        lab.append(aSpan);
+
+        // Create div for code inside question
+        var codeSpan;
+        if ("code" in item){
+            codeSpan = document.createElement('span');
+            codeSpan.id="code"+id+index;
+            codeSpan.className="QuizCode";
+            var codePre = document.createElement('pre');
+            codeSpan.append(codePre);
+            var codeCode = document.createElement('code');
+            codePre.append(codeCode);
+            codeCode.innerHTML=item.code;
+            lab.append(codeSpan);
+            //console.log(codeSpan);
+        }
+
+        //lab.textContent=item.answer;
+
+        // Set the data attributes for the answer
+        lab.setAttribute('data-correct', item.correct);
+        if (item.correct) {
+            num_correct++;
+        }
+        if ("feedback" in item){
+            lab.setAttribute('data-feedback', item.feedback);
+        }
+        lab.setAttribute('data-answered', 0);
+
+        aDiv.append(lab);
+
+    });
+
+    if (num_correct>1) {
+        outerqDiv.className="ManyChoiceQn";
+    } else {
+        outerqDiv.className="MultipleChoiceQn";
+    }
+
+    return num_correct;
+
+}
+function check_numeric(ths, event) {
+
+    if (event.keyCode === 13) {
+        ths.blur();
+
+        var id=ths.id.split('-')[0];
+
+        var submission=ths.value;
+				if (submission.indexOf('/') != -1) {
+            sub_parts=submission.split('/');
+            //console.log(sub_parts);
+            submission=sub_parts[0]/sub_parts[1];
+        }
+        console.log("Reader entered", submission);
+
+        if ("precision" in ths.dataset) {
+            precision=ths.dataset.precision;
+            // console.log("1:", submission)
+            submission=Math.round((1*submission + Number.EPSILON)*10**precision)/ 10**precision; 
+            // console.log("Rounded to ", submission, " precision=", precision  );
+        }
+
+
+        //console.log("In check_numeric(), id="+id);
+        //console.log(event.srcElement.id)           
+        //console.log(event.srcElement.dataset.feedback)
+
+        var fb = document.getElementById("fb"+id);
+        fb.style.display="none";
+        fb.textContent="Incorrect -- try again.";
+
+        answers=JSON.parse(ths.dataset.answers);
+        console.log(answers);
+
+        var defaultFB="";
+        var correct;
+        var done=false;
+        answers.every(answer => {
+            console.log(answer.type);
+
+            correct=false;
+            // if (answer.type=="value"){
+            if ('value' in answer){
+                if (submission == answer.value) {
+                    fb.textContent=answer.feedback;
+                    correct=answer.correct;
+                    console.log(answer.correct);
+                    done=true;
+                }
+            // } else if (answer.type=="range") {
+            } else if ('range' in answer) {
+                console.log(answer.range);
+                if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
+                    fb.textContent=answer.feedback;
+                    correct=answer.correct;
+                    console.log(answer.correct);
+                    done=true;
+                }
+            } else if (answer.type=="default") {
+                defaultFB=answer.feedback;
+            }
+            if (done) {
+                return false; // Break out of loop if this has been marked correct
+            } else {
+                return true; // Keep looking for case that includes this as a correct answer
+            }
+        });
+
+        if ((!done) && (defaultFB != "")) {
+            fb.textContent=defaultFB;
+            console.log("Default feedback", defaultFB);
+        }
+
+        fb.style.display="block";
+        if (correct) {
+            ths.className="Input-text";
+            ths.classList.add("correctButton");
+            fb.className="Feedback";
+            fb.classList.add("correct");
+        } else {
+            ths.className="Input-text";
+            ths.classList.add("incorrectButton");
+            fb.className="Feedback";
+            fb.classList.add("incorrect");
+        }
+
+        if (MathJax) {
+            var version=MathJax.version;
+            if (version[0]=="2") {
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            } else if (version[0] == "3") {
+                MathJax.typeset();
+            }
+        }
+        return false;
+    }
+
+}
+
+function isValid(el,  charC) {
+		if (charC == 46) {
+				if (el.value.indexOf('.') === -1) {
+					  return true;
+				} else if (el.value.indexOf('/') != -1) {
+            parts=el.value.split('/');
+				    if (parts[1].indexOf('.') === -1) {
+					      return true;
+            }
+        }
+        else{
+					  return false;
+				}
+		} else if (charC == 47) {
+				if (el.value.indexOf('/') === -1) {
+            if ((el.value != "") && (el.value != ".")) {
+					      return true;
+            } else {
+					  return false;
+				    }
+        } else {
+            return false;
+        }
+		} else if (charC == 45) {
+        if (el.value == "" ) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+				if (charC > 31 && (charC < 48 || charC > 57))
+					  return false;
+		}
+		return true;
+}
+
+function numeric_keypress( evnt) {
+		var charC = (evnt.which) ? evnt.which : evnt.keyCode;
+
+    if (charC==13) {
+        check_numeric(this, evnt);
+    } else{
+		    return isValid(this, charC);
+    }
+}
+
+
+
+
+
+function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
+
+
+
+        //console.log(answer);
+
+    
+    outerqDiv.className="NumericQn";
+    aDiv.style.display='block';
+
+    var lab = document.createElement("label");
+    lab.className="InpLabel";
+    lab.textContent="Type numeric answer here:";
+    aDiv.append(lab);
+
+    var inp = document.createElement("input");
+    inp.type="text";
+    //inp.id="input-"+id;
+    inp.id=id+"-0";
+    inp.className="Input-text";
+    inp.setAttribute('data-answers', JSON.stringify(qa.answers) );
+    if ("precision" in qa) {
+        inp.setAttribute('data-precision', qa.precision);
+    }
+    aDiv.append(inp);
+    console.log(inp);
+
+    //inp.addEventListener("keypress", check_numeric);
+    //inp.addEventListener("keypress", numeric_keypress);
+    /*
+    inp.addEventListener("keypress", function(event) {
+        return numeric_keypress(this, event);
+    }
+                        );
+                        */
+    //inp.onkeypress="return numeric_keypress(this, event)";
+    inp.onkeypress=numeric_keypress;
+    inp.onpaste= event => false;
+
+    inp.addEventListener("focus", function(event) {
+        this.value="";
+        return false;
+    }
+                        );
+
+
+}
+function show_questions (json, mydiv) {
+    //var mydiv=document.getElementById(myid);
+    var shuffle_questions=mydiv.dataset.shufflequestions;
+    var num_questions=mydiv.dataset.numquestions;
+    var shuffle_answers=mydiv.dataset.shuffleanswers;
+    
+    if (num_questions>json.length) {
+        num_questions=json.length;
+    }
+    
+    var questions;
+    if ( (num_questions<json.length) || (shuffle_questions=="True") ) {
+        //console.log(num_questions+","+json.length);
+        questions=getRandomSubarray(json, num_questions);
+    } else {
+        questions=json;
+    }
+    
+    //console.log("SQ: "+shuffle_questions+", NQ: " + num_questions + ", SA: ", shuffle_answers);
+    
+    // Iterate over questions
+    questions.forEach((qa, index, array) => {
+        //console.log(qa.question); 
+
+        var id = makeid(8);
+        //console.log(id);
+
+
+        // Create Div to contain question and answers
+        var iDiv = document.createElement('div');
+        iDiv.id = 'quizWrap'+id+index;
+        iDiv.className='Quiz';
+        mydiv.appendChild(iDiv);
+        // iDiv.innerHTML=qa.question;
+
+        var outerqDiv = document.createElement('div');
+        outerqDiv.id="OuterquizQn"+id+index;
+        //qDiv.textContent=qa.question;
+        iDiv.append(outerqDiv);
+
+        // Create div to contain question part
+        var qDiv = document.createElement('div');
+        qDiv.id="quizQn"+id+index;
+        //qDiv.textContent=qa.question;
+        qDiv.innerHTML=qa.question;
+        outerqDiv.append(qDiv);
+
+        // Create div for code inside question
+        var codeDiv;
+        if ("code" in qa){
+            codeDiv = document.createElement('div');
+            codeDiv.id="code"+id+index;
+            codeDiv.className="QuizCode";
+            var codePre = document.createElement('pre');
+            codeDiv.append(codePre);
+            var codeCode = document.createElement('code');
+            codePre.append(codeCode);
+            codeCode.innerHTML=qa.code;
+            outerqDiv.append(codeDiv);
+            console.log(codeDiv);
+        }
+
+
+        // Create div to contain answer part
+        var aDiv = document.createElement('div');
+        aDiv.id="quizAns"+id+index;
+        aDiv.className='Answer';
+        iDiv.append(aDiv);
+
+        console.log(qa.type);
+
+        var num_correct;
+        if (qa.type=="multiple_choice")  {
+            num_correct=make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id);
+        } else if   (qa.type=="many_choice"){
+            num_correct=make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id);
+        } else if  (qa.type=="numeric") {
+            console.log("numeric");
+            make_numeric(qa, outerqDiv, qDiv, aDiv, id);
+        }
+
+
+        //Make div for feedback
+        var fb = document.createElement("div");
+        fb.id="fb"+id;
+        //fb.style="font-size: 20px;text-align:center;";
+        fb.className="Feedback";
+        fb.setAttribute("data-answeredcorrect", 0);
+        fb.setAttribute("data-numcorrect", num_correct);
+        iDiv.append(fb);
+
+
+    });
+    if (MathJax) {
+        var version=MathJax.version;
+        if (version[0]=="2") {
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        } else if (version[0] == "3") {
+            MathJax.typeset();
+        }
+    }
+    return false;
+}
+
+        //console.log(element);
+        {
+        const jmscontroller = new AbortController();
+        const signal = jmscontroller.signal;
+
+        setTimeout(() => jmscontroller.abort(), 5000);
+
+        fetch("https://raw.githubusercontent.com/jmshea/intro-data-science-for-engineers/main/questions/ch1.json", {signal})
+        .then(response => response.json())
+        .then(json => show_questions(json, aLEiiCKfOwsL))
+        .catch(err => {
+        console.log("Fetch error or timeout");
+        show_questions(questionsaLEiiCKfOwsL, aLEiiCKfOwsL);
+        });
+        }
+        </script>
+        </div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="TQipRrQlCTvo" data-shufflequestions="False" data-shuffleanswers="True" data-numquestions="2"><style>
+:root {
+    --medium-slate-blue: #6f78ffff;
+    --orange-pantone: #f75c03ff;
+    --russian-violet: #392061ff;
+    --maximum-yellow-red: #ffc857ff;
+    --viridian-green: #119da4ff;
+    --incorrect-red: #c80202;
+    --correct-green: #009113;
+}
+
+
+.Quiz {
+     max-width: 600px;
+     margin-top: 15px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 15px;
+     padding-bottom: 4px;
+     padding-top: 4px;
+     line-height: 1.1;
+     font-size: 16pt;
+}
+
+.QuizCode {
+    font-size: 14pt;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.QuizCode > pre {
+    padding: 4px;
+}
+.Answer{
+     margin: 10px 0;
+     display: grid;
+     grid-template-columns: auto auto;
+     grid-gap: 10px;
+}
+.Feedback{
+     font-size: 16pt;
+     text-align:center;
+ }
+
+.Input {
+    align:left;
+    font-size: 20pt;
+}
+.Input-text {
+    display: block;
+    margin: 10px;
+    color: inherit;
+    width: 140px;
+    background-color: #c0c0c0;
+    color: #fff;
+    padding: 5px;
+    padding-left: 10px;
+
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: inherit;
+    line-height: 20pt;
+    border: none;
+    border-radius: 0.2rem;
+    transition: box-shadow 0.1s);
+}
+
+ .Input-text:focus {
+     outline: none;
+     background-color: #c0c0c0;
+     box-shadow: 0.6rem 0.8rem 1.4rem -0.5rem #999999;
+ }
+
+ .MCButton{
+     background: #fafafa;
+     border: 1px solid #eee;
+     border-radius: 10px;
+     padding: 10px;
+     font-size: 16px;
+     cursor: pointer;
+     text-align: center;
+ }
+ .MultipleChoiceQn {
+     padding: 10px;
+     background: var(--medium-slate-blue);
+     color: #fafafa;
+     border-radius: 10px;
+ }
+ .ManyChoiceQn {
+     padding: 10px;
+     background: var(--orange-pantone);
+     color: #fafafa;
+     border-radius: 10px;
+ }
+ .NumericQn {
+     padding: 10px;
+     background: var(--russian-violet);
+     color: #fafafa;
+     border-radius: 10px;
+ }
+.InpLabel {
+     line-height: 34px;
+     float:left;
+     margin-right: 10px;
+     color: #101010;
+     font-size: 15pt;
+}
+.incorrect {
+    color: var(--incorrect-red);
+}
+.correct {
+    color: var(--correct-green);
+}
+.correctButton {
+    background: var(--correct-green);
+    color: #fafafa;
+    box-shadow: inset 0px 0px 5px #555555;
+    outline: none;
+}
+.incorrectButton {
+    background: var(--incorrect-red);
+    color: #fafafa;
+    box-shadow: inset 0px 0px 5px #555555;
+    outline: none;
+}
+
+
+</style><script type="text/Javascript">questionsTQipRrQlCTvo=[
+    {
+        "question": "Which of these cannot be a probability?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "1",
+                "correct": false,
+                "feedback": "This is a number between 0 and 1, so it can be probability."
+            },
+            {
+                "answer": "-0.5",
+                "correct": true,
+                "feedback": "Correct! Probabilities must be numbers between 0 and 1."
+            },
+            {
+                "answer": "0",
+                "correct": false,
+                "feedback": "This is a number between 0 and 1, so it can be probability."
+            },
+            {
+                "answer": "0.5",
+                "correct": false,
+                "feedback": "This is a number between 0 and 1, so it can be probability."
+            }
+        ]
+    },{
+        "question": "True or False: Relative frequencies can only take values  between 0 and 1.",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "True",
+                "correct": true,
+                "feedback": "Correct. Relative frequencies are a proportion of the total and thus (like probabilities) take values between 0 and 1."
+            },
+            {
+                "answer": "False",
+                "correct": false,
+                "feedback": "Incorrect. Relative frequencies are a proportion of the total and thus (like probabilities) take values between 0 and 1."
+            }
+        ]
+    },
+
+    {
+        "question": "Determine the relative frequency of the outcome 3 in the following data set:\n\n2,3,5,2,3",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "answer": "2",
+                "correct": false,
+                "feedback": "Relative frequency is the proportion of experiments in which an outcome occurs. It is always between 0 and 1."
+            },
+            {
+                "answer": "0.6",
+                "correct": false,
+                "feedback": "Relative frequency is the proportion of experiments in which an outcome occurs. Count the number of times that outcome 3 occurred and divide by the total number of experiments."
+            },
+            {
+                "answer": "0.4",
+                "correct": true,
+                "feedback": "Correct! The outcome 3 occurred 2 times out of 5 experiments, so the relative frequency is 2/5=0.4."
+            },
+            {
+                "answer": "0",
+                "correct": false,
+                "feedback": "Relative frequency is the proportion of experiments in which an outcome occurs. Since 3 occured, that proportion will not be 0."
+            }
+        ]
+    }
+]
+;
+    //var mydiv=document.getElementById("testDIV");//console.log(mydiv);// Make a random ID
+function makeid(length) {
+    var result           = [];
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result.push(characters.charAt(Math.floor(Math.random() *  charactersLength)));
+    }
+    return result.join('');
+}
+
+// Choose a random subset of an array. Can also be used to shuffle the array
+function getRandomSubarray(arr, size) {
+    var shuffled = arr.slice(0), i = arr.length, temp, index;
+    while (i--) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+    }
+    return shuffled.slice(0, size);
+}
+function check_mc() {
+    var id=this.id.split('-')[0];
+
+    //console.log("In check_mc(), id="+id);
+    //console.log(event.srcElement.id)           
+    //console.log(event.srcElement.dataset.correct)   
+    //console.log(event.srcElement.dataset.feedback)
+
+    var label = event.srcElement;
+    //console.log(label, label.nodeName);
+    var depth=0;
+    while ((label.nodeName!="LABEL") && (depth<3)) {
+        label=label.parentElement;
+        //console.log(depth,label);
+        depth++;
+    }
+
+
+
+    var answers=label.parentElement.children;
+
+    //console.log(answers);
+
+
+    // Split behavior based on multiple choice vs many choice:
+    var fb = document.getElementById("fb"+id);
+    //console.log(id, ", got numcorrect=",fb.dataset.numcorrect);
+    if (fb.dataset.numcorrect==1) {
+        for (var i = 0; i < answers.length; i++) {
+            var child=answers[i];
+            //console.log(child);
+            child.className="MCButton";
+        }
+
+
+
+        if (label.dataset.correct=="true")   {
+            // console.log("Correct action");
+            if ("feedback" in label.dataset) {
+                fb.textContent=label.dataset.feedback;
+            } else{
+                fb.textContent="Correct!";
+            }
+            label.classList.add("correctButton");
+
+            fb.className="Feedback";
+            fb.classList.add("correct");
+
+        } else {
+            if ("feedback" in label.dataset) {
+                fb.textContent=label.dataset.feedback;
+            } else{
+                fb.textContent="Incorrect -- try again.";
+            }
+            //console.log("Error action");
+            label.classList.add("incorrectButton");
+            fb.className="Feedback";
+            fb.classList.add("incorrect");
+        }
+    }
+    else {
+        var reset = false;
+        var feedback;
+        if (label.dataset.correct=="true" )   {
+            if ("feedback" in label.dataset) {
+                feedback=label.dataset.feedback;
+            } else{
+                feedback="Correct!";
+            }
+            if (label.dataset.answered<=0) {
+                if (fb.dataset.answeredcorrect<0) {
+                    fb.dataset.answeredcorrect=1;
+                    reset=true;
+                } else {
+                    fb.dataset.answeredcorrect++;
+                }
+                if (reset) {
+                    for (var i = 0; i < answers.length; i++) {
+                        var child=answers[i];
+                        child.className="MCButton";
+                        child.dataset.answered=0;
+                    }
+                }
+                label.classList.add("correctButton");
+                label.dataset.answered=1;
+                fb.className="Feedback";
+                fb.classList.add("correct");
+
+            }
+        } else {
+            if ("feedback" in label.dataset) {
+                feedback=label.dataset.feedback;
+            } else{
+                feedback="Incorrect -- try again.";
+            }
+            if (fb.dataset.answeredcorrect>0) {
+                fb.dataset.answeredcorrect=-1;
+                reset=true;
+            } else {
+                fb.dataset.answeredcorrect--;
+            }
+
+            if (reset) {
+                for (var i = 0; i < answers.length; i++) {
+                    var child=answers[i];
+                    child.className="MCButton";
+                    child.dataset.answered=0;
+                }
+            }
+            label.classList.add("incorrectButton");
+            fb.className="Feedback";
+            fb.classList.add("incorrect");
+        }
+
+
+        var numcorrect=fb.dataset.numcorrect;
+        var answeredcorrect=fb.dataset.answeredcorrect;
+        if (answeredcorrect>=0) {
+            fb.textContent=feedback + " ["  + answeredcorrect + "/" + numcorrect + "]";
+        } else {
+            fb.textContent=feedback + " ["  + 0 + "/" + numcorrect + "]";
+        }
+
+
+    }
+
+    if (MathJax) {
+        var version=MathJax.version;
+        if (version[0]=="2") {
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        } else if (version[0] == "3") {
+            MathJax.typeset();
+        }
+    }
+
+}
+
+function make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id) {
+    var shuffled;
+    if (shuffle_answers=="True") {
+        //console.log(shuffle_answers+" read as true");
+        shuffled=getRandomSubarray(qa.answers, qa.answers.length);
+    } else {
+        //console.log(shuffle_answers+" read as false");
+        shuffled=qa.answers;
+    }
+    
+
+    var num_correct=0;
+
+
+
+    shuffled.forEach((item, index, ans_array) => {
+        //console.log(answer);
+
+        // Make input element
+        var inp = document.createElement("input");
+        inp.type="radio";
+        inp.id="quizo"+id+index;
+        inp.style="display:none;";
+        aDiv.append(inp);
+
+        //Make label for input element
+        var lab = document.createElement("label");
+        lab.className="MCButton";
+        lab.id=id+ '-' +index;
+        lab.onclick=check_mc;
+        var aSpan = document.createElement('span');
+        aSpan.classsName="";
+        //qDiv.id="quizQn"+id+index;
+        if ("answer" in item) {
+            aSpan.innerHTML=item.answer;
+        }
+        lab.append(aSpan);
+
+        // Create div for code inside question
+        var codeSpan;
+        if ("code" in item){
+            codeSpan = document.createElement('span');
+            codeSpan.id="code"+id+index;
+            codeSpan.className="QuizCode";
+            var codePre = document.createElement('pre');
+            codeSpan.append(codePre);
+            var codeCode = document.createElement('code');
+            codePre.append(codeCode);
+            codeCode.innerHTML=item.code;
+            lab.append(codeSpan);
+            //console.log(codeSpan);
+        }
+
+        //lab.textContent=item.answer;
+
+        // Set the data attributes for the answer
+        lab.setAttribute('data-correct', item.correct);
+        if (item.correct) {
+            num_correct++;
+        }
+        if ("feedback" in item){
+            lab.setAttribute('data-feedback', item.feedback);
+        }
+        lab.setAttribute('data-answered', 0);
+
+        aDiv.append(lab);
+
+    });
+
+    if (num_correct>1) {
+        outerqDiv.className="ManyChoiceQn";
+    } else {
+        outerqDiv.className="MultipleChoiceQn";
+    }
+
+    return num_correct;
+
+}
+function check_numeric(ths, event) {
+
+    if (event.keyCode === 13) {
+        ths.blur();
+
+        var id=ths.id.split('-')[0];
+
+        var submission=ths.value;
+				if (submission.indexOf('/') != -1) {
+            sub_parts=submission.split('/');
+            //console.log(sub_parts);
+            submission=sub_parts[0]/sub_parts[1];
+        }
+        console.log("Reader entered", submission);
+
+        if ("precision" in ths.dataset) {
+            precision=ths.dataset.precision;
+            // console.log("1:", submission)
+            submission=Math.round((1*submission + Number.EPSILON)*10**precision)/ 10**precision; 
+            // console.log("Rounded to ", submission, " precision=", precision  );
+        }
+
+
+        //console.log("In check_numeric(), id="+id);
+        //console.log(event.srcElement.id)           
+        //console.log(event.srcElement.dataset.feedback)
+
+        var fb = document.getElementById("fb"+id);
+        fb.style.display="none";
+        fb.textContent="Incorrect -- try again.";
+
+        answers=JSON.parse(ths.dataset.answers);
+        console.log(answers);
+
+        var defaultFB="";
+        var correct;
+        var done=false;
+        answers.every(answer => {
+            console.log(answer.type);
+
+            correct=false;
+            // if (answer.type=="value"){
+            if ('value' in answer){
+                if (submission == answer.value) {
+                    fb.textContent=answer.feedback;
+                    correct=answer.correct;
+                    console.log(answer.correct);
+                    done=true;
+                }
+            // } else if (answer.type=="range") {
+            } else if ('range' in answer) {
+                console.log(answer.range);
+                if ((submission >= answer.range[0]) && (submission < answer.range[1])) {
+                    fb.textContent=answer.feedback;
+                    correct=answer.correct;
+                    console.log(answer.correct);
+                    done=true;
+                }
+            } else if (answer.type=="default") {
+                defaultFB=answer.feedback;
+            }
+            if (done) {
+                return false; // Break out of loop if this has been marked correct
+            } else {
+                return true; // Keep looking for case that includes this as a correct answer
+            }
+        });
+
+        if ((!done) && (defaultFB != "")) {
+            fb.textContent=defaultFB;
+            console.log("Default feedback", defaultFB);
+        }
+
+        fb.style.display="block";
+        if (correct) {
+            ths.className="Input-text";
+            ths.classList.add("correctButton");
+            fb.className="Feedback";
+            fb.classList.add("correct");
+        } else {
+            ths.className="Input-text";
+            ths.classList.add("incorrectButton");
+            fb.className="Feedback";
+            fb.classList.add("incorrect");
+        }
+
+        if (MathJax) {
+            var version=MathJax.version;
+            if (version[0]=="2") {
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            } else if (version[0] == "3") {
+                MathJax.typeset();
+            }
+        }
+        return false;
+    }
+
+}
+
+function isValid(el,  charC) {
+		if (charC == 46) {
+				if (el.value.indexOf('.') === -1) {
+					  return true;
+				} else if (el.value.indexOf('/') != -1) {
+            parts=el.value.split('/');
+				    if (parts[1].indexOf('.') === -1) {
+					      return true;
+            }
+        }
+        else{
+					  return false;
+				}
+		} else if (charC == 47) {
+				if (el.value.indexOf('/') === -1) {
+            if ((el.value != "") && (el.value != ".")) {
+					      return true;
+            } else {
+					  return false;
+				    }
+        } else {
+            return false;
+        }
+		} else if (charC == 45) {
+        if (el.value == "" ) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+				if (charC > 31 && (charC < 48 || charC > 57))
+					  return false;
+		}
+		return true;
+}
+
+function numeric_keypress( evnt) {
+		var charC = (evnt.which) ? evnt.which : evnt.keyCode;
+
+    if (charC==13) {
+        check_numeric(this, evnt);
+    } else{
+		    return isValid(this, charC);
+    }
+}
+
+
+
+
+
+function make_numeric(qa, outerqDiv, qDiv, aDiv, id) {
+
+
+
+        //console.log(answer);
+
+    
+    outerqDiv.className="NumericQn";
+    aDiv.style.display='block';
+
+    var lab = document.createElement("label");
+    lab.className="InpLabel";
+    lab.textContent="Type numeric answer here:";
+    aDiv.append(lab);
+
+    var inp = document.createElement("input");
+    inp.type="text";
+    //inp.id="input-"+id;
+    inp.id=id+"-0";
+    inp.className="Input-text";
+    inp.setAttribute('data-answers', JSON.stringify(qa.answers) );
+    if ("precision" in qa) {
+        inp.setAttribute('data-precision', qa.precision);
+    }
+    aDiv.append(inp);
+    console.log(inp);
+
+    //inp.addEventListener("keypress", check_numeric);
+    //inp.addEventListener("keypress", numeric_keypress);
+    /*
+    inp.addEventListener("keypress", function(event) {
+        return numeric_keypress(this, event);
+    }
+                        );
+                        */
+    //inp.onkeypress="return numeric_keypress(this, event)";
+    inp.onkeypress=numeric_keypress;
+    inp.onpaste= event => false;
+
+    inp.addEventListener("focus", function(event) {
+        this.value="";
+        return false;
+    }
+                        );
+
+
+}
+function show_questions (json, mydiv) {
+    //var mydiv=document.getElementById(myid);
+    var shuffle_questions=mydiv.dataset.shufflequestions;
+    var num_questions=mydiv.dataset.numquestions;
+    var shuffle_answers=mydiv.dataset.shuffleanswers;
+    
+    if (num_questions>json.length) {
+        num_questions=json.length;
+    }
+    
+    var questions;
+    if ( (num_questions<json.length) || (shuffle_questions=="True") ) {
+        //console.log(num_questions+","+json.length);
+        questions=getRandomSubarray(json, num_questions);
+    } else {
+        questions=json;
+    }
+    
+    //console.log("SQ: "+shuffle_questions+", NQ: " + num_questions + ", SA: ", shuffle_answers);
+    
+    // Iterate over questions
+    questions.forEach((qa, index, array) => {
+        //console.log(qa.question); 
+
+        var id = makeid(8);
+        //console.log(id);
+
+
+        // Create Div to contain question and answers
+        var iDiv = document.createElement('div');
+        iDiv.id = 'quizWrap'+id+index;
+        iDiv.className='Quiz';
+        mydiv.appendChild(iDiv);
+        // iDiv.innerHTML=qa.question;
+
+        var outerqDiv = document.createElement('div');
+        outerqDiv.id="OuterquizQn"+id+index;
+        //qDiv.textContent=qa.question;
+        iDiv.append(outerqDiv);
+
+        // Create div to contain question part
+        var qDiv = document.createElement('div');
+        qDiv.id="quizQn"+id+index;
+        //qDiv.textContent=qa.question;
+        qDiv.innerHTML=qa.question;
+        outerqDiv.append(qDiv);
+
+        // Create div for code inside question
+        var codeDiv;
+        if ("code" in qa){
+            codeDiv = document.createElement('div');
+            codeDiv.id="code"+id+index;
+            codeDiv.className="QuizCode";
+            var codePre = document.createElement('pre');
+            codeDiv.append(codePre);
+            var codeCode = document.createElement('code');
+            codePre.append(codeCode);
+            codeCode.innerHTML=qa.code;
+            outerqDiv.append(codeDiv);
+            console.log(codeDiv);
+        }
+
+
+        // Create div to contain answer part
+        var aDiv = document.createElement('div');
+        aDiv.id="quizAns"+id+index;
+        aDiv.className='Answer';
+        iDiv.append(aDiv);
+
+        console.log(qa.type);
+
+        var num_correct;
+        if (qa.type=="multiple_choice")  {
+            num_correct=make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id);
+        } else if   (qa.type=="many_choice"){
+            num_correct=make_mc(qa, shuffle_answers, outerqDiv, qDiv, aDiv, id);
+        } else if  (qa.type=="numeric") {
+            console.log("numeric");
+            make_numeric(qa, outerqDiv, qDiv, aDiv, id);
+        }
+
+
+        //Make div for feedback
+        var fb = document.createElement("div");
+        fb.id="fb"+id;
+        //fb.style="font-size: 20px;text-align:center;";
+        fb.className="Feedback";
+        fb.setAttribute("data-answeredcorrect", 0);
+        fb.setAttribute("data-numcorrect", num_correct);
+        iDiv.append(fb);
+
+
+    });
+    if (MathJax) {
+        var version=MathJax.version;
+        if (version[0]=="2") {
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        } else if (version[0] == "3") {
+            MathJax.typeset();
+        }
+    }
+    return false;
+}
+
+        //console.log(element);
+        {
+        const jmscontroller = new AbortController();
+        const signal = jmscontroller.signal;
+
+        setTimeout(() => jmscontroller.abort(), 5000);
+
+        fetch("https://raw.githubusercontent.com/jmshea/intro-data-science-for-engineers/main/questions/ch2.json", {signal})
+        .then(response => response.json())
+        .then(json => show_questions(json, TQipRrQlCTvo))
+        .catch(err => {
+        console.log("Fetch error or timeout");
+        show_questions(questionsTQipRrQlCTvo, TQipRrQlCTvo);
+        });
+        }
+        </script>
+        </div></div>
+</div>
+<p><strong>Key Take-aways:</strong></p>
+<ul class="simple">
+<li><p>Pandas stores data in dataframes. <strong>Dataframes store tabular data, like spreadsheets or database tables.</strong></p></li>
+<li><p><strong>Pandas can import data from standard file formats</strong>, including comma-separated value (CSV) files and Excel files.</p></li>
+<li><p><strong>Scatter plots are useful for initial data exploration and identifying outliers.</strong></p></li>
+<li><p><strong>Partitions divide data into disjoint subsets.</strong></p></li>
+<li><p><strong>Summary statistics represent a group of data by a single number.</strong></p></li>
+<li><p><strong>Common summary statistics minimize a measure of error from the summary statistic to the data:</strong></p>
+<ul>
+<li><p>Mode minimizes the <em>error count</em>.</p></li>
+<li><p>Median minimizes the <em>sum of absolute errors</em>.</p></li>
+<li><p>Average, or sample mean, minimizes the <em>sum of squared errors</em>.</p></li>
+</ul>
+</li>
+<li><p>A <strong>statistical hypothesis is a hypothesis that is testable using data.</strong></p></li>
+<li><p>A <strong>binary hypothesis test is a statistical test that decides between two competing statistical hypotheses.</strong></p>
+<ul>
+<li><p>A <strong>null hypothesis, denoted <span class="math notranslate nohighlight">\(H_0\)</span> assumes that the data being evaluated come from the same underlying random phenomena</strong>. Observed differences are caused by random sampling.</p></li>
+</ul>
+</li>
+<li><p><strong>Resampling is a model-free technique to draw new samples of data for use in statistical testing.</strong></p>
+<ul>
+<li><p><strong>Bootstrap resampling is when data is drawn from the pooled data with replacement.</strong></p></li>
+</ul>
+</li>
+<li><p><strong>Two-dimensional statistical methods can be used to directly work with pairs of data</strong> through techniques such as curve fitting.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spaced-repetition-review">
+   Spaced Repetition Review
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Andreas Haraldsrud
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>

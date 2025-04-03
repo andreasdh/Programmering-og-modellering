@@ -1,0 +1,1354 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Modelleringsoppgave II &#8212; Programmering og modellering</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/oppgaver/modelleringsprosjekt2';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Repetisjon I: Kjemioppgaver" href="../fagoppgaver/kjemioppgaver.html" />
+    <link rel="prev" title="Modelleringsoppgave I" href="modelleringsprosjekt1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lokker.html">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/statistikk.html">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/likninger.html">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/differensiallikninger.html">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/teknologi.html">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">
+                        En første kodesnutt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">
+                        Variabler og datatyper
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lister.html">
+                        Lister
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/if-tester.html">
+                        Vilkår (if-tester)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/lokker.html">
+                        Løkker
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/funksjoner.html">
+                        Funksjoner
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema2_kodestrukturering/klasser_objekter.html">
+                        Klasser og objekter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">
+                        Programmeringsverktøy
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/datasamlinger.html">
+                        Datasamlinger
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/plotting.html">
+                        Datahåndtering I: Visualisering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/lese_filer.html">
+                        Datahåndering II: Håndtere og visualisere data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/statistikk.html">
+                        Datahåndering III: Statistikk
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema3_datahandtering/maskinlaring.html">
+                        Datahåndtering IV: Maskinlæring
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/algoritmer.html">
+                        Matematiske algoritmer og stokastiske simuleringer
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/likninger.html">
+                        Likninger og nullpunkter
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/derivasjon.html">
+                        Numerisk derivasjon
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/integrasjon.html">
+                        Numerisk integrasjon (ekstrastoff)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema4_algoritmer/symbolsk_utregning.html">
+                        Symbolsk utregning (CAS)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/diskret_modellering.html">
+                        Modellering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/regresjonsmodeller.html">
+                        Regresjonsmodeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tema5_modellering/differensiallikninger.html">
+                        Differensiallikninger og kontinuerlige modeller
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="differensiallikninger_oppgaver.html">
+                        Differensiallikninger (oppgaver)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="maskinlaring_titanic_oppgaver.html">
+                        Maskinlæring med Titanic (oppgave)
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="statistikkprosjekt.html">
+                        Statistikkprosjekt
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="modelleringsprosjekt1.html">
+                        Modelleringsoppgave I
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Modelleringsoppgave II
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/kjemioppgaver.html">
+                        Repetisjon I: Kjemioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/biologioppgaver.html">
+                        Repetisjon II: Biologioppgaver
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../fagoppgaver/teknologi.html">
+                        Teknologi og programmering
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../datafiler.html">
+                        Datafiler
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../../_static/datalogo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/datalogo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 1 - Grunnleggende programmering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema1_grunnleggende_programmering/kom_i_gang.html">En første kodesnutt</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/tall_variabler.html">Variabler og datatyper</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz1.html">Quiz 1: Variabler og aritmetikk</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/lister.html">Lister</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz2.html">Quiz 2: Lister</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/if-tester.html">Vilkår (if-tester)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz3.html">Quiz 3: Vilkår (if-tester)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema1_grunnleggende_programmering/lokker.html">Løkker</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz4.html">Quiz 4: Løkker</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 2 - Kodestrukturering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema2_kodestrukturering/funksjoner.html">Funksjoner</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz5.html">Quiz 5: Funksjoner</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tema2_kodestrukturering/klasser_objekter.html">Klasser og objekter</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 3 - Datahåndtering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema1_grunnleggende_programmering/programmeringsverktoy.html">Programmeringsverktøy</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tema3_datahandtering/datasamlinger.html">Datasamlinger</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tema1_grunnleggende_programmering/quiz6.html">Quiz 6: Datasamlinger (arrayer og dictionarier)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/plotting.html">Datahåndtering I: Visualisering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/lese_filer.html">Datahåndering II: Håndtere og visualisere data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/statistikk.html">Datahåndering III: Statistikk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema3_datahandtering/maskinlaring.html">Datahåndtering IV: Maskinlæring</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 4 - Algoritmer</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/algoritmer.html">Matematiske algoritmer og stokastiske simuleringer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/likninger.html">Likninger og nullpunkter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/derivasjon.html">Numerisk derivasjon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/integrasjon.html">Numerisk integrasjon (ekstrastoff)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema4_algoritmer/symbolsk_utregning.html">Symbolsk utregning (CAS)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tema 5 - Modellering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/diskret_modellering.html">Modellering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/regresjonsmodeller.html">Regresjonsmodeller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tema5_modellering/differensiallikninger.html">Differensiallikninger og kontinuerlige modeller</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Oppgaver</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="differensiallikninger_oppgaver.html">Differensiallikninger (oppgaver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maskinlaring_titanic_oppgaver.html">Maskinlæring med Titanic (oppgave)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="statistikkprosjekt.html">Statistikkprosjekt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modelleringsprosjekt1.html">Modelleringsoppgave I</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modelleringsoppgave II</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Fagoppgaver</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/kjemioppgaver.html">Repetisjon I: Kjemioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/biologioppgaver.html">Repetisjon II: Biologioppgaver</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fagoppgaver/teknologi.html">Teknologi og programmering</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Datafiler</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../datafiler.html">Datafiler</a></li>
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../../_sources/docs/oppgaver/modelleringsprosjekt2.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Modelleringsoppgave II</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oppgaver">
+   Oppgaver
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oppgave-1-zombie-apokalypse-biologi">
+     Oppgave 1: Zombie-apokalypse (biologi)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#utgangspunkt">
+       Utgangspunkt
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#oppgave">
+       Oppgave
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oppgave-2-klimamodell-1-ozonlaget-kjemi">
+     Oppgave 2: Klimamodell 1 – Ozonlaget (kjemi)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fartslover">
+       Fartslover
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fartslover-for-dannelse-og-nedbrytning-av-ozon-i-stratosfaeren">
+       Fartslover for dannelse og nedbrytning av ozon i stratosfæren
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Oppgaver
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oppgave-3-klimamodell-ii-drivhuseffekten-fysikk">
+     Oppgave 3: Klimamodell II – Drivhuseffekten (fysikk)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oppgave-4-solsystemet-fysikk">
+     Oppgave 4: Solsystemet (fysikk)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#teoretisk-bakgrunn">
+       Teoretisk bakgrunn
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Oppgaver
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <section class="tex2jax_ignore mathjax_ignore" id="modelleringsoppgave-ii">
+<h1>Modelleringsoppgave II<a class="headerlink" href="#modelleringsoppgave-ii" title="Permalink to this heading">#</a></h1>
+<p>I dette prosjektet skal dere modellere en naturvitenskapelig sammenheng ved å bruke differensiallikninger. Prosjektet skal presenteres på en ryddig måte med teori, programkode og drøfting i Jupyter Notebook. Oppgavene er ment som en veiledning til momenter dere bør ha med, men rapporten skal ikke struktureres etter oppgavene. Alle oppgaver og sentrale momenter skal være en integrert del av en helhetlig rapport. Dere vil bli vurdert etter følgende kriterier:</p>
+<ul class="simple">
+<li><p>Koden virker og er lagt opp på en god måte.</p></li>
+<li><p>Koden er strukturert og oversiktlig.</p></li>
+<li><p>Det kommer fram at dere kan anvende grunnleggende programmering på en hensiktsmessig måte.</p></li>
+<li><p>Det kommer fram at dere forstår det realfaglige innholdet.</p></li>
+<li><p>Modellene som er brukt, er differensiallikninger.</p></li>
+<li><p>Rapporten er ryddig og oversiktlig. Rapporten skal ikke være inndelt etter <em>oppgaver</em>, men ha en klar struktur:</p>
+<ol class="arabic simple">
+<li><p>Introduksjon: Hva dreier prosjektet seg om. Hva skal du vise/gjøre?</p></li>
+<li><p>Hvilke metoder bruker du? Utled metodene.</p></li>
+<li><p>Beskrivelse, resultater og drøfting: Gjør rede for framgangsmåte og programmer. Drøft de ulike modellene: Begrensninger, forutsetninger, antakelser, konsekvenser. Hva innebærer en endring av de ulike parametrene?</p></li>
+<li><p>Konklusjon: Hva har du gjort, og hvordan? Kort oppsummering.</p></li>
+</ol>
+</li>
+<li><p>Alle figurer og grafer er oversiktlige med figurtekst, aksetitler o.l.</p></li>
+<li><p>Alle resultater er drøfta og redegjort for.</p></li>
+</ul>
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<p>Velg én av oppgavene nedenfor, eller foreslå en problemstilling for læreren. Problemstillingen må bli godkjent før dere går i gang med prosjektet.</p>
+<section id="oppgave-1-zombie-apokalypse-biologi">
+<h3>Oppgave 1: Zombie-apokalypse (biologi)<a class="headerlink" href="#oppgave-1-zombie-apokalypse-biologi" title="Permalink to this heading">#</a></h3>
+<p>Denne oppgava tar utgangspunkt i å modellere og simulere en menneskepopulasjon under en zombie-apokalypse. Gjør rede for begrensninger for modellene dine, og drøft hva de forteller oss om populasjonen.</p>
+<section id="utgangspunkt">
+<h4>Utgangspunkt<a class="headerlink" href="#utgangspunkt" title="Permalink to this heading">#</a></h4>
+<p>Vi befinner oss i en postapokalyptisk situasjon der verden har blitt utsatt for et virus som gjør mennesker om til zombier. Viruset smitter kun via blod, f.eks. ved bitt eller kloring fra zombier. Vi skal studere en avsideliggende landsby, Alexandria, som ligger i nærheten av Washington D.C., og som etter et zombie-utbrudd har blitt et tilfluktssted for 500 mennesker. De har tilgang til en del mat og våpen, og de har en mur rundt hele landsbyen som holder zombiene unna. Men de må også ut for å finne nye ressurser og andre mennesker som trenger hjelp, så de er aldri helt trygge.</p>
+</section>
+<section id="oppgave">
+<h4>Oppgave<a class="headerlink" href="#oppgave" title="Permalink to this heading">#</a></h4>
+<p>Modellen din kan inneholde mange ulike faktorer, og du står fritt til å legge til flere, dersom du begrunner det. Legg til én og én faktor, og test modellen etter hver gang. Kommenter populasjonsutviklinga etter hver nye faktor er lagt til. Her er et forslag til framgangsmåte:</p>
+<ol class="arabic simple">
+<li><p>Lag først et program der menneskene er trygge mot zombier, og der nye mennesker kan komme til ved fødsel og (mer sannsynlig) innvandring. Lag gjerne ett ledd i likninga som inkluderer begge disse faktorene.</p></li>
+<li><p>Legg inn en ressursbegrensning (bæreevne) for populasjonen. Hvilke faktorer påvirker denne?</p></li>
+<li><p>Menneskene kan også dø av sykdom, skade og alderdom (naturlig død). Legg dette inn i modellen, og tenk på hvor sannsynlig dette er (hvor god er tilgangen på medisiner, lege o.l.?).</p></li>
+<li><p>Nå skal du legge inn en zombiepopulasjon som lever i nærheten av Alexandria. Du kan selv bestemme hvor mange zombier som finnes og hvor sannsynlig det er at mennesker blir drept av en zombie. Zombiene fungerer som rovdyr, slik at menneskene ikke blir til zombier i denne modellen.</p></li>
+<li><p>Nå kan du legge inn muligheten for at mennesker blir til zombier hvis de blir bitt, men ikke revet i fillebiter. Det vil si at noen mennesker vil bli smitta, mens andre vil bli drept av zombiene. De som blir smitta, blir til zombier, og dermed øker zombiepopulasjonen.</p></li>
+<li><p>Alexandria kan slå tilbake mot zombiene. Legg inn en faktor som bidrar til at menneskene kan ta livet av zombier.</p></li>
+<li><p>I nærheten av Alexandria finner vi landsbyene Hilltop og Kingdom. Fra disse kan det komme forsterkninger til Alexandria ved behov. Inkluder dette i modellen din.</p></li>
+</ol>
+</section>
+</section>
+<section id="oppgave-2-klimamodell-1-ozonlaget-kjemi">
+<h3>Oppgave 2: Klimamodell 1 – Ozonlaget (kjemi)<a class="headerlink" href="#oppgave-2-klimamodell-1-ozonlaget-kjemi" title="Permalink to this heading">#</a></h3>
+<p>Vi kan også simulere kjemiske reaksjoner ved hjelp av modeller for reaksjonsfart. Disse modellene lar oss forutsi hvordan og hvor fort en kjemisk reaksjon vil gå. Dette kan brukes til å simulere alt fra industrielle prosesser til viktige reaksjoner i miljøet. Her skal vi se på modeller som kan forutsi hvordan det vil gå med ozonlaget i framtida.</p>
+<section id="fartslover">
+<h4>Fartslover<a class="headerlink" href="#fartslover" title="Permalink to this heading">#</a></h4>
+<p>Modeller for reaksjonsfart kaller vi <em>fartslover</em>. En fartslov beskriver endringen i konsentrasjon i en kjemisk reaksjon. La oss ta et enkelt eksempel der vi har to reaktanter og ett produkt:</p>
+<div class="math notranslate nohighlight">
+\[A + B \rightarrow C\]</div>
+<p>Fartsloven for denne reaksjonen må bestemmes eksperimentelt, og er derfor en <em>empirisk</em> lov. For eksempel kan endringen i konsentrasjonen til C være gitt ved:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d[C]}{dt} = k[A][B]\]</div>
+<p>Her betyr <span class="math notranslate nohighlight">\(\frac{d[C]}{dt}\)</span> den deriverte av [C] med hensyn på tid (c’(t)). Det vil si at endringen i konsentrasjonen til produktet C er avhengig av konsentrasjonen til begge reaktanter i like stor grad. Men det kunne jo være at endringen i [C] varierte mer med [A] enn med [B], eller for eksempel ikke med [A] i det hele tatt. Da kunne vi henholdsvis fått disse modellene:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d[C]}{dt} = k[A]^2[B]\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{d[C]}{dt} = k[B]\]</div>
+<p>Eksperimenter avgjør hvilken form vi gir fartslovene. Og dersom endringen av [C] er gitt ved <span class="math notranslate nohighlight">\(\frac{d[C]}{dt} = k[A][B]\)</span>, kan vi ut fra reaksjonslikningen utlede følgende sammenhenger (forklar hvorfor!):</p>
+<div class="math notranslate nohighlight">
+\[\frac{d[A]}{dt} = -k[A][B]\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{d[B]}{dt} = -k[A][B]\]</div>
+</section>
+<section id="fartslover-for-dannelse-og-nedbrytning-av-ozon-i-stratosfaeren">
+<h4>Fartslover for dannelse og nedbrytning av ozon i stratosfæren<a class="headerlink" href="#fartslover-for-dannelse-og-nedbrytning-av-ozon-i-stratosfaeren" title="Permalink to this heading">#</a></h4>
+<p>Den såkalte <em>Chapman-modellen</em> kan benyttes for å simulere produksjon og nedbrytning av ozon i stratosfæren. Den er basert på følgende reaksjonslikninger med tilhørende reaksjonskoeffisienter:</p>
+<div class="math notranslate nohighlight">
+\[O_2 \xrightarrow{uv} 2O\]</div>
+<div class="math notranslate nohighlight">
+\[O_2 + O + M \rightarrow O_3 + M\]</div>
+<div class="math notranslate nohighlight">
+\[O_3 \xrightarrow{uv'} O + O_2\]</div>
+<div class="math notranslate nohighlight">
+\[O + O_3 \rightarrow 2O_2\]</div>
+<p>hvor O, O<span class="math notranslate nohighlight">\(_2\)</span> og O<span class="math notranslate nohighlight">\(_3\)</span> er henholdsvis oksygen, dioksygen og ozon. M er en ikke-reagerende støtpartner, mens <span class="math notranslate nohighlight">\(h \nu\)</span> og <span class="math notranslate nohighlight">\(h \nu '\)</span> er energi tilført av UV-stråling med bølgelengde, <span class="math notranslate nohighlight">\(\lambda\)</span>, under 242 nm og 336 nm, henholdsvis.</p>
+<p>Den første reaksjonslikningen beskriver spaltingen av O<span class="math notranslate nohighlight">\(_2\)</span> til 2 O-atomer som resultat av UV-stråling. Den andre reaksjonslikningen viser den påfølgende reaksjonen mellom O<span class="math notranslate nohighlight">\(_2\)</span> og O som krever en kollisjon med M for å danne O<span class="math notranslate nohighlight">\(_3\)</span>, mens de to siste reaksjonslikningene viser hvordan O<span class="math notranslate nohighlight">\(_3\)</span> brytes ned henholdsvis som resultat av UV-stråling for å danne O og O<span class="math notranslate nohighlight">\(_2\)</span>, og gjennom reaksjon med O for produksjon av 2 O<span class="math notranslate nohighlight">\(_2\)</span>-molekyler.</p>
+<p>Fartslovene for [O], [O<span class="math notranslate nohighlight">\(_2\)</span>] og [O<span class="math notranslate nohighlight">\(_3\)</span>] er gitt ved henholdsvis</p>
+<div class="math notranslate nohighlight">
+\[\frac{d[\textrm{O}]}{dt} = 2 k_1 [\textrm{O}_2] - k_2 [\textrm{O}_2] [\textrm{O}] [\textrm{M}] + k_3 [\textrm{O}_3] - k_4 [\textrm{O}] [\textrm{O}_3\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{d[\textrm{O}_2]}{dt} = - k_1 [\textrm{O}_2] - k_2 [\textrm{O}_2] [\textrm{O}] [\textrm{M}] + k_3 [\textrm{O}_3] + 2 k_4 [\textrm{O}] [\textrm{O}_3]\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{d[\textrm{O}_3]}{dt} = k_2 [\textrm{O}_2] [\textrm{O}] [\textrm{M}] - k_3 [\textrm{O}_3] - k_4 [\textrm{O}] [\textrm{O}_3]\]</div>
+<p>Ratekonstantene er gitt som følger:</p>
+<div class="math notranslate nohighlight">
+\[k_1 = 3.0 \times 10^{-12} \textrm{ s}^{-1}\]</div>
+<div class="math notranslate nohighlight">
+\[k_2 = 1.2 \times 10^{-33} \textrm{ cm}^6 \textrm{ molekyler}^{-2} \textrm{ s}^{-1}\]</div>
+<div class="math notranslate nohighlight">
+\[k_3 = 5.5 \times 10^{-4} \textrm{ s}^{-1}\]</div>
+<div class="math notranslate nohighlight">
+\[k_4 = 6.9 \times 10^{-16} \textrm{ cm}^3 \textrm{ molekyler}^{-1} \textrm{ s}^{-1}\]</div>
+<p>Ratekonstantene er gitt ved omtrent 25 km høyde, hvor <span class="math notranslate nohighlight">\([\textrm{M}] \approx 9.0 \times 10^{17}\)</span> molekyler cm<span class="math notranslate nohighlight">\(^{-3}\)</span>. Systemet har følgende initialbetingelser:</p>
+<div class="math notranslate nohighlight">
+\[[\textrm{O}_2]_{t=0} = 0.21[\textrm{M}]\]</div>
+<div class="math notranslate nohighlight">
+\[[\textrm{O}]_{t=0} = 0\]</div>
+<div class="math notranslate nohighlight">
+\[[\textrm{O}_3]_{t=0} = 0\]</div>
+</section>
+<section id="id1">
+<h4>Oppgaver<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<p>a) Lag et program som beregner og plotter [O<span class="math notranslate nohighlight">\(_3\)</span>] og [O] som funksjon av tid i intervallet <span class="math notranslate nohighlight">\(t \in [0,100]\)</span> ved å benytte Forward Euler-algoritmen på fartslovene i teoridelen med de gitte initialbetingelsene og tidssteg <span class="math notranslate nohighlight">\(h = 0.001\)</span>. Plott med logaritmisk skala på <span class="math notranslate nohighlight">\(y\)</span>-aksen (<em>plt.yscale(‘log’)</em>).</p>
+<p>b) Beregn og plott de samme verdiene med en backward-metode (‘BDF) ved å bruke funksjonen <em>scipy.integrate.solve_ivp</em> fra Scipy-biblioteket for <span class="math notranslate nohighlight">\(t \in [0,10^8]\)</span>. Evaluer punktene for t = np.linspace(t0,tid_slutt,int(1E6)).</p>
+<p>c) Legg til justeringer i modellen eller søk og finn andre modeller du kan bruke. Ideer til endringer kan være å innkludere et økt utslipp av KFK-gasser (begrunn eventuelt hvorfor) og sammenlikninger av modellen med data og med andre modeller på internett.</p>
+</section>
+</section>
+<section id="oppgave-3-klimamodell-ii-drivhuseffekten-fysikk">
+<h3>Oppgave 3: Klimamodell II – Drivhuseffekten (fysikk)<a class="headerlink" href="#oppgave-3-klimamodell-ii-drivhuseffekten-fysikk" title="Permalink to this heading">#</a></h3>
+<p>Det som hovedsakelig varmer opp planeten vår, er sollys. Sola sender ut energi i form av elektromagnetisk stråling som treffer jordkloden. All elektromagnetisk stråling som treffer toppen av atmosfæren, har blitt målt til ca 1361 kW/m<span class="math notranslate nohighlight">\(^2\)</span> Hvor mye energi som treffer toppen av atmosfæren er nesten konstant, og har bare variert med 0.2 prosent på 400 år. Strålingen blir kalt for <em>solkonstanten</em> (K<span class="math notranslate nohighlight">\(_s\)</span>).</p>
+<p><img alt="sunlight_angle.png" src="https://www.uio.no/studier/emner/matnat/ifi/IN-KJM1900/h20/datafiler/sunlight_angle.png" /></p>
+<p>Energien som treffer planeten kan beregnes slik:</p>
+<div class="math notranslate nohighlight">
+\[ E_{inn} = K_s \cdot \pi R_{jorda}^2\]</div>
+<p>a) Forklar hva vi forutsetter om modellen vår dersom vi bruker uttrykket ovenfor til å beregne hvor mye energi som treffer jorda.</p>
+<p>Ikke all energi som treffer jorda, blir absorbert av jordas overflate. En del energi reflekteres tilbake på grunn av jordas <em>albedo</em>. Den absorberte energien kan beregnes slik:</p>
+<div class="math notranslate nohighlight">
+\[E_{absorbert} = K_s \cdot (1 - albedo) \cdot \pi R{_jorda}^2\]</div>
+<p>b) Forklar hvorfor vi kan uttrykke den absorberte energien som ovenfor.
+c) Beregn energien som treffer jorda, og energien som jorda absorberer. Hvor mange prosent blir absorbert?</p>
+<p>Alle legemer sender også ut (emitterer) energi. Dette kan beskrives med Stefan-Boltzmann-loven:</p>
+<div class="math notranslate nohighlight">
+\[\phi=\sigma T^4\]</div>
+<p><span class="math notranslate nohighlight">\(\sigma\)</span> er Stefan-Boltzmann constant. <span class="math notranslate nohighlight">\(\sigma = 5.670373 \cdot 10^{-8} W / (m^2K^4)\)</span></p>
+<div class="math notranslate nohighlight">
+\[E_{emittert} = \sigma T^4 \cdot 4\pi R{_jorda}^2\]</div>
+<p>På grunn av energiprinsippet, loven om at energi er konstant, må energi inn på planeten være det samme som energi ut. Da har vi at:</p>
+<div class="math notranslate nohighlight">
+\[ E_{absorbert}= E_{emittert}\]</div>
+<p>d) Bruk dette energiprinsippet og uttrykkene ovenfor til å finne et uttrykk for den gjennomsnittlige temperaturen til jordkloden. Kommenter svaret og forklar hvilken modell du nå har brukt.</p>
+<p>Modellen vi nå har brukt, tar ikke hensyn til atmosfæren. Når vi legger til atmosfæren, kan vi først gjøre følgende forenklinger:</p>
+<ol class="arabic simple">
+<li><p>Atmosfæren har en konstant temperatur. Det vil si at vi modeller atmosfæren som en stor blokk hvor hele blokken har den samme temperaturen.<br></p></li>
+<li><p>Atmosfæren er fullstendig gjennomsiktig for stråling fra sola. Det vil si at all stråling fra sola treffer jordoverflaten. <br></p></li>
+<li><p>Atmosfæren tar imot all strålinga fra jorden.</p></li>
+</ol>
+<p><img alt="Atmosfære.png" src="https://www.uio.no/studier/emner/matnat/ifi/IN-KJM1900/h20/datafiler/atmosferestraling.png" /></p>
+<p>e) Legg til atmosfæren i modellen din. Du må fortsatt bruke energibevaring som utgangspunkt, men beregne energi inn og ut av atmosfæren hver for seg. Da får du to likninger som du kan kombinere for å få en løsning or temperaturen.</p>
+<p>f) Nå kan du legge til flere faktorer i modellen din, f.eks. flere lag i atmosfæren. Her kan du lage modeller selv, eller du kan søke opp informasjon om ulike klimamodeller. Finn temperaturen for hver modell, og drøft modellene og resultatene underveis. Det er viktig at minst en av modellene du bruker i prosjektet er en difflikning.</p>
+</section>
+<section id="oppgave-4-solsystemet-fysikk">
+<h3>Oppgave 4: Solsystemet (fysikk)<a class="headerlink" href="#oppgave-4-solsystemet-fysikk" title="Permalink to this heading">#</a></h3>
+<p>Solsystemet har lenge vært til fascinasjon og undring for mennesker. Selv i et så stort system som solsystemet kan en simulere planetenes baner med god tilnærming ved å kun bruke Newtons lover!</p>
+<section id="teoretisk-bakgrunn">
+<h4>Teoretisk bakgrunn<a class="headerlink" href="#teoretisk-bakgrunn" title="Permalink to this heading">#</a></h4>
+<p>Hvis vi ser på kraften som virker mellom to planeter, en med masse <span class="math notranslate nohighlight">\(m_1\)</span> og én med masse <span class="math notranslate nohighlight">\(m_2\)</span>, kan vi bruke Newtons <em>universelle gravitasjonslov</em>. Loven forteller oss at for to legemer med masse <span class="math notranslate nohighlight">\(m_1\)</span> og <span class="math notranslate nohighlight">\(m_2\)</span> som kan ansees å ha perfekt kuleform, er kraften mellom dem <span class="math notranslate nohighlight">\(F = \frac{Gm_1m_2}{r^2}\)</span>. Vi bruker denne loven til å finne kreftene som virker på dem. Vi kan anta at planetene beveger seg i to dimensjoner, det vil si langs <span class="math notranslate nohighlight">\(x\)</span>- og <span class="math notranslate nohighlight">\(y\)</span>-aksen. Hvis du vil ha en mer realistisk simulering ved å inkludere en tredje dimensjon, dvs. <span class="math notranslate nohighlight">\(z\)</span>-aksen, er det mulig å utvide modellen med å gjøre akkurat det samme for <span class="math notranslate nohighlight">\(z\)</span>-aksen som modellen har gjort for <span class="math notranslate nohighlight">\(x\)</span>- og <span class="math notranslate nohighlight">\(y\)</span>-aksen, men dette er valgfritt. Kraften som virker på en planet med masse <span class="math notranslate nohighlight">\(m_1\)</span> langs <span class="math notranslate nohighlight">\(x\)</span>- og <span class="math notranslate nohighlight">\(y\)</span>-aksen, <span class="math notranslate nohighlight">\(F_{x}\)</span> og <span class="math notranslate nohighlight">\(F_{y}\)</span>, blir påvirka av en planet med masse <span class="math notranslate nohighlight">\(m_2\)</span>. Kreftene langs <span class="math notranslate nohighlight">\(x\)</span>- og <span class="math notranslate nohighlight">\(y\)</span>-aksen kan uttrykkes ved:</p>
+<div class="math notranslate nohighlight">
+\[F_{x} = -\frac{G\cdot m_1\cdot m_2\cdot x(t)}{r^3}\]</div>
+<div class="math notranslate nohighlight">
+\[F_{x} =  -\frac{G\cdot m_1\cdot m_2\cdot x(t)}{\left((x(t) - x_2(t))^2 + (y(t) - y_2(t))^2\right)^{\frac{3}{2}}}\]</div>
+<div class="math notranslate nohighlight">
+\[F_{y} = -\frac{G\cdot m_1\cdot m_2\cdot y(t)}{r^3}\]</div>
+<div class="math notranslate nohighlight">
+\[F_{y} = -\frac{G\cdot m_1\cdot m_2\cdot y(t)}{\left((x(t) - x_2(t))^2 + (y(t) - y_2(t))^2\right)^{\frac{3}{2}}}\]</div>
+<p>der <span class="math notranslate nohighlight">\(G\)</span> er gravitasjonskonstanten, <span class="math notranslate nohighlight">\(r\)</span> er avstanden mellom planetene og <span class="math notranslate nohighlight">\(x(t)\)</span> og <span class="math notranslate nohighlight">\(y(t)\)</span> er posisjonen til planeten med masse <span class="math notranslate nohighlight">\(m_1\)</span> langs henholdsvis <span class="math notranslate nohighlight">\(x\)</span>- og <span class="math notranslate nohighlight">\(y\)</span>-aksen etter ei tid <span class="math notranslate nohighlight">\(t\)</span>. Vi har også at <span class="math notranslate nohighlight">\(x_2(t)\)</span> og <span class="math notranslate nohighlight">\(y_2(t)\)</span> er posisjonen til planeten med masse <span class="math notranslate nohighlight">\(m_2\)</span> langs henholdsvis <span class="math notranslate nohighlight">\(x\)</span>- og <span class="math notranslate nohighlight">\(y\)</span>-aksen etter ei tid <span class="math notranslate nohighlight">\(t\)</span>.</p>
+</section>
+<section id="id2">
+<h4>Oppgaver<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Vis at akselerasjonen <span class="math notranslate nohighlight">\(a_{x}(t)\)</span> og <span class="math notranslate nohighlight">\(a_y(t)\)</span> til en planet med masse <span class="math notranslate nohighlight">\(m_1\)</span> langs henholdsvis <span class="math notranslate nohighlight">\(x\)</span>- og <span class="math notranslate nohighlight">\(y\)</span>-aksen er:</p>
+<div class="math notranslate nohighlight">
+\[a_x(t) = -\frac{G\cdot m_2\cdot x(t)}{r^3}\]</div>
+<div class="math notranslate nohighlight">
+\[a_y(t) = -\frac{G\cdot m_2\cdot y(t)}{r^3}\]</div>
+</li>
+<li><p>Forklar hvorfor vi får at disse likningene må løses for å finne posisjonene <span class="math notranslate nohighlight">\(x(t)\)</span> og <span class="math notranslate nohighlight">\(y(t)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[x'(t) = v_x(t)\]</div>
+<div class="math notranslate nohighlight">
+\[y'(t) = v_y(t)\]</div>
+<div class="math notranslate nohighlight">
+\[v_x'(t) = -\frac{G\cdot m_2\cdot x(t)}{r^3}\]</div>
+<div class="math notranslate nohighlight">
+\[v_y'(t) = -\frac{G\cdot m_2\cdot y(t)}{r^3}\]</div>
+<p>der <span class="math notranslate nohighlight">\(v_x(t)\)</span> og <span class="math notranslate nohighlight">\(v_y(t)\)</span> er farten til planeten med masse <span class="math notranslate nohighlight">\(m_1\)</span>.</p>
+<p>Nå skal vi se på et solsystem som består av kun jorda og sola. Modellen antar at sola står stille. Du kan derfor fokusere på hvordan jordas bane blir påvirket av sola.</p>
+<p>I denne modellen lar vi jordas masse <span class="math notranslate nohighlight">\(m_1 = 3\cdot 10^{-6}\)</span> solmasser og solas masse <span class="math notranslate nohighlight">\(m_2 = 1\)</span> solmasse. Solmasser er en enhet som forteller stor en planet er i forhold til sola. Ved å bruke AU (enhet brukt som den gjennomsnittlige avstanden mellom sol og jord) og år som enheter i vår modell, kan vi finne at <span class="math notranslate nohighlight">\(G = 4\pi^2\)</span>.</p>
+<p>La startbetingelsene til jorda være <span class="math notranslate nohighlight">\(x(0) = 1\)</span>, <span class="math notranslate nohighlight">\(y(0) = 0\)</span>, <span class="math notranslate nohighlight">\(v_x(0) = 0\)</span> og <span class="math notranslate nohighlight">\(v_y(0) = 2\pi\)</span>. Sola kan stå i origo. Det betyr at i dette tilfellet vil <span class="math notranslate nohighlight">\(x_2(t) = 0\)</span> og <span class="math notranslate nohighlight">\(y_2(t) = 0\)</span> for alle tider <span class="math notranslate nohighlight">\(t\)</span>.</p>
+</li>
+<li><p>Skriv et program som først bruker Eulers metode til å finne jordas bane rundt sola for ett år ved å bruke <span class="math notranslate nohighlight">\(N = 1000\)</span> tidssteg. La programmet plotte banen.</p></li>
+<li><p>Euler-Cromers metode er en liten justering av Eulers metode. Finn ut hva som menes med denne metoden. Skriv om programmet fra deloppgave c) slik at det bruker Euler-Cromer isteden med samme verdi for <span class="math notranslate nohighlight">\(N\)</span>. Hvordan er plottet nå, sammenlikna med plottet fra deloppgave c)?</p>
+<p>Men vi kan jo ikke ha bare én planet i solsystemet vårt! Nå skal vi se på hvordan simuleringa kan være dersom vi har med flere planeter i solsystemet. Merk at  <span class="math notranslate nohighlight">\(x_2(t)\)</span> og <span class="math notranslate nohighlight">\(y_2(t)\)</span> nå vil være avhengig av hvilken planet vi ser på. Du kan fortsatt anta at sola står stille.</p>
+</li>
+<li><p>Skriv et program som modellerer planetenes bane for <span class="math notranslate nohighlight">\(P\)</span> planeter. Du kan gjerne bruke fila <a class="reference external" href="https://raw.githubusercontent.com/andreasdh/Programmering-og-modellering/master/docs/programmer/planetermalstruktur.py">planetermalstruktur.py</a> som forslag til programstruktur i programmet ditt, men du kan også utvide programmet ditt fra d). Hvis du skriver om programmet ditt fra d), er det viktig at det greier å lese en datafil med info over planetenes startposisjon, startfart og masse.</p>
+<p>Forslaget til programstrukturen henter ut eksempeldata fra ei fil som heter <a class="reference external" href="https://raw.githubusercontent.com/andreasdh/Programmering-og-modellering/master/docs/Datafiler/planeter.dat"><em>planeter_data.dat</em></a>. Tallene er henta fra NASA og har blitt noe modifisert. Du kan finne sida her: <a class="reference external" href="https://ssd.jpl.nasa.gov/horizons.cgi">https://ssd.jpl.nasa.gov/horizons.cgi</a>. Sola er ikke tatt med, da simuleringa antar at den står i origo og ikke beveger seg.</p>
+<p><strong>Kommentar til struktur:</strong></p>
+<p>Vi har ikke jobba så mye med matrisestrukturer. Tankegangen bak strukturen til <em>pos</em> og <em>fart</em> i <a class="reference external" href="https://raw.githubusercontent.com/andreasdh/Programmering-og-modellering/master/docs/programmer/planetermalstruktur.py">planetermalstruktur.py</a> kan illustreres slik:</p>
+ <img src="https://github.com/andreasdh/Programmering-og-modellering/raw/master/docs/bilder/illplaneter.png" alt="Matriser" width = "500px"> 
+<p>Illustrasjon viser tankegangen bak <em>pos</em>, som er helt den samme for <em>fart</em>. Her kan en tenke at vi lagrer informasjonen over planetene i et arkiv. Det <span class="math notranslate nohighlight">\(j\)</span>-te “arket” med informasjon til den <span class="math notranslate nohighlight">\(j\)</span>-te planeten hentes ut ved <em>pos[:,:,<span class="math notranslate nohighlight">\(j\)</span>]</em>. Skal vi se hvor den <span class="math notranslate nohighlight">\(j\)</span>-te planeten befinner seg langs både <span class="math notranslate nohighlight">\(x\)</span>- og <span class="math notranslate nohighlight">\(y\)</span>-aksen ved et tidssteg <span class="math notranslate nohighlight">\(i\)</span>, bruker vi <em>pos[<span class="math notranslate nohighlight">\(i\)</span>,:,<span class="math notranslate nohighlight">\(j\)</span>]</em>. Skal vi for eksempel bare se  på <span class="math notranslate nohighlight">\(x\)</span>-verdien til den <span class="math notranslate nohighlight">\(j\)</span>-te planeten ved tidssteg <span class="math notranslate nohighlight">\(i\)</span>, bruker vi <em>pos[<span class="math notranslate nohighlight">\(i\)</span>,0,<span class="math notranslate nohighlight">\(j\)</span>]</em>, og <em>1</em> istedenfor <em>0</em> dersom vi skal se på <span class="math notranslate nohighlight">\(y\)</span>-verdien.</p>
+<p>Du kan sjekke om simuleringa di gir følgende planetbaner etter ett år ved å bruke informasjonen fra fil <a class="reference external" href="https://raw.githubusercontent.com/andreasdh/Programmering-og-modellering/master/docs/Datafiler/planeter.dat"><em>planeter_data.dat</em></a>. Fildataene gir følgende resultater av simuleringa etter ett år:</p>
+<img src="https://raw.githubusercontent.com/andreasdh/Programmering-og-modellering/master/docs/bilder/planetere.png" alt="Planetbaner" width = "500px">
+</li>
+<li><p>Bruk <em>pygame</em> til å visualisere planetenes bane rundt sola. Du får et forslag til hvordan programstrukturen kan være, men utvid gjerne med mer om du har lyst. Her er det kun fantasien som setter grenser! Et forslag til programstruktur har filnavnet <a class="reference external" href="https://raw.githubusercontent.com/andreasdh/Programmering-og-modellering/master/docs/programmer/planetermalpygame.py"><em>planetermalpygame.py</em></a>.</p></li>
+<li><p>Legg inn en valgfri dynamisk hendelse i modellen din, f.eks. en meteor eller liknende som kan påvirke planetene. Du kan også lage en annen dynamisk hendelse som du selv finner på. Det er viktig at du begrunner hva som skjer i modellen din og hvorfor det skjer.</p></li>
+</ol>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/oppgaver"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="modelleringsprosjekt1.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Modelleringsoppgave I</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="../fagoppgaver/kjemioppgaver.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Repetisjon I: Kjemioppgaver</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oppgaver">
+   Oppgaver
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oppgave-1-zombie-apokalypse-biologi">
+     Oppgave 1: Zombie-apokalypse (biologi)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#utgangspunkt">
+       Utgangspunkt
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#oppgave">
+       Oppgave
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oppgave-2-klimamodell-1-ozonlaget-kjemi">
+     Oppgave 2: Klimamodell 1 – Ozonlaget (kjemi)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fartslover">
+       Fartslover
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fartslover-for-dannelse-og-nedbrytning-av-ozon-i-stratosfaeren">
+       Fartslover for dannelse og nedbrytning av ozon i stratosfæren
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Oppgaver
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oppgave-3-klimamodell-ii-drivhuseffekten-fysikk">
+     Oppgave 3: Klimamodell II – Drivhuseffekten (fysikk)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#oppgave-4-solsystemet-fysikk">
+     Oppgave 4: Solsystemet (fysikk)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#teoretisk-bakgrunn">
+       Teoretisk bakgrunn
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Oppgaver
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Andreas Haraldsrud
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2022.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>

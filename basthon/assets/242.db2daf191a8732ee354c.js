@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_basthon_basthon_console=self.webpackChunk_basthon_basthon_console||[]).push([[242],{8242(s,n,o){o.r(n)}}]);

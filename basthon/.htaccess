@@ -1,0 +1,44 @@
+# redirect to https
+RewriteEngine on
+
+RewriteCond %{HTTPS} off
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ignoring .git folder
+RewriteRule ^(?:.git)\b.* - [R=404]
+
+# prevent from listing directories
+Options -Indexes
+IndexIgnore *
+
+<IfModule mod_mime.c>
+  AddType application/wasm .wasm
+</IfModule>
+
+<ifModule mod_headers.c>
+Header set Cache-Control "no-cache"
+# uncomment to enable SharedArrayBuffer (can be enabled once
+# https://developer.mozilla.org/en-US/docs/Web/Security/IFrame_credentialless
+# is widely supported)
+# Header add Cross-Origin-Opener-Policy same-origin
+# Header add Cross-Origin-Embedder-Policy credentialless
+</ifModule>
+
+# static brotli (pre)compression
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # this disable the request on o2switch don't know why...
+    # RewriteCond %{HTTP:Accept-Encoding} br
+    RewriteCond %{REQUEST_FILENAME}.br -f
+    RewriteCond %{REQUEST_URI} !\.br$
+    RewriteRule ^(.*)$ $1.br [L]
+
+  <IfModule mod_headers.c>
+    AddEncoding br .br
+    <FilesMatch "\.(.*)\.br$">
+      Header set Content-Encoding br
+      Header set Vary Accept-Encoding
+    </FilesMatch>
+  </IfModule>
+</IfModule>

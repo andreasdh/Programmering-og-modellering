@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta http-equiv="cache-control" content="no-cache"/><title>Python editor</title><link rel="icon" type="image/png" href="assets/4a8803c585af3c0cbc9d.png"/><script>var sys_info={"kernel-version":"0.77.5","console-react-version":"0.4.9","build-date":"2026-06-27T00:49:40.357Z"}</script><script defer="defer" src="assets/main.27c2f4348437d13dc972.js?custom=e70e5485404f"></script><link href="assets/main.c58bec0c487ce7814317.css?6bb580e65a31996f7e1f" rel="stylesheet"><style id="programmering-og-modellering-basthon-style">div:has(> a > img[alt="Basthon"]) {display: none !important;}</style><script id="programmering-og-modellering-basthon-storage">
+(() => {
+  "use strict";
+  const source = new URLSearchParams(window.location.search).get("from");
+  if (!source) return;
+  const prefix = `programmering-og-modellering:basthon:${encodeURIComponent(source)}:`;
+  const prototype = Storage.prototype;
+  const nativeGetItem = prototype.getItem;
+  const nativeSetItem = prototype.setItem;
+  const nativeRemoveItem = prototype.removeItem;
+  const nativeClear = prototype.clear;
+  const nativeKey = prototype.key;
+  const local = window.localStorage;
+  const session = window.sessionStorage;
+  const scoped = (store) => store === local || store === session;
+  const key = (value) => prefix + String(value);
+  prototype.getItem = function (value) { return nativeGetItem.call(this, scoped(this) ? key(value) : value); };
+  prototype.setItem = function (value, data) { return nativeSetItem.call(this, scoped(this) ? key(value) : value, data); };
+  prototype.removeItem = function (value) { return nativeRemoveItem.call(this, scoped(this) ? key(value) : value); };
+  prototype.clear = function () {
+    if (!scoped(this)) return nativeClear.call(this);
+    const keys = [];
+    for (let index = 0; index < this.length; index += 1) {
+      const value = nativeKey.call(this, index);
+      if (value && value.startsWith(prefix)) keys.push(value);
+    }
+    keys.forEach((value) => nativeRemoveItem.call(this, value));
+  };
+})();
+</script><script id="programmering-og-modellering-basthon-focus">
+(() => {
+  "use strict";
+  if (!new URLSearchParams(window.location.search).get("from")) return;
+  let guardStartupFocus = true;
+  const nativeFocus = HTMLElement.prototype.focus;
+  HTMLElement.prototype.focus = function (options) {
+    if (!guardStartupFocus) return nativeFocus.call(this, options);
+    const guarded = options && typeof options === "object" ? { ...options, preventScroll: true } : { preventScroll: true };
+    return nativeFocus.call(this, guarded);
+  };
+  const release = () => {
+    guardStartupFocus = false;
+    window.removeEventListener("pointerdown", release, true);
+    window.removeEventListener("touchstart", release, true);
+    window.removeEventListener("keydown", release, true);
+  };
+  window.addEventListener("pointerdown", release, true);
+  window.addEventListener("touchstart", release, true);
+  window.addEventListener("keydown", release, true);
+})();
+</script></head><body></body></html>

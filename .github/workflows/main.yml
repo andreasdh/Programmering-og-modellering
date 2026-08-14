@@ -36,6 +36,7 @@ jobs:
 
           git checkout master
           jupyter-book build .
+          bash scripts/prepare_basthon.sh _build/html/basthon
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

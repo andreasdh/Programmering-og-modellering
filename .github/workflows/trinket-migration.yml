@@ -1,0 +1,49 @@
+name: Snapshot Trinkets and migrate to Basthon
+
+on:
+  push:
+    branches:
+      - agent/migrate-trinkets-to-basthon
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/migrate-trinkets-to-basthon
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Snapshot Trinkets and update live pages
+        run: python scripts/migrate_trinkets_to_basthon.py
+
+      - name: Validate migrated source
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('scripts/trinket_migration_report.json').read_text(encoding='utf-8'))
+          assert report['trinket_references_replaced'] > 0
+          for item in report['trinkets'].values():
+              assert Path(item['local_main']).is_file(), item['local_main']
+          print(json.dumps(report, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Commit migration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs scripts/trinket_migration_report.json
+          if git diff --cached --quiet; then
+            echo "No migration changes"
+          else
+            git commit -m "Snapshot Trinkets and migrate to Basthon [skip ci]"
+            git push origin HEAD:agent/migrate-trinkets-to-basthon
+          fi

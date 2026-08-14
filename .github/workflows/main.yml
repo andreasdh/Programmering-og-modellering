@@ -5,6 +5,7 @@ on:
     branches:
       - master
 
+# Build and deploy the Jupyter Book with the self-hosted Basthon editor.
 jobs:
   build:
     runs-on: ubuntu-latest
